@@ -224,6 +224,17 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 main{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign,.ticker{animation:none}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
+
+/* legal */
+.legal-link{padding:0;border:0;background:none;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.legal-link:hover{color:var(--ink)}
+.legal{width:min(640px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:32px clamp(20px,4vw,40px);border-radius:24px;border:1px solid rgba(255,79,163,.5);background:var(--night2);color:var(--muted);box-shadow:0 0 60px rgba(255,79,163,.25)}
+.legal::backdrop{background:rgba(5,4,14,.75);backdrop-filter:blur(6px)}
+.legal h3{margin:0 0 18px;font-family:var(--display);font-size:24px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.legal h4{margin:20px 0 6px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua)}
+.legal p{margin:0;font-size:15px;line-height:1.65}
+.legal a{color:var(--pink)}
+.legal-x{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:16px;cursor:pointer}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MusicGroup","name":"Mika Montero","url":"https://mikamontero.com/","image":"https://mikamontero.com/assets/img/cover.jpg","genre":["Electronic","Dance","Pop"],"foundingLocation":{"@type":"Place","name":"Miami, Florida"},
@@ -414,12 +425,24 @@ main{position:relative;z-index:1}
       <div class="foot">
         <span class="logo">MIKA<span>.</span>MONTERO</span>
         <span style="display:flex;flex-wrap:wrap;gap:18px"><a href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">Instagram</a><a href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener">Spotify</a><a href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener">YouTube</a><a href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener">Apple Music</a></span>
-        <span>© 2026 Mika Montero</span>
+        <span style="display:flex;flex-wrap:wrap;gap:18px;align-items:center"><button class="legal-link" id="legal-open" type="button" data-i18n="lg_link">Legal &amp; Privacy</button><span>© 2026 Mika Montero</span></span>
       </div>
     </footer>
   </div>
 </main>
 
+<dialog class="legal" id="legal" aria-labelledby="legal-h">
+  <button class="legal-x" id="legal-close" type="button" aria-label="Close">✕</button>
+  <h3 id="legal-h" data-i18n="lg_h">Legal &amp; Privacy</h3>
+  <h4 data-i18n="lg_1h">About this site</h4>
+  <p data-i18n="lg_1p">This is the official website of the artist Mika Montero. For any questions, requests or legal matters, write to <a href="mailto:mikamonroe26@gmail.com">mikamonroe26@gmail.com</a>.</p>
+  <h4 data-i18n="lg_2h">Privacy</h4>
+  <p data-i18n="lg_2p">No cookies, no ads, no tracking. This site does not collect personal data. Your language choice is saved only in your own browser. The site is hosted by Cloudflare, which processes technical data such as your IP address to deliver it securely, and counts visits anonymously without cookies or personal profiles.</p>
+  <h4 data-i18n="lg_3h">External links</h4>
+  <p data-i18n="lg_3p">Links to Fanvue, Throne, Instagram, Spotify, YouTube and Apple Music lead to other services. Their own terms, age checks and privacy policies apply there.</p>
+  <h4 data-i18n="lg_4h">Copyright</h4>
+  <p data-i18n="lg_4p">All photos, videos and music on this site © 2026 Mika Montero. Please don't use them without permission.</p>
+</dialog>
 <div class="glow" id="glow" aria-hidden="true"></div>
 <div class="player" id="player">
   <button class="pl-btn" id="pl-btn" aria-label="Play Break You Out">
@@ -496,7 +519,7 @@ main{position:relative;z-index:1}
     pv_cta:'Mira lo nuevo de hoy en Fanvue',
     w_eye:'Lista de deseos', w_t:'Consiénteme, al estilo Miami.', w_p:'Mi lista de deseos en Throne. Cada regalo recibe un pequeño gracias.', w_cta:'Ver mi lista',
     b_eye:'Marcas, bookings y música', b_t:'Trabajemos juntos.', b_p:'Campañas, moda, belleza, vida nocturna, features y colaboraciones.', b_cta:'Escríbeme',
-    pl_tap:'Toca para escuchar', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
+    pl_tap:'Toca para escuchar', lg_link:'Aviso legal y privacidad', lg_h:'Aviso legal y privacidad', lg_1h:'Sobre este sitio', lg_1p:'Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href="mailto:mikamonroe26@gmail.com">mikamonroe26@gmail.com</a>.', lg_2h:'Privacidad', lg_2p:'Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.', lg_3h:'Enlaces externos', lg_3p:'Los enlaces a Fanvue, Throne, Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos, verificaciones de edad y políticas de privacidad.', lg_4h:'Derechos de autor', lg_4p:'Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
   };
   var ES_OUT={ tag:'Nuevo single ya disponible', mq_soon:'Ya disponible', mq_date:'✦ Desde el 23 de noviembre',
     music_p:'Mi primer single ya salió. Noches manejando por Ocean Drive, cielos rosados sobre Biscayne Bay y ese sentimiento que tienes que dejar salir. Break You Out es el sonido de mis noches en Miami. Súbele el volumen.',
@@ -548,6 +571,12 @@ main{position:relative;z-index:1}
     document.addEventListener('mouseleave',function(){ g.classList.remove('on'); });
   }
 })();
+</script>
+<script>
+(function(){var d=document.getElementById('legal');
+document.getElementById('legal-open').addEventListener('click',function(){ if(d.showModal) d.showModal(); else d.setAttribute('open',''); });
+document.getElementById('legal-close').addEventListener('click',function(){ d.close?d.close():d.removeAttribute('open'); });
+d.addEventListener('click',function(e){ if(e.target===d) d.close(); });})();
 </script>
 </body>
 </html>
