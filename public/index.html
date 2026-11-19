@@ -204,18 +204,16 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 
 /* neon sign */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.neon-sign{position:relative;display:block;width:min(100%,5.6em);height:.92em;margin-top:.14em;border-radius:.14em;overflow:hidden;--px:max(4px,.052em);
-  border:max(2px,.022em) solid #7FF5EA;
-  background:radial-gradient(circle at center,rgba(63,224,208,.17) 0 34%,transparent 42%) 0 0/var(--px) var(--px),#03181e;
+.neon-sign{position:relative;display:block;width:100%;aspect-ratio:12.6/1.6;margin-top:.14em;border-radius:.12em;overflow:hidden;container-type:inline-size;
+  border:max(2px,.022em) solid #7FF5EA;background:#03181e;
   box-shadow:0 0 4px #B8FFF7,0 0 14px #3FE0D0,0 0 34px rgba(63,224,208,.65),0 0 70px rgba(63,224,208,.35),inset 0 0 14px rgba(63,224,208,.35);
   animation:neonOn 2.4s linear .5s both,buzz 11s linear 4s infinite}
-/* LED-Raster: nur durch die runden Punkte sieht man die Schrift */
-.neon-sign::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:radial-gradient(circle at center,transparent 0 43%,#03181e 52%) 0 0/var(--px) var(--px)}
-.neon-sign::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
-  background:linear-gradient(90deg,#03181e,transparent 9%,transparent 91%,#03181e)}
-.ticker{display:flex;width:max-content;height:100%;align-items:center;animation:tick 11s linear infinite}
-.ticker span{flex:none;padding-right:.45em;font-size:.62em;line-height:1;letter-spacing:.03em;white-space:nowrap;
+/* LED-Raster: ::before = ausgeschaltete Punkte, ::after = Maske, durch deren Löcher die Schrift leuchtet */
+.neon-sign::before,.neon-sign::after{content:"";position:absolute;inset:0;pointer-events:none;--px:max(3px,calc(100cqw / 104))}
+.neon-sign::before{background:radial-gradient(circle at center,rgba(63,224,208,.17) 0 34%,transparent 42%) 0 0/var(--px) var(--px)}
+.neon-sign::after{z-index:2;background:linear-gradient(90deg,#03181e,transparent 3%,transparent 97%,#03181e),radial-gradient(circle at center,transparent 0 43%,#03181e 52%) 0 0/var(--px) var(--px)}
+.ticker{position:relative;z-index:1;display:flex;width:max-content;height:100%;align-items:center;animation:tick 11s linear infinite}
+.ticker span{flex:none;padding-right:.45em;font-size:calc(100cqw / 12.7);line-height:1;letter-spacing:.03em;white-space:nowrap;
   color:#FF6BB8;text-shadow:0 0 .04em #FFB3DD,0 0 .12em #FF4FA3;-webkit-text-stroke:.02em #FF8ECB}
 @keyframes tick{to{transform:translateX(-50%)}}
 @keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
