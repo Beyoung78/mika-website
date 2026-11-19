@@ -204,18 +204,19 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 
 /* neon sign */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.neon-sign{position:relative;display:block;width:min(100%,5.6em);height:.92em;margin-top:.14em;border-radius:.14em;overflow:hidden;
+.neon-sign{position:relative;display:block;width:min(100%,5.6em);height:.92em;margin-top:.14em;border-radius:.14em;overflow:hidden;--px:max(4px,.052em);
   border:max(2px,.022em) solid #7FF5EA;
-  background:radial-gradient(120% 140% at 50% 50%,rgba(20,95,105,.55),rgba(6,38,48,.85));
-  box-shadow:0 0 4px #B8FFF7,0 0 14px #3FE0D0,0 0 34px rgba(63,224,208,.65),0 0 70px rgba(63,224,208,.35),inset 0 0 18px rgba(63,224,208,.45),inset 0 0 50px rgba(63,224,208,.18);
+  background:radial-gradient(circle at center,rgba(63,224,208,.17) 0 34%,transparent 42%) 0 0/var(--px) var(--px),#03181e;
+  box-shadow:0 0 4px #B8FFF7,0 0 14px #3FE0D0,0 0 34px rgba(63,224,208,.65),0 0 70px rgba(63,224,208,.35),inset 0 0 14px rgba(63,224,208,.35);
   animation:neonOn 2.4s linear .5s both,buzz 11s linear 4s infinite}
-.neon-sign::before,.neon-sign::after{content:"";position:absolute;top:0;bottom:0;width:14%;z-index:2;pointer-events:none}
-.neon-sign::before{left:0;background:linear-gradient(90deg,rgba(6,38,48,.95),transparent)}
-.neon-sign::after{right:0;background:linear-gradient(270deg,rgba(6,38,48,.95),transparent)}
-.ticker{display:flex;width:max-content;height:100%;align-items:center;animation:tick 10s linear infinite}
-.ticker span{flex:none;padding-right:.45em;font-size:.6em;line-height:1;letter-spacing:.02em;white-space:nowrap;
-  color:transparent;background:linear-gradient(90deg,#FF4FA3,#FF7EC4 30%,#C77DFF 60%,#FF4FA3);-webkit-background-clip:text;background-clip:text;
-  filter:drop-shadow(0 0 1px rgba(255,255,255,.7)) drop-shadow(0 0 6px rgba(255,79,163,.95)) drop-shadow(0 0 16px rgba(199,125,255,.7))}
+/* LED-Raster: nur durch die runden Punkte sieht man die Schrift */
+.neon-sign::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(circle at center,transparent 0 43%,#03181e 52%) 0 0/var(--px) var(--px)}
+.neon-sign::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,#03181e,transparent 9%,transparent 91%,#03181e)}
+.ticker{display:flex;width:max-content;height:100%;align-items:center;animation:tick 11s linear infinite}
+.ticker span{flex:none;padding-right:.45em;font-size:.62em;line-height:1;letter-spacing:.03em;white-space:nowrap;
+  color:#FF6BB8;text-shadow:0 0 .04em #FFB3DD,0 0 .12em #FF4FA3;-webkit-text-stroke:.02em #FF8ECB}
 @keyframes tick{to{transform:translateX(-50%)}}
 @keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
 @keyframes buzz{0%,91%,100%{opacity:1}92%{opacity:.35}93%{opacity:1}95%{opacity:.6}96%{opacity:1}}
@@ -240,7 +241,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
 @media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
 main{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign,.ticker{animation:none}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
 
 /* legal */
@@ -305,7 +306,7 @@ main{position:relative;z-index:1}
         <source media="(max-width:860px)" srcset="assets/hero-mobile.jpg">
         <img class="poster" src="assets/hero.jpg" alt="" fetchpriority="high">
       </picture>
-      <video id="film" muted playsinline loop preload="auto" aria-hidden="true"></video>
+      <video id="film" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video>
       <div class="hero-copy">
       <span class="tag"><i aria-hidden="true"></i><span data-i18n="tag" data-rel>New single coming soon</span></span>
       <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><span class="ticker"><span>MONTERO ✦ MONTERO ✦ MONTERO ✦ </span><span>MONTERO ✦ MONTERO ✦ MONTERO ✦ </span></span></span></h1>
@@ -540,7 +541,6 @@ main{position:relative;z-index:1}
   var nav=document.getElementById('nav'), film=document.querySelector('.film'), v=document.getElementById('film');
   function onScroll(){ nav.classList.toggle('solid', window.scrollY>film.offsetHeight*0.6); }
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var mobile=window.matchMedia('(max-width:860px)').matches;
   v.src=mobile?'assets/hero-mobile.mp4':'assets/hero.mp4';
   v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
