@@ -235,6 +235,28 @@ main{position:relative;z-index:1}
 .legal p{margin:0;font-size:15px;line-height:1.65}
 .legal a{color:var(--pink)}
 .legal-x{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:16px;cursor:pointer}
+
+/* neon palm sign */
+.neonwall{position:relative;display:flex;justify-content:center;padding:clamp(60px,9vw,120px) 18px clamp(50px,7vw,90px);overflow:hidden;
+  background:radial-gradient(60% 70% at 50% 45%,rgba(199,125,255,.14),transparent 70%),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 34px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 1px,transparent 1px 68px),#0B0A1A}
+.palm-sign{width:min(560px,88vw);display:flex;flex-direction:column;align-items:center;gap:6px}
+.palm-sign svg{width:100%;height:auto;overflow:visible}
+.palm-sign .tube{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.palm-sign .tree{stroke:#7CFFD6;stroke-width:5;filter:drop-shadow(0 0 2px #E8FFF8) drop-shadow(0 0 8px #3FE0D0) drop-shadow(0 0 20px rgba(63,224,208,.75))}
+.palm-sign .sun{filter:drop-shadow(0 0 2px #FFE1F0) drop-shadow(0 0 9px #FF4FA3) drop-shadow(0 0 22px rgba(199,125,255,.7))}
+.palm-sign .sea{stroke:#3FE0D0;stroke-width:4;filter:drop-shadow(0 0 6px #3FE0D0) drop-shadow(0 0 16px rgba(63,224,208,.6))}
+.neon-txt{margin:0;white-space:nowrap;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(24px,5vw,42px);letter-spacing:.06em;text-transform:uppercase;color:#FFE6F3;
+  text-shadow:0 0 2px #fff,0 0 8px #FF7DBE,0 0 20px #FF4FA3,0 0 44px #FF2E93,0 0 80px rgba(199,125,255,.6)}
+.palm-sign .tube,.neon-txt{opacity:.07;transition:opacity .2s}
+.palm-sign.on .sun{animation:pOn 1.8s linear .1s both,pBuzz 9s linear 3s infinite}
+.palm-sign.on .tree{animation:pOn 2.2s linear .5s both,pBuzz 7s linear 4s infinite}
+.palm-sign.on .sea{animation:pOn 1.6s linear .9s both,pBuzz 11s linear 5s infinite}
+.palm-sign.on .neon-txt{animation:pOn 2s linear 1.2s both,pBuzz 13s linear 6s infinite}
+@keyframes pOn{0%,8%{opacity:.07}9%{opacity:1}12%{opacity:.1}16%{opacity:1}19%{opacity:.15}38%{opacity:.15}40%{opacity:1}43%{opacity:.5}46%,100%{opacity:1}}
+@keyframes pBuzz{0%,88%,100%{opacity:1}89%{opacity:.3}90%{opacity:1}93%{opacity:.55}94%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.palm-sign .tube,.neon-txt{opacity:1}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MusicGroup","name":"Mika Montero","url":"https://mikamontero.com/","image":"https://mikamontero.com/assets/img/cover.jpg","genre":["Electronic","Dance","Pop"],"foundingLocation":{"@type":"Place","name":"Miami, Florida"},
@@ -290,6 +312,34 @@ main{position:relative;z-index:1}
     </div>
   </div>
 
+  <section class="neonwall" aria-label="Neon sign: palm tree and sunset, Miami nights">
+    <div class="palm-sign" id="palm-sign">
+      <svg viewBox="0 0 400 320" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="sunG" gradientUnits="userSpaceOnUse" x1="0" y1="58" x2="0" y2="242"><stop offset="0" stop-color="#FF4FA3"/><stop offset=".55" stop-color="#C77DFF"/><stop offset="1" stop-color="#FF9E5E"/></linearGradient>
+          <clipPath id="sunC"><circle cx="236" cy="150" r="88"/></clipPath>
+        </defs>
+        <g class="tube sun">
+          <circle cx="236" cy="150" r="92" stroke="url(#sunG)" stroke-width="5"/>
+          <g clip-path="url(#sunC)" stroke="url(#sunG)" stroke-width="4"><line x1="130" x2="345" y1="74" y2="74"/><line x1="130" x2="345" y1="90" y2="90"/><line x1="130" x2="345" y1="106" y2="106"/><line x1="130" x2="345" y1="121" y2="121"/><line x1="130" x2="345" y1="136" y2="136"/><line x1="130" x2="345" y1="150" y2="150"/><line x1="130" x2="345" y1="163" y2="163"/><line x1="130" x2="345" y1="175" y2="175"/><line x1="130" x2="345" y1="186" y2="186"/><line x1="130" x2="345" y1="196" y2="196"/><line x1="130" x2="345" y1="205" y2="205"/><line x1="130" x2="345" y1="213" y2="213"/><line x1="130" x2="345" y1="220" y2="220"/><line x1="130" x2="345" y1="226" y2="226"/><line x1="130" x2="345" y1="231" y2="231"/><line x1="130" x2="345" y1="235" y2="235"/></g>
+        </g>
+        <g class="tube sea">
+          <path d="M96 262 H372"/><path d="M134 278 H336"/><path d="M178 293 H292"/>
+        </g>
+        <g class="tube tree">
+          <path d="M138 296 C146 244 160 192 171 132"/><path d="M153 296 C160 244 173 192 183 132"/>
+          <path d="M141 270 l14 2 M145 244 l15 2 M150 218 l15 2 M156 192 l15 2 M162 166 l15 2"/>
+          <path d="M177 128 C150 104 118 102 88 118"/>
+          <path d="M177 128 C158 92 128 78 100 82"/>
+          <path d="M177 128 C176 94 192 70 220 62"/>
+          <path d="M177 128 C206 102 240 100 266 114"/>
+          <path d="M177 128 C202 120 228 134 242 160"/>
+          <path d="M177 128 C158 126 136 142 126 166"/>
+        </g>
+      </svg>
+      <p class="neon-txt" data-i18n="neon_txt">Miami nights</p>
+    </div>
+  </section>
   <div class="wrap">
     <section class="section" id="music">
       <div class="music">
@@ -510,7 +560,7 @@ main{position:relative;z-index:1}
     cd_head:'Sale el lunes 23 de noviembre', cd_d:'Días', cd_h:'Horas', cd_m:'Min', cd_s:'Seg', cd_cta:'Sígueme en Spotify y escúchalo primero',
     ab_eye:'Hola, soy Mika', ab_h:'Nacida en <em>Honolulu,</em><br>hecha en Miami.',
     ab_p:'Japonesa-americana, chica de isla de corazón y noctámbula por elección. Modelo, fotografío, escribo canciones y vivo para esa hora en que se encienden las luces de la ciudad. Un poco dulce, un poco peligro.',
-    f_artist:'Artista', f_model:'Modelo', f_photo:'Fotógrafa', f_lang:'English · 日本語 · un poco de español',
+    f_artist:'Artista', neon_txt:'Noches de Miami', f_model:'Modelo', f_photo:'Fotógrafa', f_lang:'English · 日本語 · un poco de español',
     feed_h:'El <em>feed</em>', tab_music:'Música', tab_model:'Modelo', feed_follow:'Sígueme @mikamontero26',
     today:'Nuevo hoy', members:'Solo miembros', pv_eye:'Solo miembros · Nuevo cada día', pv_h:'Solo de <em>noche.</em>',
     pv_p:'Algo nuevo <strong class="hl">todos los días</strong>. Fotos y videos exclusivos, detrás de cámaras de mis sesiones y del estudio, y chats privados a cualquier hora. Todo lo que nunca subiría a Instagram está en mi Fanvue.',
@@ -577,6 +627,11 @@ main{position:relative;z-index:1}
 document.getElementById('legal-open').addEventListener('click',function(){ if(d.showModal) d.showModal(); else d.setAttribute('open',''); });
 document.getElementById('legal-close').addEventListener('click',function(){ d.close?d.close():d.removeAttribute('open'); });
 d.addEventListener('click',function(e){ if(e.target===d) d.close(); });})();
+</script>
+<script>
+(function(){var el=document.getElementById('palm-sign');
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){el.classList.add('on');return;}
+var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ el.classList.add('on'); io.disconnect(); } },{threshold:.35}); io.observe(el);})();
 </script>
 </body>
 </html>
