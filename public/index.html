@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mika Montero</title>
+<meta name="description" content="Mika Montero. Miami nights, Honolulu heart. Artist, model and creator. New single Break You Out coming soon.">
+<meta property="og:title" content="Mika Montero">
+<meta property="og:description" content="Miami nights, Honolulu heart. New single Break You Out coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mikamontero.com/assets/img/cover.jpg">
+<meta property="og:url" content="https://mikamontero.com/">
+<link rel="canonical" href="https://mikamontero.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0B0A1A;--night2:#14112B;--card:#17142F;--ink:#FBF3FF;--muted:#C9BFDD;--dim:#9A8FB4;--line:#2B2550;--pink:#FF4FA3;--aqua:#3FE0D0;--sun:#FF9E5E;--display:Syne,"Arial Black",sans-serif;--serif:"DM Serif Display",Georgia,serif;--sans:Inter,system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+::selection{background:var(--pink);color:var(--night)}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px clamp(18px,4vw,48px);transition:background .4s}
+.nav.solid{background:rgba(11,10,26,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.logo{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.12em;text-decoration:none}
+.logo span{color:var(--pink)}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2.4vw,28px);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.links a{text-decoration:none;color:var(--muted);transition:color .25s}
+.links a:hover{color:var(--aqua)}
+.nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--pink);color:var(--night)!important;box-shadow:0 0 24px rgba(255,79,163,.45)}
+@media(max-width:760px){.hide-sm{display:none}.nav{flex-wrap:nowrap}.logo{font-size:15px;letter-spacing:.08em;white-space:nowrap}.nav-cta{min-height:40px;padding:0 16px}}
+
+/* hero loop video */
+.film{position:relative;height:100vh;height:100dvh;min-height:620px;background:var(--night)}
+.stage{position:relative;height:100%;overflow:hidden;display:flex;align-items:flex-end}
+.stage video,.stage .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.stage video{opacity:0;transition:opacity .8s}
+.stage video.ready{opacity:1}
+.stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(11,10,26,1) 0%,rgba(11,10,26,.5) 34%,rgba(11,10,26,0) 62%),linear-gradient(90deg,rgba(11,10,26,.78) 0%,rgba(11,10,26,.25) 46%,rgba(11,10,26,0) 66%)}
+.stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 50% at 85% 20%,rgba(255,79,163,.22),transparent 70%),radial-gradient(50% 40% at 10% 90%,rgba(63,224,208,.16),transparent 70%);mix-blend-mode:screen}
+.hero-copy{position:relative;z-index:2;padding:0 clamp(18px,6vw,96px) clamp(64px,10vh,120px);width:100%;max-width:980px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--aqua)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--aqua);box-shadow:0 0 12px var(--aqua);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.hero-copy h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(44px,10.5vw,170px);line-height:.86;letter-spacing:-.03em;text-transform:uppercase}
+.hero-copy .lead{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,34px);color:var(--ink)}
+.hero-copy .sub{margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:40ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;padding-top:6px}
+.cta-fan{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--sun));color:var(--night);font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 10px 40px rgba(255,79,163,.4);transition:transform .3s,box-shadow .3s}
+.cta-fan:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 14px 50px rgba(255,79,163,.6)}
+.cta-ig{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;border:1.5px solid var(--aqua);color:var(--ink);font-weight:700;text-decoration:none;background:rgba(11,10,26,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,color .3s}
+.cta-ig:hover{background:var(--aqua);color:var(--night)}
+
+/* marquee */
+.marquee{position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--night2);padding:18px 0}
+.marquee .track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.marquee .track span:nth-child(odd){color:var(--ink)}
+.marquee .track span:nth-child(even){color:var(--pink)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.section{padding-top:clamp(80px,11vw,140px)}
+.eyebrow{margin:0;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--aqua);font-weight:700}
+h2{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,5.4vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;color:var(--pink);letter-spacing:0}
+.p{margin:0;font-size:18px;line-height:1.7;color:var(--muted)}
+.stripes{height:10px;border-radius:10px;background:linear-gradient(90deg,var(--pink) 0 33%,var(--sun) 33% 66%,var(--aqua) 66% 100%);max-width:160px}
+
+/* music */
+.music{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:stretch}
+.cover{flex:1 1 360px;max-width:560px;position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;box-shadow:0 30px 80px rgba(255,79,163,.18)}
+.cover img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:contrast(1.05)}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,79,163,.35),rgba(11,10,26,0) 45%,rgba(63,224,208,.25))}
+.cover .title{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;font-family:var(--display);font-weight:800;font-size:clamp(34px,4vw,54px);line-height:.9;text-transform:uppercase}
+.cover .title small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.28em;font-weight:700;color:var(--aqua);margin-bottom:10px}
+.music .txt{flex:1 1 360px;display:flex;flex-direction:column;gap:20px;justify-content:center}
+.soon{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:8px 16px;border-radius:999px;border:1px solid var(--pink);color:var(--pink);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.platforms{display:flex;flex-wrap:wrap;gap:12px}
+.plat{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 22px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-weight:700;text-decoration:none;transition:transform .25s,border-color .25s,background .25s}
+.plat:hover{transform:translateY(-2px)}
+.plat.sp svg{color:#1ED760}.plat.sp:hover{border-color:#1ED760}
+.plat.yt svg{color:#FF3B3B}.plat.yt:hover{border-color:#FF3B3B}
+.plat.am svg{color:var(--pink)}.plat.am:hover{border-color:var(--pink)}
+.plat svg:last-child{color:var(--dim)}
+
+/* about */
+.about{display:flex;flex-wrap:wrap-reverse;align-items:center;gap:clamp(32px,6vw,80px)}
+.about .txt{flex:1 1 380px;display:flex;flex-direction:column;gap:22px}
+.about figure{flex:1 1 340px;margin:0;max-width:520px;position:relative}
+.about figure img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:200px 200px 26px 26px}
+.about figure::before{content:"";position:absolute;inset:-14px -14px auto auto;width:62%;height:62%;border-radius:200px 200px 0 0;border:2px solid var(--aqua);z-index:-1}
+.facts{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:6px 0 0;padding:0}
+.facts li{padding:10px 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;color:var(--ink)}
+
+/* feed */
+.feed-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:28px}
+.feed-link{font-size:14px;font-weight:700;letter-spacing:.08em;text-decoration:none;border-bottom:2px solid var(--pink);padding-bottom:4px}
+.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.feed{grid-template-columns:repeat(2,1fr);gap:10px}}
+.feed figure{margin:0;overflow:hidden;border-radius:20px;position:relative}
+.feed img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
+.feed figure:hover img{transform:scale(1.05);filter:saturate(1.15)}
+
+.tabs{display:inline-flex;padding:5px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.tab{min-height:44px;padding:0 24px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:700 13px var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s}
+.tab[aria-selected="true"]{background:linear-gradient(90deg,var(--pink),var(--sun));color:var(--night)}
+.feed[hidden]{display:none}
+
+/* private */
+.private{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:stretch;border-radius:32px;padding:clamp(22px,4vw,56px);background:linear-gradient(135deg,rgba(255,79,163,.14),rgba(63,224,208,.08)),var(--night2);border:1px solid var(--line)}
+.private figure{flex:1 1 300px;margin:0;max-width:440px;position:relative;overflow:hidden;border-radius:24px;min-height:440px}
+.private figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--pink);text-shadow:0 0 20px rgba(255,79,163,.6)}
+.lock span{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
+.private .txt{flex:1 1 340px;display:flex;flex-direction:column;gap:20px;justify-content:center}
+.perks{list-style:none;margin:4px 0 0;padding:0}
+.perks li{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
+.perks li span:last-child{color:var(--aqua);font-weight:600}
+.cta-private{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:0 28px;border-radius:18px;background:linear-gradient(90deg,var(--pink),var(--sun));color:var(--night);font-weight:800;font-size:18px;text-decoration:none;transition:letter-spacing .35s}
+.cta-private:hover{letter-spacing:.04em}
+
+
+.today{position:absolute;z-index:2;top:16px;left:16px;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--pink);color:var(--night);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 22px rgba(255,79,163,.7)}
+.today i{width:7px;height:7px;border-radius:50%;background:var(--night);animation:pulse 1.4s infinite}
+.hl{color:var(--ink);font-weight:700;background:linear-gradient(transparent 62%,rgba(255,79,163,.45) 62%)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:4px}
+.week span{position:relative;padding:12px 0 10px;border-radius:12px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:rgba(255,79,163,.1);border:1px solid rgba(255,79,163,.45)}
+.week span::after{content:attr(data-new);display:block;margin-top:5px;font-size:9px;letter-spacing:.16em;color:var(--aqua)}
+.week span.on{background:linear-gradient(135deg,var(--pink),var(--sun));color:var(--night);border-color:transparent}
+.week span.on::after{color:var(--night)}
+
+/* wish + brands */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.box{display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:clamp(28px,4vw,44px);border-radius:26px;background:var(--card);border:1px solid var(--line);min-height:260px}
+.box .t{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(30px,3.2vw,44px);line-height:1.05}
+.box.wish{border-color:var(--pink)}
+.box.brand{border-color:var(--aqua)}
+.mail{font-family:var(--display);font-weight:700;font-size:clamp(18px,2vw,24px);text-decoration:none;border-bottom:2px solid var(--aqua);padding-bottom:4px;word-break:break-all;width:max-content;max-width:100%}
+.cta-wish,.cta-mail{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:700;text-decoration:none;width:max-content;transition:background .3s,color .3s}
+.cta-wish{border:1.5px solid var(--pink);color:var(--ink)}
+.cta-wish:hover{background:var(--pink);color:var(--night)}
+.cta-mail{background:var(--aqua);color:var(--night)}
+.cta-mail:hover{background:var(--ink)}
+footer{padding:clamp(80px,11vw,140px) 0 56px}
+.foot{border-top:1px solid var(--line);padding-top:36px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;font-size:14px;color:var(--dim)}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+@media(max-width:860px){.hero-copy{gap:16px;padding-bottom:56px}.hero-copy h1{font-size:12vw}.hero-copy .sub{font-size:15px}.actions{flex-direction:column;align-items:stretch}.cta-fan,.cta-ig{justify-content:center;min-height:54px}}
+@media(max-width:860px){.stage video,.stage .poster{object-position:center center}}
+
+/* music player */
+.player{position:fixed;z-index:60;right:clamp(12px,3vw,32px);bottom:clamp(12px,3vw,28px);display:flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;border-radius:999px;background:rgba(11,10,26,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1.5px solid var(--pink);box-shadow:0 0 24px rgba(255,79,163,.45),inset 0 0 12px rgba(255,79,163,.15);overflow:hidden;max-width:calc(100vw - 24px)}
+.player::before{content:"";position:absolute;inset:-2px;border-radius:999px;border:2px solid var(--pink);opacity:0;animation:ring 2.2s ease-out infinite;pointer-events:none}
+.player.played::before{display:none}
+@keyframes ring{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.12)}}
+.pl-btn{flex:none;width:48px;height:48px;border-radius:50%;border:0;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--sun));color:var(--night);cursor:pointer;box-shadow:0 0 18px rgba(255,79,163,.6)}
+.pl-btn svg{width:18px;height:18px}
+.pl-btn .i-pause{display:none}.player.playing .i-play{display:none}.player.playing .i-pause{display:block}
+.pl-thumb{flex:none;width:40px;height:40px;border-radius:10px;object-fit:cover}
+.pl-meta{display:flex;flex-direction:column;gap:2px;min-width:0;text-decoration:none}
+.pl-meta b{font-family:var(--display);font-size:14px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.pl-meta span{font-size:12px;color:var(--pink);white-space:nowrap;font-weight:600;letter-spacing:.04em}
+.eq{display:flex;align-items:flex-end;gap:3px;height:22px;flex:none}
+.eq i{width:3px;height:30%;border-radius:2px;background:var(--aqua);box-shadow:0 0 6px var(--aqua)}
+.player.playing .eq i{animation:eq .9s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:-.3s!important}.eq i:nth-child(3){animation-delay:-.6s!important}.eq i:nth-child(4){animation-delay:-.15s!important}
+@keyframes eq{0%{height:20%}50%{height:100%}100%{height:45%}}
+.pl-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,79,163,.15)}
+.pl-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--aqua))}
+@media(max-width:860px){.player{left:12px;right:12px;bottom:12px}.pl-meta{flex:1}.hero-copy{padding-bottom:110px!important}}
+
+/* neon sign */
+.hero-copy h1 .neon{display:block;font-family:var(--display);font-weight:800;font-size:1em;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;color:#FFE1F0;
+  text-shadow:0 0 2px #fff,0 0 8px #FF7DBE,0 0 18px #FF4FA3,0 0 36px #FF2E93,0 0 70px #FF2E93,0 0 110px rgba(255,46,147,.55);
+  animation:neonOn 2.4s linear .5s both,buzz 11s linear 4s infinite}
+@keyframes neonOn{0%,6%{opacity:.08;text-shadow:none}7%{opacity:1}9%{opacity:.15;text-shadow:none}12%{opacity:1}14%{opacity:.2;text-shadow:none}30%{opacity:.2;text-shadow:none}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
+@keyframes buzz{0%,91%,100%{opacity:1}92%{opacity:.35}93%{opacity:1}95%{opacity:.6}96%{opacity:1}}
+/* lang toggle */
+.lang{display:inline-flex;min-height:40px;padding:3px;border-radius:999px;border:1px solid var(--line);background:rgba(11,10,26,.5);cursor:pointer;font:700 11px var(--sans);letter-spacing:.14em}
+.lang span{display:grid;place-items:center;min-width:34px;border-radius:999px;color:var(--dim);transition:background .25s,color .25s}
+html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{background:var(--aqua);color:var(--night)}
+/* countdown */
+.countdown{display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:22px;background:linear-gradient(135deg,rgba(255,79,163,.16),rgba(63,224,208,.08)),var(--card);border:1px solid rgba(255,79,163,.5);box-shadow:0 0 40px rgba(255,79,163,.15)}
+.cd-head{margin:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
+.cd-time{color:var(--dim)}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cd-grid div{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 0 12px;border-radius:14px;background:rgba(11,10,26,.6);border:1px solid var(--line)}
+.cd-grid b{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1;color:var(--ink);text-shadow:0 0 18px rgba(255,79,163,.6);font-variant-numeric:tabular-nums}
+.cd-grid span{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua)}
+.cd-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:14px;background:#1ED760;color:#06120A;font-weight:800;text-decoration:none;transition:transform .25s}
+.cd-cta:hover{transform:translateY(-2px)}
+.countdown.out .cd-grid,.countdown.out .cd-time{display:none}
+/* reveal + cursor glow */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
+@media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
+main{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.hero-copy h1 .neon{animation:none}}
+@media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="logo" href="#top">MIKA<span>.</span>MONTERO</a>
+  <nav class="links" aria-label="Main">
+    <a class="hide-sm" href="#music" data-i18n="nav_music">Music</a>
+    <a class="hide-sm" href="#about" data-i18n="nav_about">About</a>
+    <a class="hide-sm" href="#feed" data-i18n="nav_feed">Feed</a>
+    <a class="hide-sm" href="#brands" data-i18n="nav_brands">Brands</a>
+    <button class="lang" id="lang" type="button" aria-label="Español / English"><span data-l="en">EN</span><span data-l="es">ES</span></button>
+    <a class="nav-cta" href="https://www.fanvue.com/mikamontero" target="_blank" rel="noopener" data-i18n="nav_join">Join me</a>
+  </nav>
+</header>
+
+<main>
+  <section class="film" id="top" aria-label="Mika on a rainy neon street at night">
+    <div class="stage">
+      <picture>
+        <source media="(max-width:860px)" srcset="assets/hero-mobile.jpg">
+        <img class="poster" src="assets/hero.jpg" alt="" fetchpriority="high">
+      </picture>
+      <video id="film" muted playsinline loop preload="auto" aria-hidden="true"></video>
+      <div class="hero-copy">
+      <span class="tag"><i aria-hidden="true"></i><span data-i18n="tag" data-rel>New single coming soon</span></span>
+      <h1>Mika<br><span class="neon">Montero</span></h1>
+      <p class="lead" data-i18n="lead">Miami nights. Honolulu heart.</p>
+      <p class="sub" data-i18n="sub">Artist, model and creator. Music, style and the life after dark, and the side of me you only get to see as a member.</p>
+      <div class="actions">
+        <a class="cta-fan" href="https://www.fanvue.com/mikamontero" target="_blank" rel="noopener"><span data-i18n="cta_fan">Join me on Fanvue</span>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+        <a class="cta-ig" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+          <span data-i18n="cta_ig">Follow on Instagram</span></a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span>✦ Miami</span>
+      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span>✦ Miami</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="section" id="music">
+      <div class="music">
+        <div class="cover">
+          <img src="assets/img/artist.jpg" alt="Black and white portrait of Mika in a black blazer" loading="lazy">
+          <div class="title"><small data-i18n="cover_new">New single</small>Break<br>You Out</div>
+        </div>
+        <div class="txt">
+          <span class="soon" data-i18n="tag" data-rel>New single coming soon</span>
+          <h2 data-i18n="music_h">The <em>music</em></h2>
+          <p class="p" data-i18n="music_p" data-rel>My first single is almost here. Late drives along Ocean Drive, pink skies over Biscayne Bay and that one feeling you have to set free. Break You Out is the sound of my Miami nights. Follow me now so you hear it first.</p>
+          <div class="countdown" id="countdown">
+            <p class="cd-head"><span data-i18n="cd_head" data-rel>Out Monday, Nov 23</span><span class="cd-time">00:00 Miami</span></p>
+            <div class="cd-grid" id="cd-grid">
+              <div><b id="cd-d">0</b><span data-i18n="cd_d">Days</span></div>
+              <div><b id="cd-h">00</b><span data-i18n="cd_h">Hours</span></div>
+              <div><b id="cd-m">00</b><span data-i18n="cd_m">Min</span></div>
+              <div><b id="cd-s">00</b><span data-i18n="cd_s">Sec</span></div>
+            </div>
+            <a class="cd-cta" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><span data-i18n="cd_cta" data-rel>Follow on Spotify to hear it first</span> <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+          <div class="platforms" aria-label="Streaming platforms">
+            <a class="plat sp" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg>Spotify <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat yt" href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>YouTube <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat am" href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Apple Music <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+          <div class="stripes" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about">
+        <div class="txt">
+          <p class="eyebrow" data-i18n="ab_eye">Hey, I'm Mika</p>
+          <h2 data-i18n="ab_h">Born in <em>Honolulu,</em><br>made in Miami.</h2>
+          <p class="p" data-i18n="ab_p">Japanese-American, island girl at heart and a night owl by choice. I model, I shoot, I write songs, and I live for that hour when the city lights come on. A little bit sweet, a little bit trouble.</p>
+          <ul class="facts">
+            <li>Miami, FL</li>
+            <li data-i18n="f_artist">Artist</li>
+            <li data-i18n="f_model">Model</li>
+            <li data-i18n="f_photo">Photographer</li>
+            <li data-i18n="f_lang">English · 日本語 · un poco español</li>
+          </ul>
+        </div>
+        <figure><img src="assets/img/about.jpg" alt="Black and white portrait of Mika in a white shirt" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="section" id="feed">
+      <div class="feed-head">
+        <h2 data-i18n="feed_h">The <em>feed</em></h2>
+        <div class="tabs" role="tablist" aria-label="Feed">
+          <button class="tab" id="tab-music" role="tab" aria-selected="true" aria-controls="panel-music" data-i18n="tab_music">Music</button>
+          <button class="tab" id="tab-model" role="tab" aria-selected="false" aria-controls="panel-model" data-i18n="tab_model">Model</button>
+        </div>
+      </div>
+      <div class="feed" id="panel-music" role="tabpanel" aria-labelledby="tab-music">
+        <figure><img src="assets/img/m1.jpg" alt="Mika singing into a studio microphone with headphones" loading="lazy"></figure>
+        <figure><img src="assets/img/m2.jpg" alt="Mika performing on stage under pink spotlights" loading="lazy"></figure>
+        <figure><img src="assets/img/m3.jpg" alt="Mika at a mixing console in the studio at night" loading="lazy"></figure>
+        <figure><img src="assets/img/m4.jpg" alt="Mika with headphones around her neck on a neon Miami street" loading="lazy"></figure>
+        <figure><img src="assets/img/m5.jpg" alt="Mika in the recording studio" loading="lazy"></figure>
+        <figure><img src="assets/img/m6.jpg" alt="Mika behind the wheel of a red vintage car" loading="lazy"></figure>
+      </div>
+      <div class="feed" id="panel-model" role="tabpanel" aria-labelledby="tab-model" hidden>
+        <figure><img src="assets/img/g1.jpg" alt="Mika in a golden satin dress on a rooftop at sunset" loading="lazy"></figure>
+        <figure><img src="assets/img/g2.jpg" alt="Mika in white resort wear with palm shadows" loading="lazy"></figure>
+        <figure><img src="assets/img/g3.jpg" alt="Beauty portrait of Mika with gold hoop earrings" loading="lazy"></figure>
+        <figure><img src="assets/img/g4.jpg" alt="Mika in a blazer in front of neon city lights" loading="lazy"></figure>
+        <figure><img src="assets/img/g5.jpg" alt="Black and white photo of Mika in an evening gown" loading="lazy"></figure>
+        <figure><img src="assets/img/g6.jpg" alt="Mika in a black blazer by a window at blue hour" loading="lazy"></figure>
+      </div>
+      <a class="feed-link" style="display:inline-block;margin-top:24px" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener" data-i18n="feed_follow">Follow @mikamontero26</a>
+    </section>
+
+    <section class="section" id="private">
+      <div class="private">
+        <figure>
+          <img src="assets/img/private.jpg" alt="" loading="lazy">
+          <span class="today"><i aria-hidden="true"></i><span data-i18n="today">New today</span></span>
+          <div class="lock">
+            <svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <span data-i18n="members">Members only</span>
+          </div>
+        </figure>
+        <div class="txt">
+          <p class="eyebrow" data-i18n="pv_eye">Members only · New every day</p>
+          <h2 data-i18n="pv_h">After <em>dark.</em></h2>
+          <p class="p" data-i18n="pv_p">Something new drops <strong class="hl">every single day</strong>. Exclusive photos and videos, behind the scenes from my shoots and the studio, and private chats around the clock. Everything I'd never post on Instagram lives on my Fanvue.</p>
+          <div class="week" aria-label="New exclusive content every day of the week">
+            <span data-i18n="w0" data-new="NEW">Mon</span><span data-i18n="w1" data-new="NEW">Tue</span><span data-i18n="w2" data-new="NEW">Wed</span><span data-i18n="w3" data-new="NEW">Thu</span><span data-i18n="w4" data-new="NEW">Fri</span><span data-i18n="w5" data-new="NEW">Sat</span><span data-i18n="w6" data-new="NEW">Sun</span>
+          </div>
+          <ul class="perks">
+            <li><span data-i18n="pk1">New exclusive photos &amp; videos</span><span data-i18n="every">Every day</span></li>
+            <li><span data-i18n="pk2">Behind the scenes, shoots &amp; studio</span><span data-i18n="every">Every day</span></li>
+            <li><span data-i18n="pk3">Private chats</span><span>24/7</span></li>
+          </ul>
+          <a class="cta-private" href="https://www.fanvue.com/mikamontero" target="_blank" rel="noopener"><span data-i18n="pv_cta">Get today's drop on Fanvue</span>
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="brands">
+      <div class="duo">
+        <div class="box wish">
+          <div>
+            <p class="eyebrow" style="color:var(--pink)" data-i18n="w_eye">Wishlist</p>
+            <p class="t" data-i18n="w_t">Spoil me, Miami style.</p>
+            <p class="p" style="font-size:16px;margin-top:10px" data-i18n="w_p">My wishlist on Throne. Every gift gets a little thank-you.</p>
+          </div>
+          <a class="cta-wish" href="https://throne.com/mikamontero" target="_blank" rel="noopener"><span data-i18n="w_cta">Open my wishlist</span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </div>
+        <div class="box brand">
+          <div>
+            <p class="eyebrow" data-i18n="b_eye">Brands, bookings &amp; music</p>
+            <p class="t" data-i18n="b_t">Let's work together.</p>
+            <p class="p" style="font-size:16px;margin:10px 0 16px" data-i18n="b_p">Campaigns, fashion, beauty, nightlife, features and collaborations.</p>
+            <a class="mail" href="mailto:mikamonroe26@gmail.com">mikamonroe26@gmail.com</a>
+          </div>
+          <a class="cta-mail" href="mailto:mikamonroe26@gmail.com?subject=Collaboration%20with%20Mika%20Montero"><span data-i18n="b_cta">Write me</span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <span class="logo">MIKA<span>.</span>MONTERO</span>
+        <span style="display:flex;flex-wrap:wrap;gap:18px"><a href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">Instagram</a><a href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener">Spotify</a><a href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener">YouTube</a><a href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener">Apple Music</a></span>
+        <span>© 2026 Mika Montero</span>
+      </div>
+    </footer>
+  </div>
+</main>
+
+<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="player" id="player">
+  <button class="pl-btn" id="pl-btn" aria-label="Play Break You Out">
+    <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+    <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+  </button>
+  <img class="pl-thumb" src="assets/img/player-thumb.jpg" alt="">
+  <a class="pl-meta" id="pl-meta" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><b>Break You Out</b><span id="pl-sub" data-i18n="pl_tap">Tap for sound</span></a>
+  <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="pl-bar" aria-hidden="true"><span id="pl-prog"></span></div>
+  <audio id="song" src="assets/break-you-out-teaser.m4a" preload="none"></audio>
+</div>
+<script>
+(function(){
+  var nav=document.getElementById('nav'), film=document.querySelector('.film'), v=document.getElementById('film');
+  function onScroll(){ nav.classList.toggle('solid', window.scrollY>film.offsetHeight*0.6); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var mobile=window.matchMedia('(max-width:860px)').matches;
+  v.src=mobile?'assets/hero-mobile.mp4':'assets/hero.mp4';
+  v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
+  var p=v.play(); if(p&&p.catch){p.catch(function(){
+    function go(){v.play();window.removeEventListener('touchstart',go);}
+    window.addEventListener('touchstart',go,{passive:true});
+  });}
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ e[0].isIntersecting?v.play().catch(function(){}):v.pause(); }).observe(film); }
+})();
+</script>
+<script>
+(function(){var t=[].slice.call(document.querySelectorAll('.tab'));t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});});});})();
+</script>
+<script>
+(function(){
+  var pl=document.getElementById('player'),btn=document.getElementById('pl-btn'),a=document.getElementById('song'),
+      sub=document.getElementById('pl-sub'),prog=document.getElementById('pl-prog'),meta=document.getElementById('pl-meta');
+  function toggle(){
+    if(a.paused){ a.play().then(function(){pl.classList.add('playing','played');sub.textContent=window.MMT('pl_playing');btn.setAttribute('aria-label','Pause');}).catch(function(){}); }
+    else { a.pause(); }
+  }
+  btn.addEventListener('click',toggle);
+  meta.addEventListener('click',function(e){ if(!pl.classList.contains('ended')){ e.preventDefault(); toggle(); } });
+  a.addEventListener('pause',function(){pl.classList.remove('playing');btn.setAttribute('aria-label','Play Break You Out');if(!a.ended)sub.textContent=window.MMT('pl_paused');});
+  a.addEventListener('timeupdate',function(){ if(a.duration) prog.style.width=(a.currentTime/a.duration*100)+'%'; });
+  a.addEventListener('ended',function(){ pl.classList.add('ended'); sub.textContent=window.MMT('pl_end'); prog.style.width='100%'; });
+})();
+</script>
+<script>(function(){var d=(new Date().getDay()+6)%7,w=document.querySelectorAll(".week span");if(w[d]){w[d].classList.add("on");w[d].setAttribute("aria-current","date");}})();</script>
+<script>
+(function(){
+  var RELEASE=new Date('2026-11-23T00:00:00-05:00').getTime();
+  function released(){ return Date.now()>=RELEASE; }
+  var EN_OUT={
+    tag:'New single out now', mq_soon:'Out now',
+    music_p:'My first single is out now. Late drives along Ocean Drive, pink skies over Biscayne Bay and that one feeling you have to set free. Break You Out is the sound of my Miami nights. Turn it up.',
+    cd_head:'Out now everywhere', cd_cta:'Listen on Spotify', pl_end:'Full song out now on Spotify ↗'
+  };
+  var ES={
+    nav_music:'Música', nav_about:'Sobre mí', nav_feed:'Feed', nav_brands:'Marcas', nav_join:'Únete',
+    tag:'Nuevo single muy pronto', lead:'Noches de Miami. Corazón de Honolulu.',
+    sub:'Artista, modelo y creadora. Música, estilo y la vida de noche, y el lado de mí que solo ves como miembro.',
+    cta_fan:'Únete en Fanvue', cta_ig:'Sígueme en Instagram',
+    mq_new:'✦ Nuevo single', mq_soon:'Muy pronto', cover_new:'Nuevo single',
+    music_h:'La <em>música</em>',
+    music_p:'Mi primer single ya casi está aquí. Noches manejando por Ocean Drive, cielos rosados sobre Biscayne Bay y ese sentimiento que tienes que dejar salir. Break You Out es el sonido de mis noches en Miami. Sígueme ahora para escucharlo primero.',
+    cd_head:'Sale el lunes 23 de noviembre', cd_d:'Días', cd_h:'Horas', cd_m:'Min', cd_s:'Seg', cd_cta:'Sígueme en Spotify y escúchalo primero',
+    ab_eye:'Hola, soy Mika', ab_h:'Nacida en <em>Honolulu,</em><br>hecha en Miami.',
+    ab_p:'Japonesa-americana, chica de isla de corazón y noctámbula por elección. Modelo, fotografío, escribo canciones y vivo para esa hora en que se encienden las luces de la ciudad. Un poco dulce, un poco peligro.',
+    f_artist:'Artista', f_model:'Modelo', f_photo:'Fotógrafa', f_lang:'English · 日本語 · un poco de español',
+    feed_h:'El <em>feed</em>', tab_music:'Música', tab_model:'Modelo', feed_follow:'Sígueme @mikamontero26',
+    today:'Nuevo hoy', members:'Solo miembros', pv_eye:'Solo miembros · Nuevo cada día', pv_h:'Solo de <em>noche.</em>',
+    pv_p:'Algo nuevo <strong class="hl">todos los días</strong>. Fotos y videos exclusivos, detrás de cámaras de mis sesiones y del estudio, y chats privados a cualquier hora. Todo lo que nunca subiría a Instagram está en mi Fanvue.',
+    w0:'Lun', w1:'Mar', w2:'Mié', w3:'Jue', w4:'Vie', w5:'Sáb', w6:'Dom',
+    pk1:'Fotos y videos exclusivos nuevos', pk2:'Detrás de cámaras, sesiones y estudio', pk3:'Chats privados', every:'Todos los días',
+    pv_cta:'Mira lo nuevo de hoy en Fanvue',
+    w_eye:'Lista de deseos', w_t:'Consiénteme, al estilo Miami.', w_p:'Mi lista de deseos en Throne. Cada regalo recibe un pequeño gracias.', w_cta:'Ver mi lista',
+    b_eye:'Marcas, bookings y música', b_t:'Trabajemos juntos.', b_p:'Campañas, moda, belleza, vida nocturna, features y colaboraciones.', b_cta:'Escríbeme',
+    pl_tap:'Toca para escuchar', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
+  };
+  var ES_OUT={ tag:'Nuevo single ya disponible', mq_soon:'Ya disponible',
+    music_p:'Mi primer single ya salió. Noches manejando por Ocean Drive, cielos rosados sobre Biscayne Bay y ese sentimiento que tienes que dejar salir. Break You Out es el sonido de mis noches en Miami. Súbele el volumen.',
+    cd_head:'Ya disponible en todas partes', cd_cta:'Escúchalo en Spotify', pl_end:'Canción completa ya en Spotify ↗' };
+  var EN_EXTRA={pl_playing:'Teaser · now playing', pl_paused:'Paused · tap to play', pl_end:'Full song soon · follow on Spotify ↗'};
+  var els=[].slice.call(document.querySelectorAll('[data-i18n]')), EN={};
+  els.forEach(function(e){ var k=e.getAttribute('data-i18n'); if(!(k in EN)) EN[k]=e.innerHTML; });
+  for(var k in EN_EXTRA) EN[k]=EN_EXTRA[k];
+  var lang='en';
+  function t(k){ var out=released(); var d=lang==='es'?ES:EN, o=lang==='es'?ES_OUT:EN_OUT;
+    if(out && o[k]!==undefined) return o[k]; return d[k]!==undefined?d[k]:EN[k]; }
+  window.MMT=t;
+  function apply(){
+    document.documentElement.lang=lang;
+    els.forEach(function(e){ var k=e.getAttribute('data-i18n'); var v=t(k); if(v!==undefined && e.innerHTML!==v) e.innerHTML=v; });
+    document.querySelectorAll('.week span').forEach(function(w){ w.setAttribute('data-new', lang==='es'?'NUEVO':'NEW'); });
+    var pl=document.getElementById('player'), sub=document.getElementById('pl-sub');
+    if(pl&&sub){ sub.textContent = pl.classList.contains('ended')?t('pl_end'):pl.classList.contains('playing')?t('pl_playing'):pl.classList.contains('played')?t('pl_paused'):t('pl_tap'); }
+  }
+  try{ lang=localStorage.getItem('mm_lang')||''; }catch(e){ lang=''; }
+  if(lang!=='en'&&lang!=='es') lang=(navigator.language||'en').toLowerCase().indexOf('es')===0?'es':'en';
+  apply();
+  document.getElementById('lang').addEventListener('click',function(){ lang=lang==='es'?'en':'es'; try{localStorage.setItem('mm_lang',lang)}catch(e){} apply(); });
+
+  // countdown
+  var cd=document.getElementById('countdown'), D=document.getElementById('cd-d'),H=document.getElementById('cd-h'),M=document.getElementById('cd-m'),S=document.getElementById('cd-s');
+  var wasOut=released();
+  function pad(n){return (n<10?'0':'')+n}
+  function tick(){
+    var ms=RELEASE-Date.now();
+    if(ms<=0){ cd.classList.add('out'); if(!wasOut){wasOut=true;apply();} return; }
+    var sec=Math.floor(ms/1000); D.textContent=Math.floor(sec/86400); H.textContent=pad(Math.floor(sec%86400/3600)); M.textContent=pad(Math.floor(sec%3600/60)); S.textContent=pad(sec%60);
+    setTimeout(tick,1000-(Date.now()%1000));
+  }
+  tick();
+
+  // reveal on scroll
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    var targets=document.querySelectorAll('.music,.about,.feed-head,.feed figure,.private,.box,.countdown');
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px'});
+    [].forEach.call(targets,function(el,i){ el.classList.add('rv'); if(el.matches('.feed figure')) el.style.transitionDelay=((i%3)*90)+'ms'; io.observe(el); });
+  }
+  // cursor glow (desktop only)
+  var g=document.getElementById('glow');
+  if(!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var x=0,y=0,raf=0;
+    window.addEventListener('mousemove',function(e){ x=e.clientX;y=e.clientY; g.classList.add('on'); if(!raf) raf=requestAnimationFrame(function(){ g.style.transform='translate('+x+'px,'+y+'px)'; raf=0; }); },{passive:true});
+    document.addEventListener('mouseleave',function(){ g.classList.remove('on'); });
+  }
+})();
+</script>
+</body>
+</html>
