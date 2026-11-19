@@ -34,7 +34,7 @@ img{display:block;max-width:100%}
 .links a{text-decoration:none;color:var(--muted);transition:color .25s}
 .links a:hover{color:var(--aqua)}
 .nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--pink);color:var(--night)!important;box-shadow:0 0 24px rgba(255,79,163,.45)}
-@media(max-width:760px){.hide-sm{display:none}.nav{flex-wrap:nowrap}.logo{font-size:15px;letter-spacing:.08em;white-space:nowrap}.nav-cta{min-height:40px;padding:0 16px}}
+@media(max-width:760px){.hide-sm{display:none}.nav{flex-wrap:nowrap;gap:8px;padding:14px 14px}.links{gap:8px;flex-wrap:nowrap}.logo{font-size:12.5px;letter-spacing:.04em;white-space:nowrap}.nav-cta{min-height:38px;padding:0 12px;font-size:11px;white-space:nowrap;letter-spacing:.12em}}
 
 /* hero loop video */
 .film{position:relative;height:100vh;height:100dvh;min-height:620px;background:var(--night)}
@@ -178,11 +178,20 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 @media(max-width:860px){.player{left:12px;right:12px;bottom:12px}.pl-meta{flex:1}.hero-copy{padding-bottom:110px!important}}
 
 /* neon sign */
-.hero-copy h1 .neon{display:block;font-family:var(--display);font-weight:800;font-size:1em;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;
-  color:transparent;background:linear-gradient(90deg,#FF4FA3 0%,#FF7EC4 14%,#C77DFF 27%,#3FE0D0 40%,#B8FFF7 50%,#3FE0D0 60%,#C77DFF 73%,#FF7EC4 86%,#FF4FA3 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
-  filter:drop-shadow(0 0 2px rgba(255,255,255,.55)) drop-shadow(0 0 10px rgba(255,79,163,.85)) drop-shadow(0 0 26px rgba(63,224,208,.5));
-  animation:neonOn 2.4s linear .5s both,flow 5s ease-in-out infinite alternate,buzz 11s linear 4s infinite}
-@keyframes flow{from{background-position:0% 50%}to{background-position:100% 50%}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.neon-sign{position:relative;display:block;width:min(100%,5.6em);height:.92em;margin-top:.14em;border-radius:.14em;overflow:hidden;
+  border:max(2px,.022em) solid #7FF5EA;
+  background:radial-gradient(120% 140% at 50% 50%,rgba(20,95,105,.55),rgba(6,38,48,.85));
+  box-shadow:0 0 4px #B8FFF7,0 0 14px #3FE0D0,0 0 34px rgba(63,224,208,.65),0 0 70px rgba(63,224,208,.35),inset 0 0 18px rgba(63,224,208,.45),inset 0 0 50px rgba(63,224,208,.18);
+  animation:neonOn 2.4s linear .5s both,buzz 11s linear 4s infinite}
+.neon-sign::before,.neon-sign::after{content:"";position:absolute;top:0;bottom:0;width:14%;z-index:2;pointer-events:none}
+.neon-sign::before{left:0;background:linear-gradient(90deg,rgba(6,38,48,.95),transparent)}
+.neon-sign::after{right:0;background:linear-gradient(270deg,rgba(6,38,48,.95),transparent)}
+.ticker{display:flex;width:max-content;height:100%;align-items:center;animation:tick 10s linear infinite}
+.ticker span{flex:none;padding-right:.45em;font-size:.6em;line-height:1;letter-spacing:.02em;white-space:nowrap;
+  color:transparent;background:linear-gradient(90deg,#FF4FA3,#FF7EC4 30%,#C77DFF 60%,#FF4FA3);-webkit-background-clip:text;background-clip:text;
+  filter:drop-shadow(0 0 1px rgba(255,255,255,.7)) drop-shadow(0 0 6px rgba(255,79,163,.95)) drop-shadow(0 0 16px rgba(199,125,255,.7))}
+@keyframes tick{to{transform:translateX(-50%)}}
 @keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
 @keyframes buzz{0%,91%,100%{opacity:1}92%{opacity:.35}93%{opacity:1}95%{opacity:.6}96%{opacity:1}}
 /* lang toggle */
@@ -206,7 +215,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
 @media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
 main{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.hero-copy h1 .neon{animation:none}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign,.ticker{animation:none}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
 </style>
 <script type="application/ld+json">
@@ -241,7 +250,7 @@ main{position:relative;z-index:1}
       <video id="film" muted playsinline loop preload="auto" aria-hidden="true"></video>
       <div class="hero-copy">
       <span class="tag"><i aria-hidden="true"></i><span data-i18n="tag" data-rel>New single coming soon</span></span>
-      <h1>Mika<br><span class="neon">Montero</span></h1>
+      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><span class="ticker"><span>MONTERO ✦ MONTERO ✦ MONTERO ✦ </span><span>MONTERO ✦ MONTERO ✦ MONTERO ✦ </span></span></span></h1>
       <p class="lead" data-i18n="lead">Miami nights. Honolulu heart.</p>
       <p class="sub" data-i18n="sub">Artist, model and creator. Music, style and the life after dark, and the side of me you only get to see as a member.</p>
       <div class="actions">
