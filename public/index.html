@@ -178,10 +178,12 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 @media(max-width:860px){.player{left:12px;right:12px;bottom:12px}.pl-meta{flex:1}.hero-copy{padding-bottom:110px!important}}
 
 /* neon sign */
-.hero-copy h1 .neon{display:block;font-family:var(--display);font-weight:800;font-size:1em;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;color:#FFE1F0;
-  text-shadow:0 0 2px #fff,0 0 8px #FF7DBE,0 0 18px #FF4FA3,0 0 36px #FF2E93,0 0 70px #FF2E93,0 0 110px rgba(255,46,147,.55);
-  animation:neonOn 2.4s linear .5s both,buzz 11s linear 4s infinite}
-@keyframes neonOn{0%,6%{opacity:.08;text-shadow:none}7%{opacity:1}9%{opacity:.15;text-shadow:none}12%{opacity:1}14%{opacity:.2;text-shadow:none}30%{opacity:.2;text-shadow:none}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
+.hero-copy h1 .neon{display:block;font-family:var(--display);font-weight:800;font-size:1em;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;
+  color:transparent;background:linear-gradient(90deg,#FF4FA3 0%,#FF7EC4 14%,#C77DFF 27%,#3FE0D0 40%,#B8FFF7 50%,#3FE0D0 60%,#C77DFF 73%,#FF7EC4 86%,#FF4FA3 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;
+  filter:drop-shadow(0 0 2px rgba(255,255,255,.55)) drop-shadow(0 0 10px rgba(255,79,163,.85)) drop-shadow(0 0 26px rgba(63,224,208,.5));
+  animation:neonOn 2.4s linear .5s both,flow 5s ease-in-out infinite alternate,buzz 11s linear 4s infinite}
+@keyframes flow{from{background-position:0% 50%}to{background-position:100% 50%}}
+@keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
 @keyframes buzz{0%,91%,100%{opacity:1}92%{opacity:.35}93%{opacity:1}95%{opacity:.6}96%{opacity:1}}
 /* lang toggle */
 .lang{display:inline-flex;min-height:40px;padding:3px;border-radius:999px;border:1px solid var(--line);background:rgba(11,10,26,.5);cursor:pointer;font:700 11px var(--sans);letter-spacing:.14em}
