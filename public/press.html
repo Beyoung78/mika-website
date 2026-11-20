@@ -89,7 +89,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--aqua)}
       <h1>Mika<br><em>Montero</em></h1>
       <p class="lead">Singer, model and creator. Japanese-American, born in Honolulu, based in Miami. R&amp;B at heart, with a new taste for the dance floor.</p>
       <div class="btns">
-        <a class="btn pri" href="assets/press/mika-montero-press-kit.zip" download>Download all photos (ZIP, 6 MB)</a>
+        <a class="btn pri" href="assets/press/mika-montero-press-kit.zip" download>Download all photos (ZIP, 7 MB)</a>
         <a class="btn sec" href="mailto:booking@mikamontero.com?subject=Press%20%2F%20booking%20request">booking@mikamontero.com</a>
       </div>
     </div>
@@ -138,7 +138,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--aqua)}
     <p class="eyebrow">Free to use with credit</p>
     <h2>Press <em>photos</em></h2>
     <div class="grid" id="photos"></div>
-    <p class="note">Please credit “Mika Montero”. Studio, booth and stage photos are 1000 × 1333 px, suitable for online use.</p>
+    <p class="note">Please credit “Mika Montero”. Studio and stage photos are 1000 × 1333 px, suitable for online use.</p>
   </section>
 
   <section class="band">
@@ -165,7 +165,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--aqua)}
 {
   const P='assets/press/';
   const photos=[['mika-montero_headshot','Headshot','1792 × 2400'],['mika-montero_editorial-bw','Editorial, black & white','1792 × 2400'],['mika-montero_editorial-stairs','Editorial, full length','1792 × 2400'],
-    ['mika-montero_vocal-booth','Vocal booth','1000 × 1333'],['mika-montero_studio','Studio','1000 × 1333'],['mika-montero_stage','On stage','1000 × 1333']];
+    ['mika-montero_vocal-booth','Vocal booth','1856 × 2304'],['mika-montero_studio','Studio','1000 × 1333'],['mika-montero_stage','On stage','1000 × 1333']];
   const covers=[['cover_no-angel-no-apology','No Angel. No Apology.','1254 × 1254'],['cover_break-you-out','Break You Out','2576 × 2576'],['cover_break-you-out-the-remixes','Break You Out (The Remixes)','2576 × 2576']];
   const card=([f,t,s])=>`<figure class="ph"><img src="${P}thumbs/${f}.jpg" alt="${t}" loading="lazy"><figcaption><span>${t}<small>${s} px · JPG</small></span><a href="${P}${f}.jpg" download="${f}.jpg">Download</a></figcaption></figure>`;
   document.getElementById('photos').innerHTML=photos.map(card).join('');
