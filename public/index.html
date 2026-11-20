@@ -996,7 +996,7 @@ var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ el.classLi
 <script>
 /* Miami street loop: load only when the section comes near the viewport */
 (function(){var v=document.getElementById('nw-vid'); if(!v||!('IntersectionObserver' in window)) return; var loaded=false;
-  new IntersectionObserver(function(e){ if(e[0].isIntersecting){ if(!loaded){ loaded=true; v.src=window.matchMedia('(max-width:860px)').matches?'assets/miami-street-mobile.mp4':'assets/miami-street.mp4'; v.addEventListener('playing',function(){v.classList.add('ready')},{once:true}); } var p=v.play(); if(p&&p.catch) p.catch(function(){}); } else if(loaded){ v.pause(); } },{rootMargin:'300px 0px'}).observe(v.parentNode);
+  new IntersectionObserver(function(e){ if(e[0].isIntersecting){ if(!loaded){ loaded=true; v.src=window.matchMedia('(max-width:860px)').matches?'assets/miami-street-mobile.mp4?v=2':'assets/miami-street.mp4?v=2'; v.addEventListener('playing',function(){v.classList.add('ready')},{once:true}); } var p=v.play(); if(p&&p.catch) p.catch(function(){}); } else if(loaded){ v.pause(); } },{rootMargin:'300px 0px'}).observe(v.parentNode);
 })();
 </script>
 </body>
