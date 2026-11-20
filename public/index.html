@@ -307,18 +307,18 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* free-standing Miami neon: MONTERO in script tubes with a flamingo, like a wall sign */
 @font-face{font-family:"Sacramento";font-weight:400;font-display:swap;src:url(assets/fonts/sacramento-400.woff2) format("woff2")}
-.neon-sign{position:relative;display:block;width:min(122%,calc(100vw - 2*clamp(18px,6vw,96px)));margin:.07em 0 -.04em;animation:neonOn 2.4s linear .5s both}
+.neon-sign{position:relative;display:block;width:min(92%,calc(100vw - 2*clamp(18px,6vw,96px)));margin:.07em 0 -.04em;animation:neonOn 2.4s linear .5s both}
 /* wall neon: LED tube on a clear acrylic plate cut to the lettering (layers: shadow, plate rim, plate, tube shell, tube, light, core) */
 .nsvg{display:block;width:100%;height:auto;overflow:visible;animation:buzz 9s linear 4s infinite}
 .nsvg text{font-family:"Sacramento",cursive;font-size:100px}
 .nsvg use{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.nsvg .ly-s use{stroke:#000;fill:#000;stroke-width:27;opacity:.5}
-.nsvg .ly-s{filter:blur(4px);transform:translate(5px,8px)}
+.nsvg .ly-s use{stroke:#000;fill:#000;stroke-width:8;opacity:.55}
+.nsvg .ly-s{filter:blur(3px);transform:translate(4px,6px)}
 .nsvg .ly-e use{stroke:#FFC9E8;fill:#FFC9E8;stroke-width:25.4;opacity:.75}
 .nsvg .ly-p use{stroke:#1c0b24;fill:#1c0b24;stroke-width:23.4}
 .nsvg .ly-p{opacity:.9}
 .nsvg .ly-h use{stroke:rgba(255,255,255,.1);fill:none;stroke-width:21}
-.nsvg .ly-t1 use{stroke-width:9.4}.nsvg .ly-t2 use{stroke-width:6.4}.nsvg .ly-t3 use{stroke-width:3.2}.nsvg .ly-t4 use{stroke-width:1.1}
+.nsvg .ly-t1 use{stroke-width:6.6}.nsvg .ly-t2 use{stroke-width:4.6}.nsvg .ly-t3 use{stroke-width:2.4}.nsvg .ly-t4 use{stroke-width:.7}
 .nsvg .pk.ly-t1 use{stroke:#B81E70;fill:#B81E70}.nsvg .pk.ly-t2 use{stroke:#FF4FA3;fill:#FF4FA3}.nsvg .pk.ly-t3 use{stroke:#FFA6D8;fill:#FFA6D8}
 .nsvg .aq.ly-t1 use{stroke:#178F84}.nsvg .aq.ly-t2 use{stroke:#3FE0D0}.nsvg .aq.ly-t3 use{stroke:#B5FFF7}
 .nsvg .ly-t4 use{stroke:#fff;fill:#fff}
@@ -326,8 +326,8 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 .nsvg .pk.ly-t2{filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 10px #FF4FA3) drop-shadow(0 0 26px rgba(255,79,163,.75))}
 .nsvg .aq.ly-t2{filter:drop-shadow(0 0 3px #3FE0D0) drop-shadow(0 0 10px #3FE0D0) drop-shadow(0 0 24px rgba(63,224,208,.7))}
 @media(max-width:860px){.neon-sign{width:100%;margin-top:.12em}}
-@media(min-width:1700px) and (min-height:821px){.neon-sign{width:150%}}
-@media(min-width:861px) and (max-height:820px){.hero-copy{gap:14px;padding-bottom:clamp(40px,7vh,80px)}.hero-copy h1{font-size:clamp(44px,13vh,120px)}.neon-sign{width:min(112%,88vh,calc(100vw - 2*clamp(18px,6vw,96px)));margin-top:.04em}}
+@media(min-width:1700px) and (min-height:821px){.neon-sign{width:108%}}
+@media(min-width:861px) and (max-height:820px){.hero-copy{gap:14px;padding-bottom:clamp(40px,7vh,80px)}.hero-copy h1{font-size:clamp(44px,13vh,120px)}.neon-sign{width:min(100%,78vh,calc(100vw - 2*clamp(18px,6vw,96px)));margin-top:.04em}}
 @media(min-width:861px) and (max-height:640px){.hero-copy .sub{display:none}}
 @keyframes tubeFlick{0%,86%,100%{opacity:1}87%{opacity:.15}88%{opacity:1}90%{opacity:.25}91%{opacity:.9}93%{opacity:.1}94%{opacity:1}}
 @keyframes tick{to{transform:translateX(-50%)}}
@@ -441,7 +441,7 @@ main{position:relative;z-index:1}
       <video id="film" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video>
       <div class="hero-copy">
       <span class="tag"><i aria-hidden="true"></i><span data-i18n="tag" data-rel>New single coming soon</span></span>
-      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><svg class="nsvg" viewBox="18 34 432 118" aria-hidden="true"><defs><text id="nT" x="40" y="130" style="font-family:Sacramento,cursive;font-size:100px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0">Montero</text><g id="nB" transform="translate(362.7 42.4) scale(.95)"><path d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path d="M58 48l9-5"/><path d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><path d="M45 25c3 6-1 10-6 8"/></g><g id="nG" transform="translate(362.7 42.4) scale(.95)"><path d="M42 64v29m-6 0h12"/><path d="M51 62l6 14-9 9"/></g></defs><g class="ly-s"><use href="#nT"/><use href="#nB"/><use href="#nG"/></g><g class="ly-e"><use href="#nT"/><use href="#nB"/><use href="#nG"/></g><g class="ly-p"><use href="#nT"/><use href="#nB"/><use href="#nG"/></g><g class="pk ly-t1"><use href="#nT"/><use href="#nB" style="fill:none"/></g><g class="aq ly-t1"><use href="#nG"/></g><g class="pk ly-t2"><use href="#nT"/><use href="#nB" style="fill:none"/></g><g class="aq ly-t2"><use href="#nG"/></g><g class="pk ly-t3"><use href="#nT"/><use href="#nB" style="fill:none"/></g><g class="aq ly-t3"><use href="#nG"/></g><g class="ly-t4"><use href="#nT"/></g><g class="ly-t4 nf"><use href="#nB"/><use href="#nG"/></g></svg></span></h1>
+      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><svg class="nsvg" viewBox="24 34 340 118" aria-hidden="true"><defs><text id="nT" x="40" y="130" style="font-family:Sacramento,cursive;font-size:100px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0">Montero</text></defs><g class="ly-s"><use href="#nT"/></g><g class="pk ly-t1"><use href="#nT"/></g><g class="pk ly-t2"><use href="#nT"/></g><g class="pk ly-t3"><use href="#nT"/></g><g class="ly-t4"><use href="#nT"/></g></svg></span></h1>
       <p class="lead" data-i18n="lead">Miami nights. Honolulu heart.</p>
       <p class="sub" data-i18n="sub">Singer and songwriter from Miami. I write my songs at night, when the city glows pink and everything feels possible. My first single, Break You Out, drops Monday. Turn it up.</p>
       <div class="actions">
