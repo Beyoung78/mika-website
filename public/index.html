@@ -92,7 +92,13 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .platforms{display:flex;flex-wrap:wrap;gap:12px}
 .plat{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 22px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-weight:700;text-decoration:none;transition:transform .25s,border-color .25s,background .25s}
 .plat:hover{transform:translateY(-2px)}
-.about-cta{margin-top:28px}
+.about .facts{gap:12px}
+.about .facts li{position:relative;padding:11px 18px 11px 36px;background:rgba(255,255,255,.035);border:1px solid color-mix(in srgb,var(--fc) 65%,transparent);color:#fff;font-weight:600;letter-spacing:.02em;
+  box-shadow:0 0 16px color-mix(in srgb,var(--fc) 32%,transparent),inset 0 0 14px color-mix(in srgb,var(--fc) 14%,transparent);animation:chipGlow 4.2s ease-in-out infinite}
+.about .facts li::before{content:"";position:absolute;left:16px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--fc);box-shadow:0 0 8px var(--fc),0 0 16px var(--fc)}
+.about .facts li:nth-child(1){--fc:#FF4FA3}.about .facts li:nth-child(2){--fc:#3FE0D0;animation-delay:.4s}.about .facts li:nth-child(3){--fc:#C77DFF;animation-delay:.8s}.about .facts li:nth-child(4){--fc:#FF9A5A;animation-delay:1.2s}.about .facts li:nth-child(5){--fc:#3FE0D0;animation-delay:1.6s}
+@keyframes chipGlow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.45)}}
+.feed-cta{display:flex;justify-content:center;margin-top:36px}
 @media(max-width:860px){.about-cta{flex-direction:column;align-items:stretch}}
 .actions .plat{min-height:56px;border-radius:999px;background:rgba(11,10,26,.5);border-color:rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .plat.sp svg{color:#1ED760}.plat.sp:hover{border-color:#1ED760}
@@ -116,12 +122,13 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .eye-glow{display:inline-flex;align-items:center;gap:.8em;color:#7FF5EA;animation:eyePulse 1.5s ease-in-out infinite}
 .eye-glow::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 8px var(--pink),0 0 18px var(--pink)}
 @keyframes eyePulse{0%,100%{opacity:1;text-shadow:0 0 6px rgba(127,245,234,.95),0 0 18px rgba(63,224,208,.75),0 0 36px rgba(63,224,208,.45)}50%{opacity:.4;text-shadow:none}}
-.wave{white-space:nowrap}
+.tz-copy .wave{white-space:nowrap}
+.wave .w{display:inline-block;white-space:nowrap}
 .wave em{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:inherit}
-.wave span{display:inline-block;color:var(--c);animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite}
+.wave .l{display:inline-block;color:var(--c);animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite}
 @keyframes waveGlow{0%,24%,100%{color:var(--c);text-shadow:none}10%{color:#fff;text-shadow:0 0 .1em #fff,0 0 .3em var(--g),0 0 .7em var(--g),0 0 1.2em var(--g)}}
 @keyframes waveLift{0%,24%,100%{transform:none}10%{transform:translateY(-.08em) scale(1.04)}}
-@media(prefers-reduced-motion:no-preference){.wave span{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite,waveLift 3.4s ease-in-out calc(var(--i)*.08s) infinite}}
+@media(prefers-reduced-motion:no-preference){.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite,waveLift 3.4s ease-in-out calc(var(--i)*.08s) infinite}}
 .tz-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:14px;border:0;padding:0;cursor:pointer;color:#fff;background:linear-gradient(180deg,rgba(7,6,15,0) 45%,rgba(7,6,15,.55));font:700 12px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;transition:opacity .35s}
 .tz-play span.ring{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:rgba(255,79,163,.18);border:1.5px solid var(--pink);box-shadow:0 0 30px rgba(255,79,163,.6),inset 0 0 18px rgba(255,79,163,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:transform .3s}
 .tz-play::after{content:"";flex:0 0 26%}
@@ -260,7 +267,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
 @media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
 main{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.eye-glow{animation:eyePulse 1.5s ease-in-out infinite!important}.wave span{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.eye-glow{animation:eyePulse 1.5s ease-in-out infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
 
 /* legal */
@@ -279,6 +286,9 @@ main{position:relative;z-index:1}
   background:radial-gradient(60% 70% at 50% 45%,rgba(199,125,255,.14),transparent 70%),
   repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 34px),
   repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 1px,transparent 1px 68px),#0B0A1A}
+.neonwall.mid{margin-top:clamp(64px,8vw,110px);padding:clamp(34px,5vw,60px) 18px clamp(28px,4vw,48px)}
+.neonwall.mid .palm-sign{width:min(400px,74vw)}
+.section.after-neon{padding-top:clamp(48px,6vw,84px)}
 .palm-sign{width:min(560px,88vw);display:flex;flex-direction:column;align-items:center;gap:6px}
 .palm-sign svg{width:100%;height:auto;overflow:visible}
 .palm-sign .tube{fill:none;stroke-linecap:round;stroke-linejoin:round}
@@ -347,34 +357,6 @@ main{position:relative;z-index:1}
     </div>
   </div>
 
-  <section class="neonwall" aria-label="Neon sign: palm tree and sunset, Miami nights">
-    <div class="palm-sign" id="palm-sign">
-      <svg viewBox="0 0 400 320" role="img" aria-hidden="true">
-        <defs>
-          <linearGradient id="sunG" gradientUnits="userSpaceOnUse" x1="0" y1="58" x2="0" y2="242"><stop offset="0" stop-color="#FF4FA3"/><stop offset=".55" stop-color="#C77DFF"/><stop offset="1" stop-color="#FF9E5E"/></linearGradient>
-          <clipPath id="sunC"><circle cx="236" cy="150" r="88"/></clipPath>
-        </defs>
-        <g class="tube sun">
-          <circle cx="236" cy="150" r="92" stroke="url(#sunG)" stroke-width="5"/>
-          <g clip-path="url(#sunC)" stroke="url(#sunG)" stroke-width="4"><line x1="130" x2="345" y1="74" y2="74"/><line x1="130" x2="345" y1="90" y2="90"/><line x1="130" x2="345" y1="106" y2="106"/><line x1="130" x2="345" y1="121" y2="121"/><line x1="130" x2="345" y1="136" y2="136"/><line x1="130" x2="345" y1="150" y2="150"/><line x1="130" x2="345" y1="163" y2="163"/><line x1="130" x2="345" y1="175" y2="175"/><line x1="130" x2="345" y1="186" y2="186"/><line x1="130" x2="345" y1="196" y2="196"/><line x1="130" x2="345" y1="205" y2="205"/><line x1="130" x2="345" y1="213" y2="213"/><line x1="130" x2="345" y1="220" y2="220"/><line x1="130" x2="345" y1="226" y2="226"/><line x1="130" x2="345" y1="231" y2="231"/><line x1="130" x2="345" y1="235" y2="235"/></g>
-        </g>
-        <g class="tube sea">
-          <path d="M96 262 H372"/><path d="M134 278 H336"/><path d="M178 293 H292"/>
-        </g>
-        <g class="tube tree">
-          <path d="M138 296 C146 244 160 192 171 132"/><path d="M153 296 C160 244 173 192 183 132"/>
-          <path d="M141 270 l14 2 M145 244 l15 2 M150 218 l15 2 M156 192 l15 2 M162 166 l15 2"/>
-          <path d="M177 128 C150 104 118 102 88 118"/>
-          <path d="M177 128 C158 92 128 78 100 82"/>
-          <path d="M177 128 C176 94 192 70 220 62"/>
-          <path d="M177 128 C206 102 240 100 266 114"/>
-          <path d="M177 128 C202 120 228 134 242 160"/>
-          <path d="M177 128 C158 126 136 142 126 166"/>
-        </g>
-      </svg>
-      <p class="neon-txt" data-i18n="neon_txt">Miami nights</p>
-    </div>
-  </section>
   <div class="wrap">
     <section class="section" id="music">
       <div class="music">
@@ -458,14 +440,16 @@ main{position:relative;z-index:1}
         <figure><img src="assets/img/g5.jpg" alt="Black and white photo of Mika in an evening gown" loading="lazy"></figure>
         <figure><img src="assets/img/g6.jpg" alt="Mika in a black blazer by a window at blue hour" loading="lazy"></figure>
       </div>
-      <a class="feed-link" style="display:inline-block;margin-top:24px" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener" data-i18n="feed_follow">Follow @mikamontero26</a>
+      <div class="feed-cta"><a class="cta-ig" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+        <span data-i18n="feed_follow">Follow @mikamontero26</span></a></div>
     </section>
 
     <section class="section" id="about">
       <div class="about">
         <div class="txt">
-          <p class="eyebrow" data-i18n="ab_eye">Hey, I'm Mika</p>
-          <h2 data-i18n="ab_h">Born in <em>Honolulu,</em><br>made in Miami.</h2>
+          <p class="eyebrow eye-glow" data-i18n="ab_eye">Hey, I'm Mika</p>
+          <h2 class="wave" id="ab-h" data-i18n="ab_h">Born in <em>Honolulu,</em><br>made in Miami.</h2>
           <p class="p" data-i18n="ab_p">Japanese-American, island girl at heart and a night owl by choice. I model, I shoot, I write songs, and I live for that hour when the city lights come on. A little bit sweet, a little bit trouble.</p>
           <ul class="facts">
             <li>Miami, FL</li>
@@ -474,17 +458,43 @@ main{position:relative;z-index:1}
             <li data-i18n="f_photo">Photographer</li>
             <li data-i18n="f_lang">English · 日本語 · un poco español</li>
           </ul>
-          <div class="platforms about-cta" aria-label="Fanvue and Instagram">
-        <a class="cta-ig" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">
-          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-          <span data-i18n="cta_ig">Follow on Instagram</span></a>
-          </div>
         </div>
         <figure><img src="assets/img/about.jpg" alt="Black and white portrait of Mika in a white shirt" loading="lazy"></figure>
       </div>
     </section>
+  </div>
 
-    <section class="section" id="private">
+  <section class="neonwall mid" aria-label="Neon sign: palm tree and sunset, Miami nights">
+    <div class="palm-sign" id="palm-sign">
+      <svg viewBox="0 0 400 320" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="sunG" gradientUnits="userSpaceOnUse" x1="0" y1="58" x2="0" y2="242"><stop offset="0" stop-color="#FF4FA3"/><stop offset=".55" stop-color="#C77DFF"/><stop offset="1" stop-color="#FF9E5E"/></linearGradient>
+          <clipPath id="sunC"><circle cx="236" cy="150" r="88"/></clipPath>
+        </defs>
+        <g class="tube sun">
+          <circle cx="236" cy="150" r="92" stroke="url(#sunG)" stroke-width="5"/>
+          <g clip-path="url(#sunC)" stroke="url(#sunG)" stroke-width="4"><line x1="130" x2="345" y1="74" y2="74"/><line x1="130" x2="345" y1="90" y2="90"/><line x1="130" x2="345" y1="106" y2="106"/><line x1="130" x2="345" y1="121" y2="121"/><line x1="130" x2="345" y1="136" y2="136"/><line x1="130" x2="345" y1="150" y2="150"/><line x1="130" x2="345" y1="163" y2="163"/><line x1="130" x2="345" y1="175" y2="175"/><line x1="130" x2="345" y1="186" y2="186"/><line x1="130" x2="345" y1="196" y2="196"/><line x1="130" x2="345" y1="205" y2="205"/><line x1="130" x2="345" y1="213" y2="213"/><line x1="130" x2="345" y1="220" y2="220"/><line x1="130" x2="345" y1="226" y2="226"/><line x1="130" x2="345" y1="231" y2="231"/><line x1="130" x2="345" y1="235" y2="235"/></g>
+        </g>
+        <g class="tube sea">
+          <path d="M96 262 H372"/><path d="M134 278 H336"/><path d="M178 293 H292"/>
+        </g>
+        <g class="tube tree">
+          <path d="M138 296 C146 244 160 192 171 132"/><path d="M153 296 C160 244 173 192 183 132"/>
+          <path d="M141 270 l14 2 M145 244 l15 2 M150 218 l15 2 M156 192 l15 2 M162 166 l15 2"/>
+          <path d="M177 128 C150 104 118 102 88 118"/>
+          <path d="M177 128 C158 92 128 78 100 82"/>
+          <path d="M177 128 C176 94 192 70 220 62"/>
+          <path d="M177 128 C206 102 240 100 266 114"/>
+          <path d="M177 128 C202 120 228 134 242 160"/>
+          <path d="M177 128 C158 126 136 142 126 166"/>
+        </g>
+      </svg>
+      <p class="neon-txt" data-i18n="neon_txt">Miami nights</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section after-neon" id="private">
       <div class="private">
         <figure>
           <img src="assets/img/private.jpg" alt="" loading="lazy">
@@ -673,20 +683,28 @@ main{position:relative;z-index:1}
     function render(){ var d=T[document.documentElement.lang==='es'?'es':'en'], out=Date.now()>=REMIX.getTime();
       document.getElementById('rx-eye').textContent=out?d.eyeOut:d.eye; document.getElementById('rx-p').textContent=out?d.pOut:d.p; document.getElementById('rx-btn').textContent=d.btn;
       if(out){ fr.hidden=true; try{v.pause()}catch(e){} } }
-    // split the headings into letters for the light wave
+    // split headings into letters for the light wave
     (function(){
       function mix(a,b,t){ return 'rgb('+a.map(function(x,k){return Math.round(x+(b[k]-x)*t)}).join(',')+')'; }
       var P=[255,79,163],V=[199,125,255],A=[63,224,208];
-      [['rx-h','THE','REMIXES'],['tz-h','BREAK','YOU OUT']].forEach(function(cfg){
-        var h=document.getElementById(cfg[0]); if(!h) return; var i=0;
-        function mk(ch,c,g){ var sp=document.createElement('span'); sp.textContent=ch===' '?'\u00a0':ch; sp.setAttribute('aria-hidden','true'); sp.style.setProperty('--i',i++); sp.style.setProperty('--c',c); sp.style.setProperty('--g',g); return sp; }
-        h.textContent='';
-        cfg[1].split('').forEach(function(ch){ h.appendChild(mk(ch,'#F7F3FF','#FF4FA3')); });
-        h.appendChild(document.createElement('br')); i+=1;
-        var e=document.createElement('em'), bot=cfg[2];
-        bot.split('').forEach(function(ch,k){ var t=k/(bot.length-1), c=t<.55?mix(P,V,t/.55):mix(V,A,(t-.55)/.45); e.appendChild(mk(ch,c,c)); });
-        h.appendChild(e);
-      });
+      function waveify(h,grad){ if(!h||h.querySelector('.l')) return; var i=0;
+        if(!h.getAttribute('aria-label')) h.setAttribute('aria-label',h.innerHTML.replace(/<br\s*\/?>/gi,' ').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim());
+        function fill(text,colorOf,glowOf,count){ var f=document.createDocumentFragment(), k=0;
+          text.split(/(\s+)/).forEach(function(part){ if(!part) return; if(/^\s+$/.test(part)){ f.appendChild(document.createTextNode(' ')); return; }
+            var w=document.createElement('span'); w.className='w'; w.setAttribute('aria-hidden','true');
+            part.split('').forEach(function(ch){ var t=count>1?k/(count-1):0, sp=document.createElement('span'); sp.className='l'; sp.textContent=ch; sp.style.setProperty('--i',i++); sp.style.setProperty('--c',colorOf(t)); sp.style.setProperty('--g',glowOf(t)); k++; w.appendChild(sp); });
+            f.appendChild(w); }); return f; }
+        var gradC=function(t){ return t<.55?mix(P,V,t/.55):mix(V,A,(t-.55)/.45); };
+        [].slice.call(h.childNodes).forEach(function(n){
+          if(n.nodeType===3){ if(n.textContent.trim()) h.replaceChild(fill(n.textContent,function(){return '#F7F3FF'},function(){return '#FF4FA3'},0),n); }
+          else if(n.nodeName==='BR'){ i+=1; }
+          else if(n.nodeName==='EM'){ var txt=n.textContent, cnt=txt.replace(/\s/g,'').length; n.textContent='';
+            n.appendChild(grad?fill(txt,gradC,gradC,cnt):fill(txt,function(){return '#FF4FA3'},function(){return '#FF4FA3'},cnt)); }
+        });
+      }
+      waveify(document.getElementById('rx-h'),true); waveify(document.getElementById('tz-h'),true);
+      var ab=document.getElementById('ab-h');
+      if(ab){ waveify(ab,false); if('MutationObserver' in window){ new MutationObserver(function(){ if(!ab.querySelector('.l')){ ab.removeAttribute('aria-label'); waveify(ab,false); } }).observe(ab,{childList:true}); } }
     })();
     render(); setInterval(render,60000);
     document.getElementById('lang').addEventListener('click',function(){ setTimeout(render,0); });
