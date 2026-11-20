@@ -113,8 +113,8 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .tz-frame video:fullscreen{object-fit:contain;background:#000}
 .tz-frame video:-webkit-full-screen{object-fit:contain;background:#000}
 /* remix block: glowing date line and letter wave */
-#rx-eye{display:inline-flex;align-items:center;gap:.8em;color:#7FF5EA;animation:eyePulse 1.5s ease-in-out infinite}
-#rx-eye::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 8px var(--pink),0 0 18px var(--pink)}
+.eye-glow{display:inline-flex;align-items:center;gap:.8em;color:#7FF5EA;animation:eyePulse 1.5s ease-in-out infinite}
+.eye-glow::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 8px var(--pink),0 0 18px var(--pink)}
 @keyframes eyePulse{0%,100%{opacity:1;text-shadow:0 0 6px rgba(127,245,234,.95),0 0 18px rgba(63,224,208,.75),0 0 36px rgba(63,224,208,.45)}50%{opacity:.4;text-shadow:none}}
 .wave{white-space:nowrap}
 .wave em{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:inherit}
@@ -260,7 +260,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
 @media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
 main{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}#rx-eye{animation:eyePulse 1.5s ease-in-out infinite!important}.wave span{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.eye-glow{animation:eyePulse 1.5s ease-in-out infinite!important}.wave span{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
 
 /* legal */
@@ -406,8 +406,8 @@ main{position:relative;z-index:1}
       </div>
       <div class="teaser" id="teaser">
         <div class="tz-copy">
-          <p class="eyebrow" data-i18n="tz_eye">Official teaser</p>
-          <h3 data-i18n="tz_h">Break<br><em>You Out</em></h3>
+          <p class="eyebrow eye-glow" data-i18n="tz_eye">Official teaser</p>
+          <h3 class="wave" id="tz-h" aria-label="Break You Out">Break<br><em>You Out</em></h3>
           <p class="p" data-i18n="tz_p">Studio night in Miami, headphones off, volume up. A first taste before Monday. Sound on.</p>
           <div class="stripes" aria-hidden="true"></div>
         </div>
@@ -423,7 +423,7 @@ main{position:relative;z-index:1}
         </div>
         <div class="tz-copy">
           <img class="rx-cover" src="assets/img/remix-cover.jpg" alt="Cover of Break You Out, The Remixes: Mika in pink and turquoise neon light" width="640" height="640" loading="lazy">
-          <p class="eyebrow" id="rx-eye">Next up · Friday, Nov 27</p>
+          <p class="eyebrow eye-glow" id="rx-eye">Next up · Friday, Nov 27</p>
           <h3 class="wave" id="rx-h" aria-label="The Remixes">The<br><em>Remixes</em></h3>
           <p class="p" id="rx-p">Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.</p>
           <ul class="facts" aria-label="Remixes">
@@ -673,17 +673,21 @@ main{position:relative;z-index:1}
     function render(){ var d=T[document.documentElement.lang==='es'?'es':'en'], out=Date.now()>=REMIX.getTime();
       document.getElementById('rx-eye').textContent=out?d.eyeOut:d.eye; document.getElementById('rx-p').textContent=out?d.pOut:d.p; document.getElementById('rx-btn').textContent=d.btn;
       if(out){ fr.hidden=true; try{v.pause()}catch(e){} } }
-    // split the heading into letters for the light wave
-    (function(){ var h=document.getElementById('rx-h'); if(!h) return; var i=0;
+    // split the headings into letters for the light wave
+    (function(){
       function mix(a,b,t){ return 'rgb('+a.map(function(x,k){return Math.round(x+(b[k]-x)*t)}).join(',')+')'; }
       var P=[255,79,163],V=[199,125,255],A=[63,224,208];
-      function mk(ch,c,g){ var sp=document.createElement('span'); sp.textContent=ch; sp.setAttribute('aria-hidden','true'); sp.style.setProperty('--i',i++); sp.style.setProperty('--c',c); sp.style.setProperty('--g',g); return sp; }
-      var top='THE', bot='REMIXES', em=h.querySelector('em'); h.textContent='';
-      top.split('').forEach(function(ch){ h.appendChild(mk(ch,'#F7F3FF','#FF4FA3')); });
-      h.appendChild(document.createElement('br')); i+=1;
-      var e=document.createElement('em');
-      bot.split('').forEach(function(ch,k){ var t=k/(bot.length-1), c=t<.55?mix(P,V,t/.55):mix(V,A,(t-.55)/.45); e.appendChild(mk(ch,c,c)); });
-      h.appendChild(e); })();
+      [['rx-h','THE','REMIXES'],['tz-h','BREAK','YOU OUT']].forEach(function(cfg){
+        var h=document.getElementById(cfg[0]); if(!h) return; var i=0;
+        function mk(ch,c,g){ var sp=document.createElement('span'); sp.textContent=ch===' '?'\u00a0':ch; sp.setAttribute('aria-hidden','true'); sp.style.setProperty('--i',i++); sp.style.setProperty('--c',c); sp.style.setProperty('--g',g); return sp; }
+        h.textContent='';
+        cfg[1].split('').forEach(function(ch){ h.appendChild(mk(ch,'#F7F3FF','#FF4FA3')); });
+        h.appendChild(document.createElement('br')); i+=1;
+        var e=document.createElement('em'), bot=cfg[2];
+        bot.split('').forEach(function(ch,k){ var t=k/(bot.length-1), c=t<.55?mix(P,V,t/.55):mix(V,A,(t-.55)/.45); e.appendChild(mk(ch,c,c)); });
+        h.appendChild(e);
+      });
+    })();
     render(); setInterval(render,60000);
     document.getElementById('lang').addEventListener('click',function(){ setTimeout(render,0); });
     b.addEventListener('click',function(){ if(song&&!song.paused) song.pause(); if(tz&&!tz.paused) tz.pause(); v.muted=false; v.controls=true; fr.classList.add('on'); v.play().catch(function(){ fr.classList.remove('on'); }); });
