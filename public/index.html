@@ -117,6 +117,12 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .tz-play svg{width:30px;height:30px;margin-left:4px}
 .tz-frame.on .tz-play{opacity:0;pointer-events:none}
 @media (max-width:760px){.tz-copy{text-align:center;align-items:center}}
+.remix{margin-top:clamp(64px,9vw,130px)}
+.rx-cover{width:132px;height:132px;border-radius:18px;display:block;box-shadow:0 0 0 1px rgba(255,79,163,.5),0 0 40px rgba(255,79,163,.35),0 0 80px rgba(63,224,208,.15)}
+.remix .facts{margin-top:2px}
+.remix .facts li{font-size:13px;padding:8px 14px}
+@media (max-width:760px){.remix{flex-direction:column-reverse}.remix .facts{justify-content:center}}
+
 
 /* about */
 .about{display:flex;flex-wrap:wrap-reverse;align-items:center;gap:clamp(32px,6vw,80px)}
@@ -398,6 +404,22 @@ main{position:relative;z-index:1}
           <button class="tz-play" id="tz-play" type="button" aria-label="Play the Break You Out teaser with sound"><span class="ring"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span><span data-i18n="tz_btn">Play with sound</span></button>
         </div>
       </div>
+      <div class="teaser remix" id="remix">
+        <div class="tz-frame" id="rx-frame">
+          <video id="rx-video" src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.jpg" preload="none" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video>
+          <button class="tz-play" id="rx-play" type="button" aria-label="Play the Dark Disco Dub remix trailer with sound"><span class="ring"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span><span id="rx-btn">Play with sound</span></button>
+        </div>
+        <div class="tz-copy">
+          <img class="rx-cover" src="assets/img/remix-cover.jpg" alt="Cover of Break You Out, The Remixes: Mika in pink and turquoise neon light" width="640" height="640" loading="lazy">
+          <p class="eyebrow" id="rx-eye">Next up · Friday, Nov 27</p>
+          <h3>The<br><em>Remixes</em></h3>
+          <p class="p" id="rx-p">Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.</p>
+          <ul class="facts" aria-label="Remixes">
+            <li>Dark Disco Dub</li><li>Melodic House</li><li>Concrete Techno</li><li>Indie Dance</li><li>Minimal</li>
+          </ul>
+          <div class="stripes" aria-hidden="true"></div>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="feed">
@@ -628,6 +650,26 @@ main{position:relative;z-index:1}
   document.getElementById('lang').addEventListener('click',function(){ lang=lang==='es'?'en':'es'; try{localStorage.setItem('mm_lang',lang)}catch(e){} apply(); });
 
 
+
+  // remixes (trailer says "Coming soon", so it goes away at the remix release)
+  (function(){
+    var REMIX=new Date('2026-11-27T00:00:00-05:00');
+    var fr=document.getElementById('rx-frame'), v=document.getElementById('rx-video'), b=document.getElementById('rx-play'), song=document.getElementById('song'), tz=document.getElementById('tz-video');
+    if(!fr) return;
+    var T={en:{eye:'Next up · Friday, Nov 27', p:'Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.', eyeOut:'The Remixes · Out now', pOut:'Five new versions of Break You Out, from dark disco to minimal. Out now everywhere you stream.', btn:'Play with sound'},
+           es:{eye:'Lo próximo · Viernes 27 de noviembre', p:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Aquí va un adelanto del Dark Disco Dub. Sale el próximo viernes a medianoche en todas las plataformas.', eyeOut:'The Remixes · Ya disponible', pOut:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Ya disponibles en todas las plataformas.', btn:'Reproducir con sonido'}};
+    function render(){ var d=T[document.documentElement.lang==='es'?'es':'en'], out=Date.now()>=REMIX.getTime();
+      document.getElementById('rx-eye').textContent=out?d.eyeOut:d.eye; document.getElementById('rx-p').textContent=out?d.pOut:d.p; document.getElementById('rx-btn').textContent=d.btn;
+      if(out){ fr.hidden=true; try{v.pause()}catch(e){} } }
+    render(); setInterval(render,60000);
+    document.getElementById('lang').addEventListener('click',function(){ setTimeout(render,0); });
+    b.addEventListener('click',function(){ if(song&&!song.paused) song.pause(); if(tz&&!tz.paused) tz.pause(); v.muted=false; v.controls=true; fr.classList.add('on'); v.play().catch(function(){ fr.classList.remove('on'); }); });
+    v.addEventListener('play',function(){ if(song&&!song.paused) song.pause(); if(tz&&!tz.paused) tz.pause(); });
+    if(song) song.addEventListener('play',function(){ if(!v.paused) v.pause(); });
+    if(tz) tz.addEventListener('play',function(){ if(!v.paused) v.pause(); });
+    v.addEventListener('ended',function(){ v.controls=false; fr.classList.remove('on'); v.load(); });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ if(!e[0].isIntersecting&&!v.paused) v.pause(); }).observe(fr); }
+  })();
   // teaser (only until release, the clip says "Out Monday")
   (function(){
     var box=document.getElementById('teaser'), fr=document.getElementById('tz-frame'), v=document.getElementById('tz-video'), b=document.getElementById('tz-play'), song=document.getElementById('song');
