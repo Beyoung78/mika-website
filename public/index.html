@@ -150,7 +150,20 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .sp-embed small{color:var(--dim);font-size:12.5px;text-align:center;max-width:34ch;line-height:1.5}
 .sp-embed .cd-cta{border:0;cursor:pointer;font:inherit;font-weight:800;width:auto;padding-left:26px;padding-right:26px}
 .sp-embed.on{padding:0;border:0;background:none;box-shadow:0 0 60px rgba(30,215,96,.14);min-height:0}
-.sp-embed iframe{display:block;width:100%;height:352px;border:0;border-radius:14px}
+.sp-embed iframe{display:block;width:100%;height:352px;border:0;border-radius:14px;position:relative;z-index:1}
+/* ambient light behind the Spotify player */
+@property --spa{syntax:"<angle>";inherits:false;initial-value:0deg}
+.sp-embed.on{position:relative;isolation:isolate;box-shadow:none}
+.sp-embed.on::before,.sp-embed.on::after{content:"";position:absolute;z-index:0;pointer-events:none;border-radius:34px;
+  background:conic-gradient(from var(--spa),#FF4FA3,#C77DFF,#3FE0D0,#FF9A5A,#FF4FA3);animation:spSpin 9s linear infinite}
+.sp-embed.on::before{inset:-14px;filter:blur(26px);opacity:.5}
+.sp-embed.on::after{inset:-46px;filter:blur(70px);opacity:.28;animation-direction:reverse;animation-duration:14s}
+.sp-embed.playing::before{animation:spSpin 5s linear infinite,spBeat .5s ease-in-out infinite alternate}
+.sp-embed.playing::after{animation:spSpin 8s linear infinite reverse,spBeat2 1s ease-in-out infinite alternate}
+.sp-embed.paused::before{opacity:.22}.sp-embed.paused::after{opacity:.12}
+@keyframes spSpin{to{--spa:360deg}}
+@keyframes spBeat{from{opacity:.5;transform:scale(1)}to{opacity:.95;transform:scale(1.035)}}
+@keyframes spBeat2{from{opacity:.28;transform:scale(1)}to{opacity:.55;transform:scale(1.06)}}
 .rx-cover{width:132px;height:132px;border-radius:18px;display:block;box-shadow:0 0 0 1px rgba(255,79,163,.5),0 0 40px rgba(255,79,163,.35),0 0 80px rgba(63,224,208,.15)}
 .rx-cover.gold{box-shadow:0 0 0 1px rgba(255,200,110,.55),0 0 40px rgba(255,190,90,.3),0 0 80px rgba(80,120,255,.16)}
 .remix .facts{margin-top:2px}
@@ -283,7 +296,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
 @media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
 main{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.eye-glow,.tag{animation:eyePulse 1.5s ease-in-out infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.eye-glow,.tag{animation:eyePulse 1.5s ease-in-out infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}.sp-embed.on::before{animation:spSpin 9s linear infinite!important}.sp-embed.on::after{animation:spSpin 14s linear infinite reverse!important}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
 
 /* legal */
@@ -746,7 +759,10 @@ main{position:relative;z-index:1}
   (function(){ var box=document.getElementById('sp-embed'), btn=document.getElementById('sp-load'); if(!btn) return;
     btn.addEventListener('click',function(){ ['song','tz-video','rx-video'].forEach(function(id){ var m=document.getElementById(id); if(m&&!m.paused) m.pause(); });
       var f=document.createElement('iframe'); f.src='https://open.spotify.com/embed/artist/4VnsEXQqPFEcNySITWgvTW?utm_source=generator&theme=0'; f.title='Mika Montero on Spotify';
-      f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'; f.loading='lazy'; box.textContent=''; box.classList.add('on'); box.appendChild(f); }); })();
+      f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'; f.loading='lazy'; box.textContent=''; box.classList.add('on'); box.appendChild(f);
+      // Spotify tells the page when playback starts or pauses; the light reacts to that
+      window.addEventListener('message',function(e){ if(e.origin!=='https://open.spotify.com'||!e.data) return; var d=e.data, pl=d.payload||d.data;
+        if(d.type==='playback_update'&&pl&&typeof pl.isPaused==='boolean'){ box.classList.toggle('playing',!pl.isPaused); box.classList.toggle('paused',pl.isPaused); } }); }); })();
   // teaser (only until release, the clip says "Out Monday")
   (function(){
     var box=document.getElementById('teaser'), fr=document.getElementById('tz-frame'), v=document.getElementById('tz-video'), b=document.getElementById('tz-play'), song=document.getElementById('song');
