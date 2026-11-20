@@ -105,7 +105,8 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .about .facts li::before{content:"";position:absolute;left:16px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--fc);box-shadow:0 0 8px var(--fc),0 0 16px var(--fc)}
 .about .facts li:nth-child(1){--fc:#FF4FA3}.about .facts li:nth-child(2){--fc:#3FE0D0;animation-delay:.4s}.about .facts li:nth-child(3){--fc:#C77DFF;animation-delay:.8s}.about .facts li:nth-child(4){--fc:#FF9A5A;animation-delay:1.2s}.about .facts li:nth-child(5){--fc:#3FE0D0;animation-delay:1.6s}
 @keyframes chipGlow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.45)}}
-.feed-cta{display:flex;justify-content:center;margin-top:36px}
+.feed-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+.feed-cta[hidden]{display:none}
 @media(max-width:860px){.about-cta{flex-direction:column;align-items:stretch}}
 .actions .plat{min-height:56px;border-radius:999px;background:rgba(11,10,26,.5);border-color:rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .plat.sp svg{color:#1ED760}.plat.sp:hover{border-color:#1ED760}
@@ -381,8 +382,8 @@ main{position:relative;z-index:1}
 
   <div class="marquee" aria-hidden="true">
     <div class="track">
-      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span data-i18n="mq_date" data-rel>✦ Monday, Nov 23</span><span>✦ Miami</span>
-      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span data-i18n="mq_date" data-rel>✦ Monday, Nov 23</span><span>✦ Miami</span>
+      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span data-i18n="mq_date" data-rel>✦ Monday, Nov 23</span><span>✦ Miami</span><span>✦ The Remixes</span><span class="mq-rxd">Friday, Nov 27</span><span class="mq-rxn">✦ 5 new versions</span>
+      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span data-i18n="mq_date" data-rel>✦ Monday, Nov 23</span><span>✦ Miami</span><span>✦ The Remixes</span><span class="mq-rxd">Friday, Nov 27</span><span class="mq-rxn">✦ 5 new versions</span>
     </div>
   </div>
 
@@ -479,7 +480,12 @@ main{position:relative;z-index:1}
         <figure><img src="assets/img/g5.jpg" alt="Black and white photo of Mika in an evening gown" loading="lazy"></figure>
         <figure><img src="assets/img/g6.jpg" alt="Mika in a black blazer by a window at blue hour" loading="lazy"></figure>
       </div>
-      <div class="feed-cta"><a class="cta-ig" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">
+      <div class="feed-cta" id="cta-music" aria-label="Streaming platforms">
+            <a class="plat yt" href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>YouTube <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat sp" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg>Spotify <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat am" href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Apple Music <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+      </div>
+      <div class="feed-cta" id="cta-model" hidden><a class="cta-ig" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
         <span data-i18n="feed_follow">Follow @mikamontero26</span></a></div>
     </section>
@@ -638,7 +644,7 @@ main{position:relative;z-index:1}
 })();
 </script>
 <script>
-(function(){var t=[].slice.call(document.querySelectorAll('.tab'));t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});});});})();
+(function(){var t=[].slice.call(document.querySelectorAll('.tab'));t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});var mu=b.id==='tab-music';document.getElementById('cta-music').hidden=!mu;document.getElementById('cta-model').hidden=mu;});});})();
 </script>
 <script>
 (function(){
@@ -717,10 +723,11 @@ main{position:relative;z-index:1}
     var REMIX=new Date('2026-11-27T00:00:00-05:00');
     var fr=document.getElementById('rx-frame'), v=document.getElementById('rx-video'), b=document.getElementById('rx-play'), song=document.getElementById('song'), tz=document.getElementById('tz-video');
     if(!fr) return;
-    var T={en:{eye:'Next up · Friday, Nov 27', p:'Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.', eyeOut:'The Remixes · Out now', pOut:'Five new versions of Break You Out, from dark disco to minimal. Out now everywhere you stream.', btn:'Play with sound'},
-           es:{eye:'Lo próximo · Viernes 27 de noviembre', p:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Aquí va un adelanto del Dark Disco Dub. Sale el próximo viernes a medianoche en todas las plataformas.', eyeOut:'The Remixes · Ya disponible', pOut:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Ya disponibles en todas las plataformas.', btn:'Reproducir con sonido'}};
+    var T={en:{eye:'Next up · Friday, Nov 27', p:'Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.', mq:'Friday, Nov 27', mqOut:'Out now', mqn:'✦ 5 new versions', eyeOut:'The Remixes · Out now', pOut:'Five new versions of Break You Out, from dark disco to minimal. Out now everywhere you stream.', btn:'Play with sound'},
+           es:{eye:'Lo próximo · Viernes 27 de noviembre', p:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Aquí va un adelanto del Dark Disco Dub. Sale el próximo viernes a medianoche en todas las plataformas.', mq:'Viernes 27 de noviembre', mqOut:'Ya disponibles', mqn:'✦ 5 versiones nuevas', eyeOut:'The Remixes · Ya disponible', pOut:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Ya disponibles en todas las plataformas.', btn:'Reproducir con sonido'}};
     function render(){ var d=T[document.documentElement.lang==='es'?'es':'en'], out=Date.now()>=REMIX.getTime();
       document.getElementById('rx-eye').textContent=out?d.eyeOut:d.eye; document.getElementById('rx-p').textContent=out?d.pOut:d.p; document.getElementById('rx-btn').textContent=d.btn;
+      [].forEach.call(document.querySelectorAll('.mq-rxd'),function(x){x.textContent=out?d.mqOut:d.mq;}); [].forEach.call(document.querySelectorAll('.mq-rxn'),function(x){x.textContent=d.mqn;});
       if(out){ fr.hidden=true; try{v.pause()}catch(e){} } }
     // split headings into letters for the light wave
     (function(){
