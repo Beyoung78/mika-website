@@ -70,6 +70,22 @@ img{display:block;max-width:100%}
 .marquee .track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
 .marquee .track span:nth-child(odd){color:var(--ink)}
 .marquee .track span:nth-child(even){color:var(--pink)}
+/* everything clickable comes forward on hover */
+.links a:not(.nav-cta){display:inline-block}
+.links a{transition:color .25s,transform .28s cubic-bezier(.2,.9,.3,1.4),text-shadow .25s,box-shadow .28s}
+.lang,.tab,.player,.cta-ig,.cta-fan{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,background .25s,color .25s,border-color .25s}
+@media(hover:hover){
+  .links a:not(.nav-cta):hover{transform:translateY(-3px) scale(1.14);color:#B5FFF7;text-shadow:0 0 10px rgba(63,224,208,.9),0 0 24px rgba(63,224,208,.5)}
+  .nav-cta:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 10px 26px rgba(0,0,0,.4),0 0 22px rgba(255,79,163,.9),0 0 50px rgba(255,79,163,.55)}
+  .lang:hover{transform:translateY(-3px) scale(1.1);border-color:#7FF5EA;box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 18px rgba(63,224,208,.7),0 0 40px rgba(63,224,208,.35)}
+  .tab:hover{transform:translateY(-3px) scale(1.08)}
+  .tab[aria-selected="false"]:hover{color:#fff;background:rgba(255,255,255,.08);box-shadow:0 0 18px rgba(63,224,208,.45)}
+  .tab[aria-selected="true"]:hover{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 22px rgba(255,79,163,.8),0 0 46px rgba(255,79,163,.4)}
+  .player:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 30px rgba(255,79,163,.85),0 0 70px rgba(255,79,163,.45)}
+  .cta-ig:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 24px rgba(63,224,208,.7),0 0 50px rgba(63,224,208,.35)}
+  .cta-fan:hover{transform:translateY(-5px) scale(1.05)}
+}
+.links a:focus-visible,.lang:focus-visible,.tab:focus-visible{transform:translateY(-3px) scale(1.08)}
 /* marquee as LED display (same dot technique as the MONTERO sign) */
 .marquee{--px:clamp(4px,.36vw,6px);background:#03181e;border-top:2px solid #7FF5EA;border-bottom:2px solid #7FF5EA;padding:calc(var(--px)*3.5) 0;
   box-shadow:0 0 14px rgba(63,224,208,.55),0 0 40px rgba(63,224,208,.25),inset 0 0 18px rgba(63,224,208,.18)}
