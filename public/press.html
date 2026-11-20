@@ -171,7 +171,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--aqua)}
   document.getElementById('photos').innerHTML=photos.map(card).join('');
   document.getElementById('covers').innerHTML=covers.map(card).join('');
   const now=Date.now();
-  if(now>=new Date('2026-11-23T00:00:00-05:00').getTime()) document.getElementById('r1').textContent='Out now';
+  if(now>=new Date(2026,10,23,0,0,0).getTime()) document.getElementById('r1').textContent='Out now';
   if(now>=new Date('2026-11-27T00:00:00-05:00').getTime()) document.getElementById('r2').textContent='Out now';
   const toast=document.getElementById('toast');
   document.getElementById('copy').addEventListener('click',()=>{
