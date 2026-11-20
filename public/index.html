@@ -70,6 +70,15 @@ img{display:block;max-width:100%}
 .marquee .track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
 .marquee .track span:nth-child(odd){color:var(--ink)}
 .marquee .track span:nth-child(even){color:var(--pink)}
+/* marquee as LED display (same dot technique as the MONTERO sign) */
+.marquee{--px:clamp(4px,.36vw,6px);background:#03181e;border-top:2px solid #7FF5EA;border-bottom:2px solid #7FF5EA;padding:calc(var(--px)*3.5) 0;
+  box-shadow:0 0 14px rgba(63,224,208,.55),0 0 40px rgba(63,224,208,.25),inset 0 0 18px rgba(63,224,208,.18)}
+.marquee::before,.marquee::after{content:"";position:absolute;inset:0;pointer-events:none}
+.marquee::before{background:radial-gradient(circle at center,rgba(63,224,208,.16) 0 34%,transparent 42%) 0 0/var(--px) var(--px)}
+.marquee::after{z-index:2;background:linear-gradient(90deg,#03181e,transparent 4%,transparent 96%,#03181e),radial-gradient(circle at center,transparent 0 46%,#03181e 56%) 0 0/var(--px) var(--px)}
+.marquee .track{position:relative;z-index:1;font-size:calc(var(--px)*9.2);line-height:1.1;gap:calc(var(--px)*9);-webkit-text-stroke:.02em currentColor}
+.marquee .track span:nth-child(odd){color:#B5FFF7;text-shadow:0 0 .1em #7FF5EA}
+.marquee .track span:nth-child(even){color:#FF86C6;text-shadow:0 0 .1em #FF4FA3}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
 /* sections */
@@ -297,7 +306,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
 @media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
 main{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.eye-glow,.tag{animation:eyePulse 1.5s ease-in-out infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}.sp-embed.on::before{animation:spSpin 9s linear infinite!important}.sp-embed.on::after{animation:spSpin 14s linear infinite reverse!important}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.marquee .track{animation:scroll 28s linear infinite!important}.eye-glow,.tag{animation:eyePulse 1.5s ease-in-out infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}.sp-embed.on::before{animation:spSpin 9s linear infinite!important}.sp-embed.on::after{animation:spSpin 14s linear infinite reverse!important}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
 
 /* legal */
