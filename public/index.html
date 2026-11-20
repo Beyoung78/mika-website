@@ -8,7 +8,7 @@
 <meta property="og:title" content="Mika Montero">
 <meta property="og:description" content="Miami nights, Honolulu heart. New single Break You Out coming soon.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://mikamontero.com/assets/img/cover.jpg">
+<meta property="og:image" content="https://mikamontero.com/assets/img/og-single.jpg">
 <meta property="og:url" content="https://mikamontero.com/">
 <link rel="canonical" href="https://mikamontero.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -85,6 +85,9 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .music{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:stretch}
 .cover{flex:1 1 360px;max-width:560px;position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;box-shadow:0 30px 80px rgba(255,79,163,.18)}
 .cover img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:contrast(1.05)}
+.cover.real{box-shadow:0 0 0 1px rgba(255,200,110,.35),0 30px 80px rgba(255,180,80,.16),0 0 90px rgba(70,110,255,.14)}
+.cover.real img{object-position:center;filter:none}
+.cover.real::after{display:none}
 .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,79,163,.35),rgba(11,10,26,0) 45%,rgba(63,224,208,.25))}
 .cover .title{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;font-family:var(--display);font-weight:800;font-size:clamp(34px,4vw,54px);line-height:.9;text-transform:uppercase}
 .cover .title small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.28em;font-weight:700;color:var(--aqua);margin-bottom:10px}
@@ -141,6 +144,13 @@ h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:
 .tz-frame.on .tz-play{opacity:0;pointer-events:none}
 @media (max-width:760px){.tz-copy{text-align:center;align-items:center}}
 .remix{margin-top:clamp(64px,9vw,130px)}
+.spbox{margin-top:clamp(64px,9vw,130px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(28px,6vw,90px)}
+.spbox .tz-copy h3{font-size:clamp(34px,4.2vw,58px)}
+.sp-embed{flex:1 1 360px;max-width:560px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px;border-radius:22px;background:var(--card);border:1px solid rgba(30,215,96,.35);box-shadow:0 0 50px rgba(30,215,96,.1)}
+.sp-embed small{color:var(--dim);font-size:12.5px;text-align:center;max-width:34ch;line-height:1.5}
+.sp-embed .cd-cta{border:0;cursor:pointer;font:inherit;font-weight:800;width:auto;padding-left:26px;padding-right:26px}
+.sp-embed.on{padding:0;border:0;background:none;box-shadow:0 0 60px rgba(30,215,96,.14);min-height:0}
+.sp-embed iframe{display:block;width:100%;height:352px;border:0;border-radius:14px}
 .rx-cover{width:132px;height:132px;border-radius:18px;display:block;box-shadow:0 0 0 1px rgba(255,79,163,.5),0 0 40px rgba(255,79,163,.35),0 0 80px rgba(63,224,208,.15)}
 .rx-cover.gold{box-shadow:0 0 0 1px rgba(255,200,110,.55),0 0 40px rgba(255,190,90,.3),0 0 80px rgba(80,120,255,.16)}
 .remix .facts{margin-top:2px}
@@ -211,7 +221,8 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 .foot a{text-decoration:none}
 .foot a:hover{color:var(--ink)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-@media(max-width:860px){.hero-copy{gap:16px;padding-bottom:56px}.hero-copy h1{font-size:12vw}.hero-copy .sub{font-size:15px}.actions{flex-direction:column;align-items:stretch}.cta-fan,.cta-ig,.actions .plat{justify-content:center;min-height:54px}}
+@media(max-width:860px){.hero-copy{gap:16px;padding-bottom:56px}.hero-copy h1{font-size:12vw}.hero-copy .sub{font-size:15px}.actions{flex-direction:column;align-items:stretch}.cta-fan,.cta-ig{justify-content:center;min-height:54px}.actions{flex-direction:row!important;flex-wrap:nowrap;gap:8px}.actions .plat{flex:1 1 0;justify-content:center;min-height:50px;padding:0 6px;gap:7px;font-size:13px;white-space:nowrap}.actions .plat svg:last-child{display:none}.actions .plat svg{width:18px;height:18px;flex:none}}
+@media(max-width:350px){.actions .plat{font-size:12px;gap:5px}}
 @media(max-width:860px){.stage video,.stage .poster{object-position:center center}}
 
 /* music player */
@@ -365,9 +376,8 @@ main{position:relative;z-index:1}
   <div class="wrap">
     <section class="section" id="music">
       <div class="music">
-        <div class="cover">
-          <img src="assets/img/artist.jpg" alt="Black and white portrait of Mika in a black blazer" loading="lazy">
-          <div class="title"><small data-i18n="cover_new">New single</small>Break<br>You Out</div>
+        <div class="cover real">
+          <img src="assets/img/single-cover-lg.jpg" alt="Cover of the single Break You Out: Mika in the rain with a golden sequin glove" width="1200" height="1200" loading="lazy">
         </div>
         <div class="txt">
           <span class="soon" data-i18n="tag" data-rel>New single coming soon</span>
@@ -393,7 +403,6 @@ main{position:relative;z-index:1}
       </div>
       <div class="teaser" id="teaser">
         <div class="tz-copy">
-          <img class="rx-cover gold" src="assets/img/single-cover.jpg" alt="Cover of the single Break You Out: Mika in the rain with a golden sequin glove" width="640" height="640" loading="lazy">
           <p class="eyebrow eye-glow" data-i18n="tz_eye">Official teaser</p>
           <h3 class="wave" id="tz-h" aria-label="Break You Out">Break<br><em>You Out</em></h3>
           <p class="p" data-i18n="tz_p">Studio night in Miami, headphones off, volume up. A first taste before Monday. Sound on.</p>
@@ -418,6 +427,17 @@ main{position:relative;z-index:1}
             <li>Dark Disco Dub</li><li>Melodic House</li><li>Concrete Techno</li><li>Indie Dance</li><li>Minimal</li>
           </ul>
           <div class="stripes" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="spbox" id="spbox">
+        <div class="tz-copy">
+          <p class="eyebrow" data-i18n="sp_eye">More music</p>
+          <h3 data-i18n="sp_h">All my <em>music</em></h3>
+          <p class="p" data-i18n="sp_p">Everything I've released so far, in one place. Press play and stay a while.</p>
+        </div>
+        <div class="sp-embed" id="sp-embed">
+          <button class="cd-cta" id="sp-load" type="button"><span data-i18n="sp_btn">Load the Spotify player</span></button>
+          <small data-i18n="sp_note">The player comes from Spotify. Loading it connects your browser to Spotify.</small>
         </div>
       </div>
     </section>
@@ -652,7 +672,7 @@ main{position:relative;z-index:1}
     pv_cta:'Mira lo nuevo de hoy en Fanvue',
     w_eye:'Lista de deseos', w_t:'Consiénteme, al estilo Miami.', w_p:'Mi lista de deseos en Throne. Cada regalo recibe un pequeño gracias.', w_cta:'Ver mi lista',
     b_eye:'Marcas, bookings y música', b_t:'Trabajemos juntos.', b_p:'Campañas, moda, belleza, vida nocturna, features y colaboraciones.', b_cta:'Escríbeme',
-    pl_tap:'Toca para escuchar', tz_eye:'Teaser oficial', tz_p:'Noche de estudio en Miami, audífonos fuera, volumen arriba. Un adelanto antes del lunes. Con sonido.', tz_btn:'Reproducir con sonido', lg_link:'Aviso legal y privacidad', lg_h:'Aviso legal y privacidad', lg_1h:'Sobre este sitio', lg_1p:'Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href="mailto:mikamonroe26@gmail.com">mikamonroe26@gmail.com</a>.', lg_2h:'Privacidad', lg_2p:'Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.', lg_3h:'Enlaces externos', lg_3p:'Los enlaces a Fanvue, Throne, Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos, verificaciones de edad y políticas de privacidad.', lg_4h:'Derechos de autor', lg_4p:'Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
+    pl_tap:'Toca para escuchar', sp_eye:'Más música', sp_h:'Toda mi <em>música</em>', sp_p:'Todo lo que he lanzado hasta ahora, en un solo lugar. Dale play y quédate un rato.', sp_btn:'Cargar el reproductor de Spotify', sp_note:'El reproductor es de Spotify. Al cargarlo, tu navegador se conecta con Spotify.', tz_eye:'Teaser oficial', tz_p:'Noche de estudio en Miami, audífonos fuera, volumen arriba. Un adelanto antes del lunes. Con sonido.', tz_btn:'Reproducir con sonido', lg_link:'Aviso legal y privacidad', lg_h:'Aviso legal y privacidad', lg_1h:'Sobre este sitio', lg_1p:'Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href="mailto:mikamonroe26@gmail.com">mikamonroe26@gmail.com</a>.', lg_2h:'Privacidad', lg_2p:'Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.', lg_3h:'Enlaces externos', lg_3p:'Los enlaces a Fanvue, Throne, Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos, verificaciones de edad y políticas de privacidad.', lg_4h:'Derechos de autor', lg_4p:'Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
   };
   var ES_OUT={ tag:'Nuevo single ya disponible', sub:'Cantante y compositora de Miami. Escribo mis canciones de noche, cuando la ciudad brilla en rosa y todo parece posible. Mi primer single, Break You Out, ya está disponible. Súbele.', mq_soon:'Ya disponible', mq_date:'✦ Desde el 23 de noviembre',
     music_p:'Mi primer single ya salió. Noches manejando por Ocean Drive, cielos rosados sobre Biscayne Bay y ese sentimiento que tienes que dejar salir. Break You Out es el sonido de mis noches en Miami. Súbele el volumen.',
@@ -721,6 +741,12 @@ main{position:relative;z-index:1}
     v.addEventListener('ended',function(){ v.controls=false; fr.classList.remove('on'); v.load(); });
     if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ if(!e[0].isIntersecting&&!v.paused) v.pause(); }).observe(fr); }
   })();
+
+  // Spotify player loads only on click (nothing is sent to Spotify before that)
+  (function(){ var box=document.getElementById('sp-embed'), btn=document.getElementById('sp-load'); if(!btn) return;
+    btn.addEventListener('click',function(){ ['song','tz-video','rx-video'].forEach(function(id){ var m=document.getElementById(id); if(m&&!m.paused) m.pause(); });
+      var f=document.createElement('iframe'); f.src='https://open.spotify.com/embed/artist/4VnsEXQqPFEcNySITWgvTW?utm_source=generator&theme=0'; f.title='Mika Montero on Spotify';
+      f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'; f.loading='lazy'; box.textContent=''; box.classList.add('on'); box.appendChild(f); }); })();
   // teaser (only until release, the clip says "Out Monday")
   (function(){
     var box=document.getElementById('teaser'), fr=document.getElementById('tz-frame'), v=document.getElementById('tz-video'), b=document.getElementById('tz-play'), song=document.getElementById('song');
