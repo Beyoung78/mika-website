@@ -271,18 +271,21 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 
 /* neon sign */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-/* free-standing Miami neon: flamingo + MONTERO in glowing tubes, no box */
-.neon-sign{position:relative;display:block;width:100%;margin-top:.12em;container-type:inline-size;animation:neonOn 2.4s linear .5s both}
-.ticker{display:flex;align-items:center;gap:calc(100cqw / 34);font-size:calc(100cqw / 11.1);line-height:1}
-.ticker .word{display:inline-flex;letter-spacing:.05em;white-space:nowrap;color:rgba(255,214,236,.14);-webkit-text-stroke:.034em #FFB8DE;paint-order:stroke fill;
-  filter:drop-shadow(0 0 .035em #fff) drop-shadow(0 0 .12em #FF4FA3) drop-shadow(0 0 .36em rgba(255,79,163,.9)) drop-shadow(0 0 .9em rgba(255,79,163,.45));
+/* free-standing Miami neon: MONTERO in script tubes with a flamingo, like a wall sign */
+@font-face{font-family:"Sacramento";font-weight:400;font-display:swap;src:url(assets/fonts/sacramento-400.woff2) format("woff2")}
+.neon-sign{position:relative;display:block;width:100%;margin-top:-.02em;container-type:inline-size;animation:neonOn 2.4s linear .5s both}
+.ticker{display:flex;align-items:center;gap:calc(100cqw / 60);font-size:calc(100cqw / 5.3);line-height:1.05}
+.ticker .word{display:inline-block;font-family:"Sacramento",cursive;font-weight:400;text-transform:none;letter-spacing:0;white-space:nowrap;padding:0 .06em 0 .04em;
+  color:#FFEAF6;-webkit-text-stroke:.014em #FFD3EC;
+  text-shadow:0 0 .03em #fff,0 0 .09em #FF7EC4,0 0 .2em #FF4FA3,0 0 .45em #FF4FA3,0 0 .9em rgba(255,79,163,.55);
   animation:buzz 9s linear 4s infinite}
 .ticker .word b{font-weight:inherit}
 .ticker .word b:nth-child(4){animation:tubeFlick 6.5s linear 3s infinite}
-.ticker .fl{flex:none;height:1.9em;width:auto;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:3;
+.ticker .fl{flex:none;height:1.02em;width:auto;margin-top:-.06em;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.6;
   filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 5px #FF4FA3) drop-shadow(0 0 16px rgba(255,79,163,.8));animation:buzz 7s linear 2.2s infinite}
-.ticker .fl .b{stroke:#FFA6D8}
+.ticker .fl .b{stroke:#FFC2E4}
 .ticker .fl .g{stroke:#8FFBF0;filter:drop-shadow(0 0 3px #3FE0D0) drop-shadow(0 0 9px #3FE0D0)}
+@media(max-width:860px){.ticker{font-size:calc(100cqw / 4.5)}}
 @keyframes tubeFlick{0%,86%,100%{opacity:1}87%{opacity:.15}88%{opacity:1}90%{opacity:.25}91%{opacity:.9}93%{opacity:.1}94%{opacity:1}}
 @keyframes tick{to{transform:translateX(-50%)}}
 @keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
@@ -379,7 +382,7 @@ main{position:relative;z-index:1}
       <video id="film" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video>
       <div class="hero-copy">
       <span class="tag"><i aria-hidden="true"></i><span data-i18n="tag" data-rel>New single coming soon</span></span>
-      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><span class="ticker"><svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg><span class="word"><b>M</b><b>O</b><b>N</b><b>T</b><b>E</b><b>R</b><b>O</b></span></span></span></h1>
+      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><span class="ticker"><span class="word"><b>M</b><b>o</b><b>n</b><b>t</b><b>e</b><b>r</b><b>o</b></span><svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg></span></span></h1>
       <p class="lead" data-i18n="lead">Miami nights. Honolulu heart.</p>
       <p class="sub" data-i18n="sub">Singer and songwriter from Miami. I write my songs at night, when the city glows pink and everything feels possible. My first single, Break You Out, drops Monday. Turn it up.</p>
       <div class="actions">
