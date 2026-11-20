@@ -382,7 +382,7 @@ main{position:relative;z-index:1}
         <div class="txt">
           <span class="soon" data-i18n="tag" data-rel>New single coming soon</span>
           <h2 data-i18n="music_h">The <em>music</em></h2>
-          <p class="p" data-i18n="music_p" data-rel>My first single is almost here. Late drives along Ocean Drive, pink skies over Biscayne Bay and that one feeling you have to set free. Break You Out is the sound of my Miami nights. Follow me now so you hear it first.</p>
+          <p class="p" data-i18n="music_p" data-rel>My first single is almost here. Late drives along Ocean Drive, pink skies over Biscayne Bay and that one feeling you have to set free. Break You Out is the sound of my Miami nights. Pre-save it now and it's yours the second it drops.</p>
           <div class="countdown" id="countdown">
             <p class="cd-head"><span data-i18n="cd_head" data-rel>Out Monday, Nov 23</span><span class="cd-time">00:00 Miami</span></p>
             <div class="cd-grid" id="cd-grid">
@@ -391,7 +391,7 @@ main{position:relative;z-index:1}
               <div><b id="cd-m">00</b><span data-i18n="cd_m">Min</span></div>
               <div><b id="cd-s">00</b><span data-i18n="cd_s">Sec</span></div>
             </div>
-            <a class="cd-cta" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><span data-i18n="cd_cta" data-rel>Follow on Spotify to hear it first</span> <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="cd-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-original-mix?utm_source=website" target="_blank" rel="noopener"><span data-i18n="cd_cta" data-rel>Pre-save Break You Out</span> <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           </div>
           <div class="platforms" aria-label="Streaming platforms">
             <a class="plat sp" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg>Spotify <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
@@ -431,8 +431,8 @@ main{position:relative;z-index:1}
       </div>
       <div class="spbox" id="spbox">
         <div class="tz-copy">
-          <p class="eyebrow" data-i18n="sp_eye">More music</p>
-          <h3 data-i18n="sp_h">All my <em>music</em></h3>
+          <p class="eyebrow eye-glow" data-i18n="sp_eye">More music</p>
+          <h3 class="wave" id="sp-h" data-i18n="sp_h">All my<br><em>music</em></h3>
           <p class="p" data-i18n="sp_p">Everything I've released so far, in one place. Press play and stay a while.</p>
         </div>
         <div class="sp-embed" id="sp-embed">
@@ -650,7 +650,7 @@ main{position:relative;z-index:1}
   var EN_OUT={
     tag:'New single out now', sub:'Singer and songwriter from Miami. I write my songs at night, when the city glows pink and everything feels possible. My first single, Break You Out, is out now. Turn it up.', mq_soon:'Out now', mq_date:'✦ Since Nov 23',
     music_p:'My first single is out now. Late drives along Ocean Drive, pink skies over Biscayne Bay and that one feeling you have to set free. Break You Out is the sound of my Miami nights. Turn it up.',
-    cd_head:'Out now everywhere', cd_cta:'Listen on Spotify', pl_end:'Full song out now on Spotify ↗'
+    cd_head:'Out now everywhere', cd_cta:'Listen now', pl_end:'Full song out now on Spotify ↗'
   };
   var ES={
     nav_music:'Música', nav_about:'Sobre mí', nav_feed:'Feed', nav_brands:'Marcas', nav_join:'Únete',
@@ -659,8 +659,8 @@ main{position:relative;z-index:1}
     cta_fan:'Únete en Fanvue', cta_ig:'Sígueme en Instagram',
     mq_new:'✦ Nuevo single', mq_soon:'Muy pronto', mq_date:'✦ Lunes 23 de noviembre', cover_new:'Nuevo single',
     music_h:'La <em>música</em>',
-    music_p:'Mi primer single ya casi está aquí. Noches manejando por Ocean Drive, cielos rosados sobre Biscayne Bay y ese sentimiento que tienes que dejar salir. Break You Out es el sonido de mis noches en Miami. Sígueme ahora para escucharlo primero.',
-    cd_head:'Sale el lunes 23 de noviembre', cd_d:'Días', cd_h:'Horas', cd_m:'Min', cd_s:'Seg', cd_cta:'Sígueme en Spotify y escúchalo primero',
+    music_p:'Mi primer single ya casi está aquí. Noches manejando por Ocean Drive, cielos rosados sobre Biscayne Bay y ese sentimiento que tienes que dejar salir. Break You Out es el sonido de mis noches en Miami. Haz pre-save ahora y será tuyo en cuanto salga.',
+    cd_head:'Sale el lunes 23 de noviembre', cd_d:'Días', cd_h:'Horas', cd_m:'Min', cd_s:'Seg', cd_cta:'Haz pre-save de Break You Out',
     ab_eye:'Hola, soy Mika', ab_h:'Nacida en <em>Honolulu,</em><br>hecha en Miami.',
     ab_p:'Japonesa-americana, chica de isla de corazón y noctámbula por elección. Modelo, fotografío, escribo canciones y vivo para esa hora en que se encienden las luces de la ciudad. Un poco dulce, un poco peligro.',
     f_artist:'Artista', neon_txt:'Noches de Miami', f_model:'Modelo', f_photo:'Fotógrafa', f_lang:'English · 日本語 · un poco de español',
@@ -672,11 +672,11 @@ main{position:relative;z-index:1}
     pv_cta:'Mira lo nuevo de hoy en Fanvue',
     w_eye:'Lista de deseos', w_t:'Consiénteme, al estilo Miami.', w_p:'Mi lista de deseos en Throne. Cada regalo recibe un pequeño gracias.', w_cta:'Ver mi lista',
     b_eye:'Marcas, bookings y música', b_t:'Trabajemos juntos.', b_p:'Campañas, moda, belleza, vida nocturna, features y colaboraciones.', b_cta:'Escríbeme',
-    pl_tap:'Toca para escuchar', sp_eye:'Más música', sp_h:'Toda mi <em>música</em>', sp_p:'Todo lo que he lanzado hasta ahora, en un solo lugar. Dale play y quédate un rato.', sp_btn:'Cargar el reproductor de Spotify', sp_note:'El reproductor es de Spotify. Al cargarlo, tu navegador se conecta con Spotify.', tz_eye:'Teaser oficial', tz_p:'Noche de estudio en Miami, audífonos fuera, volumen arriba. Un adelanto antes del lunes. Con sonido.', tz_btn:'Reproducir con sonido', lg_link:'Aviso legal y privacidad', lg_h:'Aviso legal y privacidad', lg_1h:'Sobre este sitio', lg_1p:'Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href="mailto:mikamonroe26@gmail.com">mikamonroe26@gmail.com</a>.', lg_2h:'Privacidad', lg_2p:'Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.', lg_3h:'Enlaces externos', lg_3p:'Los enlaces a Fanvue, Throne, Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos, verificaciones de edad y políticas de privacidad.', lg_4h:'Derechos de autor', lg_4p:'Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
+    pl_tap:'Toca para escuchar', sp_eye:'Más música', sp_h:'Toda mi<br><em>música</em>', sp_p:'Todo lo que he lanzado hasta ahora, en un solo lugar. Dale play y quédate un rato.', sp_btn:'Cargar el reproductor de Spotify', sp_note:'El reproductor es de Spotify. Al cargarlo, tu navegador se conecta con Spotify.', tz_eye:'Teaser oficial', tz_p:'Noche de estudio en Miami, audífonos fuera, volumen arriba. Un adelanto antes del lunes. Con sonido.', tz_btn:'Reproducir con sonido', lg_link:'Aviso legal y privacidad', lg_h:'Aviso legal y privacidad', lg_1h:'Sobre este sitio', lg_1p:'Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href="mailto:mikamonroe26@gmail.com">mikamonroe26@gmail.com</a>.', lg_2h:'Privacidad', lg_2p:'Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.', lg_3h:'Enlaces externos', lg_3p:'Los enlaces a Fanvue, Throne, Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos, verificaciones de edad y políticas de privacidad.', lg_4h:'Derechos de autor', lg_4p:'Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
   };
   var ES_OUT={ tag:'Nuevo single ya disponible', sub:'Cantante y compositora de Miami. Escribo mis canciones de noche, cuando la ciudad brilla en rosa y todo parece posible. Mi primer single, Break You Out, ya está disponible. Súbele.', mq_soon:'Ya disponible', mq_date:'✦ Desde el 23 de noviembre',
     music_p:'Mi primer single ya salió. Noches manejando por Ocean Drive, cielos rosados sobre Biscayne Bay y ese sentimiento que tienes que dejar salir. Break You Out es el sonido de mis noches en Miami. Súbele el volumen.',
-    cd_head:'Ya disponible en todas partes', cd_cta:'Escúchalo en Spotify', pl_end:'Canción completa ya en Spotify ↗' };
+    cd_head:'Ya disponible en todas partes', cd_cta:'Escúchalo ahora', pl_end:'Canción completa ya en Spotify ↗' };
   var EN_EXTRA={pl_playing:'Teaser · now playing', pl_paused:'Paused · tap to play', pl_end:'Full song soon · follow on Spotify ↗'};
   var els=[].slice.call(document.querySelectorAll('[data-i18n]')), EN={};
   els.forEach(function(e){ var k=e.getAttribute('data-i18n'); if(!(k in EN)) EN[k]=e.innerHTML; });
@@ -729,8 +729,8 @@ main{position:relative;z-index:1}
         });
       }
       waveify(document.getElementById('rx-h'),true); waveify(document.getElementById('tz-h'),true);
-      var ab=document.getElementById('ab-h');
-      if(ab){ waveify(ab,false); if('MutationObserver' in window){ new MutationObserver(function(){ if(!ab.querySelector('.l')){ ab.removeAttribute('aria-label'); waveify(ab,false); } }).observe(ab,{childList:true}); } }
+      [['ab-h',false],['sp-h',true]].forEach(function(c){ var el=document.getElementById(c[0]); if(!el) return; waveify(el,c[1]);
+        if('MutationObserver' in window){ new MutationObserver(function(){ if(!el.querySelector('.l')){ el.removeAttribute('aria-label'); waveify(el,c[1]); } }).observe(el,{childList:true}); } });
     })();
     render(); setInterval(render,60000);
     document.getElementById('lang').addEventListener('click',function(){ setTimeout(render,0); });
