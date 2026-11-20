@@ -46,7 +46,7 @@ img{display:block;max-width:100%}
 /* hero loop video */
 .film{position:relative;height:100vh;height:100dvh;min-height:620px;background:var(--night)}
 .stage{position:relative;height:100%;overflow:hidden;display:flex;align-items:flex-end}
-.stage video,.stage .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.stage video,.stage .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 49%}
 .stage video{opacity:0;transition:opacity .8s}
 .stage video.ready{opacity:1}
 .stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(11,10,26,1) 0%,rgba(11,10,26,.5) 34%,rgba(11,10,26,0) 62%),linear-gradient(90deg,rgba(11,10,26,.78) 0%,rgba(11,10,26,.25) 46%,rgba(11,10,26,0) 66%)}
@@ -414,6 +414,11 @@ main{position:relative;z-index:1}
 .skyline .wn{stroke:#FFD9A8;stroke-width:2.6;opacity:.75;filter:drop-shadow(0 0 3px #FFB86B)}
 .skyline .fl{animation:winFl 7s linear infinite}.skyline .f1{animation-duration:11s;animation-delay:-3s}.skyline .f2{animation-duration:9s;animation-delay:-6s}
 @keyframes winFl{0%,38%{opacity:1}39%,41%{opacity:.1}42%,70%{opacity:1}71%,88%{opacity:0}89%{opacity:1}90%{opacity:.2}91%,100%{opacity:1}}
+.skyline .car{fill:none;stroke-linecap:round;stroke-linejoin:round;animation:carDrive 15s linear infinite}
+.skyline .cb{stroke:#FFE6F3;stroke-width:2.4;filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 9px #FF4FA3)}
+.skyline .cw{stroke:#7CFFD6;stroke-width:2.4;filter:drop-shadow(0 0 4px #3FE0D0)}
+.skyline .cl{stroke:#FFE9A8;stroke-width:3;filter:drop-shadow(0 0 5px #FFD36B) drop-shadow(8px 0 10px #FFD36B)}
+@keyframes carDrive{0%{transform:translateX(-130px)}50%,100%{transform:translateX(1730px)}}
 .section.after-neon{padding-top:clamp(48px,6vw,84px)}
 .palm-sign{width:min(560px,88vw);display:flex;flex-direction:column;align-items:center;gap:6px}
 .palm-sign svg{width:100%;height:auto;overflow:visible}
@@ -601,7 +606,7 @@ main{position:relative;z-index:1}
 
   <section class="neonwall mid" aria-label="Neon sign: palm tree and sunset, Miami nights">
     <div class="palm-sign" id="palm-sign">
-      <svg class="skyline" viewBox="0 0 1600 210" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g class="sk pu"><path d="M40 200V175A23.0 23.0 0 0 1 86 175V200 M86 200V131H146V200 M186 200V88H246V200 M252 200V84H304V200 M304 200V60H311V44H331V60H338V200 M408 200V73H454V200 M454 200V89H466V75H476V89H488V200M471 75V53 M488 200V120H501V104H535V120H548V200 M608 200V162A16.0 16.0 0 0 1 640 162V200 M1030 200V152H1040V136H1066V152H1076V200 M1076 200V156H1087V140H1117V156H1128V200 M1200 200V96H1213V80H1247V96H1260V200 M1260 200V86H1268V70H1292V86H1300V200 M1306 200V102H1316V86H1342V102H1352V200 M1414 200V110H1448V200 M1448 200V134H1494V200 M1494 200V152H1540V200"/></g><g class="sk pk"><path d="M146 200V124H186V200 M338 200V79H398V200 M548 200V123H573V109H583V123H608V200M578 109V87 M1138 200V131H1149V115H1179V131H1190V200 M1352 200V94A26.0 26.0 0 0 1 1404 94V200"/></g><g class="sk pa"><path d="M14 200C16 170 17 152 20 138M20 138c-10 -10 -22 -9 -30 -2M20 138c-4 -14 -16 -20 -26 -18M20 138c2 -14 12 -20 22 -20M20 138c12 -8 24 -6 30 2M20 138c8 0 16 6 18 16M1580 200C1578 170 1577 152 1574 138M1574 138c-10 -10 -22 -9 -30 -2M1574 138c-4 -14 -16 -20 -26 -18M1574 138c2 -14 12 -20 22 -20M1574 138c12 -8 24 -6 30 2M1574 138c8 0 16 6 18 16M668 200C670 170 671 152 674 138M674 138c-10 -10 -22 -9 -30 -2M674 138c-4 -14 -16 -20 -26 -18M674 138c2 -14 12 -20 22 -20M674 138c12 -8 24 -6 30 2M674 138c8 0 16 6 18 16M1004 200C1002 170 1001 152 998 138M998 138c-10 -10 -22 -9 -30 -2M998 138c-4 -14 -16 -20 -26 -18M998 138c2 -14 12 -20 22 -20M998 138c12 -8 24 -6 30 2M998 138c8 0 16 6 18 16"/></g><g class="sk wn"><path d="M1162 166h10"/><path d="M586 161h10"/><path d="M465 162h10"/><path d="M620 172h10"/><path d="M1106 170h10"/><path d="M462 182h10"/><path d="M1317 152h10"/><path d="M1269 171h10"/><path d="M50 182h10"/><path d="M1149 158h10"/><path d="M466 168h10"/><path d="M584 176h10"/><path d="M1459 178h10"/><path d="M620 176h10"/><path d="M1231 151h10"/><path d="M420 130h10"/><path d="M615 182h10"/><path d="M201 119h10"/><path d="M49 178h10"/><path d="M1513 182h10"/><path d="M156 157h10"/><path d="M1324 180h10"/><path class="fl f0" d="M312 117h10"/><path class="fl f1" d="M1095 173h10"/><path class="fl f2" d="M424 145h10"/><path class="fl f0" d="M1423 164h10"/><path class="fl f1" d="M119 170h10"/><path class="fl f2" d="M166 153h10"/></g><g class="sk gr"><path d="M0 200H690M980 200H1600"/></g></svg>
+      <svg class="skyline" viewBox="0 0 1600 210" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g class="sk pu"><path d="M40 200V175A23.0 23.0 0 0 1 86 175V200 M86 200V131H146V200 M186 200V88H246V200 M252 200V84H304V200 M304 200V60H311V44H331V60H338V200 M408 200V73H454V200 M454 200V89H466V75H476V89H488V200M471 75V53 M488 200V120H501V104H535V120H548V200 M608 200V162A16.0 16.0 0 0 1 640 162V200 M1030 200V152H1040V136H1066V152H1076V200 M1076 200V156H1087V140H1117V156H1128V200 M1200 200V96H1213V80H1247V96H1260V200 M1260 200V86H1268V70H1292V86H1300V200 M1306 200V102H1316V86H1342V102H1352V200 M1414 200V110H1448V200 M1448 200V134H1494V200 M1494 200V152H1540V200"/></g><g class="sk pk"><path d="M146 200V124H186V200 M338 200V79H398V200 M548 200V123H573V109H583V123H608V200M578 109V87 M1138 200V131H1149V115H1179V131H1190V200 M1352 200V94A26.0 26.0 0 0 1 1404 94V200"/></g><g class="sk pa"><path d="M14 200C16 170 17 152 20 138M20 138c-10 -10 -22 -9 -30 -2M20 138c-4 -14 -16 -20 -26 -18M20 138c2 -14 12 -20 22 -20M20 138c12 -8 24 -6 30 2M20 138c8 0 16 6 18 16M1580 200C1578 170 1577 152 1574 138M1574 138c-10 -10 -22 -9 -30 -2M1574 138c-4 -14 -16 -20 -26 -18M1574 138c2 -14 12 -20 22 -20M1574 138c12 -8 24 -6 30 2M1574 138c8 0 16 6 18 16M668 200C670 170 671 152 674 138M674 138c-10 -10 -22 -9 -30 -2M674 138c-4 -14 -16 -20 -26 -18M674 138c2 -14 12 -20 22 -20M674 138c12 -8 24 -6 30 2M674 138c8 0 16 6 18 16M1004 200C1002 170 1001 152 998 138M998 138c-10 -10 -22 -9 -30 -2M998 138c-4 -14 -16 -20 -26 -18M998 138c2 -14 12 -20 22 -20M998 138c12 -8 24 -6 30 2M998 138c8 0 16 6 18 16"/></g><g class="sk wn"><path d="M1162 166h10"/><path d="M586 161h10"/><path d="M465 162h10"/><path d="M620 172h10"/><path d="M1106 170h10"/><path d="M462 182h10"/><path d="M1317 152h10"/><path d="M1269 171h10"/><path d="M50 182h10"/><path d="M1149 158h10"/><path d="M466 168h10"/><path d="M584 176h10"/><path d="M1459 178h10"/><path d="M620 176h10"/><path d="M1231 151h10"/><path d="M420 130h10"/><path d="M615 182h10"/><path d="M201 119h10"/><path d="M49 178h10"/><path d="M1513 182h10"/><path d="M156 157h10"/><path d="M1324 180h10"/><path class="fl f0" d="M312 117h10"/><path class="fl f1" d="M1095 173h10"/><path class="fl f2" d="M424 145h10"/><path class="fl f0" d="M1423 164h10"/><path class="fl f1" d="M119 170h10"/><path class="fl f2" d="M166 153h10"/></g><g class="car"><path class="cb" d="M6 191V182Q7 177 16 177H50L60 165M57 177H78Q92 178 95 186V191H84M64 191H32M12 191H6M60 165L65 177M36 177V171H44V177"/><path class="cw" d="M22 186a7 7 0 1 0 .01 0M74 186a7 7 0 1 0 .01 0"/><path class="cl" d="M97 186h9"/></g><g class="sk gr"><path d="M0 200H690M980 200H1600"/></g></svg>
       <svg viewBox="0 0 400 320" role="img" aria-hidden="true">
         <defs>
           <linearGradient id="sunG" gradientUnits="userSpaceOnUse" x1="0" y1="58" x2="0" y2="242"><stop offset="0" stop-color="#FF4FA3"/><stop offset=".55" stop-color="#C77DFF"/><stop offset="1" stop-color="#FF9E5E"/></linearGradient>
@@ -739,7 +744,7 @@ main{position:relative;z-index:1}
   var v=document.getElementById('film'), svg=document.querySelector('.nsvg'), stage=document.querySelector('.stage');
   if(!v||!svg||!stage||!svg.getScreenCTM) return;
   var mobile=window.matchMedia('(max-width:860px)').matches;
-  var CFG=mobile?{letter:0,fist:[329,597],fit:{k:.00156,ax:.27,ay:.12},off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]}:{letter:0,fist:[556,468],off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]};
+  var CFG=mobile?{letter:0,fist:[329,597],fit:{k:.00156,ax:.27,ay:.12},off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]}:{letter:0,fist:[556,644],fit:{ax:1.12,ay:.26,max:1.45},off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]};
   if(!CFG) return;
   var NS='http://www.w3.org/2000/svg', WORD='Montero', base=document.getElementById('nT'), ext=null, cur=-1, off=false, spark;
   function build(){
@@ -763,8 +768,11 @@ main{position:relative;z-index:1}
     if(!CFG.fit||!ext||!v.videoWidth) return;
     var m=svg.getScreenCTM(), sr=stage.getBoundingClientRect(), vw=v.videoWidth, vh=v.videoHeight, e=ext[CFG.letter];
     var tx=(e[0]+e[2]*CFG.fit.ax)*m.a+m.e-sr.left, ty=(e[1]+e[3]*CFG.fit.ay)*m.d+m.f-sr.top;
-    var sc=Math.max(CFG.fit.k*sr.width, sr.width/vw, (sr.height-ty)/(vh-CFG.fist[1]));
-    var x=Math.min(0,Math.max(sr.width-vw*sc, tx-CFG.fist[0]*sc)), y=Math.max(sr.height-vh*sc, ty-CFG.fist[1]*sc);
+    var fx=CFG.fist[0], fy=CFG.fist[1], W=sr.width, H=sr.height, cov=Math.max(W/vw,H/vh), sc, x, y;
+    if(CFG.fit.k){ sc=Math.max(CFG.fit.k*W, W/vw, (H-ty)/(vh-fy)); x=Math.min(0,Math.max(W-vw*sc, tx-fx*sc)); y=Math.max(H-vh*sc, ty-fy*sc); }
+    else{ /* desktop: zoom just enough that the picture still fills the stage with her knuckles on the letter */
+      sc=Math.min(cov*CFG.fit.max, Math.max(cov, tx/fx, (W-tx)/(vw-fx), ty/fy, (H-ty)/(vh-fy)));
+      x=Math.min(0,Math.max(W-vw*sc, tx-fx*sc)); y=Math.min(0,Math.max(H-vh*sc, ty-fy*sc)); }
     var mk=y>0?'linear-gradient(to bottom,transparent 0,#000 '+Math.round(Math.min(150,y+110))+'px)':'none'; /* top fades into the night when the picture starts lower */
     [v,stage.querySelector('.poster')].forEach(function(el){ if(!el) return; var st=el.style;
       st.left=x+'px'; st.top=y+'px'; st.right='auto'; st.bottom='auto'; st.width=vw*sc+'px'; st.height=vh*sc+'px'; st.objectFit='fill'; st.maxWidth='none'; st.webkitMaskImage=mk; st.maskImage=mk; });
