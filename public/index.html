@@ -332,6 +332,17 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 @keyframes tubeFlick{0%,86%,100%{opacity:1}87%{opacity:.15}88%{opacity:1}90%{opacity:.25}91%{opacity:.9}93%{opacity:.1}94%{opacity:1}}
 @keyframes tick{to{transform:translateX(-50%)}}
 @keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
+.nsvg use.uL{transition:none}
+.nsvg.tap-off .ly-t2 use.dk,.nsvg.tap-off .ly-t3 use.dk{opacity:0}
+.nsvg.tap-off .ly-t1 use.dk{stroke:#6b4a63;fill:#6b4a63;stroke-width:2.2;opacity:.75}
+.nsvg.tap-off .ly-t4 use.dk{opacity:.16}
+.nsvg.tap-flash .ly-t2{animation:tapFlash .7s ease-out}
+@keyframes tapFlash{0%{filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 16px #FF8CC6) drop-shadow(0 0 46px #FF4FA3) brightness(1.5)}100%{filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 10px #FF4FA3) drop-shadow(0 0 26px rgba(255,79,163,.75)) brightness(1)}}
+.tap-spark{position:absolute;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;pointer-events:none;opacity:0;z-index:2;background:radial-gradient(circle,#fff 0,#B5FFF7 28%,rgba(63,224,208,.55) 52%,rgba(63,224,208,0) 72%)}
+.tap-spark.go{animation:tapSpark .42s ease-out}
+.tap-spark.big.go{animation:tapSparkBig .6s ease-out}
+@keyframes tapSpark{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(5)}}
+@keyframes tapSparkBig{0%{opacity:1;transform:scale(.8)}100%{opacity:0;transform:scale(11)}}
 @keyframes buzz{0%,91%,100%{opacity:1}92%{opacity:.35}93%{opacity:1}95%{opacity:.6}96%{opacity:1}}
 /* lang toggle */
 .lang{display:inline-flex;min-height:40px;padding:3px;border-radius:999px;border:1px solid var(--line);background:rgba(11,10,26,.5);cursor:pointer;font:700 11px var(--sans);letter-spacing:.14em}
@@ -709,6 +720,87 @@ main{position:relative;z-index:1}
     window.addEventListener('touchstart',go,{passive:true});
   });}
   if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ e[0].isIntersecting?v.play().catch(function(){}):v.pause(); }).observe(film); }
+})();
+/* Tap gag: one letter of the neon sign dies, Mika knocks on it, it lights up again (synced to the hero video) */
+(function(){
+  var v=document.getElementById('film'), svg=document.querySelector('.nsvg'), stage=document.querySelector('.stage');
+  if(!v||!svg||!stage||!svg.getScreenCTM) return;
+  var mobile=window.matchMedia('(max-width:860px)').matches;
+  var CFG=mobile?{letter:0,fist:[329,597],fit:{k:.00156,ax:.27,ay:.12},off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]}:{letter:0,fist:[556,468],off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]};
+  if(!CFG) return;
+  var NS='http://www.w3.org/2000/svg', WORD='Montero', base=document.getElementById('nT'), ext=null, cur=-1, off=false, spark;
+  function build(){
+    var defs=svg.querySelector('defs'), i, j;
+    for(i=0;i<WORD.length;i++){
+      var t=base.cloneNode(false); t.id='nL'+i;
+      for(j=0;j<WORD.length;j++){ var ts=document.createElementNS(NS,'tspan'); ts.textContent=WORD[j]; if(j!==i) ts.setAttribute('style','visibility:hidden;fill:none;stroke:none'); t.appendChild(ts); }
+      defs.appendChild(t);
+    }
+    [].forEach.call(svg.querySelectorAll('g'),function(g){
+      g.textContent='';
+      for(var k=0;k<WORD.length;k++){ var u=document.createElementNS(NS,'use'); u.setAttribute('href','#nL'+k); u.setAttribute('class','uL uL'+k); g.appendChild(u); }
+    });
+    var m=base.cloneNode(true); m.removeAttribute('id'); m.style.visibility='hidden'; m.style.stroke='none'; svg.appendChild(m);
+    ext=[]; for(i=0;i<WORD.length;i++){ var e=m.getExtentOfChar(i); ext.push([e.x,e.y,e.width,e.height]); }
+    svg.removeChild(m);
+    spark=document.createElement('span'); spark.className='tap-spark'; stage.appendChild(spark);
+  }
+  var fitted=false;
+  function fit(){ /* phones: place the video so her knuckles land on the letter, whatever the screen height */
+    if(!CFG.fit||!ext||!v.videoWidth) return;
+    var m=svg.getScreenCTM(), sr=stage.getBoundingClientRect(), vw=v.videoWidth, vh=v.videoHeight, e=ext[CFG.letter];
+    var tx=(e[0]+e[2]*CFG.fit.ax)*m.a+m.e-sr.left, ty=(e[1]+e[3]*CFG.fit.ay)*m.d+m.f-sr.top;
+    var sc=Math.max(CFG.fit.k*sr.width, sr.width/vw, (sr.height-ty)/(vh-CFG.fist[1]));
+    var x=Math.min(0,Math.max(sr.width-vw*sc, tx-CFG.fist[0]*sc)), y=Math.max(sr.height-vh*sc, ty-CFG.fist[1]*sc);
+    var mk=y>0?'linear-gradient(to bottom,transparent 0,#000 '+Math.round(Math.min(150,y+110))+'px)':'none'; /* top fades into the night when the picture starts lower */
+    [v,stage.querySelector('.poster')].forEach(function(el){ if(!el) return; var st=el.style;
+      st.left=x+'px'; st.top=y+'px'; st.right='auto'; st.bottom='auto'; st.width=vw*sc+'px'; st.height=vh*sc+'px'; st.objectFit='fill'; st.maxWidth='none'; st.webkitMaskImage=mk; st.maskImage=mk; });
+    fitted=true;
+  }
+  function fist(){ /* knock point: video pixel -> page pixel */
+    var r=v.getBoundingClientRect(), vw=v.videoWidth, vh=v.videoHeight; if(!vw||!r.width) return null;
+    if(fitted) return [r.left+CFG.fist[0]*r.width/vw, r.top+CFG.fist[1]*r.height/vh];
+    var sc=Math.max(r.width/vw,r.height/vh), op=getComputedStyle(v).objectPosition.split(' '), px=parseFloat(op[0])/100, py=parseFloat(op[1])/100;
+    if(isNaN(px)) px=.5; if(isNaN(py)) py=.5;
+    return [r.left+(r.width-vw*sc)*px+CFG.fist[0]*sc, r.top+(r.height-vh*sc)*py+CFG.fist[1]*sc];
+  }
+  function pick(){
+    var f=fist(), m=svg.getScreenCTM(); if(!f||!m||!ext) return -1;
+    var best=-1, bd=1e9, sr=svg.getBoundingClientRect();
+    if(f[0]<sr.left-sr.width*.12||f[0]>sr.right+sr.width*.12||f[1]<sr.top-sr.height*.45||f[1]>sr.bottom+sr.height*.3) return -1;
+    if(CFG.letter!=null) return CFG.letter;
+    for(var i=0;i<ext.length;i++){
+      var cx=(ext[i][0]+ext[i][2]/2)*m.a+m.e, d=Math.abs(cx-f[0]); if(d<bd){bd=d;best=i;}
+    }
+    return best;
+  }
+  function mark(i){
+    if(i===cur) return; cur=i;
+    [].forEach.call(svg.querySelectorAll('use.uL'),function(u){ u.classList.toggle('dk', u.classList.contains('uL'+i)); });
+  }
+  function pop(big){
+    var f=fist(), sr=stage.getBoundingClientRect(); if(!f) return;
+    spark.style.left=(f[0]-sr.left)+'px'; spark.style.top=(f[1]-sr.top)+'px';
+    spark.className='tap-spark'+(big?' big':''); void spark.offsetWidth; spark.classList.add('go');
+  }
+  var last=0;
+  function tick(){
+    var t=v.currentTime, o=false, i;
+    if(t<last){ mark(pick()); } /* loop restarted: re-pick for the current layout */
+    if(cur>=0){ for(i=0;i<CFG.off.length;i++){ if(t>=CFG.off[i][0]&&t<CFG.off[i][1]){o=true;break;} } }
+    if(o!==off){
+      off=o; svg.classList.toggle('tap-off',o);
+      if(!o&&t>=CFG.on&&t<CFG.on+.4){ svg.classList.remove('tap-flash'); void svg.getBoundingClientRect(); svg.classList.add('tap-flash'); }
+    }
+    if(cur>=0){ for(i=0;i<CFG.knocks.length;i++){ var k=CFG.knocks[i]; if(last<k&&t>=k&&t-k<.25) pop(Math.abs(k-CFG.on)<.02); } }
+    last=t;
+    requestAnimationFrame(tick);
+  }
+  function start(){ try{ build(); }catch(e){ return; } fit(); mark(pick()); requestAnimationFrame(tick);
+    if(CFG.fit){ var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(fit,120); }); setTimeout(fit,900); }
+  }
+  var fr=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
+  fr.then(function(){ if(v.videoWidth) start(); else v.addEventListener('loadedmetadata',start,{once:true}); });
 })();
 </script>
 <script>
