@@ -85,6 +85,12 @@ img{display:block;max-width:100%}
   .cta-ig:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 24px rgba(63,224,208,.7),0 0 50px rgba(63,224,208,.35)}
   .cta-fan:hover{transform:translateY(-5px) scale(1.05)}
 }
+a.cta-private,a.cta-wish,a.cta-mail{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,background .25s,color .25s,border-color .25s}
+@media(hover:hover){
+  a.cta-private:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 26px rgba(255,79,163,.85),0 0 60px rgba(255,79,163,.45)}
+  a.cta-wish:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 22px rgba(255,79,163,.75),0 0 50px rgba(255,79,163,.4)}
+  a.cta-mail:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 22px rgba(63,224,208,.8),0 0 50px rgba(63,224,208,.4)}
+}
 .links a:focus-visible,.lang:focus-visible,.tab:focus-visible{transform:translateY(-3px) scale(1.08)}
 /* marquee as LED display (same dot technique as the MONTERO sign) */
 .marquee{--px:clamp(4px,.36vw,6px);background:#03181e;border-top:2px solid #7FF5EA;border-bottom:2px solid #7FF5EA;padding:calc(var(--px)*3.5) 0;
