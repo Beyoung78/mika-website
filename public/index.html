@@ -336,6 +336,9 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 .nsvg.tap-off .ly-t2 use.dk,.nsvg.tap-off .ly-t3 use.dk{opacity:0}
 .nsvg.tap-off .ly-t1 use.dk{stroke:#6b4a63;fill:#6b4a63;stroke-width:2.2;opacity:.75}
 .nsvg.tap-off .ly-t4 use.dk{opacity:.16}
+.nsvg.tap-dim .ly-t2 use.dk{opacity:.42}.nsvg.tap-dim .ly-t3 use.dk{opacity:.3}.nsvg.tap-dim .ly-t4 use.dk{opacity:.5}
+.nsvg.tap-sag .pk.ly-t2{filter:drop-shadow(0 0 2px #FF4FA3) drop-shadow(0 0 7px #FF4FA3) drop-shadow(0 0 16px rgba(255,79,163,.45)) brightness(.82)}
+.nsvg.tap-sag .ly-t4{opacity:.6}
 .nsvg.tap-flash .ly-t2{animation:tapFlash .7s ease-out}
 @keyframes tapFlash{0%{filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 16px #FF8CC6) drop-shadow(0 0 46px #FF4FA3) brightness(1.5)}100%{filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 10px #FF4FA3) drop-shadow(0 0 26px rgba(255,79,163,.75)) brightness(1)}}
 .tap-spark{position:absolute;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;pointer-events:none;opacity:0;z-index:2;background:radial-gradient(circle,#fff 0,#B5FFF7 28%,rgba(63,224,208,.55) 52%,rgba(63,224,208,0) 72%)}
@@ -735,7 +738,7 @@ main{position:relative;z-index:1}
   var v=document.getElementById('film'), svg=document.querySelector('.nsvg'), stage=document.querySelector('.stage');
   if(!v||!svg||!stage||!svg.getScreenCTM) return;
   var mobile=window.matchMedia('(max-width:860px)').matches;
-  var CFG=mobile?{letter:0,fist:[329,597],fit:{k:.00156,ax:.27,ay:.12},off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]}:{letter:0,fist:[556,644],fit:{ax:1.12,ay:.26,max:1.45},off:[[2.60,2.66],[2.80,2.90],[3.05,3.45],[3.52,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]};
+  var CFG=mobile?{letter:0,fist:[329,597],fit:{k:.00156,ax:.27,ay:.12},off:[[2.38,2.42],[2.56,2.59],[2.63,2.71],[2.85,2.88],[2.96,3.13],[3.17,3.20],[3.25,3.50],[3.55,3.58],[3.64,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],dim:[[2.42,2.56],[2.71,2.85],[3.13,3.17],[3.50,3.55],[3.58,3.64],[5.43,5.50],[5.68,5.76],[5.85,5.93],[6.01,6.08]],sag:[[2.63,2.71],[2.96,3.06],[3.25,3.33],[3.64,3.70]],zz:[[2.38,.18],[2.56,.15],[2.85,.28],[3.17,.33],[3.55,.09]],die:3.64,on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]}:{letter:0,fist:[556,644],fit:{ax:1.12,ay:.26,max:1.45},off:[[2.38,2.42],[2.56,2.59],[2.63,2.71],[2.85,2.88],[2.96,3.13],[3.17,3.20],[3.25,3.50],[3.55,3.58],[3.64,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],dim:[[2.42,2.56],[2.71,2.85],[3.13,3.17],[3.50,3.55],[3.58,3.64],[5.43,5.50],[5.68,5.76],[5.85,5.93],[6.01,6.08]],sag:[[2.63,2.71],[2.96,3.06],[3.25,3.33],[3.64,3.70]],zz:[[2.38,.18],[2.56,.15],[2.85,.28],[3.17,.33],[3.55,.09]],die:3.64,on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]};
   if(!CFG) return;
   var NS='http://www.w3.org/2000/svg', WORD='Montero', base=document.getElementById('nT'), ext=null, cur=-1, off=false, spark;
   function build(){
@@ -795,7 +798,38 @@ main{position:relative;z-index:1}
     spark.style.left=(f[0]-sr.left)+'px'; spark.style.top=(f[1]-sr.top)+'px';
     spark.className='tap-spark'+(big?' big':''); void spark.offsetWidth; spark.classList.add('go');
   }
-  var last=0;
+  var last=0, dimS=false, sagS=false;
+  /* Sound: mains buzz while the tube struggles, knuckles on glass. Browsers only allow audio after the visitor's first tap or click. */
+  var sfx=(function(){
+    var AC=window.AudioContext||window.webkitAudioContext, ctx=null, out=null, noise=null, song=document.getElementById('song'), seen=true;
+    function arm(){ if(!AC) return; if(!ctx){ try{ ctx=new AC(); out=ctx.createGain(); out.gain.value=.5; var cp=ctx.createDynamicsCompressor(); out.connect(cp); cp.connect(ctx.destination);
+        var n=ctx.sampleRate*1.5, bf=ctx.createBuffer(1,n,ctx.sampleRate), d=bf.getChannelData(0); for(var i=0;i<n;i++) d[i]=Math.random()*2-1; noise=bf; }catch(e){ ctx=null; return; } }
+      if(ctx.state==='suspended') ctx.resume(); }
+    ['pointerdown','keydown','touchend'].forEach(function(ev){ window.addEventListener(ev,arm,{passive:true}); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(e){ seen=e[0].intersectionRatio>.35; },{threshold:[0,.35,.6]}).observe(stage);
+    function ok(){ if(!ctx||ctx.state!=='running'||!seen||document.hidden) return false; if(song&&!song.paused) return false;
+      var vs=document.querySelectorAll('video'); for(var i=0;i<vs.length;i++){ if(!vs[i].paused&&!vs[i].muted) return false; } return true; }
+    function env(g,t,a,peak,d){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+a); g.gain.exponentialRampToValueAtTime(0.0001,t+a+d); }
+    function nz(t,dur,f,q,peak,type){ var s=ctx.createBufferSource(); s.buffer=noise; s.loop=true; var bp=ctx.createBiquadFilter(); bp.type=type||'bandpass'; bp.frequency.value=f; bp.Q.value=q; var g=ctx.createGain();
+      s.connect(bp); bp.connect(g); g.connect(out); env(g,t,.004,peak,dur); s.start(t,Math.random()); s.stop(t+dur+.05); return g; }
+    function hum(t,dur,peak){ /* 60 Hz transformer buzz: rough 120 Hz with harsh overtones, chopped at mains rate */
+      var g=ctx.createGain(), lp=ctx.createBiquadFilter(), hp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=5200; hp.type='highpass'; hp.frequency.value=140;
+      [[120,'sawtooth',.5],[60,'square',.22],[240,'sawtooth',.2],[1740,'square',.05]].forEach(function(o){ var os=ctx.createOscillator(), og=ctx.createGain(); os.type=o[1]; os.frequency.value=o[0]*(1+(Math.random()-.5)*.01); og.gain.value=o[2]; os.connect(og); og.connect(hp); os.start(t); os.stop(t+dur+.06); });
+      var ch=ctx.createGain(), lfo=ctx.createOscillator(), lg=ctx.createGain(); lfo.type='square'; lfo.frequency.value=60; lg.gain.value=.45; ch.gain.value=.55; lfo.connect(lg); lg.connect(ch.gain); lfo.start(t); lfo.stop(t+dur+.06);
+      hp.connect(lp); lp.connect(ch); ch.connect(g); g.connect(out);
+      g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+.008); g.gain.setValueAtTime(peak,t+Math.max(.01,dur-.02)); g.gain.exponentialRampToValueAtTime(0.0001,t+dur+.03); }
+    return {
+      buzz:function(dur){ if(!ok()) return; var t=ctx.currentTime+.005; hum(t,dur,.16); nz(t,.03,4200,1.2,.22); /* arc crackle */
+        var n=Math.max(1,Math.round(dur*22)); for(var i=0;i<n;i++) nz(t+Math.random()*dur,.012+Math.random()*.02,2600+Math.random()*4200,2,.07+Math.random()*.1); },
+      die:function(){ if(!ok()) return; var t=ctx.currentTime+.005; nz(t,.05,3200,1,.3); nz(t+.02,.22,900,.7,.1,'lowpass');
+        var o=ctx.createOscillator(), g=ctx.createGain(); o.type='sawtooth'; o.frequency.setValueAtTime(120,t); o.frequency.exponentialRampToValueAtTime(38,t+.28); o.connect(g); g.connect(out); env(g,t,.005,.14,.28); o.start(t); o.stop(t+.35); },
+      knock:function(fin){ if(!ok()) return; var t=ctx.currentTime+.005; /* knuckle on a glass tube: click, short glassy ring, small body thump */
+        nz(t,.012,3400,.8,.34);
+        [[1320,.2,.07],[2470,.12,.05],[3890,.06,.035]].forEach(function(p){ var o=ctx.createOscillator(), g=ctx.createGain(); o.type='sine'; o.frequency.value=p[0]*(1+(Math.random()-.5)*.03); o.connect(g); g.connect(out); env(g,t,.002,p[1],p[2]); o.start(t); o.stop(t+p[2]+.05); });
+        var th=ctx.createOscillator(), tg=ctx.createGain(); th.type='sine'; th.frequency.setValueAtTime(210,t); th.frequency.exponentialRampToValueAtTime(95,t+.07); th.connect(tg); tg.connect(out); env(tg,t,.003,.3,.08); th.start(t); th.stop(t+.14);
+        if(fin){ hum(t+.02,.34,.13); nz(t+.02,.05,5200,1.5,.2); } else { nz(t+.015,.03,4800,2,.1); hum(t+.015,.05,.09); } }
+    };
+  })();
   function tick(){
     var t=v.currentTime, o=false, i;
     if(t<last){ mark(pick()); } /* loop restarted: re-pick for the current layout */
@@ -804,7 +838,18 @@ main{position:relative;z-index:1}
       off=o; svg.classList.toggle('tap-off',o);
       if(!o&&t>=CFG.on&&t<CFG.on+.4){ svg.classList.remove('tap-flash'); void svg.getBoundingClientRect(); svg.classList.add('tap-flash'); }
     }
-    if(cur>=0){ for(i=0;i<CFG.knocks.length;i++){ var k=CFG.knocks[i]; if(last<k&&t>=k&&t-k<.25) pop(Math.abs(k-CFG.on)<.02); } }
+    var dm=false, sg=false;
+    if(cur>=0){
+      for(i=0;i<CFG.dim.length;i++){ if(t>=CFG.dim[i][0]&&t<CFG.dim[i][1]){dm=true;break;} }
+      for(i=0;i<CFG.sag.length;i++){ if(t>=CFG.sag[i][0]&&t<CFG.sag[i][1]){sg=true;break;} }
+    }
+    if(dm!==dimS){ dimS=dm; svg.classList.toggle('tap-dim',dm); }
+    if(sg!==sagS){ sagS=sg; svg.classList.toggle('tap-sag',sg); }
+    if(cur>=0){
+      for(i=0;i<CFG.knocks.length;i++){ var k=CFG.knocks[i]; if(last<k&&t>=k&&t-k<.25){ var fin=Math.abs(k-CFG.on)<.02; pop(fin); sfx.knock(fin); } }
+      for(i=0;i<CFG.zz.length;i++){ var z=CFG.zz[i]; if(last<z[0]&&t>=z[0]&&t-z[0]<.25) sfx.buzz(z[1]); }
+      if(last<CFG.die&&t>=CFG.die&&t-CFG.die<.25) sfx.die();
+    }
     last=t;
     requestAnimationFrame(tick);
   }
