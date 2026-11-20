@@ -271,19 +271,19 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 
 /* neon sign */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.neon-sign{position:relative;display:block;width:100%;aspect-ratio:12.6/1.75;margin-top:.14em;border-radius:.16em;overflow:hidden;container-type:inline-size;
-  border:max(2px,.022em) solid #7FF5EA;background:linear-gradient(180deg,#041c22,#03141a);
-  box-shadow:0 0 4px #B8FFF7,0 0 14px #3FE0D0,0 0 34px rgba(63,224,208,.65),0 0 70px rgba(63,224,208,.35),inset 0 0 22px rgba(63,224,208,.28),inset 0 0 60px rgba(255,79,163,.12);
-  animation:neonOn 2.4s linear .5s both,buzz 11s linear 4s infinite}
-/* Miami neon sign: hollow glowing tube letters and a neon flamingo between the names */
-.neon-sign::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,#03161c,transparent 4%,transparent 96%,#03161c)}
-.ticker{position:relative;z-index:1;display:flex;width:max-content;height:100%;align-items:center;animation:tick 12s linear infinite}
-.ticker span{flex:none;display:inline-flex;align-items:center;gap:.34em;padding-right:.34em;font-size:calc(100cqw / 12.9);line-height:1;letter-spacing:.05em;white-space:nowrap;
-  color:rgba(255,214,236,.16);-webkit-text-stroke:.034em #FFB8DE;paint-order:stroke fill;
-  filter:drop-shadow(0 0 .035em #fff) drop-shadow(0 0 .12em #FF4FA3) drop-shadow(0 0 .34em rgba(255,79,163,.85))}
-.ticker .fl{flex:none;height:1.5em;width:auto;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
-.ticker .fl .b{stroke:#FF9AD2}
-.ticker .fl .g{stroke:#7FF5EA;filter:drop-shadow(0 0 2px #3FE0D0)}
+/* free-standing Miami neon: flamingo + MONTERO in glowing tubes, no box */
+.neon-sign{position:relative;display:block;width:100%;margin-top:.12em;container-type:inline-size;animation:neonOn 2.4s linear .5s both}
+.ticker{display:flex;align-items:center;gap:calc(100cqw / 34);font-size:calc(100cqw / 11.1);line-height:1}
+.ticker .word{display:inline-flex;letter-spacing:.05em;white-space:nowrap;color:rgba(255,214,236,.14);-webkit-text-stroke:.034em #FFB8DE;paint-order:stroke fill;
+  filter:drop-shadow(0 0 .035em #fff) drop-shadow(0 0 .12em #FF4FA3) drop-shadow(0 0 .36em rgba(255,79,163,.9)) drop-shadow(0 0 .9em rgba(255,79,163,.45));
+  animation:buzz 9s linear 4s infinite}
+.ticker .word b{font-weight:inherit}
+.ticker .word b:nth-child(4){animation:tubeFlick 6.5s linear 3s infinite}
+.ticker .fl{flex:none;height:1.9em;width:auto;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:3;
+  filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 5px #FF4FA3) drop-shadow(0 0 16px rgba(255,79,163,.8));animation:buzz 7s linear 2.2s infinite}
+.ticker .fl .b{stroke:#FFA6D8}
+.ticker .fl .g{stroke:#8FFBF0;filter:drop-shadow(0 0 3px #3FE0D0) drop-shadow(0 0 9px #3FE0D0)}
+@keyframes tubeFlick{0%,86%,100%{opacity:1}87%{opacity:.15}88%{opacity:1}90%{opacity:.25}91%{opacity:.9}93%{opacity:.1}94%{opacity:1}}
 @keyframes tick{to{transform:translateX(-50%)}}
 @keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
 @keyframes buzz{0%,91%,100%{opacity:1}92%{opacity:.35}93%{opacity:1}95%{opacity:.6}96%{opacity:1}}
@@ -308,7 +308,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
 @media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
 main{position:relative;z-index:1}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .ticker{animation:tick 11s linear infinite!important}.marquee .track{animation:scroll 28s linear infinite!important}.eye-glow,.tag{animation:eyePulse 1.5s ease-in-out infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}.sp-embed.on::before{animation:spSpin 9s linear infinite!important}.sp-embed.on::after{animation:spSpin 14s linear infinite reverse!important}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .word{animation:buzz 9s linear 4s infinite!important}.neon-sign .word b:nth-child(4){animation:tubeFlick 6.5s linear 3s infinite!important}.neon-sign .fl{animation:buzz 7s linear 2.2s infinite!important}.marquee .track{animation:scroll 28s linear infinite!important}.eye-glow,.tag{animation:eyePulse 1.5s ease-in-out infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}.sp-embed.on::before{animation:spSpin 9s linear infinite!important}.sp-embed.on::after{animation:spSpin 14s linear infinite reverse!important}}
 @media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
 
 /* legal */
@@ -379,7 +379,7 @@ main{position:relative;z-index:1}
       <video id="film" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video>
       <div class="hero-copy">
       <span class="tag"><i aria-hidden="true"></i><span data-i18n="tag" data-rel>New single coming soon</span></span>
-      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><span class="ticker"><span>MONTERO<svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg>MONTERO<svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg>MONTERO<svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg></span><span>MONTERO<svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg>MONTERO<svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg>MONTERO<svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg></span></span></span></h1>
+      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><span class="ticker"><svg class="fl" viewBox="14 8 58 90" aria-hidden="true"><path class="b" d="M30 53c0-13 22-15 28-5 5 8-3 16-14 16-8 0-14-4-14-11z"/><path class="b" d="M58 48l9-5"/><path class="b" d="M34 46c-12-7-15-20-6-27 7-6 17-2 17 6"/><circle class="b" cx="43" cy="20" r="1.2"/><path class="b" d="M45 25c3 6-1 10-6 8"/><path class="g" d="M42 64v29m-6 0h12"/><path class="g" d="M51 62l6 14-9 9"/></svg><span class="word"><b>M</b><b>O</b><b>N</b><b>T</b><b>E</b><b>R</b><b>O</b></span></span></span></h1>
       <p class="lead" data-i18n="lead">Miami nights. Honolulu heart.</p>
       <p class="sub" data-i18n="sub">Singer and songwriter from Miami. I write my songs at night, when the city glows pink and everything feels possible. My first single, Break You Out, drops Monday. Turn it up.</p>
       <div class="actions">
