@@ -71,7 +71,8 @@ img{display:block;max-width:100%}
 .marquee .track span:nth-child(odd){color:var(--ink)}
 .marquee .track span:nth-child(even){color:var(--pink)}
 /* everything clickable comes forward on hover */
-.links a:not(.nav-cta){display:inline-block}
+.links a:not(.nav-cta):not(.hide-sm){display:inline-block}
+@media(min-width:761px){.links a.hide-sm{display:inline-block}}
 .links a{transition:color .25s,transform .28s cubic-bezier(.2,.9,.3,1.4),text-shadow .25s,box-shadow .28s}
 .lang,.tab,.player,.cta-ig,.cta-fan{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,background .25s,color .25s,border-color .25s}
 @media(hover:hover){
