@@ -402,23 +402,13 @@ main{position:relative;z-index:1}
   repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 1px,transparent 1px 68px),#0B0A1A}
 .neonwall.mid{margin-top:clamp(64px,8vw,110px);padding:clamp(34px,5vw,60px) 18px clamp(28px,4vw,48px)}
 .neonwall.mid .palm-sign{width:min(400px,74vw)}
-.neonwall.mid{--pw:min(400px,74vw)}
-.neonwall.mid .palm-sign{position:relative}
-.neonwall.mid .palm-sign>svg:not(.skyline),.neonwall.mid .palm-sign>.neon-txt{position:relative;z-index:1}
-.palm-sign svg.skyline{position:absolute;z-index:0;left:50%;top:calc(var(--pw)*.152);width:calc(var(--pw)*4);height:calc(var(--pw)*.525);max-width:none;transform:translateX(-50%);overflow:visible;pointer-events:none;opacity:.8}
-.skyline .sk{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.2}
-.skyline .pu{stroke:#C77DFF;filter:drop-shadow(0 0 3px #C77DFF) drop-shadow(0 0 10px rgba(199,125,255,.6))}
-.skyline .pk{stroke:#FF4FA3;filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 10px rgba(255,79,163,.6))}
-.skyline .pa{stroke:#FF6FB5;stroke-width:2.4;filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 9px rgba(255,79,163,.6))}
-.skyline .gr{stroke:#3FE0D0;stroke-width:2.6;filter:drop-shadow(0 0 4px #3FE0D0) drop-shadow(0 0 12px rgba(63,224,208,.55))}
-.skyline .wn{stroke:#FFD9A8;stroke-width:2.6;opacity:.75;filter:drop-shadow(0 0 3px #FFB86B)}
-.skyline .fl{animation:winFl 7s linear infinite}.skyline .f1{animation-duration:11s;animation-delay:-3s}.skyline .f2{animation-duration:9s;animation-delay:-6s}
-@keyframes winFl{0%,38%{opacity:1}39%,41%{opacity:.1}42%,70%{opacity:1}71%,88%{opacity:0}89%{opacity:1}90%{opacity:.2}91%,100%{opacity:1}}
-.skyline .car{fill:none;stroke-linecap:round;stroke-linejoin:round;animation:carDrive 15s linear infinite}
-.skyline .cb{stroke:#FFE6F3;stroke-width:2.4;filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 9px #FF4FA3)}
-.skyline .cw{stroke:#7CFFD6;stroke-width:2.4;filter:drop-shadow(0 0 4px #3FE0D0)}
-.skyline .cl{stroke:#FFE9A8;stroke-width:3;filter:drop-shadow(0 0 5px #FFD36B) drop-shadow(8px 0 10px #FFD36B)}
-@keyframes carDrive{0%{transform:translateX(-130px)}50%,100%{transform:translateX(1730px)}}
+.neonwall.mid{display:block;padding:0;aspect-ratio:2/1;max-height:min(860px,92vh);min-height:400px;background:var(--night)}
+.neonwall.mid .nw-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.neonwall.mid video.nw-bg{opacity:0;transition:opacity .9s}.neonwall.mid video.nw-bg.ready{opacity:1}
+.neonwall.mid::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,var(--night) 0,rgba(11,10,26,.55) 16%,rgba(11,10,26,0) 42%,rgba(11,10,26,0) 78%,var(--night) 100%)}
+.neonwall.mid .palm-sign{position:absolute;z-index:2;left:50%;top:5%;transform:translateX(-50%);width:min(300px,23vw,38vh)}
+.neonwall.mid .neon-txt{font-size:clamp(17px,2.3vw,32px)}
+@media(max-width:860px){.neonwall.mid{aspect-ratio:4/5;max-height:none}.neonwall.mid .nw-bg{object-position:50% 70%}.neonwall.mid .palm-sign{width:min(230px,56vw);top:4%}.neonwall.mid .neon-txt{font-size:clamp(17px,5vw,24px)}}
 .section.after-neon{padding-top:clamp(48px,6vw,84px)}
 .palm-sign{width:min(560px,88vw);display:flex;flex-direction:column;align-items:center;gap:6px}
 .palm-sign svg{width:100%;height:auto;overflow:visible}
@@ -604,9 +594,10 @@ main{position:relative;z-index:1}
     </section>
   </div>
 
-  <section class="neonwall mid" aria-label="Neon sign: palm tree and sunset, Miami nights">
+  <section class="neonwall mid" aria-label="Miami at night: neon-lit boulevard with a neon sign of a palm tree and sunset">
+    <img class="nw-bg" src="assets/miami-street.jpg" alt="" loading="lazy" decoding="async">
+    <video class="nw-bg" id="nw-vid" muted playsinline loop preload="none" aria-hidden="true"></video>
     <div class="palm-sign" id="palm-sign">
-      <svg class="skyline" viewBox="0 0 1600 210" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g class="sk pu"><path d="M40 200V175A23.0 23.0 0 0 1 86 175V200 M86 200V131H146V200 M186 200V88H246V200 M252 200V84H304V200 M304 200V60H311V44H331V60H338V200 M408 200V73H454V200 M454 200V89H466V75H476V89H488V200M471 75V53 M488 200V120H501V104H535V120H548V200 M608 200V162A16.0 16.0 0 0 1 640 162V200 M1030 200V152H1040V136H1066V152H1076V200 M1076 200V156H1087V140H1117V156H1128V200 M1200 200V96H1213V80H1247V96H1260V200 M1260 200V86H1268V70H1292V86H1300V200 M1306 200V102H1316V86H1342V102H1352V200 M1414 200V110H1448V200 M1448 200V134H1494V200 M1494 200V152H1540V200"/></g><g class="sk pk"><path d="M146 200V124H186V200 M338 200V79H398V200 M548 200V123H573V109H583V123H608V200M578 109V87 M1138 200V131H1149V115H1179V131H1190V200 M1352 200V94A26.0 26.0 0 0 1 1404 94V200"/></g><g class="sk pa"><path d="M14 200C16 170 17 152 20 138M20 138c-10 -10 -22 -9 -30 -2M20 138c-4 -14 -16 -20 -26 -18M20 138c2 -14 12 -20 22 -20M20 138c12 -8 24 -6 30 2M20 138c8 0 16 6 18 16M1580 200C1578 170 1577 152 1574 138M1574 138c-10 -10 -22 -9 -30 -2M1574 138c-4 -14 -16 -20 -26 -18M1574 138c2 -14 12 -20 22 -20M1574 138c12 -8 24 -6 30 2M1574 138c8 0 16 6 18 16M668 200C670 170 671 152 674 138M674 138c-10 -10 -22 -9 -30 -2M674 138c-4 -14 -16 -20 -26 -18M674 138c2 -14 12 -20 22 -20M674 138c12 -8 24 -6 30 2M674 138c8 0 16 6 18 16M1004 200C1002 170 1001 152 998 138M998 138c-10 -10 -22 -9 -30 -2M998 138c-4 -14 -16 -20 -26 -18M998 138c2 -14 12 -20 22 -20M998 138c12 -8 24 -6 30 2M998 138c8 0 16 6 18 16"/></g><g class="sk wn"><path d="M1162 166h10"/><path d="M586 161h10"/><path d="M465 162h10"/><path d="M620 172h10"/><path d="M1106 170h10"/><path d="M462 182h10"/><path d="M1317 152h10"/><path d="M1269 171h10"/><path d="M50 182h10"/><path d="M1149 158h10"/><path d="M466 168h10"/><path d="M584 176h10"/><path d="M1459 178h10"/><path d="M620 176h10"/><path d="M1231 151h10"/><path d="M420 130h10"/><path d="M615 182h10"/><path d="M201 119h10"/><path d="M49 178h10"/><path d="M1513 182h10"/><path d="M156 157h10"/><path d="M1324 180h10"/><path class="fl f0" d="M312 117h10"/><path class="fl f1" d="M1095 173h10"/><path class="fl f2" d="M424 145h10"/><path class="fl f0" d="M1423 164h10"/><path class="fl f1" d="M119 170h10"/><path class="fl f2" d="M166 153h10"/></g><g class="car"><path class="cb" d="M6 191V182Q7 177 16 177H50L60 165M57 177H78Q92 178 95 186V191H84M64 191H32M12 191H6M60 165L65 177M36 177V171H44V177"/><path class="cw" d="M22 186a7 7 0 1 0 .01 0M74 186a7 7 0 1 0 .01 0"/><path class="cl" d="M97 186h9"/></g><g class="sk gr"><path d="M0 200H690M980 200H1600"/></g></svg>
       <svg viewBox="0 0 400 320" role="img" aria-hidden="true">
         <defs>
           <linearGradient id="sunG" gradientUnits="userSpaceOnUse" x1="0" y1="58" x2="0" y2="242"><stop offset="0" stop-color="#FF4FA3"/><stop offset=".55" stop-color="#C77DFF"/><stop offset="1" stop-color="#FF9E5E"/></linearGradient>
@@ -1001,6 +992,12 @@ d.addEventListener('click',function(e){ if(e.target===d) d.close(); });})();
 (function(){var el=document.getElementById('palm-sign');
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){el.classList.add('on');return;}
 var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ el.classList.add('on'); io.disconnect(); } },{threshold:.35}); io.observe(el);})();
+</script>
+<script>
+/* Miami street loop: load only when the section comes near the viewport */
+(function(){var v=document.getElementById('nw-vid'); if(!v||!('IntersectionObserver' in window)) return; var loaded=false;
+  new IntersectionObserver(function(e){ if(e[0].isIntersecting){ if(!loaded){ loaded=true; v.src=window.matchMedia('(max-width:860px)').matches?'assets/miami-street-mobile.mp4':'assets/miami-street.mp4'; v.addEventListener('playing',function(){v.classList.add('ready')},{once:true}); } var p=v.play(); if(p&&p.catch) p.catch(function(){}); } else if(loaded){ v.pause(); } },{rootMargin:'300px 0px'}).observe(v.parentNode);
+})();
 </script>
 </body>
 </html>
