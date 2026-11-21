@@ -316,6 +316,20 @@ h3{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6v
 footer{padding:40px var(--pad) 48px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;font-size:14px;color:var(--dim);max-width:1280px;margin:0 auto}
 footer nav{display:flex;gap:22px;flex-wrap:wrap}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+/* mini player: only while music plays and the deck is out of view */
+.mini{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));z-index:60;width:min(560px,calc(100% - 24px));display:flex;align-items:center;gap:12px;padding:8px 8px 8px 8px;border-radius:14px;background:rgba(20,18,28,.96);border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 40px rgba(0,0,0,.55);transform:translate(-50%,140%);opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.mini.on{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.mini-go{display:flex;align-items:center;gap:12px;flex:1;min-width:0;background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.mini img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex:0 0 auto}
+.mini-t{min-width:0;display:flex;flex-direction:column;gap:3px}
+.mini-t b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini-t span{font-size:12px;color:var(--mute)}
+.mini-bar{position:absolute;left:14px;right:14px;bottom:3px;height:2px;border-radius:2px;background:rgba(255,255,255,.08);overflow:hidden}
+.mini-bar i{display:block;height:100%;width:0;background:var(--pink)}
+.mini-b{flex:0 0 auto;width:44px;height:44px;border-radius:10px;border:0;display:grid;place-items:center;cursor:pointer;color:var(--ink);background:rgba(255,255,255,.06)}
+.mini-b.pp{background:var(--pink);color:#14040C}
+.mini-b svg{width:18px;height:18px;fill:currentColor}
+.mini-b:focus-visible,.mini-go:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*70ms),transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*70ms)}
 .rv.in{opacity:1;transform:none}
@@ -482,6 +496,12 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <div class="row rv" style="--d:3"><a class="btn btn-p" href="mailto:booking@mikamontero.com">booking@mikamontero.com</a><a class="btn btn-g" href="press.html">Press kit</a></div>
   </section>
 </main>
+<div class="mini" id="mini" role="region" aria-label="Now playing">
+  <button class="mini-go" id="mini-go" type="button" aria-label="Back to the player"><img id="mini-c" src="assets/img/single-cover.jpg" alt=""><span class="mini-t"><b id="mini-ti">Break You Out</b><span>Mika Montero · preview</span></span></button>
+  <button class="mini-b pp" id="mini-pp" type="button" aria-label="Pause"><svg viewBox="0 0 24 24" id="mini-ico"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button>
+  <button class="mini-b" id="mini-nx" type="button" aria-label="Next track"><svg viewBox="0 0 24 24"><path d="M17.5 5H20v14h-2.5zM4 5l12 7-12 7z"/></svg></button>
+  <div class="mini-bar" aria-hidden="true"><i id="mini-bar"></i></div>
+</div>
 <footer>
   <span>© 2026 Mika Montero</span>
   <nav><a href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener">Spotify</a><a href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener">Apple Music</a><a href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">Instagram</a><a href="press.html">Press</a></nav>
@@ -655,6 +675,21 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 (function(){ var tl=document.getElementById('dk-tl'), deck=document.getElementById('dk-deck'); if(!tl||!deck) return;
   tl.addEventListener('click',function(e){ if(!e.target.closest('button')||innerWidth>860) return; var r=deck.getBoundingClientRect(), top=scrollY+r.top-70, room=innerHeight-70;
     if(r.top<60||r.bottom>innerHeight) scrollTo({top:r.height<room?top-(room-r.height)/2:top,behavior:'smooth'}); });
+})();
+/* mini player */
+(function(){ var m=document.getElementById('mini'), au=document.getElementById('song'), deck=document.getElementById('dk-deck'); if(!m||!au||!deck) return;
+  var seen=true, PAUSE='<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>', PLAY='<path d="M6 4l14 8-14 8z"/>';
+  function sync(){ var started=!!au.getAttribute('src')&&(au.currentTime>0||!au.paused);
+    m.classList.toggle('on', started && !seen);
+    document.getElementById('mini-ti').textContent=document.getElementById('dk-ls').textContent;
+    document.getElementById('mini-c').src=document.getElementById('dk-lc').src;
+    document.getElementById('mini-ico').innerHTML=au.paused?PLAY:PAUSE; document.getElementById('mini-pp').setAttribute('aria-label',au.paused?'Play':'Pause'); }
+  new IntersectionObserver(function(e){ seen=e[0].isIntersecting; sync(); },{threshold:.25}).observe(deck);
+  ['play','pause','ended','loadedmetadata'].forEach(function(ev){ au.addEventListener(ev,sync); });
+  au.addEventListener('timeupdate',function(){ if(au.duration) document.getElementById('mini-bar').style.width=(au.currentTime/au.duration*100).toFixed(1)+'%'; });
+  document.getElementById('mini-pp').addEventListener('click',function(){ document.getElementById('dk-play').click(); });
+  document.getElementById('mini-nx').addEventListener('click',function(){ document.getElementById('dk-next').click(); setTimeout(sync,50); });
+  document.getElementById('mini-go').addEventListener('click',function(){ var r=deck.getBoundingClientRect(); scrollTo({top:scrollY+r.top-Math.max(70,(innerHeight-r.height)/2),behavior:'smooth'}); });
 })();
 /* only one thing plays at a time */
 (function(){ var vids=document.querySelectorAll('.vid video'), song=document.getElementById('song');
