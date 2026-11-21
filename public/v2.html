@@ -225,6 +225,8 @@ a{color:inherit}
 /* nav */
 .nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px var(--pad);transition:background .35s,backdrop-filter .35s,padding .35s}
 .nav.solid{background:rgba(9,8,14,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.nav.solid{will-change:auto}
+@media(max-width:860px){.nav.solid{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(9,8,14,.96)}}
 .logo{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.16em;text-decoration:none}
 .logo span{color:var(--pink)}
 .nav ul{display:flex;align-items:center;gap:30px;margin:0;padding:0;list-style:none;font-size:14px;font-weight:500}
@@ -284,6 +286,7 @@ h3{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6v
 #mm1 .dk-spot{background:rgba(255,255,255,.03)!important;color:var(--ink)!important;border:1px solid rgba(255,255,255,.2)!important;box-shadow:none!important}
 #mm1 .dk-spot:hover{border-color:rgba(255,255,255,.45)!important}
 #mm1 .dk-ambi{opacity:.55}
+@media(max-width:700px){#mm1 .dk-bay{height:calc(222*var(--u))!important}#mm1 .dk-tape{top:calc(14*var(--u))!important;bottom:calc(14*var(--u))!important}#mm1 .dk-label{top:calc(8*var(--u))!important;height:calc(74*var(--u))!important}#mm1 .dk-label img{width:calc(56*var(--u))!important;height:calc(56*var(--u))!important}#mm1 .dk-win{top:calc(92*var(--u))!important;height:calc(80*var(--u))!important}#mm1 .dk-tape .dk-foot{height:calc(24*var(--u))!important}#mm1 .dk-vu{height:calc(92*var(--u))!important}#mm1 .dk-eq{height:calc(78*var(--u))!important}#mm1 .dk-main{gap:calc(10*var(--u))!important}#mm1 .dk-side-r{gap:calc(10*var(--u))!important}#mm1 .dk-ctl{margin-top:calc(14*var(--u))!important;gap:calc(12*var(--u))!important}#mm1 .dk-key{height:calc(56*var(--u))!important}#mm1 .dk-spot{height:calc(44*var(--u))!important}#mm1 .dk-top{padding-bottom:calc(10*var(--u))!important}#mm1 .dk-scene{padding:20px 0 28px!important}.listen .lede{display:none}}
 #mm1 .dk-list{margin-top:28px!important}
 #mm1 .dk-list h4{display:none}
 #mm1 .dk-list button{border-radius:var(--r)!important}
@@ -293,7 +296,7 @@ h3{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6v
 .vid video{width:100%;aspect-ratio:9/16;max-height:78vh;object-fit:cover;border-radius:14px;background:#000;display:block}
 .vid figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:14px;color:var(--mute)}
 .vid figcaption b{color:var(--ink);font-weight:600}
-@media(max-width:700px){.vids{grid-template-columns:1fr}.vid video{max-height:none}}
+@media(max-width:700px){.vids{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:36px calc(-1*var(--pad)) 0;padding:0 var(--pad) 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.vids::-webkit-scrollbar{display:none}.vid{flex:0 0 72%;scroll-snap-align:start}.vid video{max-height:none}}
 /* gallery */
 .gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.4vw,18px);margin-top:48px}
 .ph{margin:0;overflow:hidden;border-radius:12px}
@@ -448,8 +451,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <p class="eyebrow rv">Videos</p>
     <h2 class="rv" style="--d:1">Watch</h2>
     <div class="vids">
-      <figure class="vid rv"><video src="assets/teaser.mp4" poster="assets/img/teaser-poster.jpg" controls playsinline preload="none"></video><figcaption><b>Break You Out</b><span>Teaser</span></figcaption></figure>
-      <figure class="vid rv" style="--d:1" id="rx-vid"><video src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.jpg" controls playsinline preload="none"></video><figcaption><b>Dark Disco Dub</b><span>The Remixes · trailer</span></figcaption></figure>
+      <figure class="vid"><video src="assets/teaser.mp4" poster="assets/img/teaser-poster.jpg" controls playsinline preload="none"></video><figcaption><b>Break You Out</b><span>Teaser</span></figcaption></figure>
+      <figure class="vid" id="rx-vid"><video src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.jpg" controls playsinline preload="none"></video><figcaption><b>Dark Disco Dub</b><span>The Remixes · trailer</span></figcaption></figure>
     </div>
   </section>
 
@@ -646,6 +649,11 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   var cov=document.getElementById('cov'), raf=0;
   function drift(){ raf=0; var r=cov.getBoundingClientRect(), c=(r.top+r.height/2-innerHeight/2)/innerHeight; cov.style.setProperty('--py',(c*-28).toFixed(1)+'px'); }
   addEventListener('scroll',function(){ if(!raf) raf=requestAnimationFrame(drift); },{passive:true});
+})();
+/* phones: tapping a track scrolls the whole player into view */
+(function(){ var tl=document.getElementById('dk-tl'), deck=document.getElementById('dk-deck'); if(!tl||!deck) return;
+  tl.addEventListener('click',function(e){ if(!e.target.closest('button')||innerWidth>860) return; var r=deck.getBoundingClientRect(), top=scrollY+r.top-70, room=innerHeight-70;
+    if(r.top<60||r.bottom>innerHeight) scrollTo({top:r.height<room?top-(room-r.height)/2:top,behavior:'smooth'}); });
 })();
 /* only one thing plays at a time */
 (function(){ var vids=document.querySelectorAll('.vid video'), song=document.getElementById('song');
