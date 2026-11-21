@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mika Montero – Official Site | New Single “Break You Out”</title>
+<meta name="description" content="Official site of Mika Montero, Miami-based singer, model and creator. New single “Break You Out” out November 23, 2026 on Spotify, Apple Music and YouTube.">
+<meta property="og:title" content="Mika Montero – Official Site">
+<meta property="og:description" content="Miami nights, Honolulu heart. Music, videos and the debut album No Angel. No Apology. New single Break You Out out November 23.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mikamontero.com/assets/img/og-site.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mika Montero, official site">
+<meta property="og:site_name" content="Mika Montero">
+<meta property="og:url" content="https://mikamontero.com/">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Syne;font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/syne-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Syne;font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/syne-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Syne;font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/syne-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Serif Display";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/dm-serif-display-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Serif Display";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/dm-serif-display-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2")}
+:root{--night:#0B0A1A;--night2:#14112B;--card:#17142F;--ink:#FBF3FF;--muted:#C9BFDD;--dim:#9A8FB4;--line:#2B2550;--pink:#FF4FA3;--aqua:#3FE0D0;--sun:#FF9E5E;--display:Syne,"Arial Black",sans-serif;--serif:"DM Serif Display",Georgia,serif;--sans:Inter,system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+::selection{background:var(--pink);color:var(--night)}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px clamp(18px,4vw,48px);transition:background .4s}
+.nav.solid{background:rgba(11,10,26,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.logo{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.12em;text-decoration:none}
+.logo span{color:var(--pink)}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2.4vw,28px);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.links a{text-decoration:none;color:var(--muted);transition:color .25s}
+.links a:hover{color:var(--aqua)}
+.nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--pink);color:var(--night)!important;box-shadow:0 0 24px rgba(255,79,163,.45)}
+@media(max-width:760px){.hide-sm{display:none}.nav{flex-wrap:nowrap;gap:8px;padding:14px 14px}.links{gap:8px;flex-wrap:nowrap}.logo{font-size:12.5px;letter-spacing:.04em;white-space:nowrap}.nav-cta{min-height:38px;padding:0 12px;font-size:11px;white-space:nowrap;letter-spacing:.12em}}
+
+/* hero loop video */
+.film{position:relative;height:100vh;height:100dvh;min-height:620px;background:var(--night)}
+.stage{position:relative;height:100%;overflow:hidden;display:flex;align-items:flex-end}
+.stage video,.stage .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 49%}
+.stage video{opacity:0;transition:opacity .8s}
+.stage video.ready{opacity:1}
+.stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(11,10,26,1) 0%,rgba(11,10,26,.5) 34%,rgba(11,10,26,0) 62%),linear-gradient(90deg,rgba(11,10,26,.78) 0%,rgba(11,10,26,.25) 46%,rgba(11,10,26,0) 66%)}
+.stage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 50% at 85% 20%,rgba(255,79,163,.22),transparent 70%),radial-gradient(50% 40% at 10% 90%,rgba(63,224,208,.16),transparent 70%);mix-blend-mode:screen}
+.hero-copy{position:relative;z-index:2;padding:0 clamp(18px,6vw,96px) clamp(64px,10vh,120px);width:100%;max-width:980px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.tag{animation:eyePulse 1.5s ease-in-out infinite;color:#7FF5EA;}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--aqua)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--aqua);box-shadow:0 0 12px var(--aqua);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.hero-copy h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(44px,10.5vw,170px);line-height:.86;letter-spacing:-.03em;text-transform:uppercase}
+.hero-copy .lead{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,34px);color:var(--ink)}
+.hero-copy .sub{margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:40ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;padding-top:6px}
+.cta-fan{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--sun));color:var(--night);font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 10px 40px rgba(255,79,163,.4);transition:transform .3s,box-shadow .3s}
+.cta-fan:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 14px 50px rgba(255,79,163,.6)}
+.cta-ig{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 24px;border-radius:999px;border:1.5px solid var(--aqua);color:var(--ink);font-weight:700;text-decoration:none;background:rgba(11,10,26,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,color .3s}
+.cta-ig:hover{background:var(--aqua);color:var(--night)}
+
+/* marquee */
+.marquee{position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--night2);padding:18px 0}
+.marquee .track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite;font-family:var(--display);font-weight:800;font-size:clamp(20px,2.6vw,34px);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.marquee .track span:nth-child(odd){color:var(--ink)}
+.marquee .track span:nth-child(even){color:var(--pink)}
+/* everything clickable comes forward on hover */
+.links a:not(.nav-cta):not(.hide-sm){display:inline-block}
+@media(min-width:761px){.links a.hide-sm{display:inline-block}}
+.links a{transition:color .25s,transform .28s cubic-bezier(.2,.9,.3,1.4),text-shadow .25s,box-shadow .28s}
+.lang,.tab,.player,.cta-ig,.cta-fan{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,background .25s,color .25s,border-color .25s}
+@media(hover:hover){
+  .links a:not(.nav-cta):hover{transform:translateY(-3px) scale(1.14);color:#B5FFF7;text-shadow:0 0 10px rgba(63,224,208,.9),0 0 24px rgba(63,224,208,.5)}
+  .nav-cta:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 10px 26px rgba(0,0,0,.4),0 0 22px rgba(255,79,163,.9),0 0 50px rgba(255,79,163,.55)}
+  .lang:hover{transform:translateY(-3px) scale(1.1);border-color:#7FF5EA;box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 18px rgba(63,224,208,.7),0 0 40px rgba(63,224,208,.35)}
+  .tab:hover{transform:translateY(-3px) scale(1.08)}
+  .tab[aria-selected="false"]:hover{color:#fff;background:rgba(255,255,255,.08);box-shadow:0 0 18px rgba(63,224,208,.45)}
+  .tab[aria-selected="true"]:hover{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 22px rgba(255,79,163,.8),0 0 46px rgba(255,79,163,.4)}
+  .player:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 30px rgba(255,79,163,.85),0 0 70px rgba(255,79,163,.45)}
+  .cta-ig:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 24px rgba(63,224,208,.7),0 0 50px rgba(63,224,208,.35)}
+  .cta-fan:hover{transform:translateY(-5px) scale(1.05)}
+}
+.press-link{display:inline-block;align-self:flex-start;margin:12px 0 0;font-size:14px;font-weight:700;color:var(--aqua);text-decoration:none;border-bottom:1px solid rgba(63,224,208,.5);transition:transform .28s cubic-bezier(.2,.9,.3,1.4),text-shadow .25s}
+@media(hover:hover){.press-link:hover{transform:translateY(-3px);text-shadow:0 0 12px rgba(63,224,208,.9)}}
+a.cta-private,a.cta-wish,a.cta-mail{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,background .25s,color .25s,border-color .25s}
+@media(hover:hover){
+  a.cta-private:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 26px rgba(255,79,163,.85),0 0 60px rgba(255,79,163,.45)}
+  a.cta-wish:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 22px rgba(255,79,163,.75),0 0 50px rgba(255,79,163,.4)}
+  a.cta-mail:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 22px rgba(63,224,208,.8),0 0 50px rgba(63,224,208,.4)}
+}
+.foot a,.foot .legal-link{display:inline-block;transition:transform .28s cubic-bezier(.2,.9,.3,1.4),color .25s,text-shadow .25s}
+@media(hover:hover){.foot a:hover,.foot .legal-link:hover{transform:translateY(-4px) scale(1.16);color:#FF7EC4;text-shadow:0 0 10px rgba(255,79,163,.95),0 0 26px rgba(255,79,163,.6)}}
+.links a:focus-visible,.lang:focus-visible,.tab:focus-visible{transform:translateY(-3px) scale(1.08)}
+/* marquee as LED display (same dot technique as the MONTERO sign) */
+.marquee{--px:clamp(4px,.36vw,6px);background:#03181e;border-top:2px solid #7FF5EA;border-bottom:2px solid #7FF5EA;padding:calc(var(--px)*3.5) 0;
+  box-shadow:0 0 14px rgba(63,224,208,.55),0 0 40px rgba(63,224,208,.25),inset 0 0 18px rgba(63,224,208,.18)}
+.marquee::before,.marquee::after{content:"";position:absolute;inset:0;pointer-events:none}
+.marquee::before{background:radial-gradient(circle at center,rgba(63,224,208,.16) 0 34%,transparent 42%) 0 0/var(--px) var(--px)}
+.marquee::after{z-index:2;background:linear-gradient(90deg,#03181e,transparent 4%,transparent 96%,#03181e),radial-gradient(circle at center,transparent 0 46%,#03181e 56%) 0 0/var(--px) var(--px)}
+.marquee .track{position:relative;z-index:1;font-size:calc(var(--px)*9.2);line-height:1.1;gap:calc(var(--px)*9);-webkit-text-stroke:.02em currentColor}
+.marquee .track span:nth-child(odd){color:#B5FFF7;text-shadow:0 0 .1em #7FF5EA}
+.marquee .track span:nth-child(even){color:#FF86C6;text-shadow:0 0 .1em #FF4FA3}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.section{padding-top:clamp(80px,11vw,140px)}
+.eyebrow{margin:0;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--aqua);font-weight:700}
+h2{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,5.4vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;color:var(--pink);letter-spacing:0}
+.p{margin:0;font-size:18px;line-height:1.7;color:var(--muted)}
+.stripes{height:10px;border-radius:10px;background:linear-gradient(90deg,var(--pink) 0 33%,var(--sun) 33% 66%,var(--aqua) 66% 100%);max-width:160px}
+
+/* music */
+.music{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:stretch}
+.cover{flex:1 1 360px;max-width:560px;position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;box-shadow:0 30px 80px rgba(255,79,163,.18)}
+.cover img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:contrast(1.05)}
+.cover.real{box-shadow:0 0 0 1px rgba(255,200,110,.35),0 30px 80px rgba(255,180,80,.16),0 0 90px rgba(70,110,255,.14)}
+.cover.real img{object-position:center;filter:none}
+.cover.real::after{display:none}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,79,163,.35),rgba(11,10,26,0) 45%,rgba(63,224,208,.25))}
+.cover .title{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;font-family:var(--display);font-weight:800;font-size:clamp(34px,4vw,54px);line-height:.9;text-transform:uppercase}
+.cover .title small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.28em;font-weight:700;color:var(--aqua);margin-bottom:10px}
+.music .txt{flex:1 1 360px;display:flex;flex-direction:column;gap:20px;justify-content:center}
+@media(min-width:861px){
+  .music .txt{justify-content:flex-start}
+  .music .txt>h2{margin-top:-.22em}
+  .music .countdown{flex:1;padding:24px}
+  .music .cd-grid{flex:1;align-content:center;padding:clamp(18px,2.2vw,30px) 0 clamp(14px,1.8vw,24px)}
+  .music .cd-grid b{font-size:18.5cqw}
+}
+.soon{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:8px 16px;border-radius:999px;border:1px solid var(--pink);color:var(--pink);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.platforms{display:flex;flex-wrap:wrap;gap:12px}
+.plat{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 22px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-weight:700;text-decoration:none;transition:transform .25s,border-color .25s,background .25s}
+.plat{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),border-color .25s,background .25s,box-shadow .28s}
+.plat:hover,.plat:focus-visible{transform:translateY(-6px) scale(1.06);background:rgba(20,18,42,.92);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 22px var(--pg,rgba(255,79,163,.5)),0 0 46px var(--pg,rgba(255,79,163,.3))}
+.plat:active{transform:translateY(-2px) scale(1.02)}
+.plat.sp{--pg:rgba(30,215,96,.55)}.plat.yt{--pg:rgba(255,59,59,.55)}.plat.am{--pg:rgba(255,79,163,.55)}
+.about .facts{gap:12px}
+.about .facts li{position:relative;padding:11px 18px 11px 36px;background:rgba(255,255,255,.035);border:1px solid color-mix(in srgb,var(--fc) 65%,transparent);color:#fff;font-weight:600;letter-spacing:.02em;
+  box-shadow:0 0 16px color-mix(in srgb,var(--fc) 32%,transparent),inset 0 0 14px color-mix(in srgb,var(--fc) 14%,transparent);animation:chipGlow 4.2s ease-in-out infinite}
+.about .facts li::before{content:"";position:absolute;left:16px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--fc);box-shadow:0 0 8px var(--fc),0 0 16px var(--fc)}
+.about .facts li:nth-child(1){--fc:#FF4FA3}.about .facts li:nth-child(2){--fc:#3FE0D0;animation-delay:.4s}.about .facts li:nth-child(3){--fc:#C77DFF;animation-delay:.8s}.about .facts li:nth-child(4){--fc:#FF9A5A;animation-delay:1.2s}.about .facts li:nth-child(5){--fc:#3FE0D0;animation-delay:1.6s}
+@keyframes chipGlow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.45)}}
+.feed-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+.feed-cta[hidden]{display:none}
+@media(max-width:860px){.about-cta{flex-direction:column;align-items:stretch}}
+.actions .plat{min-height:56px;border-radius:999px;background:rgba(11,10,26,.5);border-color:rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.plat.sp svg{color:#1ED760}.plat.sp:hover{border-color:#1ED760}
+.plat.yt svg{color:#FF3B3B}.plat.yt:hover{border-color:#FF3B3B}
+.plat.am svg{color:var(--pink)}.plat.am:hover{border-color:var(--pink)}
+.plat svg:last-child{color:var(--dim)}
+
+
+/* teaser */
+.teaser{margin-top:clamp(56px,8vw,110px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(28px,6vw,90px)}
+.teaser[hidden]{display:none}
+.tz-copy{flex:0 1 420px;display:flex;flex-direction:column;gap:18px}
+.tz-copy .eyebrow{margin:0}
+.tz-copy h3{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,5vw,68px);line-height:.92;text-transform:uppercase;letter-spacing:-.01em}
+.tz-copy h3 em{font-style:normal;background:linear-gradient(90deg,var(--pink),#c77dff 55%,var(--aqua));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tz-frame{position:relative;flex:0 0 auto;width:min(360px,82vw);aspect-ratio:9/16;border-radius:30px;overflow:hidden;background:#07060f;border:1px solid rgba(255,79,163,.55);box-shadow:0 0 0 6px rgba(255,79,163,.06),0 0 60px rgba(255,79,163,.28),0 0 120px rgba(63,224,208,.12)}
+.tz-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tz-frame video:fullscreen{object-fit:contain;background:#000}
+.tz-frame video:-webkit-full-screen{object-fit:contain;background:#000}
+/* remix block: glowing date line and letter wave */
+.eye-glow{display:inline-flex;align-items:center;gap:.8em;color:#7FF5EA;animation:eyePulse 1.5s ease-in-out infinite}
+.eye-glow::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 8px var(--pink),0 0 18px var(--pink)}
+@keyframes eyePulse{0%,100%{opacity:1;text-shadow:0 0 6px rgba(127,245,234,.95),0 0 18px rgba(63,224,208,.75),0 0 36px rgba(63,224,208,.45)}50%{opacity:.4;text-shadow:none}}
+.tz-copy .wave{white-space:nowrap}
+.wave .w{display:inline-block;white-space:nowrap}
+.wave em{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:inherit}
+.wave .l{display:inline-block;color:var(--c);animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite}
+@keyframes waveGlow{0%,24%,100%{color:var(--c);text-shadow:none}10%{color:#fff;text-shadow:0 0 .1em #fff,0 0 .3em var(--g),0 0 .7em var(--g),0 0 1.2em var(--g)}}
+@keyframes waveLift{0%,24%,100%{transform:none}10%{transform:translateY(-.08em) scale(1.04)}}
+@media(prefers-reduced-motion:no-preference){.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite,waveLift 3.4s ease-in-out calc(var(--i)*.08s) infinite}}
+.tz-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:14px;border:0;padding:0;cursor:pointer;color:#fff;background:linear-gradient(180deg,rgba(7,6,15,0) 45%,rgba(7,6,15,.55));font:700 12px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;transition:opacity .35s}
+.tz-play span.ring{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:rgba(255,79,163,.18);border:1.5px solid var(--pink);box-shadow:0 0 30px rgba(255,79,163,.6),inset 0 0 18px rgba(255,79,163,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:transform .3s}
+.tz-play::after{content:"";flex:0 0 26%}
+.tz-play:hover span.ring{transform:scale(1.07)}
+.tz-play svg{width:30px;height:30px;margin-left:4px}
+.tz-frame.on .tz-play{opacity:0;pointer-events:none}
+@media (max-width:760px){.tz-copy{text-align:center;align-items:center}}
+.remix{margin-top:clamp(64px,9vw,130px)}
+.spbox{margin-top:clamp(64px,9vw,130px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(28px,6vw,90px)}
+.spbox .tz-copy h3{font-size:clamp(34px,4.2vw,58px)}
+.sp-embed{flex:1 1 360px;max-width:560px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px;border-radius:22px;background:var(--card);border:1px solid rgba(30,215,96,.35);box-shadow:0 0 50px rgba(30,215,96,.1)}
+.sp-embed small{color:var(--dim);font-size:12.5px;text-align:center;max-width:34ch;line-height:1.5}
+.sp-embed .cd-cta{border:0;cursor:pointer;font:inherit;font-weight:800;width:auto;padding-left:26px;padding-right:26px}
+.sp-embed.on{padding:0;border:0;background:none;box-shadow:0 0 60px rgba(30,215,96,.14);min-height:0}
+.sp-embed iframe{display:block;width:100%;height:352px;border:0;border-radius:14px;position:relative;z-index:1}
+/* ambient light behind the Spotify player */
+@property --spa{syntax:"<angle>";inherits:false;initial-value:0deg}
+.sp-embed.on{position:relative;isolation:isolate;box-shadow:none}
+.sp-embed.on::before,.sp-embed.on::after{content:"";position:absolute;z-index:0;pointer-events:none;border-radius:34px;
+  background:conic-gradient(from var(--spa),#FF4FA3,#C77DFF,#3FE0D0,#FF9A5A,#FF4FA3);animation:spSpin 9s linear infinite}
+.sp-embed.on::before{inset:-14px;filter:blur(26px);opacity:.5}
+.sp-embed.on::after{inset:-46px;filter:blur(70px);opacity:.28;animation-direction:reverse;animation-duration:14s}
+.sp-embed.playing::before{animation:spSpin 5s linear infinite,spBeat .5s ease-in-out infinite alternate}
+.sp-embed.playing::after{animation:spSpin 8s linear infinite reverse,spBeat2 1s ease-in-out infinite alternate}
+.sp-embed.paused::before{opacity:.22}.sp-embed.paused::after{opacity:.12}
+@keyframes spSpin{to{--spa:360deg}}
+@keyframes spBeat{from{opacity:.5;transform:scale(1)}to{opacity:.95;transform:scale(1.035)}}
+@keyframes spBeat2{from{opacity:.28;transform:scale(1)}to{opacity:.55;transform:scale(1.06)}}
+.rx-cover{width:132px;height:132px;border-radius:18px;display:block;box-shadow:0 0 0 1px rgba(255,79,163,.5),0 0 40px rgba(255,79,163,.35),0 0 80px rgba(63,224,208,.15)}
+.rx-cover.gold{box-shadow:0 0 0 1px rgba(255,200,110,.55),0 0 40px rgba(255,190,90,.3),0 0 80px rgba(80,120,255,.16)}
+.remix .facts{margin-top:2px}
+.remix .facts li{font-size:13px;padding:8px 14px}
+@media (max-width:760px){.remix{flex-direction:column-reverse}.remix .facts{justify-content:center}}
+
+
+/* about */
+.about{display:flex;flex-wrap:wrap-reverse;align-items:center;gap:clamp(32px,6vw,80px)}
+.about .txt{flex:1 1 380px;display:flex;flex-direction:column;gap:22px}
+.about figure{flex:1 1 340px;margin:0;max-width:520px;position:relative}
+.about figure img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:200px 200px 26px 26px}
+.about figure::before{content:"";position:absolute;inset:-14px -14px auto auto;width:62%;height:62%;border-radius:200px 200px 0 0;border:2px solid var(--aqua);z-index:-1}
+.facts{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:6px 0 0;padding:0}
+.facts li{padding:10px 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;color:var(--ink)}
+
+/* feed */
+.feed-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:28px}
+.feed-link{font-size:14px;font-weight:700;letter-spacing:.08em;text-decoration:none;border-bottom:2px solid var(--pink);padding-bottom:4px}
+.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.feed{grid-template-columns:repeat(2,1fr);gap:10px}}
+.feed figure{margin:0;overflow:hidden;border-radius:20px;position:relative}
+.feed img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
+.feed figure:hover img{transform:scale(1.05);filter:saturate(1.15)}
+
+.tabs{display:inline-flex;padding:5px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.tab{min-height:44px;padding:0 24px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:700 13px var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s}
+.tab[aria-selected="true"]{background:linear-gradient(90deg,var(--pink),var(--sun));color:var(--night)}
+.feed[hidden]{display:none}
+
+/* private */
+.private{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:stretch;border-radius:32px;padding:clamp(22px,4vw,56px);background:linear-gradient(135deg,rgba(255,79,163,.14),rgba(63,224,208,.08)),var(--night2);border:1px solid var(--line)}
+.private figure{flex:1 1 300px;margin:0;max-width:440px;position:relative;overflow:hidden;border-radius:24px;min-height:440px}
+.private figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--pink);text-shadow:0 0 20px rgba(255,79,163,.6)}
+.lock span{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
+.private .txt{flex:1 1 340px;display:flex;flex-direction:column;gap:20px;justify-content:center}
+.perks{list-style:none;margin:4px 0 0;padding:0}
+.perks li{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
+.perks li span:last-child{color:var(--aqua);font-weight:600}
+.cta-private{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:0 28px;border-radius:18px;background:linear-gradient(90deg,var(--pink),var(--sun));color:var(--night);font-weight:800;font-size:18px;text-decoration:none;transition:letter-spacing .35s}
+.cta-private:hover{letter-spacing:.04em}
+
+
+.today{position:absolute;z-index:2;top:16px;left:16px;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--pink);color:var(--night);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 22px rgba(255,79,163,.7)}
+.today i{width:7px;height:7px;border-radius:50%;background:var(--night);animation:pulse 1.4s infinite}
+.hl{color:var(--ink);font-weight:700;background:linear-gradient(transparent 62%,rgba(255,79,163,.45) 62%)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:4px}
+.week span{position:relative;padding:12px 0 10px;border-radius:12px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:rgba(255,79,163,.1);border:1px solid rgba(255,79,163,.45)}
+.week span::after{content:attr(data-new);display:block;margin-top:5px;font-size:9px;letter-spacing:.16em;color:var(--aqua)}
+.week span.on{background:linear-gradient(135deg,var(--pink),var(--sun));color:var(--night);border-color:transparent}
+.week span.on::after{color:var(--night)}
+
+/* wish + brands */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.box{display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:clamp(28px,4vw,44px);border-radius:26px;background:var(--card);border:1px solid var(--line);min-height:260px}
+.box .t{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(30px,3.2vw,44px);line-height:1.05}
+.box.wish{border-color:var(--pink)}
+.box.brand{border-color:var(--aqua)}
+.mail{font-family:var(--display);font-weight:700;font-size:clamp(18px,2vw,24px);text-decoration:none;border-bottom:2px solid var(--aqua);padding-bottom:4px;word-break:break-all;width:max-content;max-width:100%}
+.cta-wish,.cta-mail{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:700;text-decoration:none;width:max-content;transition:background .3s,color .3s}
+.cta-wish{border:1.5px solid var(--pink);color:var(--ink)}
+.cta-wish:hover{background:var(--pink);color:var(--night)}
+.cta-mail{background:var(--aqua);color:var(--night)}
+.cta-mail:hover{background:var(--ink)}
+footer{padding:clamp(80px,11vw,140px) 0 56px}
+.foot{border-top:1px solid var(--line);padding-top:36px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;font-size:14px;color:var(--dim)}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+@media(max-width:860px){.hero-copy{gap:16px;padding-bottom:56px}.hero-copy h1{font-size:12vw}.hero-copy .sub{font-size:15px}.actions{flex-direction:column;align-items:stretch}.cta-fan,.cta-ig{justify-content:center;min-height:54px}.actions{flex-direction:row!important;flex-wrap:nowrap;gap:8px}.actions .plat{flex:1 1 0;justify-content:center;min-height:50px;padding:0 6px;gap:7px;font-size:13px;white-space:nowrap}.actions .plat svg:last-child{display:none}.actions .plat svg{width:18px;height:18px;flex:none}}
+@media(max-width:350px){.actions .plat{font-size:12px;gap:5px}}
+@media(max-width:860px){.stage video,.stage .poster{object-position:center center}}
+
+/* music player */
+.player{position:fixed;z-index:60;right:clamp(12px,3vw,32px);bottom:clamp(12px,3vw,28px);display:flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;border-radius:999px;background:rgba(11,10,26,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1.5px solid var(--pink);box-shadow:0 0 24px rgba(255,79,163,.45),inset 0 0 12px rgba(255,79,163,.15);overflow:hidden;max-width:calc(100vw - 24px)}
+.player::before{content:"";position:absolute;inset:-2px;border-radius:999px;border:2px solid var(--pink);opacity:0;animation:ring 2.2s ease-out infinite;pointer-events:none}
+.player.played::before{display:none}
+@keyframes ring{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.12)}}
+.pl-btn{flex:none;width:48px;height:48px;border-radius:50%;border:0;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--sun));color:var(--night);cursor:pointer;box-shadow:0 0 18px rgba(255,79,163,.6)}
+.pl-btn svg{width:18px;height:18px}
+.pl-btn .i-pause{display:none}.player.playing .i-play{display:none}.player.playing .i-pause{display:block}
+.pl-thumb{flex:none;width:40px;height:40px;border-radius:10px;object-fit:cover}
+.pl-meta{display:flex;flex-direction:column;gap:2px;min-width:0;text-decoration:none}
+.pl-meta b{font-family:var(--display);font-size:14px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.pl-meta span{font-size:12px;color:var(--pink);white-space:nowrap;font-weight:600;letter-spacing:.04em}
+.eq{display:flex;align-items:flex-end;gap:3px;height:22px;flex:none}
+.eq i{width:3px;height:30%;border-radius:2px;background:var(--aqua);box-shadow:0 0 6px var(--aqua)}
+.player.playing .eq i{animation:eq .9s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:-.3s!important}.eq i:nth-child(3){animation-delay:-.6s!important}.eq i:nth-child(4){animation-delay:-.15s!important}
+@keyframes eq{0%{height:20%}50%{height:100%}100%{height:45%}}
+.pl-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,79,163,.15)}
+.pl-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--aqua))}
+
+
+/* neon sign */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* free-standing Miami neon: MONTERO in script tubes with a flamingo, like a wall sign */
+@font-face{font-family:"Sacramento";font-weight:400;font-display:swap;src:url(assets/fonts/sacramento-400.woff2) format("woff2")}
+.neon-sign{position:relative;display:block;width:min(92%,calc(100vw - 2*clamp(18px,6vw,96px)));margin:.07em 0 -.04em;animation:neonOn 2.4s linear .5s both}
+/* wall neon: LED tube on a clear acrylic plate cut to the lettering (layers: shadow, plate rim, plate, tube shell, tube, light, core) */
+.nsvg{display:block;width:100%;height:auto;overflow:visible;animation:buzz 9s linear 4s infinite}
+.nsvg text{font-family:"Sacramento",cursive;font-size:100px}
+.nsvg use{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.nsvg .ly-s use{stroke:#000;fill:#000;stroke-width:8;opacity:.55}
+.nsvg .ly-s{filter:blur(3.5px);transform:translate(5px,8px)}
+.nsvg .ly-g use{stroke:#FF4FA3;fill:none;stroke-width:16;opacity:.28}.nsvg .ly-g{filter:blur(11px);transform:translate(2px,4px)}
+.nsvg .ly-lo use{stroke:none;fill:#FF6FB8;opacity:.9}
+.nsvg .ly-hl use{stroke:none;fill:#fff;opacity:1}.nsvg .ly-hl{filter:drop-shadow(0 0 .8px #fff)}
+.nsvg .ly-e use{stroke:#FFC9E8;fill:#FFC9E8;stroke-width:25.4;opacity:.75}
+.nsvg .ly-p use{stroke:#1c0b24;fill:#1c0b24;stroke-width:23.4}
+.nsvg .ly-p{opacity:.9}
+.nsvg .ly-h use{stroke:rgba(255,255,255,.1);fill:none;stroke-width:21}
+.nsvg .ly-t1 use{stroke-width:6.6}.nsvg .ly-t2 use{stroke-width:4.6}.nsvg .ly-t3 use{stroke-width:1.6}.nsvg .ly-t4 use{stroke-width:0}
+.nsvg .pk.ly-t1 use{stroke:#9C1760;fill:#9C1760}.nsvg .pk.ly-t2 use{stroke:#FF4FA3;fill:#FF4FA3}.nsvg .pk.ly-t3 use{stroke:#FF8CC8;fill:#FF8CC8}
+.nsvg .aq.ly-t1 use{stroke:#178F84}.nsvg .aq.ly-t2 use{stroke:#3FE0D0}.nsvg .aq.ly-t3 use{stroke:#B5FFF7}
+.nsvg .ly-t4 use{stroke:#FFE0F0;fill:#FFE0F0}
+.nsvg .aq use,.nsvg .ly-t4.nf use{fill:none}
+.nsvg .pk.ly-t2{filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 10px #FF4FA3) drop-shadow(0 0 26px rgba(255,79,163,.75))}
+.nsvg .aq.ly-t2{filter:drop-shadow(0 0 3px #3FE0D0) drop-shadow(0 0 10px #3FE0D0) drop-shadow(0 0 24px rgba(63,224,208,.7))}
+@media(max-width:860px){.neon-sign{width:100%;margin-top:.12em}}
+@media(min-width:1700px) and (min-height:821px){.neon-sign{width:108%}}
+@media(min-width:861px) and (max-height:820px){.hero-copy{gap:14px;padding-bottom:clamp(40px,7vh,80px)}.hero-copy h1{font-size:clamp(44px,13vh,120px)}.neon-sign{width:min(100%,78vh,calc(100vw - 2*clamp(18px,6vw,96px)));margin-top:.04em}}
+@media(min-width:861px) and (max-height:640px){.hero-copy .sub{display:none}}
+@keyframes tubeFlick{0%,86%,100%{opacity:1}87%{opacity:.15}88%{opacity:1}90%{opacity:.25}91%{opacity:.9}93%{opacity:.1}94%{opacity:1}}
+@keyframes tick{to{transform:translateX(-50%)}}
+@keyframes neonOn{0%,6%{opacity:.08}7%{opacity:1}9%{opacity:.15}12%{opacity:1}14%{opacity:.2}30%{opacity:.2}31%{opacity:1}33%{opacity:.55}35%,100%{opacity:1}}
+.nsvg use.uL{transition:none}
+.nsvg.tap-off .ly-t2 use.dk,.nsvg.tap-off .ly-t3 use.dk{opacity:0}
+.nsvg.tap-off .ly-t1 use.dk{stroke:#6b4a63;fill:#6b4a63;stroke-width:2.2;opacity:.75}
+.nsvg.tap-off .ly-t4 use.dk{opacity:.16}
+.nsvg.tap-off .ly-g use.dk,.nsvg.tap-off .ly-lo use.dk{opacity:0}.nsvg.tap-off .ly-hl use.dk{opacity:.35}
+.nsvg.tap-dim .ly-g use.dk{opacity:.12}
+.nsvg.tap-dim .ly-t2 use.dk{opacity:.42}.nsvg.tap-dim .ly-t3 use.dk{opacity:.3}.nsvg.tap-dim .ly-t4 use.dk{opacity:.5}
+.nsvg.tap-sag .pk.ly-t2{filter:drop-shadow(0 0 2px #FF4FA3) drop-shadow(0 0 7px #FF4FA3) drop-shadow(0 0 16px rgba(255,79,163,.45)) brightness(.82)}
+.nsvg.tap-sag .ly-t4{opacity:.6}
+.nsvg.tap-flash .ly-t2{animation:tapFlash .7s ease-out}
+@keyframes tapFlash{0%{filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 16px #FF8CC6) drop-shadow(0 0 46px #FF4FA3) brightness(1.5)}100%{filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 10px #FF4FA3) drop-shadow(0 0 26px rgba(255,79,163,.75)) brightness(1)}}
+.tap-spark{position:absolute;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;pointer-events:none;opacity:0;z-index:2;background:radial-gradient(circle,#fff 0,#B5FFF7 28%,rgba(63,224,208,.55) 52%,rgba(63,224,208,0) 72%)}
+.tap-spark.go{animation:tapSpark .42s ease-out}
+.tap-spark.big.go{animation:tapSparkBig .6s ease-out}
+@keyframes tapSpark{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(5)}}
+@keyframes tapSparkBig{0%{opacity:1;transform:scale(.8)}100%{opacity:0;transform:scale(11)}}
+@keyframes buzz{0%,91%,100%{opacity:1}92%{opacity:.35}93%{opacity:1}95%{opacity:.6}96%{opacity:1}}
+/* lang toggle */
+.lang{display:inline-flex;min-height:40px;padding:3px;border-radius:999px;border:1px solid var(--line);background:rgba(11,10,26,.5);cursor:pointer;font:700 11px var(--sans);letter-spacing:.14em}
+.lang span{display:grid;place-items:center;min-width:34px;border-radius:999px;color:var(--dim);transition:background .25s,color .25s}
+html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{background:var(--aqua);color:var(--night)}
+/* countdown */
+.countdown{display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:22px;background:linear-gradient(135deg,rgba(255,79,163,.16),rgba(63,224,208,.08)),var(--card);border:1px solid rgba(255,79,163,.5);box-shadow:0 0 40px rgba(255,79,163,.15)}
+.cd-head{margin:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
+.cd-time{color:var(--dim)}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cd-grid div{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 0 12px;border-radius:14px;background:rgba(11,10,26,.6);border:1px solid var(--line)}
+.cd-grid b{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1;color:var(--ink);text-shadow:0 0 18px rgba(255,79,163,.6);font-variant-numeric:tabular-nums}
+.cd-grid span{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua)}
+.cd-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:14px;background:#1ED760;color:#06120A;font-weight:800;text-decoration:none;transition:transform .25s}
+.cd-cta{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s}
+.cd-cta:hover,.cd-cta:focus-visible{transform:translateY(-6px) scale(1.04);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 24px rgba(30,215,96,.6),0 0 52px rgba(30,215,96,.35)}
+.cd-cta:active{transform:translateY(-2px) scale(1.01)}
+.rx-cta{position:relative;z-index:1;margin-top:22px;padding:0 24px;width:auto}
+/* countdown as stadium LED scoreboard (same dot technique as the marquee) */
+.cd-grid{position:relative;overflow:hidden;container-type:inline-size;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:14px 0 12px;border-radius:14px;background:#03181e;border:2px solid #7FF5EA;
+  box-shadow:0 0 12px rgba(63,224,208,.6),0 0 36px rgba(63,224,208,.3),inset 0 0 20px rgba(63,224,208,.2)}
+.cd-grid::before,.cd-grid::after{content:"";position:absolute;inset:0;pointer-events:none;--px:max(3px,1.22cqw)}
+.cd-grid::before{background:radial-gradient(circle at center,rgba(63,224,208,.17) 0 34%,transparent 42%) 0 0/var(--px) var(--px)}
+.cd-grid::after{z-index:2;background:radial-gradient(circle at center,transparent 0 47%,#03181e 57%) 0 0/var(--px) var(--px)}
+.cd-grid div{position:relative;padding:0;gap:8px;background:none;border:0;border-radius:0}
+.cd-grid b{position:relative;z-index:1;font-family:var(--sans);font-weight:800;font-size:17cqw;line-height:.95;letter-spacing:-.02em;color:#FF8FCB;text-shadow:0 0 .1em #FF4FA3,0 0 .35em rgba(255,79,163,.6)}
+.cd-grid div:first-child b{color:#C4FFF9;text-shadow:0 0 .1em #7FF5EA,0 0 .35em rgba(63,224,208,.6)}
+.cd-grid span{position:relative;z-index:3;font-size:clamp(9px,2.6cqw,13px);color:#B5FFF7;text-shadow:0 0 8px rgba(63,224,208,.9);background:#03181e;padding:2px 8px;border-radius:6px}
+.cd-grid div:nth-child(n+3)::before{content:":";position:absolute;z-index:1;left:0;top:0;transform:translateX(-50%);font:800 15cqw/0.95 var(--sans);color:#FF8FCB;text-shadow:0 0 .1em #FF4FA3;animation:cdBlink 1s steps(1) infinite}
+@keyframes cdBlink{0%,49%{opacity:1}50%,100%{opacity:.15}}
+.soon{animation:soonPulse 1.5s ease-in-out infinite}
+@keyframes soonPulse{0%,100%{opacity:1;box-shadow:0 0 10px rgba(255,79,163,.9),0 0 26px rgba(255,79,163,.55),inset 0 0 10px rgba(255,79,163,.3);text-shadow:0 0 8px rgba(255,79,163,.9)}50%{opacity:.45;box-shadow:none;text-shadow:none}}
+.countdown.out .cd-grid,.countdown.out .cd-time{display:none}
+/* reveal + cursor glow */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.glow{position:fixed;z-index:0;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,79,163,.16),rgba(63,224,208,.06) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .6s;will-change:transform}
+@media(hover:hover) and (pointer:fine){.glow.on{opacity:1}}
+main{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.glow{display:none}.neon-sign{animation:none}.neon-sign .nsvg{animation:buzz 9s linear 4s infinite!important}.marquee .track{animation:scroll 28s linear infinite!important}.eye-glow,.tag{animation:eyePulse 1.5s ease-in-out infinite!important}.soon{animation:soonPulse 1.5s ease-in-out infinite!important}.cd-grid div:nth-child(n+3)::before{animation:cdBlink 1s steps(1) infinite!important}.wave .l{animation:waveGlow 3.4s ease-in-out calc(var(--i)*.08s) infinite!important}.sp-embed.on::before{animation:spSpin 9s linear infinite!important}.sp-embed.on::after{animation:spSpin 14s linear infinite reverse!important}}
+@media(max-width:760px){.lang{min-height:36px}.lang span{min-width:30px}}
+
+/* legal */
+.legal-link{padding:0;border:0;background:none;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.legal-link:hover{color:var(--ink)}
+.legal{width:min(640px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:32px clamp(20px,4vw,40px);border-radius:24px;border:1px solid rgba(255,79,163,.5);background:var(--night2);color:var(--muted);box-shadow:0 0 60px rgba(255,79,163,.25)}
+.legal::backdrop{background:rgba(5,4,14,.75);backdrop-filter:blur(6px)}
+.legal h3{margin:0 0 18px;font-family:var(--display);font-size:24px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.legal h4{margin:20px 0 6px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua)}
+.legal p{margin:0;font-size:15px;line-height:1.65}
+.legal a{color:var(--pink)}
+.legal-x{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:16px;cursor:pointer}
+
+/* neon palm sign */
+.neonwall{position:relative;display:flex;justify-content:center;padding:clamp(60px,9vw,120px) 18px clamp(50px,7vw,90px);overflow:hidden;
+  background:radial-gradient(60% 70% at 50% 45%,rgba(199,125,255,.14),transparent 70%),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 34px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 1px,transparent 1px 68px),#0B0A1A}
+.neonwall.mid{margin-top:clamp(64px,8vw,110px);padding:clamp(34px,5vw,60px) 18px clamp(28px,4vw,48px)}
+.neonwall.mid .palm-sign{width:min(400px,74vw)}
+.neonwall.mid{display:block;padding:0;width:100%;height:min(50vw,92vh,1100px);min-height:400px;background:var(--night)}
+.neonwall.mid .nw-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.neonwall.mid video.nw-bg{opacity:0;transition:opacity .9s}.neonwall.mid video.nw-bg.ready{opacity:1}
+.neonwall.mid::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,var(--night) 0,rgba(11,10,26,.55) 16%,rgba(11,10,26,0) 42%,rgba(11,10,26,0) 78%,var(--night) 100%)}
+.neonwall.mid .palm-sign{position:absolute;z-index:2;left:50%;top:5%;transform:translateX(-50%);width:min(300px,23vw,38vh)}
+.neonwall.mid .neon-txt{font-size:clamp(17px,2.3vw,32px)}
+@media(max-width:860px){.neonwall.mid{height:125vw;max-height:none}.neonwall.mid .nw-bg{object-position:50% 70%}.neonwall.mid .palm-sign{width:min(230px,56vw);top:4%}.neonwall.mid .neon-txt{font-size:clamp(17px,5vw,24px)}}
+#mm1 .dk-scene{position:relative;width:100%;display:flex;justify-content:center;padding:clamp(40px,8vw,100px) 16px clamp(50px,9vw,120px)}
+#mm1 .dk-amb{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#mm1 .dk-amb i{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform,opacity}
+#mm1 .dk-amb .dk-a1{left:50%;top:50%;width:min(980px,96vw);height:min(520px,60vw);margin:calc(min(520px,60vw)/-2) 0 0 calc(min(980px,96vw)/-2);background:radial-gradient(closest-side,rgba(255,79,163,.85),rgba(255,79,163,0));opacity:calc(.16 + var(--bass)*.6);transform:scale(calc(.9 + var(--bass)*.28))}
+#mm1 .dk-amb .dk-a2{left:8%;top:18%;width:42vw;height:34vw;max-width:520px;max-height:420px;background:radial-gradient(closest-side,rgba(63,224,208,.8),rgba(63,224,208,0));opacity:calc(.08 + var(--hi)*.6);transform:scale(calc(.9 + var(--hi)*.3))}
+#mm1 .dk-amb .dk-a3{right:6%;bottom:8%;width:40vw;height:32vw;max-width:500px;max-height:400px;background:radial-gradient(closest-side,rgba(199,125,255,.8),rgba(199,125,255,0));opacity:calc(.1 + var(--mid)*.55);transform:scale(calc(.9 + var(--mid)*.3))}
+#mm1 .dk-deck{--u:min(1px,calc((100vw - 36px)/940));--u:min(1px,calc(100cqw/940));position:relative;width:calc(940*var(--u));border-radius:calc(26*var(--u));padding:calc(3*var(--u));
+  background:linear-gradient(145deg,#C9FFF8 0,#3FE0D0 16%,#0f3f3b 40%,#5DEBDD 62%,#14524c 82%,#B5FFF7 100%);
+  box-shadow:0 calc(50*var(--u)) calc(90*var(--u)) rgba(0,0,0,.65),0 0 calc(70*var(--u)) rgba(255,79,163,calc(.1 + var(--bass)*.3)),0 calc(2*var(--u)) 0 rgba(255,255,255,.25) inset}
+#mm1 .dk-body{position:relative;border-radius:calc(23.5*var(--u));overflow:hidden;padding:calc(22*var(--u)) calc(26*var(--u)) calc(24*var(--u));
+  background:
+   linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0) 22%,rgba(0,0,0,.25) 100%),
+   repeating-linear-gradient(90deg,rgba(255,255,255,.028) 0 1px,rgba(0,0,0,.03) 1px 2px,transparent 2px 4px),
+   linear-gradient(160deg,#201b2e,#13101d 55%,#0c0a14)}
+#mm1 .dk-body::after{content:"";position:absolute;left:-20%;top:-60%;width:70%;height:160%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.045),transparent);pointer-events:none}
+#mm1 .dk-screw{position:absolute;width:calc(11*var(--u));height:calc(11*var(--u));border-radius:50%;background:radial-gradient(circle at 35% 30%,#eef3ff,#7f8aa6 60%,#2c3142);box-shadow:0 calc(1*var(--u)) calc(2*var(--u)) rgba(0,0,0,.7)}
+#mm1 .dk-screw::after{content:"";position:absolute;left:18%;right:18%;top:46%;height:8%;background:rgba(10,12,20,.85);transform:rotate(35deg)}
+#mm1 .dk-screw.dk-s1{left:calc(10*var(--u));top:calc(10*var(--u))}
+#mm1 .dk-screw.dk-s2{right:calc(10*var(--u));top:calc(10*var(--u))}
+#mm1 .dk-screw.dk-s3{left:calc(10*var(--u));bottom:calc(10*var(--u))}
+#mm1 .dk-screw.dk-s4{right:calc(10*var(--u));bottom:calc(10*var(--u))}
+#mm1 .dk-top{display:flex;align-items:center;justify-content:space-between;padding:0 calc(14*var(--u)) calc(14*var(--u))}
+#mm1 .dk-brand{font-family:var(--display);font-weight:800;letter-spacing:.2em;font-size:calc(15*var(--u));text-transform:uppercase;background:linear-gradient(180deg,#E6FFFB,#5DEBDD 55%,#1FA99B);-webkit-background-clip:text;background-clip:text;color:transparent}
+#mm1 .dk-brand span{color:var(--pink);-webkit-text-fill-color:var(--pink)}
+#mm1 .dk-model{font-size:calc(10*var(--u));letter-spacing:.32em;text-transform:uppercase;color:#8f84a6;display:flex;align-items:center;gap:calc(10*var(--u))}
+#mm1 .dk-led{width:calc(7*var(--u));height:calc(7*var(--u));border-radius:50%;background:#3a2a36;box-shadow:inset 0 0 calc(2*var(--u)) #000}
+#mm1 .dk-on .dk-led{background:#ff7dbd;box-shadow:0 0 calc(6*var(--u)) var(--pink),0 0 calc(14*var(--u)) var(--pink)}
+#mm1 .dk-main{display:grid;grid-template-columns:calc(470*var(--u)) 1fr;gap:calc(20*var(--u))}
+#mm1 .dk-bay{position:relative;height:calc(300*var(--u));border-radius:calc(14*var(--u));padding:calc(2*var(--u));background:linear-gradient(160deg,#5DEBDD,#0f3f3b 40%,#1FA99B 75%,#B5FFF7)}
+#mm1 .dk-bay-in{position:relative;height:100%;border-radius:calc(12.5*var(--u));overflow:hidden;background:radial-gradient(120% 90% at 50% 0,#191426,#06050b 75%);box-shadow:inset 0 calc(10*var(--u)) calc(30*var(--u)) #000}
+#mm1 .dk-tape{position:absolute;left:calc(24*var(--u));right:calc(24*var(--u));top:calc(26*var(--u));bottom:calc(26*var(--u));border-radius:calc(10*var(--u));
+  background:linear-gradient(180deg,rgba(60,52,78,.92),rgba(24,20,34,.95));box-shadow:0 0 0 calc(1*var(--u)) rgba(95,235,221,.35),inset 0 calc(1*var(--u)) 0 rgba(255,255,255,.14),0 calc(10*var(--u)) calc(24*var(--u)) rgba(0,0,0,.6)}
+#mm1 .dk-label{position:absolute;left:calc(14*var(--u));right:calc(14*var(--u));top:calc(12*var(--u));height:calc(88*var(--u));border-radius:calc(6*var(--u));display:flex;align-items:center;gap:calc(14*var(--u));padding:0 calc(14*var(--u)) 0 calc(8*var(--u));
+  background:linear-gradient(180deg,#F8F4FF,#E2DAF2);color:#1b1524;box-shadow:inset 0 calc(-3*var(--u)) 0 var(--pink),inset 0 calc(-5*var(--u)) 0 var(--aqua)}
+#mm1 .dk-label img{width:calc(68*var(--u));height:calc(68*var(--u));border-radius:calc(4*var(--u));object-fit:cover;box-shadow:0 calc(2*var(--u)) calc(6*var(--u)) rgba(0,0,0,.35)}
+#mm1 .dk-label .dk-t{flex:1;min-width:0}
+#mm1 .dk-label .dk-song{font-family:var(--display);font-weight:800;font-size:calc(19*var(--u));letter-spacing:.04em;text-transform:uppercase;line-height:1.08;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#mm1 .dk-label .dk-art{font-family:Sacramento;font-size:calc(27*var(--u));line-height:.9;color:#c2246f;margin-top:calc(2*var(--u))}
+#mm1 .dk-label .dk-side{font-family:var(--display);font-weight:800;font-size:calc(26*var(--u));color:#1b1524;opacity:.85}
+#mm1 .dk-win{position:absolute;left:calc(64*var(--u));right:calc(64*var(--u));top:calc(110*var(--u));height:calc(98*var(--u));border-radius:calc(52*var(--u));background:linear-gradient(180deg,#07060c,#15111f);box-shadow:inset 0 calc(4*var(--u)) calc(12*var(--u)) #000,0 0 0 calc(1.5*var(--u)) rgba(95,235,221,.5)}
+#mm1 .dk-win svg{position:absolute;inset:0;width:100%;height:100%}
+#mm1 .dk-tape .dk-foot{position:absolute;left:22%;right:22%;bottom:0;height:calc(34*var(--u));background:linear-gradient(180deg,rgba(15,12,22,.9),rgba(40,34,54,.9));clip-path:polygon(6% 0,94% 0,100% 100%,0 100%);box-shadow:inset 0 calc(1*var(--u)) 0 rgba(95,235,221,.3)}
+#mm1 .dk-tape .dk-hole{position:absolute;bottom:calc(9*var(--u));width:calc(9*var(--u));height:calc(9*var(--u));border-radius:50%;background:#05040a;box-shadow:inset 0 0 0 calc(1*var(--u)) rgba(95,235,221,.35)}
+#mm1 .dk-glass{position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.16) 0,rgba(255,255,255,.03) 22%,transparent 38%,transparent 70%,rgba(255,255,255,.05) 100%);box-shadow:inset 0 0 0 calc(1*var(--u)) rgba(255,255,255,.08)}
+#mm1 .dk-bay-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 100%,rgba(255,79,163,calc(.08 + var(--bass)*.4)),transparent 70%)}
+#mm1 .dk-side-r{display:flex;flex-direction:column;gap:calc(14*var(--u))}
+#mm1 .dk-vus{display:grid;grid-template-columns:1fr 1fr;gap:calc(12*var(--u))}
+#mm1 .dk-vu{position:relative;height:calc(120*var(--u));border-radius:calc(10*var(--u));padding:calc(1.5*var(--u));background:linear-gradient(160deg,#5DEBDD,#0f3f3b 45%,#B5FFF7)}
+#mm1 .dk-vu-in{position:relative;height:100%;border-radius:calc(8.8*var(--u));overflow:hidden;background:radial-gradient(120% 130% at 50% 110%,#3b2532 0,#17111f 55%,#0b0911 100%)}
+#mm1 .dk-on .dk-vu-in{background:radial-gradient(120% 130% at 50% 110%,#7a3558 0,#2a1730 50%,#0e0b15 100%)}
+#mm1 .dk-vu svg{position:absolute;inset:0;width:100%;height:100%}
+#mm1 .dk-vu .dk-needle{transform-origin:100px 122px;transition:none}
+#mm1 .dk-vu .dk-ch{position:absolute;left:calc(10*var(--u));top:calc(7*var(--u));font-family:var(--display);font-weight:800;font-size:calc(10*var(--u));letter-spacing:.2em;color:var(--gold)}
+#mm1 .dk-vu .dk-pk{position:absolute;right:calc(10*var(--u));top:calc(9*var(--u));width:calc(6*var(--u));height:calc(6*var(--u));border-radius:50%;background:#3a1420}
+#mm1 .dk-vu .dk-pk.dk-hot{background:#ff5a7a;box-shadow:0 0 calc(8*var(--u)) #ff3d6a}
+#mm1 .dk-eq{position:relative;height:calc(118*var(--u));border-radius:calc(10*var(--u));padding:calc(1.5*var(--u));background:linear-gradient(160deg,#1FA99B,#0c2f2c 45%,#5DEBDD)}
+#mm1 .dk-eq-in{position:relative;height:100%;border-radius:calc(8.8*var(--u));overflow:hidden;background:#07060c;box-shadow:inset 0 calc(4*var(--u)) calc(14*var(--u)) #000}
+#mm1 .dk-eq canvas{position:absolute;left:0;top:0;width:100%;height:100%}
+#mm1 .dk-row{display:flex;align-items:center;gap:calc(12*var(--u))}
+#mm1 .dk-counter{flex:0 0 auto;font-family:var(--display);font-weight:800;font-variant-numeric:tabular-nums;font-size:calc(22*var(--u));letter-spacing:.08em;color:#ffb3d6;text-shadow:0 0 calc(8*var(--u)) rgba(255,79,163,.8);background:#07060c;border-radius:calc(7*var(--u));padding:calc(7*var(--u)) calc(12*var(--u));box-shadow:inset 0 0 0 calc(1*var(--u)) rgba(95,235,221,.35),inset 0 calc(3*var(--u)) calc(8*var(--u)) #000}
+#mm1 .dk-counter small{font-size:.55em;opacity:.6;letter-spacing:.1em}
+#mm1 .dk-prog{flex:1;height:calc(8*var(--u));border-radius:99px;background:#07060c;box-shadow:inset 0 0 0 calc(1*var(--u)) rgba(95,235,221,.3);overflow:hidden;cursor:pointer}
+#mm1 .dk-prog i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--aqua),var(--pink));box-shadow:0 0 calc(10*var(--u)) var(--pink)}
+#mm1 .dk-ctl{display:flex;align-items:center;justify-content:space-between;gap:calc(16*var(--u));margin-top:calc(20*var(--u));padding:0 calc(6*var(--u))}
+#mm1 .dk-keys{display:flex;gap:calc(10*var(--u))}
+#mm1 .dk-key{width:calc(74*var(--u));height:calc(52*var(--u));border:0;border-radius:calc(9*var(--u));cursor:pointer;color:#9FF3E8;display:grid;place-items:center;
+  background:linear-gradient(180deg,#3a3550 0,#262238 40%,#1a1728 62%,#110f1c 100%);
+  box-shadow:0 calc(5*var(--u)) 0 #07060d,0 calc(9*var(--u)) calc(14*var(--u)) rgba(0,0,0,.6),inset 0 calc(1.5*var(--u)) 0 rgba(181,255,247,.55),inset 0 0 0 calc(1*var(--u)) rgba(63,224,208,.45),0 0 calc(14*var(--u)) rgba(63,224,208,.18);transition:transform .08s,box-shadow .08s}
+#mm1 .dk-key:active,#mm1 .dk-key.dk-down{transform:translateY(calc(4*var(--u)));box-shadow:0 calc(1*var(--u)) 0 #07060d,0 0 calc(16*var(--u)) rgba(63,224,208,.45),inset 0 calc(1.5*var(--u)) 0 rgba(181,255,247,.4),inset 0 0 0 calc(1*var(--u)) rgba(63,224,208,.7)}
+#mm1 .dk-key svg{filter:drop-shadow(0 0 calc(4*var(--u)) rgba(63,224,208,.8));width:calc(20*var(--u));height:calc(20*var(--u));fill:currentColor}
+#mm1 .dk-key.dk-play{width:calc(104*var(--u));background:linear-gradient(180deg,#FFC2DF 0,#FF7DBD 35%,#F0408F 65%,#B81E70 100%);color:#fff;box-shadow:0 calc(5*var(--u)) 0 #6d1244,0 calc(9*var(--u)) calc(18*var(--u)) rgba(255,79,163,.45),inset 0 calc(1.5*var(--u)) 0 rgba(255,255,255,.7)}
+#mm1 .dk-key.dk-play.dk-down{box-shadow:0 calc(1*var(--u)) 0 #6d1244,0 0 calc(22*var(--u)) rgba(255,79,163,.7),inset 0 calc(1.5*var(--u)) 0 rgba(255,255,255,.5)}
+#mm1:not(.dk-on) .dk-key.dk-play{animation:dk-invite 2.2s ease-in-out infinite}
+@keyframes dk-invite{50%{filter:brightness(1.18)}}
+#mm1 .dk-knobwrap{display:flex;align-items:center;gap:calc(12*var(--u));color:#8f84a6;font-size:calc(9.5*var(--u));letter-spacing:.3em;text-transform:uppercase}
+#mm1 .dk-knob{position:relative;width:calc(62*var(--u));height:calc(62*var(--u));border-radius:50%;cursor:ns-resize;touch-action:none;
+  background:conic-gradient(from 0deg,#dfe6f5,#4a5068,#c3cbe0,#2b2f40,#dfe6f5,#4a5068,#c3cbe0,#2b2f40,#dfe6f5);
+  box-shadow:0 calc(6*var(--u)) calc(14*var(--u)) rgba(0,0,0,.7),0 0 0 calc(2*var(--u)) rgba(63,224,208,.55),0 0 calc(14*var(--u)) rgba(63,224,208,.35),inset 0 0 0 calc(2*var(--u)) rgba(0,0,0,.35)}
+#mm1 .dk-knob::before{content:"";position:absolute;inset:calc(7*var(--u));border-radius:50%;background:radial-gradient(circle at 35% 28%,#f4f7ff,#8d96b3 45%,#33384d)}
+#mm1 .dk-knob i{position:absolute;left:50%;top:calc(10*var(--u));width:calc(3*var(--u));height:calc(13*var(--u));margin-left:calc(-1.5*var(--u));border-radius:2px;background:var(--pink);box-shadow:0 0 calc(6*var(--u)) var(--pink);transform-origin:50% calc(21*var(--u))}
+#mm1 .dk-spot{display:inline-flex;align-items:center;gap:calc(9*var(--u));height:calc(46*var(--u));padding:0 calc(18*var(--u));border-radius:99px;text-decoration:none;font-weight:700;font-size:calc(13*var(--u));color:#07130c;background:linear-gradient(180deg,#5cf08f,#1DB954);box-shadow:0 calc(6*var(--u)) calc(18*var(--u)) rgba(29,185,84,.35),inset 0 calc(1*var(--u)) 0 rgba(255,255,255,.5)}
+#mm1 .dk-spot svg{width:calc(18*var(--u));height:calc(18*var(--u))}
+@media(max-width:560px){#mm1 .dk-model b{display:none}
+}
+#mm1 .dk-list{max-width:940px;width:calc(100% - 32px);margin:calc(-1*clamp(20px,5vw,70px)) auto 34px;position:relative;z-index:1}
+#mm1 .dk-list h4{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#9FF3E8;margin:0 0 12px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+#mm1 .dk-list h4 em{font-style:normal;font-family:Inter;font-weight:500;letter-spacing:.02em;text-transform:none;color:var(--muted);font-size:13px}
+#mm1 .dk-list ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+#mm1 .dk-list button{width:100%;display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;border:1px solid rgba(95,235,221,.16);background:rgba(255,255,255,.025);color:var(--ink);font:500 14px Inter,system-ui,sans-serif;text-align:left;cursor:pointer;transition:border-color .15s,background .15s}
+#mm1 .dk-list button:hover{border-color:rgba(95,235,221,.5);background:rgba(63,224,208,.06)}
+#mm1 .dk-list .dk-no{flex:0 0 26px;font-family:var(--display);font-weight:800;font-size:12px;color:#7fd9cf;font-variant-numeric:tabular-nums}
+#mm1 .dk-list .dk-ti{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mm1 .dk-list .dk-tg.dk-soon{background:transparent;color:#9FF3E8;border:1px solid rgba(63,224,208,.5)}
+#mm1 .dk-list .dk-tg{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0B0A1A;background:var(--pink);border-radius:99px;padding:3px 8px}
+#mm1 .dk-list .dk-bars{display:none;gap:2px;align-items:flex-end;height:14px}
+#mm1 .dk-list .dk-bars i{width:3px;border-radius:1px;background:var(--pink);height:calc(4px + var(--bass)*10px)}
+#mm1 .dk-list .dk-bars i:nth-child(2){height:calc(4px + var(--mid)*14px);background:#C77DFF}
+#mm1 .dk-list .dk-bars i:nth-child(3){height:calc(4px + var(--hi)*16px);background:var(--aqua)}
+#mm1 .dk-list li.dk-cur button{border-color:var(--pink);background:rgba(255,79,163,.1);box-shadow:0 0 18px rgba(255,79,163,.22)}
+#mm1 .dk-list li.dk-cur .dk-no{color:var(--pink)}
+#mm1 .dk-list li.dk-cur .dk-bars{display:flex}
+@media(max-width:640px){#mm1 .dk-list ol{grid-template-columns:1fr}
+}
+#mm1 .dk-label .dk-side{min-width:1.4em;text-align:right}
+
+#mm1{container-type:inline-size;position:relative;width:100%;margin-top:clamp(30px,5vw,60px);--bass:0;--mid:0;--hi:0;--gold:#9FF3E8;--gold2:#3FE0D0;--gold3:#12645C}
+#mm1 *{box-sizing:border-box}
+#mm1 .dk-scene{padding:clamp(34px,6vw,80px) 0 clamp(40px,7vw,90px)}
+#mm1 .dk-amb{inset:0 -8vw;overflow:visible}
+#mm1 .dk-list{width:100%;margin:0 auto}
+#mm1 .dk-links{display:flex;gap:calc(10*var(--u));align-items:center}
+#mm1 .dk-spot.dk-yt{color:#fff;background:linear-gradient(180deg,#ff5a5a,#e60023);box-shadow:0 calc(6*var(--u)) calc(18*var(--u)) rgba(230,0,35,.35),inset 0 calc(1*var(--u)) 0 rgba(255,255,255,.45)}
+#mm1 .dk-key:focus-visible,#mm1 .dk-list button:focus-visible,#mm1 .dk-spot:focus-visible,#mm1 .dk-knob:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}
+@media(max-width:700px){
+#mm1 .dk-deck{--u:calc((100vw - 36px)/470);--u:calc(100cqw/470);border-radius:calc(22*var(--u))}
+#mm1 .dk-body{padding:calc(18*var(--u)) calc(16*var(--u)) calc(20*var(--u))}
+#mm1 .dk-top{padding:0 calc(10*var(--u)) calc(12*var(--u))}
+#mm1 .dk-model b{display:none}
+#mm1 .dk-main{grid-template-columns:1fr;gap:calc(14*var(--u))}
+#mm1 .dk-bay{height:calc(290*var(--u))}
+#mm1 .dk-ctl{flex-wrap:wrap;justify-content:center;gap:calc(16*var(--u));margin-top:calc(18*var(--u));padding:0}
+#mm1 .dk-keys{width:100%;gap:calc(10*var(--u))}
+#mm1 .dk-key{flex:1;width:auto;height:calc(62*var(--u))}
+#mm1 .dk-key.dk-play{flex:1.5;width:auto}
+#mm1 .dk-key svg{width:calc(24*var(--u));height:calc(24*var(--u))}
+#mm1 .dk-knobwrap{display:none}
+#mm1 .dk-links{width:100%}
+#mm1 .dk-spot{flex:1;justify-content:center;height:calc(50*var(--u));font-size:calc(14*var(--u))}
+}
+#mm1 .dk-rig{position:relative;--u:min(1px,calc((100vw - 36px)/940));--u:min(1px,calc(100cqw/940))}
+#mm1 .dk-ambi{position:absolute;inset:0;pointer-events:none}
+#mm1 .dk-ambi i{position:absolute;border-radius:999px;will-change:opacity,transform;transition:opacity .08s linear}
+#mm1 .dk-at{left:4%;right:4%;top:calc(-34*var(--u));height:calc(80*var(--u));filter:blur(calc(30*var(--u)));background:linear-gradient(90deg,#3FE0D0,#7CFFD6 22%,#C77DFF 50%,#3FE0D0 78%,#7CFFD6);opacity:calc(.1 + var(--hi)*1.5);transform:scaleY(calc(.7 + var(--hi)*1.2))}
+#mm1 .dk-ab{left:4%;right:4%;bottom:calc(-38*var(--u));height:calc(90*var(--u));filter:blur(calc(34*var(--u)));background:linear-gradient(90deg,#FF4FA3,#FF9E5E 25%,#FF4FA3 50%,#C77DFF 75%,#FF4FA3);opacity:calc(.12 + var(--bass)*1.05);transform:scaleY(calc(.7 + var(--bass)*1.1))}
+#mm1 .dk-al{top:6%;bottom:6%;left:calc(-36*var(--u));width:calc(84*var(--u));filter:blur(calc(32*var(--u)));background:linear-gradient(180deg,#3FE0D0,#C77DFF 45%,#FF4FA3);opacity:calc(.1 + var(--lv)*.95);transform:scaleX(calc(.7 + var(--lv)*1))}
+#mm1 .dk-ar{top:6%;bottom:6%;right:calc(-36*var(--u));width:calc(84*var(--u));filter:blur(calc(32*var(--u)));background:linear-gradient(180deg,#3FE0D0,#C77DFF 45%,#FF4FA3);opacity:calc(.1 + var(--rv)*.95);transform:scaleX(calc(.7 + var(--rv)*1))}
+#mm1 .dk-rig{width:calc(940*var(--u));max-width:100%;flex:0 1 auto}
+#mm1 .dk-deck{z-index:1;width:100%}
+#mm1{--lv:0;--rv:0}
+@media(max-width:700px){#mm1 .dk-rig{--u:calc((100vw - 36px)/470);--u:calc(100cqw/470)}}
+#mm1 .dk-list button{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,border-color .15s,background .15s}
+@media(hover:hover){#mm1 .dk-list li{perspective:600px}#mm1 .dk-list button:hover{transform:translateY(-4px) scale(1.035);border-color:var(--aqua);background:rgba(63,224,208,.09);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 22px rgba(63,224,208,.35)}
+#mm1 .dk-list li.dk-cur button:hover{border-color:var(--pink);background:rgba(255,79,163,.14);box-shadow:0 12px 28px rgba(0,0,0,.5),0 0 26px rgba(255,79,163,.5)}}
+#mm1 .dk-list button:active{transform:scale(.985)}
+.section.after-neon{padding-top:clamp(48px,6vw,84px)}
+.palm-sign{width:min(560px,88vw);display:flex;flex-direction:column;align-items:center;gap:6px}
+.palm-sign svg{width:100%;height:auto;overflow:visible}
+.palm-sign .tube{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.palm-sign .tree{stroke:#7CFFD6;stroke-width:5;filter:drop-shadow(0 0 2px #E8FFF8) drop-shadow(0 0 8px #3FE0D0) drop-shadow(0 0 20px rgba(63,224,208,.75))}
+.palm-sign .sun{filter:drop-shadow(0 0 2px #FFE1F0) drop-shadow(0 0 9px #FF4FA3) drop-shadow(0 0 22px rgba(199,125,255,.7))}
+.palm-sign .sea{stroke:#3FE0D0;stroke-width:4;filter:drop-shadow(0 0 6px #3FE0D0) drop-shadow(0 0 16px rgba(63,224,208,.6))}
+.neon-txt{margin:0;white-space:nowrap;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(24px,5vw,42px);letter-spacing:.06em;text-transform:uppercase;color:#FFE6F3;
+  text-shadow:0 0 2px #fff,0 0 8px #FF7DBE,0 0 20px #FF4FA3,0 0 44px #FF2E93,0 0 80px rgba(199,125,255,.6)}
+.palm-sign .tube,.neon-txt{opacity:.07;transition:opacity .2s}
+.palm-sign.on .sun{animation:pOn 1.8s linear .1s both,pBuzz 9s linear 3s infinite}
+.palm-sign.on .tree{animation:pOn 2.2s linear .5s both,pBuzz 7s linear 4s infinite}
+.palm-sign.on .sea{animation:pOn 1.6s linear .9s both,pBuzz 11s linear 5s infinite}
+.palm-sign.on .neon-txt{animation:pOn 2s linear 1.2s both,pBuzz 13s linear 6s infinite}
+@keyframes pOn{0%,8%{opacity:.07}9%{opacity:1}12%{opacity:.1}16%{opacity:1}19%{opacity:.15}38%{opacity:.15}40%{opacity:1}43%{opacity:.5}46%,100%{opacity:1}}
+@keyframes pBuzz{0%,88%,100%{opacity:1}89%{opacity:.3}90%{opacity:1}93%{opacity:.55}94%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.palm-sign .tube,.neon-txt{opacity:1}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MusicGroup","name":"Mika Montero","url":"https://mikamontero.com/","image":"https://mikamontero.com/assets/img/cover.jpg","genre":["Electronic","Dance","Pop"],"foundingLocation":{"@type":"Place","name":"Miami, Florida"},
+"sameAs":["https://www.instagram.com/mikamontero26/","https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW","https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg","https://music.apple.com/us/artist/mika-montero/6829494127"],
+"track":{"@type":"MusicRecording","name":"Break You Out","byArtist":{"@type":"MusicGroup","name":"Mika Montero"},"datePublished":"2026-11-23"},
+"email":"booking@mikamontero.com"}
+</script>
+<link rel="alternate" hreflang="en" href="https://mikamontero.com/">
+<link rel="alternate" hreflang="es" href="https://mikamontero.com/">
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="logo" href="#top">MIKA<span>.</span>MONTERO</a>
+  <nav class="links" aria-label="Main">
+    <a class="hide-sm" href="#music" data-i18n="nav_music">Music</a>
+    <a class="hide-sm" href="#feed" data-i18n="nav_feed">Feed</a>
+    <a class="hide-sm" href="#about" data-i18n="nav_about">About</a>
+    <a class="hide-sm" href="#brands" data-i18n="nav_brands">Brands</a>
+    <button class="lang" id="lang" type="button" aria-label="Español / English"><span data-l="en">EN</span><span data-l="es">ES</span></button>
+    <a class="nav-cta" href="https://www.fanvue.com/mikamontero" target="_blank" rel="noopener" data-i18n="nav_join">Join me</a>
+  </nav>
+</header>
+
+<main>
+  <section class="film" id="top" aria-label="Mika on a rainy neon street at night">
+    <div class="stage">
+      <picture>
+        <source media="(max-width:860px)" srcset="assets/hero-mobile.jpg">
+        <img class="poster" src="assets/hero.jpg" alt="" fetchpriority="high">
+      </picture>
+      <video id="film" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video>
+      <div class="hero-copy">
+      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><svg class="nsvg" viewBox="24 34 340 118" aria-hidden="true"><defs><text id="nT" x="40" y="130" style="font-family:Sacramento,cursive;font-size:100px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0">Montero</text><mask id="nMh" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="200"><use href="#nT" style="fill:#fff;stroke:none"/><use href="#nT" style="fill:#000;stroke:#000;stroke-width:.2" transform="translate(.85 1.05)"/></mask><mask id="nMl" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="200"><use href="#nT" style="fill:#fff;stroke:none"/><use href="#nT" style="fill:#000;stroke:#000;stroke-width:.2" transform="translate(-.95 -1.15)"/></mask></defs><g class="ly-s"><use href="#nT"/></g><g class="ly-g"><use href="#nT"/></g><g class="pk ly-t1"><use href="#nT"/></g><g class="pk ly-t2"><use href="#nT"/></g><g class="pk ly-t3"><use href="#nT"/></g><g class="ly-t4"><use href="#nT"/></g><g class="ly-lo" mask="url(#nMl)"><use href="#nT"/></g><g class="ly-hl" mask="url(#nMh)"><use href="#nT"/></g></svg></span></h1>
+      <p class="lead" data-i18n="lead">Miami nights. Honolulu heart.</p>
+      <p class="sub" data-i18n="sub">Singer and songwriter from Miami. I write my songs at night, when the city glows pink and everything feels possible. My first single, Break You Out, drops Monday. Turn it up.</p>
+      <div class="actions">
+            <a class="plat sp" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg>Spotify <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat yt" href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>YouTube <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat am" href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Apple Music <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span data-i18n="mq_date" data-rel>✦ Monday, Nov 23</span><span>✦ Miami</span><span>✦ The Remixes</span><span class="mq-rxd">Friday, Nov 27</span><span class="mq-rxn">✦ 5 new versions</span>
+      <span>Break You Out</span><span data-i18n="mq_new">✦ New single</span><span data-i18n="mq_soon" data-rel>Coming soon</span><span data-i18n="mq_date" data-rel>✦ Monday, Nov 23</span><span>✦ Miami</span><span>✦ The Remixes</span><span class="mq-rxd">Friday, Nov 27</span><span class="mq-rxn">✦ 5 new versions</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="section" id="music">
+      <div class="music">
+        <div class="cover real">
+          <img src="assets/img/single-cover-lg.jpg" alt="Cover of the single Break You Out: Mika in the rain with a golden sequin glove" width="1200" height="1200" loading="lazy">
+        </div>
+        <div class="txt">
+          <h2 data-i18n="music_h">The <em>music</em></h2>
+          <p class="p" data-i18n="music_p" data-rel>Break You Out is a story. Ruby Rae, eighty-four, once sang the Starlight Room on Sunset six nights a week. Now they're tearing it down, and her granddaughter has one night to sneak her out of the home, sequin dress and all, for one last song. 90s soul hip-hop meets a 60s torch song. Pre-save it now and it's yours the second it drops.</p>
+          <div class="countdown" id="countdown">
+            <p class="cd-head"><span data-i18n="cd_head" data-rel>Out Monday, Nov 23</span><span class="cd-time">00:00 Miami</span></p>
+            <div class="cd-grid" id="cd-grid">
+              <div><b id="cd-d">0</b><span data-i18n="cd_d">Days</span></div>
+              <div><b id="cd-h">00</b><span data-i18n="cd_h">Hours</span></div>
+              <div><b id="cd-m">00</b><span data-i18n="cd_m">Min</span></div>
+              <div><b id="cd-s">00</b><span data-i18n="cd_s">Sec</span></div>
+            </div>
+            <a class="cd-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-original-mix?utm_source=website" target="_blank" rel="noopener"><span data-i18n="cd_cta" data-rel>Pre-save Break You Out</span> <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+          <div class="stripes" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="teaser" id="teaser">
+        <div class="tz-copy">
+          <p class="eyebrow eye-glow" data-i18n="tz_eye">Official teaser</p>
+          <h3 class="wave" id="tz-h" aria-label="Break You Out">Break<br><em>You Out</em></h3>
+          <p class="p" data-i18n="tz_p">Studio night in Miami, headphones off, volume up. A first taste before Monday. Sound on.</p>
+          <div class="stripes" aria-hidden="true"></div>
+        </div>
+        <div class="tz-frame" id="tz-frame">
+          <video id="tz-video" src="assets/teaser.mp4" poster="assets/img/teaser-poster.jpg" preload="none" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video>
+          <button class="tz-play" id="tz-play" type="button" aria-label="Play the Break You Out teaser with sound"><span class="ring"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span><span data-i18n="tz_btn">Play with sound</span></button>
+        </div>
+      </div>
+      <div class="teaser remix" id="remix">
+        <div class="tz-frame" id="rx-frame">
+          <video id="rx-video" src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.jpg" preload="none" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video>
+          <button class="tz-play" id="rx-play" type="button" aria-label="Play the Dark Disco Dub remix trailer with sound"><span class="ring"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span><span id="rx-btn">Play with sound</span></button>
+        </div>
+        <div class="tz-copy">
+          <img class="rx-cover" src="assets/img/remix-cover.jpg" alt="Cover of Break You Out, The Remixes: Mika in pink and turquoise neon light" width="640" height="640" loading="lazy">
+          <p class="eyebrow eye-glow" id="rx-eye">Next up · Friday, Nov 27</p>
+          <h3 class="wave" id="rx-h" aria-label="The Remixes">The<br><em>Remixes</em></h3>
+          <p class="p" id="rx-p">Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.</p>
+          <ul class="facts" aria-label="Remixes">
+            <li>Dark Disco Dub</li><li>Melodic House</li><li>Concrete Techno</li><li>Indie Dance</li><li>Minimal</li>
+          </ul>
+          <a class="cd-cta rx-cta" id="rx-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-the-remixes?utm_source=website" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.2c-2.35-1.43-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.81-.87 7.08-.5 9.72 1.11.3.18.39.57.21.87zm1.23-2.73a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.5c3.63-1.1 8.150-.56 11.240 1.340.37.22.48.7.25 1.07zm.1-2.85C14.7 8.9 9.38 8.72 6.3 9.66a.94.94 0 11-.54-1.8c3.53-1.07 9.41-.86 13.13 1.35a.94.94 0 01-.96 1.61z"/></svg><span id="rx-cta-t">Pre-save The Remixes</span></a>
+          <div class="stripes" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="spbox" id="spbox">
+        <div class="tz-copy">
+          <p class="eyebrow eye-glow" data-i18n="sp_eye">More music</p>
+          <h3 class="wave" id="sp-h" data-i18n="sp_h">All my<br><em>music</em></h3>
+          <p class="p" data-i18n="sp_p">My debut album, No Angel. No Apology., and the new single. Pick a track, press play and stay a while.</p>
+        </div>
+        
+      </div>
+      <div id="mm1">
+<div class="dk-scene">
+  
+  <div class="dk-rig"><div class="dk-ambi" aria-hidden="true"><i class="dk-at"></i><i class="dk-ab"></i><i class="dk-al"></i><i class="dk-ar"></i></div><div class="dk-deck" id="dk-deck">
+    <div class="dk-body">
+      <i class="dk-screw dk-s1"></i><i class="dk-screw dk-s2"></i><i class="dk-screw dk-s3"></i><i class="dk-screw dk-s4"></i>
+      <div class="dk-top">
+        <div class="dk-brand">Mika<span>.</span>Montero</div>
+        <div class="dk-model"><b>MM&#8209;1 · Stereo Cassette Deck</b><i class="dk-led"></i></div>
+      </div>
+      <div class="dk-main">
+        <div class="dk-bay"><div class="dk-bay-in">
+          <div class="dk-bay-glow"></div>
+          <div class="dk-tape">
+            <div class="dk-label"><img id="dk-lc" src="assets/img/single-cover.jpg" loading="lazy" alt=""><div class="dk-t"><div class="dk-song" id="dk-ls">Break You Out</div><div class="dk-art">Mika Montero</div></div><div class="dk-side" id="dk-lside">★</div></div>
+            <div class="dk-win"><svg viewBox="0 0 302 104" aria-hidden="true">
+              <defs>
+                <radialGradient id="dk-pack" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#1c1426"/><stop offset=".7" stop-color="#2a1e38"/><stop offset="1" stop-color="#120d1a"/></radialGradient>
+                <linearGradient id="dk-hubg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6FFFB"/><stop offset=".5" stop-color="#5DEBDD"/><stop offset="1" stop-color="#178F84"/></linearGradient>
+              </defs>
+              <circle id="dk-packL" cx="70" cy="52" r="46" fill="url(#dk-pack)" stroke="#4a3a66" stroke-width=".6"/>
+              <circle id="dk-packR" cx="232" cy="52" r="24" fill="url(#dk-pack)" stroke="#4a3a66" stroke-width=".6"/>
+              <path id="dk-strand" d="" fill="none" stroke="#4a3a66" stroke-width="1.4"/>
+              <g id="dk-reelL" transform="translate(70 52)"><circle r="19" fill="#0a0810" stroke="url(#dk-hubg)" stroke-width="2.5"/><g fill="url(#dk-hubg)"><rect x="-2.2" y="-17" width="4.4" height="9" rx="1"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(60)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(120)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(180)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(240)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(300)"/></g><circle r="5.5" fill="#05040a" stroke="#9FF3E8" stroke-width="1"/></g>
+              <g id="dk-reelR" transform="translate(232 52)"><circle r="19" fill="#0a0810" stroke="url(#dk-hubg)" stroke-width="2.5"/><g fill="url(#dk-hubg)"><rect x="-2.2" y="-17" width="4.4" height="9" rx="1"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(60)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(120)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(180)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(240)"/><rect x="-2.2" y="-17" width="4.4" height="9" rx="1" transform="rotate(300)"/></g><circle r="5.5" fill="#05040a" stroke="#9FF3E8" stroke-width="1"/></g>
+              <path d="M0 0H302V30C200 8 110 8 0 34Z" fill="rgba(255,255,255,.06)"/>
+            </svg></div>
+            <div class="dk-foot"></div><i class="dk-hole" style="left:30%"></i><i class="dk-hole" style="right:30%"></i>
+          </div>
+          <div class="dk-glass"></div>
+        </div></div>
+        <div class="dk-side-r">
+          <div class="dk-vus">
+            <div class="dk-vu"><div class="dk-vu-in"><svg viewBox="0 0 200 120" aria-hidden="true"><g id="dk-scaleL"></g><g class="dk-needle" id="dk-nL"><line x1="100" y1="122" x2="100" y2="30" stroke="#FF6FB5" stroke-width="1.6" stroke-linecap="round"/></g><circle cx="100" cy="122" r="14" fill="#0b0911" stroke="#5DEBDD" stroke-width="1.2"/></svg><span class="dk-ch">L</span><i class="dk-pk" id="dk-pkL"></i></div></div>
+            <div class="dk-vu"><div class="dk-vu-in"><svg viewBox="0 0 200 120" aria-hidden="true"><g id="dk-scaleR"></g><g class="dk-needle" id="dk-nR"><line x1="100" y1="122" x2="100" y2="30" stroke="#FF6FB5" stroke-width="1.6" stroke-linecap="round"/></g><circle cx="100" cy="122" r="14" fill="#0b0911" stroke="#5DEBDD" stroke-width="1.2"/></svg><span class="dk-ch">R</span><i class="dk-pk" id="dk-pkR"></i></div></div>
+          </div>
+          <div class="dk-eq"><div class="dk-eq-in"><canvas id="dk-eq"></canvas></div></div>
+          <div class="dk-row"><div class="dk-counter" id="dk-cnt">00:00 <small>/ 00:44</small></div><div class="dk-prog" id="dk-prog"><i id="dk-bar"></i></div></div>
+        </div>
+      </div>
+      <div class="dk-ctl">
+        <div class="dk-keys">
+          <button class="dk-key" id="dk-prev" aria-label="Previous track"><svg viewBox="0 0 24 24"><path d="M4 5h2.5v14H4zM20 5v14L8 12z"/></svg></button>
+          <button class="dk-key dk-play" id="dk-play" aria-label="Play or pause"><svg viewBox="0 0 24 24" id="dk-ico"><path d="M6 4l14 8-14 8z"/></svg></button>
+          <button class="dk-key" id="dk-next" aria-label="Next track"><svg viewBox="0 0 24 24"><path d="M17.5 5H20v14h-2.5zM4 5l12 7-12 7z"/></svg></button>
+        </div>
+        <div class="dk-knobwrap"><span>Volume</span><div class="dk-knob" id="dk-knob" role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" tabindex="0"><i id="dk-kn"></i></div></div>
+        <div class="dk-links"><a class="dk-spot" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.2c-2.35-1.43-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.81-.87 7.08-.5 9.72 1.11.3.18.39.57.21.87zm1.23-2.73a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.5c3.63-1.1 8.15-.56 11.24 1.34.37.22.48.7.25 1.07zm.1-2.85C14.7 8.9 9.38 8.72 6.3 9.66a.94.94 0 11-.54-1.8c3.53-1.07 9.41-.86 13.13 1.35a.94.94 0 01-.96 1.61z"/></svg>Spotify</a><a class="dk-spot dk-yt" href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.800 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3z"/></svg>YouTube</a></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+<div class="dk-list"><h4>No Angel. No Apology. <em data-i18n="dk_sub">Debut album · 15 tracks + the remixes · 40-second previews</em></h4><ol id="dk-tl"><li class="dk-cur"><button type="button" data-f="assets/deck/r00.mp3" data-c="assets/img/single-cover.jpg" data-s="★"><span class="dk-no">★</span><span class="dk-ti">Break You Out</span><span class="dk-tg" data-i18n="dk_new">New single</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r01.mp3" data-c="assets/img/remix-cover.jpg" data-s="R1"><span class="dk-no">R1</span><span class="dk-ti">Break You Out (Dark Disco Dub)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r02.mp3" data-c="assets/img/remix-cover.jpg" data-s="R2"><span class="dk-no">R2</span><span class="dk-ti">Break You Out (Ibiza Melodic House Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r03.mp3" data-c="assets/img/remix-cover.jpg" data-s="R3"><span class="dk-no">R3</span><span class="dk-ti">Break You Out (Concrete Techno Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r04.mp3" data-c="assets/img/remix-cover.jpg" data-s="R4"><span class="dk-no">R4</span><span class="dk-ti">Break You Out (Indie Dance Freak Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r05.mp3" data-c="assets/img/remix-cover.jpg" data-s="R5"><span class="dk-no">R5</span><span class="dk-ti">Break You Out (Minimal Hypno Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t01.mp3" data-c="assets/deck/album.jpg" data-s="01"><span class="dk-no">01</span><span class="dk-ti">No Angel</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t02.mp3" data-c="assets/deck/album.jpg" data-s="02"><span class="dk-no">02</span><span class="dk-ti">Palm Trees &amp; Bad Decisions</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t03.mp3" data-c="assets/deck/album.jpg" data-s="03"><span class="dk-no">03</span><span class="dk-ti">Pretty Little Problem</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t04.mp3" data-c="assets/deck/album.jpg" data-s="04"><span class="dk-no">04</span><span class="dk-ti">Rent Free in Your Head</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t05.mp3" data-c="assets/deck/album.jpg" data-s="05"><span class="dk-no">05</span><span class="dk-ti">Money Can't Buy a Pulse</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t06.mp3" data-c="assets/deck/album.jpg" data-s="06"><span class="dk-no">06</span><span class="dk-ti">Don't Test the Lipstick</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t07.mp3" data-c="assets/deck/album.jpg" data-s="07"><span class="dk-no">07</span><span class="dk-ti">Girls Like Me Get Lonely Too</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t08.mp3" data-c="assets/deck/album.jpg" data-s="08"><span class="dk-no">08</span><span class="dk-ti">No Saints in South Beach</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t09.mp3" data-c="assets/deck/album.jpg" data-s="09"><span class="dk-no">09</span><span class="dk-ti">Mama Didn't Raise a Fool</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t10.mp3" data-c="assets/deck/album.jpg" data-s="10"><span class="dk-no">10</span><span class="dk-ti">Pretty When I'm Pissed</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t11.mp3" data-c="assets/deck/album.jpg" data-s="11"><span class="dk-no">11</span><span class="dk-ti">Love Me Like You Mean It</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t12.mp3" data-c="assets/deck/album.jpg" data-s="12"><span class="dk-no">12</span><span class="dk-ti">Bad Habit with a Heart</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t13.mp3" data-c="assets/deck/album.jpg" data-s="13"><span class="dk-no">13</span><span class="dk-ti">Everybody Wants the Sunshine</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t14.mp3" data-c="assets/deck/album.jpg" data-s="14"><span class="dk-no">14</span><span class="dk-ti">The Girl in the Rearview</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t15.mp3" data-c="assets/deck/album.jpg" data-s="15"><span class="dk-no">15</span><span class="dk-ti">Still Here, Still Trouble</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li></ol></div>
+<audio id="song" preload="none"></audio>
+</div>
+    </section>
+
+    <section class="section" id="feed">
+      <div class="feed-head">
+        <h2 data-i18n="feed_h">The <em>feed</em></h2>
+        <div class="tabs" role="tablist" aria-label="Feed">
+          <button class="tab" id="tab-music" role="tab" aria-selected="true" aria-controls="panel-music" data-i18n="tab_music">Music</button>
+          <button class="tab" id="tab-model" role="tab" aria-selected="false" aria-controls="panel-model" data-i18n="tab_model">Model</button>
+        </div>
+      </div>
+      <div class="feed" id="panel-music" role="tabpanel" aria-labelledby="tab-music">
+        <figure><img src="assets/img/m1.jpg" alt="Mika singing into a studio microphone with headphones" loading="lazy"></figure>
+        <figure><img src="assets/img/m2.jpg" alt="Mika performing on stage under pink spotlights" loading="lazy"></figure>
+        <figure><img src="assets/img/m3.jpg" alt="Mika at a mixing console in the studio at night" loading="lazy"></figure>
+        <figure><img src="assets/img/m4.jpg" alt="Mika with headphones around her neck on a neon Miami street" loading="lazy"></figure>
+        <figure><img src="assets/img/m5.jpg" alt="Mika in the recording studio" loading="lazy"></figure>
+        <figure><img src="assets/img/m6.jpg" alt="Mika behind the wheel of a red vintage car" loading="lazy"></figure>
+      </div>
+      <div class="feed" id="panel-model" role="tabpanel" aria-labelledby="tab-model" hidden>
+        <figure><img src="assets/img/g1.jpg" alt="Mika in a golden satin dress on a rooftop at sunset" loading="lazy"></figure>
+        <figure><img src="assets/img/g2.jpg" alt="Mika in white resort wear with palm shadows" loading="lazy"></figure>
+        <figure><img src="assets/img/g3.jpg" alt="Beauty portrait of Mika with gold hoop earrings" loading="lazy"></figure>
+        <figure><img src="assets/img/g4.jpg" alt="Mika in a blazer in front of neon city lights" loading="lazy"></figure>
+        <figure><img src="assets/img/g5.jpg" alt="Black and white photo of Mika in an evening gown" loading="lazy"></figure>
+        <figure><img src="assets/img/g6.jpg" alt="Mika in a black blazer by a window at blue hour" loading="lazy"></figure>
+      </div>
+      <div class="feed-cta" id="cta-music" aria-label="Streaming platforms">
+            <a class="plat yt" href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>YouTube <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat sp" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg>Spotify <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+            <a class="plat am" href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Apple Music <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+      </div>
+      <div class="feed-cta" id="cta-model" hidden><a class="cta-ig" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+        <span data-i18n="feed_follow">Follow @mikamontero26</span></a></div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about">
+        <div class="txt">
+          <p class="eyebrow eye-glow" data-i18n="ab_eye">Hey, I'm Mika</p>
+          <h2 class="wave" id="ab-h" data-i18n="ab_h">Born in <em>Honolulu,</em><br>made in Miami.</h2>
+          <p class="p" data-i18n="ab_p">Japanese-American, island girl at heart and a night owl by choice. I model, I shoot, I write songs, and I live for that hour when the city lights come on. A little bit sweet, a little bit trouble.</p>
+          <ul class="facts">
+            <li>Miami, FL</li>
+            <li data-i18n="f_artist">Artist</li>
+            <li data-i18n="f_model">Model</li>
+            <li data-i18n="f_photo">Photographer</li>
+            <li data-i18n="f_lang">English · 日本語 · un poco español</li>
+          </ul>
+        </div>
+        <figure><img src="assets/img/about.jpg" alt="Black and white portrait of Mika in a white shirt" loading="lazy"></figure>
+      </div>
+    </section>
+  </div>
+
+  <section class="neonwall mid" aria-label="Miami at night: neon-lit boulevard with a neon sign of a palm tree and sunset">
+    <img class="nw-bg" src="assets/miami-street.jpg" alt="" loading="lazy" decoding="async">
+    <video class="nw-bg" id="nw-vid" muted playsinline loop preload="none" aria-hidden="true"></video>
+    <div class="palm-sign" id="palm-sign">
+      <svg viewBox="0 0 400 320" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="sunG" gradientUnits="userSpaceOnUse" x1="0" y1="58" x2="0" y2="242"><stop offset="0" stop-color="#FF4FA3"/><stop offset=".55" stop-color="#C77DFF"/><stop offset="1" stop-color="#FF9E5E"/></linearGradient>
+          <clipPath id="sunC"><circle cx="236" cy="150" r="88"/></clipPath>
+        </defs>
+        <g class="tube sun">
+          <circle cx="236" cy="150" r="92" stroke="url(#sunG)" stroke-width="5"/>
+          <g clip-path="url(#sunC)" stroke="url(#sunG)" stroke-width="4"><line x1="130" x2="345" y1="74" y2="74"/><line x1="130" x2="345" y1="90" y2="90"/><line x1="130" x2="345" y1="106" y2="106"/><line x1="130" x2="345" y1="121" y2="121"/><line x1="130" x2="345" y1="136" y2="136"/><line x1="130" x2="345" y1="150" y2="150"/><line x1="130" x2="345" y1="163" y2="163"/><line x1="130" x2="345" y1="175" y2="175"/><line x1="130" x2="345" y1="186" y2="186"/><line x1="130" x2="345" y1="196" y2="196"/><line x1="130" x2="345" y1="205" y2="205"/><line x1="130" x2="345" y1="213" y2="213"/><line x1="130" x2="345" y1="220" y2="220"/><line x1="130" x2="345" y1="226" y2="226"/><line x1="130" x2="345" y1="231" y2="231"/><line x1="130" x2="345" y1="235" y2="235"/></g>
+        </g>
+        <g class="tube sea">
+          <path d="M96 262 H372"/><path d="M134 278 H336"/><path d="M178 293 H292"/>
+        </g>
+        <g class="tube tree">
+          <path d="M138 296 C146 244 160 192 171 132"/><path d="M153 296 C160 244 173 192 183 132"/>
+          <path d="M141 270 l14 2 M145 244 l15 2 M150 218 l15 2 M156 192 l15 2 M162 166 l15 2"/>
+          <path d="M177 128 C150 104 118 102 88 118"/>
+          <path d="M177 128 C158 92 128 78 100 82"/>
+          <path d="M177 128 C176 94 192 70 220 62"/>
+          <path d="M177 128 C206 102 240 100 266 114"/>
+          <path d="M177 128 C202 120 228 134 242 160"/>
+          <path d="M177 128 C158 126 136 142 126 166"/>
+        </g>
+      </svg>
+      <p class="neon-txt" data-i18n="neon_txt">Miami nights</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="section after-neon" id="private">
+      <div class="private">
+        <figure>
+          <img src="assets/img/private.jpg" alt="" loading="lazy">
+          <span class="today"><i aria-hidden="true"></i><span data-i18n="today">New today</span></span>
+          <div class="lock">
+            <svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <span data-i18n="members">Members only</span>
+          </div>
+        </figure>
+        <div class="txt">
+          <p class="eyebrow eye-glow" data-i18n="pv_eye">Members only · New every day</p>
+          <h2 data-i18n="pv_h">After <em>dark.</em></h2>
+          <p class="p" data-i18n="pv_p">Something new drops <strong class="hl">every single day</strong>. Exclusive photos and videos, behind the scenes from my shoots and the studio, and private chats around the clock. Everything I'd never post on Instagram lives on my Fanvue.</p>
+          <div class="week" aria-label="New exclusive content every day of the week">
+            <span data-i18n="w0" data-new="NEW">Mon</span><span data-i18n="w1" data-new="NEW">Tue</span><span data-i18n="w2" data-new="NEW">Wed</span><span data-i18n="w3" data-new="NEW">Thu</span><span data-i18n="w4" data-new="NEW">Fri</span><span data-i18n="w5" data-new="NEW">Sat</span><span data-i18n="w6" data-new="NEW">Sun</span>
+          </div>
+          <ul class="perks">
+            <li><span data-i18n="pk1">New exclusive photos &amp; videos</span><span data-i18n="every">Every day</span></li>
+            <li><span data-i18n="pk2">Behind the scenes, shoots &amp; studio</span><span data-i18n="every">Every day</span></li>
+            <li><span data-i18n="pk3">Private chats</span><span>24/7</span></li>
+          </ul>
+          <a class="cta-private" href="https://www.fanvue.com/mikamontero" target="_blank" rel="noopener"><span data-i18n="pv_cta">Get today's drop on Fanvue</span>
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="brands">
+      <div class="duo">
+        <div class="box wish">
+          <div>
+            <p class="eyebrow eye-glow" data-i18n="w_eye">Wishlist</p>
+            <p class="t" data-i18n="w_t">Spoil me, Miami style.</p>
+            <p class="p" style="font-size:16px;margin-top:10px" data-i18n="w_p">My wishlist on Throne. Every gift gets a little thank-you.</p>
+          </div>
+          <a class="cta-wish" href="https://throne.com/mikamontero" target="_blank" rel="noopener"><span data-i18n="w_cta">Open my wishlist</span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </div>
+        <div class="box brand">
+          <div>
+            <p class="eyebrow eye-glow" data-i18n="b_eye">Brands, bookings &amp; music</p>
+            <p class="t" data-i18n="b_t">Let's work together.</p>
+            <p class="p" style="font-size:16px;margin:10px 0 16px" data-i18n="b_p">Campaigns, fashion, beauty, nightlife, features and collaborations.</p>
+            <a class="mail" href="mailto:booking@mikamontero.com">booking@mikamontero.com</a>
+          </div>
+          <a class="cta-mail" href="mailto:booking@mikamontero.com?subject=Collaboration%20with%20Mika%20Montero"><span data-i18n="b_cta">Write me</span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="press-link" href="press.html"><span data-i18n="b_press">Press kit</span> →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <span class="logo">MIKA<span>.</span>MONTERO</span>
+        <span style="display:flex;flex-wrap:wrap;gap:18px"><a href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">Instagram</a><a href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener">Spotify</a><a href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener">YouTube</a><a href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener">Apple Music</a></span>
+        <span style="display:flex;flex-wrap:wrap;gap:18px;align-items:center"><button class="legal-link" id="legal-open" type="button" data-i18n="lg_link">Legal &amp; Privacy</button><span>© 2026 Mika Montero</span></span>
+      </div>
+    </footer>
+  </div>
+</main>
+
+<dialog class="legal" id="legal" aria-labelledby="legal-h">
+  <button class="legal-x" id="legal-close" type="button" aria-label="Close">✕</button>
+  <h3 id="legal-h" data-i18n="lg_h">Legal &amp; Privacy</h3>
+  <h4 data-i18n="lg_1h">About this site</h4>
+  <p data-i18n="lg_1p">This is the official website of the artist Mika Montero. For any questions, requests or legal matters, write to <a href="mailto:booking@mikamontero.com">booking@mikamontero.com</a>.</p>
+  <h4 data-i18n="lg_2h">Privacy</h4>
+  <p data-i18n="lg_2p">No cookies, no ads, no tracking. This site does not collect personal data. Your language choice is saved only in your own browser. The site is hosted by Cloudflare, which processes technical data such as your IP address to deliver it securely, and counts visits anonymously without cookies or personal profiles.</p>
+  <h4 data-i18n="lg_3h">External links</h4>
+  <p data-i18n="lg_3p">Links to Fanvue, Throne, Instagram, Spotify, YouTube and Apple Music lead to other services. Their own terms, age checks and privacy policies apply there.</p>
+  <h4 data-i18n="lg_4h">Copyright</h4>
+  <p data-i18n="lg_4p">All photos, videos and music on this site © 2026 Mika Montero. Please don't use them without permission.</p>
+</dialog>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<script>
+(function(){
+  var nav=document.getElementById('nav'), film=document.querySelector('.film'), v=document.getElementById('film');
+  function onScroll(){ nav.classList.toggle('solid', window.scrollY>film.offsetHeight*0.6); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var mobile=window.matchMedia('(max-width:860px)').matches;
+  v.src=mobile?'assets/hero-mobile.mp4':'assets/hero.mp4';
+  v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
+  var p=v.play(); if(p&&p.catch){p.catch(function(){
+    function go(){v.play();window.removeEventListener('touchstart',go);}
+    window.addEventListener('touchstart',go,{passive:true});
+  });}
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ e[0].isIntersecting?v.play().catch(function(){}):v.pause(); }).observe(film); }
+})();
+/* Tap gag: one letter of the neon sign dies, Mika knocks on it, it lights up again (synced to the hero video) */
+(function(){
+  var v=document.getElementById('film'), svg=document.querySelector('.nsvg'), stage=document.querySelector('.stage');
+  if(!v||!svg||!stage||!svg.getScreenCTM) return;
+  var mobile=window.matchMedia('(max-width:860px)').matches;
+  var CFG=mobile?{letter:0,fist:[329,597],fit:{k:.00156,ax:.27,ay:.12},off:[[2.38,2.42],[2.56,2.59],[2.63,2.71],[2.85,2.88],[2.96,3.13],[3.17,3.20],[3.25,3.50],[3.55,3.58],[3.64,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],dim:[[2.42,2.56],[2.71,2.85],[3.13,3.17],[3.50,3.55],[3.58,3.64],[5.43,5.50],[5.68,5.76],[5.85,5.93],[6.01,6.08]],sag:[[2.63,2.71],[2.96,3.06],[3.25,3.33],[3.64,3.70]],zz:[[2.38,.18],[2.56,.15],[2.85,.28],[3.17,.33],[3.55,.09]],die:3.64,on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]}:{letter:0,fist:[556,644],fit:{ax:1.12,ay:.26,max:1.45},off:[[2.38,2.42],[2.56,2.59],[2.63,2.71],[2.85,2.88],[2.96,3.13],[3.17,3.20],[3.25,3.50],[3.55,3.58],[3.64,5.43],[5.50,5.68],[5.76,5.85],[5.93,6.01],[6.08,6.342]],dim:[[2.42,2.56],[2.71,2.85],[3.13,3.17],[3.50,3.55],[3.58,3.64],[5.43,5.50],[5.68,5.76],[5.85,5.93],[6.01,6.08]],sag:[[2.63,2.71],[2.96,3.06],[3.25,3.33],[3.64,3.70]],zz:[[2.38,.18],[2.56,.15],[2.85,.28],[3.17,.33],[3.55,.09]],die:3.64,on:6.342,knocks:[5.425,5.675,5.842,6.009,6.342]};
+  if(!CFG) return;
+  var NS='http://www.w3.org/2000/svg', WORD='Montero', base=document.getElementById('nT'), ext=null, cur=-1, off=false, spark;
+  function build(){
+    var defs=svg.querySelector('defs'), i, j;
+    for(i=0;i<WORD.length;i++){
+      var t=base.cloneNode(false); t.id='nL'+i;
+      for(j=0;j<WORD.length;j++){ var ts=document.createElementNS(NS,'tspan'); ts.textContent=WORD[j]; if(j!==i) ts.setAttribute('style','visibility:hidden;fill:none;stroke:none'); t.appendChild(ts); }
+      defs.appendChild(t);
+    }
+    [].forEach.call(svg.querySelectorAll('g'),function(g){
+      g.textContent='';
+      for(var k=0;k<WORD.length;k++){ var u=document.createElementNS(NS,'use'); u.setAttribute('href','#nL'+k); u.setAttribute('class','uL uL'+k); g.appendChild(u); }
+    });
+    var m=base.cloneNode(true); m.removeAttribute('id'); m.style.visibility='hidden'; m.style.stroke='none'; svg.appendChild(m);
+    ext=[]; for(i=0;i<WORD.length;i++){ var e=m.getExtentOfChar(i); ext.push([e.x,e.y,e.width,e.height]); }
+    svg.removeChild(m);
+    spark=document.createElement('span'); spark.className='tap-spark'; stage.appendChild(spark);
+  }
+  var fitted=false;
+  function fit(){ /* phones: place the video so her knuckles land on the letter, whatever the screen height */
+    if(!CFG.fit||!ext||!v.videoWidth) return;
+    var m=svg.getScreenCTM(), sr=stage.getBoundingClientRect(), vw=v.videoWidth, vh=v.videoHeight, e=ext[CFG.letter];
+    var tx=(e[0]+e[2]*CFG.fit.ax)*m.a+m.e-sr.left, ty=(e[1]+e[3]*CFG.fit.ay)*m.d+m.f-sr.top;
+    var fx=CFG.fist[0], fy=CFG.fist[1], W=sr.width, H=sr.height, cov=Math.max(W/vw,H/vh), sc, x, y;
+    if(CFG.fit.k){ sc=Math.max(CFG.fit.k*W, W/vw, (H-ty)/(vh-fy)); x=Math.min(0,Math.max(W-vw*sc, tx-fx*sc)); y=Math.max(H-vh*sc, ty-fy*sc); }
+    else{ /* desktop: zoom just enough that the picture still fills the stage with her knuckles on the letter */
+      sc=Math.min(cov*CFG.fit.max, Math.max(cov, tx/fx, (W-tx)/(vw-fx), ty/fy, (H-ty)/(vh-fy)));
+      x=Math.min(0,Math.max(W-vw*sc, tx-fx*sc)); y=Math.min(0,Math.max(H-vh*sc, ty-fy*sc)); }
+    var mk=y>0?'linear-gradient(to bottom,transparent 0,#000 '+Math.round(Math.min(150,y+110))+'px)':'none'; /* top fades into the night when the picture starts lower */
+    [v,stage.querySelector('.poster')].forEach(function(el){ if(!el) return; var st=el.style;
+      st.left=x+'px'; st.top=y+'px'; st.right='auto'; st.bottom='auto'; st.width=vw*sc+'px'; st.height=vh*sc+'px'; st.objectFit='fill'; st.maxWidth='none'; st.webkitMaskImage=mk; st.maskImage=mk; });
+    fitted=true;
+  }
+  function fist(){ /* knock point: video pixel -> page pixel */
+    var r=v.getBoundingClientRect(), vw=v.videoWidth, vh=v.videoHeight; if(!vw||!r.width) return null;
+    if(fitted) return [r.left+CFG.fist[0]*r.width/vw, r.top+CFG.fist[1]*r.height/vh];
+    var sc=Math.max(r.width/vw,r.height/vh), op=getComputedStyle(v).objectPosition.split(' '), px=parseFloat(op[0])/100, py=parseFloat(op[1])/100;
+    if(isNaN(px)) px=.5; if(isNaN(py)) py=.5;
+    return [r.left+(r.width-vw*sc)*px+CFG.fist[0]*sc, r.top+(r.height-vh*sc)*py+CFG.fist[1]*sc];
+  }
+  function pick(){
+    var f=fist(), m=svg.getScreenCTM(); if(!f||!m||!ext) return -1;
+    var best=-1, bd=1e9, sr=svg.getBoundingClientRect();
+    if(f[0]<sr.left-sr.width*.12||f[0]>sr.right+sr.width*.12||f[1]<sr.top-sr.height*.45||f[1]>sr.bottom+sr.height*.3) return -1;
+    if(CFG.letter!=null) return CFG.letter;
+    for(var i=0;i<ext.length;i++){
+      var cx=(ext[i][0]+ext[i][2]/2)*m.a+m.e, d=Math.abs(cx-f[0]); if(d<bd){bd=d;best=i;}
+    }
+    return best;
+  }
+  function mark(i){
+    if(i===cur) return; cur=i;
+    [].forEach.call(svg.querySelectorAll('use.uL'),function(u){ u.classList.toggle('dk', u.classList.contains('uL'+i)); });
+  }
+  function pop(big){
+    var f=fist(), sr=stage.getBoundingClientRect(); if(!f) return;
+    spark.style.left=(f[0]-sr.left)+'px'; spark.style.top=(f[1]-sr.top)+'px';
+    spark.className='tap-spark'+(big?' big':''); void spark.offsetWidth; spark.classList.add('go');
+  }
+  var last=0, dimS=false, sagS=false;
+  /* Sound: mains buzz while the tube struggles, knuckles on glass. Browsers only allow audio after the visitor's first tap or click. */
+  var sfx=(function(){
+    var AC=window.AudioContext||window.webkitAudioContext, ctx=null, out=null, noise=null, song=document.getElementById('song'), seen=true;
+    function arm(){ if(!AC) return; if(!ctx){ try{ ctx=new AC(); out=ctx.createGain(); out.gain.value=.5; var cp=ctx.createDynamicsCompressor(); out.connect(cp); cp.connect(ctx.destination);
+        var n=ctx.sampleRate*1.5, bf=ctx.createBuffer(1,n,ctx.sampleRate), d=bf.getChannelData(0); for(var i=0;i<n;i++) d[i]=Math.random()*2-1; noise=bf; }catch(e){ ctx=null; return; } }
+      if(ctx.state==='suspended') ctx.resume(); }
+    ['pointerdown','keydown','touchend'].forEach(function(ev){ window.addEventListener(ev,arm,{passive:true}); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(e){ seen=e[0].intersectionRatio>.35; },{threshold:[0,.35,.6]}).observe(stage);
+    function ok(){ if(!ctx||ctx.state!=='running'||!seen||document.hidden) return false; if(song&&!song.paused) return false;
+      var vs=document.querySelectorAll('video'); for(var i=0;i<vs.length;i++){ if(!vs[i].paused&&!vs[i].muted) return false; } return true; }
+    function env(g,t,a,peak,d){ g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+a); g.gain.exponentialRampToValueAtTime(0.0001,t+a+d); }
+    function nz(t,dur,f,q,peak,type){ var s=ctx.createBufferSource(); s.buffer=noise; s.loop=true; var bp=ctx.createBiquadFilter(); bp.type=type||'bandpass'; bp.frequency.value=f; bp.Q.value=q; var g=ctx.createGain();
+      s.connect(bp); bp.connect(g); g.connect(out); env(g,t,.004,peak,dur); s.start(t,Math.random()); s.stop(t+dur+.05); return g; }
+    function hum(t,dur,peak){ /* 60 Hz transformer buzz: rough 120 Hz with harsh overtones, chopped at mains rate */
+      var g=ctx.createGain(), lp=ctx.createBiquadFilter(), hp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=5200; hp.type='highpass'; hp.frequency.value=140;
+      [[120,'sawtooth',.5],[60,'square',.22],[240,'sawtooth',.2],[1740,'square',.05]].forEach(function(o){ var os=ctx.createOscillator(), og=ctx.createGain(); os.type=o[1]; os.frequency.value=o[0]*(1+(Math.random()-.5)*.01); og.gain.value=o[2]; os.connect(og); og.connect(hp); os.start(t); os.stop(t+dur+.06); });
+      var ch=ctx.createGain(), lfo=ctx.createOscillator(), lg=ctx.createGain(); lfo.type='square'; lfo.frequency.value=60; lg.gain.value=.45; ch.gain.value=.55; lfo.connect(lg); lg.connect(ch.gain); lfo.start(t); lfo.stop(t+dur+.06);
+      hp.connect(lp); lp.connect(ch); ch.connect(g); g.connect(out);
+      g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+.008); g.gain.setValueAtTime(peak,t+Math.max(.01,dur-.02)); g.gain.exponentialRampToValueAtTime(0.0001,t+dur+.03); }
+    return {
+      buzz:function(dur){ if(!ok()) return; var t=ctx.currentTime+.005; hum(t,dur,.16); nz(t,.03,4200,1.2,.22); /* arc crackle */
+        var n=Math.max(1,Math.round(dur*22)); for(var i=0;i<n;i++) nz(t+Math.random()*dur,.012+Math.random()*.02,2600+Math.random()*4200,2,.07+Math.random()*.1); },
+      die:function(){ if(!ok()) return; var t=ctx.currentTime+.005; nz(t,.05,3200,1,.3); nz(t+.02,.22,900,.7,.1,'lowpass');
+        var o=ctx.createOscillator(), g=ctx.createGain(); o.type='sawtooth'; o.frequency.setValueAtTime(120,t); o.frequency.exponentialRampToValueAtTime(38,t+.28); o.connect(g); g.connect(out); env(g,t,.005,.14,.28); o.start(t); o.stop(t+.35); },
+      knock:function(fin){ if(!ok()) return; var t=ctx.currentTime+.005; /* knuckle on a glass tube: click, short glassy ring, small body thump */
+        nz(t,.012,3400,.8,.34);
+        [[1320,.2,.07],[2470,.12,.05],[3890,.06,.035]].forEach(function(p){ var o=ctx.createOscillator(), g=ctx.createGain(); o.type='sine'; o.frequency.value=p[0]*(1+(Math.random()-.5)*.03); o.connect(g); g.connect(out); env(g,t,.002,p[1],p[2]); o.start(t); o.stop(t+p[2]+.05); });
+        var th=ctx.createOscillator(), tg=ctx.createGain(); th.type='sine'; th.frequency.setValueAtTime(210,t); th.frequency.exponentialRampToValueAtTime(95,t+.07); th.connect(tg); tg.connect(out); env(tg,t,.003,.3,.08); th.start(t); th.stop(t+.14);
+        if(fin){ hum(t+.02,.34,.13); nz(t+.02,.05,5200,1.5,.2); } else { nz(t+.015,.03,4800,2,.1); hum(t+.015,.05,.09); } }
+    };
+  })();
+  function tick(){
+    var t=v.currentTime, o=false, i;
+    if(t<last){ mark(pick()); } /* loop restarted: re-pick for the current layout */
+    if(cur>=0){ for(i=0;i<CFG.off.length;i++){ if(t>=CFG.off[i][0]&&t<CFG.off[i][1]){o=true;break;} } }
+    if(o!==off){
+      off=o; svg.classList.toggle('tap-off',o);
+      if(!o&&t>=CFG.on&&t<CFG.on+.4){ svg.classList.remove('tap-flash'); void svg.getBoundingClientRect(); svg.classList.add('tap-flash'); }
+    }
+    var dm=false, sg=false;
+    if(cur>=0){
+      for(i=0;i<CFG.dim.length;i++){ if(t>=CFG.dim[i][0]&&t<CFG.dim[i][1]){dm=true;break;} }
+      for(i=0;i<CFG.sag.length;i++){ if(t>=CFG.sag[i][0]&&t<CFG.sag[i][1]){sg=true;break;} }
+    }
+    if(dm!==dimS){ dimS=dm; svg.classList.toggle('tap-dim',dm); }
+    if(sg!==sagS){ sagS=sg; svg.classList.toggle('tap-sag',sg); }
+    if(cur>=0){
+      for(i=0;i<CFG.knocks.length;i++){ var k=CFG.knocks[i]; if(last<k&&t>=k&&t-k<.25){ var fin=Math.abs(k-CFG.on)<.02; pop(fin); sfx.knock(fin); } }
+      for(i=0;i<CFG.zz.length;i++){ var z=CFG.zz[i]; if(last<z[0]&&t>=z[0]&&t-z[0]<.25) sfx.buzz(z[1]); }
+      if(last<CFG.die&&t>=CFG.die&&t-CFG.die<.25) sfx.die();
+    }
+    last=t;
+    requestAnimationFrame(tick);
+  }
+  function start(){ try{ build(); }catch(e){ return; } fit(); mark(pick()); requestAnimationFrame(tick);
+    if(CFG.fit){ var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(fit,120); }); setTimeout(fit,900); }
+  }
+  var fr=(document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve();
+  fr.then(function(){ if(v.videoWidth) start(); else v.addEventListener('loadedmetadata',start,{once:true}); });
+})();
+</script>
+<script>
+(function(){var t=[].slice.call(document.querySelectorAll('.tab'));t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});var mu=b.id==='tab-music';document.getElementById('cta-music').hidden=!mu;document.getElementById('cta-model').hidden=mu;});});})();
+</script>
+<script>(function(){var d=(new Date().getDay()+6)%7,w=document.querySelectorAll(".week span");if(w[d]){w[d].classList.add("on");w[d].setAttribute("aria-current","date");}})();</script>
+<script>
+(function(){
+  var RELEASE=new Date(2026,10,23,0,0,0).getTime();
+  function released(){ return Date.now()>=RELEASE; }
+  var EN_OUT={
+    tag:'New single out now', sub:'Singer and songwriter from Miami. I write my songs at night, when the city glows pink and everything feels possible. My first single, Break You Out, is out now. Turn it up.', mq_soon:'Out now', mq_date:'✦ Since Nov 23',
+    music_p:'Break You Out is a story. Ruby Rae, eighty-four, once sang the Starlight Room on Sunset six nights a week. Now they\'re tearing it down, and her granddaughter has one night to sneak her out of the home, sequin dress and all, for one last song. 90s soul hip-hop meets a 60s torch song. Out now, everywhere you stream.',
+    cd_head:'Out now everywhere', cd_cta:'Listen now', pl_end:'Full song out now on Spotify ↗'
+  };
+  var ES={
+    nav_music:'Música', nav_about:'Sobre mí', nav_feed:'Feed', nav_brands:'Marcas', nav_join:'Únete',
+    tag:'Nuevo single muy pronto', lead:'Noches de Miami. Corazón de Honolulu.',
+    sub:'Cantante y compositora de Miami. Escribo mis canciones de noche, cuando la ciudad brilla en rosa y todo parece posible. Mi primer single, Break You Out, sale el lunes. Súbele.',
+    cta_fan:'Únete en Fanvue', cta_ig:'Sígueme en Instagram',
+    mq_new:'✦ Nuevo single', mq_soon:'Muy pronto', mq_date:'✦ Lunes 23 de noviembre', cover_new:'Nuevo single',
+    music_h:'La <em>música</em>',
+    music_p:'Break You Out es una historia. Ruby Rae, de ochenta y cuatro años, cantaba seis noches a la semana en el Starlight Room de Sunset. Ahora lo van a demoler, y su nieta tiene una sola noche para sacarla de la residencia, con su vestido de lentejuelas, para una última canción. Hip-hop soul de los 90 con una balada de los 60. Haz pre-save ahora y será tuyo en cuanto salga.',
+    cd_head:'Sale el lunes 23 de noviembre', cd_d:'Días', cd_h:'Horas', cd_m:'Min', cd_s:'Seg', cd_cta:'Haz pre-save de Break You Out',
+    ab_eye:'Hola, soy Mika', ab_h:'Nacida en <em>Honolulu,</em><br>hecha en Miami.',
+    ab_p:'Japonesa-americana, chica de isla de corazón y noctámbula por elección. Modelo, fotografío, escribo canciones y vivo para esa hora en que se encienden las luces de la ciudad. Un poco dulce, un poco peligro.',
+    f_artist:'Artista', neon_txt:'Noches de Miami', f_model:'Modelo', f_photo:'Fotógrafa', f_lang:'English · 日本語 · un poco de español',
+    feed_h:'El <em>feed</em>', tab_music:'Música', tab_model:'Modelo', feed_follow:'Sígueme @mikamontero26',
+    today:'Nuevo hoy', members:'Solo miembros', pv_eye:'Solo miembros · Nuevo cada día', pv_h:'Solo de <em>noche.</em>',
+    pv_p:'Algo nuevo <strong class="hl">todos los días</strong>. Fotos y videos exclusivos, detrás de cámaras de mis sesiones y del estudio, y chats privados a cualquier hora. Todo lo que nunca subiría a Instagram está en mi Fanvue.',
+    w0:'Lun', w1:'Mar', w2:'Mié', w3:'Jue', w4:'Vie', w5:'Sáb', w6:'Dom',
+    pk1:'Fotos y videos exclusivos nuevos', pk2:'Detrás de cámaras, sesiones y estudio', pk3:'Chats privados', every:'Todos los días',
+    pv_cta:'Mira lo nuevo de hoy en Fanvue',
+    w_eye:'Lista de deseos', w_t:'Consiénteme, al estilo Miami.', w_p:'Mi lista de deseos en Throne. Cada regalo recibe un pequeño gracias.', w_cta:'Ver mi lista',
+    b_eye:'Marcas, bookings y música', b_t:'Trabajemos juntos.', b_p:'Campañas, moda, belleza, vida nocturna, features y colaboraciones.', b_press:'Kit de prensa', b_cta:'Escríbeme',
+    pl_tap:'Toca para escuchar', sp_eye:'Más música', sp_h:'Toda mi<br><em>música</em>', sp_p:'Mi álbum debut, No Angel. No Apology., y el nuevo single. Elige una canción, dale play y quédate un rato.', dk_sub:'Álbum debut · 15 canciones · adelantos de 40 segundos', dk_new:'Nuevo single', dk_soon:'Vie 27 nov', sp_btn:'Cargar el reproductor de Spotify', sp_note:'El reproductor es de Spotify. Al cargarlo, tu navegador se conecta con Spotify.', tz_eye:'Teaser oficial', tz_p:'Noche de estudio en Miami, audífonos fuera, volumen arriba. Un adelanto antes del lunes. Con sonido.', tz_btn:'Reproducir con sonido', lg_link:'Aviso legal y privacidad', lg_h:'Aviso legal y privacidad', lg_1h:'Sobre este sitio', lg_1p:'Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href="mailto:booking@mikamontero.com">booking@mikamontero.com</a>.', lg_2h:'Privacidad', lg_2p:'Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.', lg_3h:'Enlaces externos', lg_3p:'Los enlaces a Fanvue, Throne, Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos, verificaciones de edad y políticas de privacidad.', lg_4h:'Derechos de autor', lg_4p:'Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.', pl_playing:'Teaser · sonando', pl_paused:'En pausa · toca para seguir', pl_end:'Canción completa muy pronto · Spotify ↗'
+  };
+  var ES_OUT={ tag:'Nuevo single ya disponible', sub:'Cantante y compositora de Miami. Escribo mis canciones de noche, cuando la ciudad brilla en rosa y todo parece posible. Mi primer single, Break You Out, ya está disponible. Súbele.', mq_soon:'Ya disponible', mq_date:'✦ Desde el 23 de noviembre',
+    music_p:'Break You Out es una historia. Ruby Rae, de ochenta y cuatro años, cantaba seis noches a la semana en el Starlight Room de Sunset. Ahora lo van a demoler, y su nieta tiene una sola noche para sacarla de la residencia, con su vestido de lentejuelas, para una última canción. Hip-hop soul de los 90 con una balada de los 60. Ya disponible en todas las plataformas.',
+    cd_head:'Ya disponible en todas partes', cd_cta:'Escúchalo ahora', pl_end:'Canción completa ya en Spotify ↗' };
+  var EN_EXTRA={pl_playing:'Teaser · now playing', pl_paused:'Paused · tap to play', pl_end:'Full song soon · follow on Spotify ↗'};
+  var els=[].slice.call(document.querySelectorAll('[data-i18n]')), EN={};
+  els.forEach(function(e){ var k=e.getAttribute('data-i18n'); if(!(k in EN)) EN[k]=e.innerHTML; });
+  for(var k in EN_EXTRA) EN[k]=EN_EXTRA[k];
+  var lang='en';
+  function t(k){ var out=released(); var d=lang==='es'?ES:EN, o=lang==='es'?ES_OUT:EN_OUT;
+    if(out && o[k]!==undefined) return o[k]; return d[k]!==undefined?d[k]:EN[k]; }
+  window.MMT=t;
+  function apply(){
+    document.documentElement.lang=lang;
+    els.forEach(function(e){ var k=e.getAttribute('data-i18n'); var v=t(k); if(v!==undefined && e.innerHTML!==v) e.innerHTML=v; });
+    document.querySelectorAll('.week span').forEach(function(w){ w.setAttribute('data-new', lang==='es'?'NUEVO':'NEW'); });
+    var pl=document.getElementById('player'), sub=document.getElementById('pl-sub');
+    if(pl&&sub){ sub.textContent = pl.classList.contains('ended')?t('pl_end'):pl.classList.contains('playing')?t('pl_playing'):pl.classList.contains('played')?t('pl_paused'):t('pl_tap'); }
+  }
+  try{ lang=localStorage.getItem('mm_lang')||''; }catch(e){ lang=''; }
+  if(lang!=='en'&&lang!=='es') lang=(navigator.language||'en').toLowerCase().indexOf('es')===0?'es':'en';
+  apply();
+  document.getElementById('lang').addEventListener('click',function(){ lang=lang==='es'?'en':'es'; try{localStorage.setItem('mm_lang',lang)}catch(e){} apply(); });
+
+
+
+  // remixes (trailer says "Coming soon", so it goes away at the remix release)
+  (function(){
+    var REMIX=new Date(2026,10,27,0,0,0);
+    var fr=document.getElementById('rx-frame'), v=document.getElementById('rx-video'), b=document.getElementById('rx-play'), song=document.getElementById('song'), tz=document.getElementById('tz-video');
+    if(!fr) return;
+    var T={en:{eye:'Next up · Friday, Nov 27', p:'Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.', cta:'Pre-save The Remixes', ctaOut:'Listen now', mq:'Friday, Nov 27', mqOut:'Out now', mqn:'✦ 5 new versions', eyeOut:'The Remixes · Out now', pOut:'Five new versions of Break You Out, from dark disco to minimal. Out now everywhere you stream.', btn:'Play with sound'},
+           es:{eye:'Lo próximo · Viernes 27 de noviembre', p:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Aquí va un adelanto del Dark Disco Dub. Sale el próximo viernes a medianoche en todas las plataformas.', cta:'Haz pre-save de The Remixes', ctaOut:'Escúchalo ahora', mq:'Viernes 27 de noviembre', mqOut:'Ya disponibles', mqn:'✦ 5 versiones nuevas', eyeOut:'The Remixes · Ya disponible', pOut:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Ya disponibles en todas las plataformas.', btn:'Reproducir con sonido'}};
+    function render(){ var d=T[document.documentElement.lang==='es'?'es':'en'], out=Date.now()>=REMIX.getTime();
+      document.getElementById('rx-eye').textContent=out?d.eyeOut:d.eye; document.getElementById('rx-p').textContent=out?d.pOut:d.p; document.getElementById('rx-btn').textContent=d.btn; var ct=document.getElementById('rx-cta-t'); if(ct) ct.textContent=out?d.ctaOut:d.cta;
+      [].forEach.call(document.querySelectorAll('.mq-rxd'),function(x){x.textContent=out?d.mqOut:d.mq;}); [].forEach.call(document.querySelectorAll('.mq-rxn'),function(x){x.textContent=d.mqn;});
+      if(out){ fr.hidden=true; try{v.pause()}catch(e){} } }
+    // split headings into letters for the light wave
+    (function(){
+      function mix(a,b,t){ return 'rgb('+a.map(function(x,k){return Math.round(x+(b[k]-x)*t)}).join(',')+')'; }
+      var P=[255,79,163],V=[199,125,255],A=[63,224,208];
+      function waveify(h,grad){ if(!h||h.querySelector('.l')) return; var i=0;
+        if(!h.getAttribute('aria-label')) h.setAttribute('aria-label',h.innerHTML.replace(/<br\s*\/?>/gi,' ').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim());
+        function fill(text,colorOf,glowOf,count){ var f=document.createDocumentFragment(), k=0;
+          text.split(/(\s+)/).forEach(function(part){ if(!part) return; if(/^\s+$/.test(part)){ f.appendChild(document.createTextNode(' ')); return; }
+            var w=document.createElement('span'); w.className='w'; w.setAttribute('aria-hidden','true');
+            part.split('').forEach(function(ch){ var t=count>1?k/(count-1):0, sp=document.createElement('span'); sp.className='l'; sp.textContent=ch; sp.style.setProperty('--i',i++); sp.style.setProperty('--c',colorOf(t)); sp.style.setProperty('--g',glowOf(t)); k++; w.appendChild(sp); });
+            f.appendChild(w); }); return f; }
+        var gradC=function(t){ return t<.55?mix(P,V,t/.55):mix(V,A,(t-.55)/.45); };
+        [].slice.call(h.childNodes).forEach(function(n){
+          if(n.nodeType===3){ if(n.textContent.trim()) h.replaceChild(fill(n.textContent,function(){return '#F7F3FF'},function(){return '#FF4FA3'},0),n); }
+          else if(n.nodeName==='BR'){ i+=1; }
+          else if(n.nodeName==='EM'){ var txt=n.textContent, cnt=txt.replace(/\s/g,'').length; n.textContent='';
+            n.appendChild(grad?fill(txt,gradC,gradC,cnt):fill(txt,function(){return '#FF4FA3'},function(){return '#FF4FA3'},cnt)); }
+        });
+      }
+      waveify(document.getElementById('rx-h'),true); waveify(document.getElementById('tz-h'),true);
+      [].map.call(document.querySelectorAll('#ab-h,#sp-h,h2[data-i18n],p.t[data-i18n]'),function(x){return [x,x.id==='sp-h'];}).forEach(function(c){ var el=c[0]; el.classList.add('wave'); waveify(el,c[1]);
+        if('MutationObserver' in window){ new MutationObserver(function(){ if(!el.querySelector('.l')){ el.removeAttribute('aria-label'); waveify(el,c[1]); } }).observe(el,{childList:true}); } });
+    })();
+    render(); setInterval(render,60000);
+    document.getElementById('lang').addEventListener('click',function(){ setTimeout(render,0); });
+    b.addEventListener('click',function(){ if(song&&!song.paused) song.pause(); if(tz&&!tz.paused) tz.pause(); v.muted=false; v.controls=true; fr.classList.add('on'); v.play().catch(function(){ fr.classList.remove('on'); }); });
+    v.addEventListener('play',function(){ if(song&&!song.paused) song.pause(); if(tz&&!tz.paused) tz.pause(); });
+    if(song) song.addEventListener('play',function(){ if(!v.paused) v.pause(); });
+    if(tz) tz.addEventListener('play',function(){ if(!v.paused) v.pause(); });
+    v.addEventListener('ended',function(){ v.controls=false; fr.classList.remove('on'); v.load(); });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ if(!e[0].isIntersecting&&!v.paused) v.pause(); }).observe(fr); }
+  })();
+
+  // Spotify player loads only on click (nothing is sent to Spotify before that)
+  (function(){ var box=document.getElementById('sp-embed'), btn=document.getElementById('sp-load'); if(!btn) return;
+    btn.addEventListener('click',function(){ ['song','tz-video','rx-video'].forEach(function(id){ var m=document.getElementById(id); if(m&&!m.paused) m.pause(); });
+      var f=document.createElement('iframe'); f.src='https://open.spotify.com/embed/artist/4VnsEXQqPFEcNySITWgvTW?utm_source=generator&theme=0'; f.title='Mika Montero on Spotify';
+      f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'; f.loading='lazy'; box.textContent=''; box.classList.add('on'); box.appendChild(f);
+      // Spotify tells the page when playback starts or pauses; the light reacts to that
+      window.addEventListener('message',function(e){ if(e.origin!=='https://open.spotify.com'||!e.data) return; var d=e.data, pl=d.payload||d.data;
+        if(d.type==='playback_update'&&pl&&typeof pl.isPaused==='boolean'){ box.classList.toggle('playing',!pl.isPaused); box.classList.toggle('paused',pl.isPaused); } }); }); })();
+  // teaser (only until release, the clip says "Out Monday")
+  (function(){
+    var box=document.getElementById('teaser'), fr=document.getElementById('tz-frame'), v=document.getElementById('tz-video'), b=document.getElementById('tz-play'), song=document.getElementById('song');
+    if(!box) return;
+    function check(){ if(released()){ box.hidden=true; try{v.pause()}catch(e){} } }
+    check(); setInterval(check,60000);
+    b.addEventListener('click',function(){ if(song&&!song.paused) song.pause(); v.muted=false; v.controls=true; fr.classList.add('on'); v.play().catch(function(){ fr.classList.remove('on'); }); });
+    v.addEventListener('play',function(){ if(song&&!song.paused) song.pause(); });
+    if(song) song.addEventListener('play',function(){ if(!v.paused) v.pause(); });
+    v.addEventListener('ended',function(){ v.controls=false; fr.classList.remove('on'); v.load(); });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ if(!e[0].isIntersecting&&!v.paused) v.pause(); }).observe(fr); }
+  })();
+  // countdown
+  var cd=document.getElementById('countdown'), D=document.getElementById('cd-d'),H=document.getElementById('cd-h'),M=document.getElementById('cd-m'),S=document.getElementById('cd-s');
+  var wasOut=released();
+  function pad(n){return (n<10?'0':'')+n}
+  function tick(){
+    var ms=RELEASE-Date.now();
+    if(ms<=0){ cd.classList.add('out'); if(!wasOut){wasOut=true;apply();} return; }
+    var sec=Math.floor(ms/1000); D.textContent=Math.floor(sec/86400); H.textContent=pad(Math.floor(sec%86400/3600)); M.textContent=pad(Math.floor(sec%3600/60)); S.textContent=pad(sec%60);
+    setTimeout(tick,1000-(Date.now()%1000));
+  }
+  tick();
+
+  // reveal on scroll
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    var targets=document.querySelectorAll('.music,.about,.feed-head,.feed figure,.private,.box,.countdown');
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px'});
+    [].forEach.call(targets,function(el,i){ el.classList.add('rv'); if(el.matches('.feed figure')) el.style.transitionDelay=((i%3)*90)+'ms'; io.observe(el); });
+  }
+  // cursor glow (desktop only)
+  var g=document.getElementById('glow');
+  if(!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var x=0,y=0,raf=0;
+    window.addEventListener('mousemove',function(e){ x=e.clientX;y=e.clientY; g.classList.add('on'); if(!raf) raf=requestAnimationFrame(function(){ g.style.transform='translate('+x+'px,'+y+'px)'; raf=0; }); },{passive:true});
+    document.addEventListener('mouseleave',function(){ g.classList.remove('on'); });
+  }
+})();
+</script>
+<script>
+(function(){var d=document.getElementById('legal');
+document.getElementById('legal-open').addEventListener('click',function(){ if(d.showModal) d.showModal(); else d.setAttribute('open',''); });
+document.getElementById('legal-close').addEventListener('click',function(){ d.close?d.close():d.removeAttribute('open'); });
+d.addEventListener('click',function(e){ if(e.target===d) d.close(); });})();
+</script>
+<script>
+(function(){var el=document.getElementById('palm-sign');
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){el.classList.add('on');return;}
+var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ el.classList.add('on'); io.disconnect(); } },{threshold:.35}); io.observe(el);})();
+</script>
+<script>
+/* Miami street loop: load only when the section comes near the viewport */
+(function(){var v=document.getElementById('nw-vid'); if(!v||!('IntersectionObserver' in window)) return; var loaded=false;
+  new IntersectionObserver(function(e){ if(e[0].isIntersecting){ if(!loaded){ loaded=true; v.src=window.matchMedia('(max-width:860px)').matches?'assets/miami-street-mobile.mp4?v=2':'assets/miami-street.mp4?v=2'; v.addEventListener('playing',function(){v.classList.add('ready')},{once:true}); } var p=v.play(); if(p&&p.catch) p.catch(function(){}); } else if(loaded){ v.pause(); } },{rootMargin:'300px 0px'}).observe(v.parentNode);
+})();
+</script>
+<script>
+/* MM-1 cassette deck: album previews with live meters */
+
+(function(){
+  var au=document.getElementById('song'), root=document.getElementById('mm1'), body=root, vis=true;
+  var cv=document.getElementById('dk-eq'), cx=cv.getContext('2d');
+  var BARS=22, SEG=11, lvl=new Float32Array(BARS), peak=new Float32Array(BARS), pkT=new Float32Array(BARS);
+  var ctx=null, anS=null, anL=null, anR=null, fS=null, tL=null, tR=null, real=false, zeroFor=0;
+  var playing=false, vol=.8, aL=0, aR=0, nL=-48, nR=-48, bass=0, mid=0, hi=0, spin=0;
+
+  /* VU scales */
+  function scale(id){ var g=document.getElementById(id), NS='http://www.w3.org/2000/svg', h='';
+    var marks=[[-20,-46],[-10,-30],[-7,-20],[-5,-11],[-3,-1],[0,12],[3,30],[5,44]];
+    h+='<path d="M'+pt(-48,96)+' A96 96 0 0 1 '+pt(12,96)+'" fill="none" stroke="#9FF3E8" stroke-width="1.4"/>';
+    h+='<path d="M'+pt(12,96)+' A96 96 0 0 1 '+pt(48,96)+'" fill="none" stroke="#FF4F7A" stroke-width="3"/>';
+    marks.forEach(function(m){ var a=pt(m[1],96), b=pt(m[1],86), c=pt(m[1],76); h+='<line x1="'+a.split(' ')[0]+'" y1="'+a.split(' ')[1]+'" x2="'+b.split(' ')[0]+'" y2="'+b.split(' ')[1]+'" stroke="'+(m[0]>0?'#FF4F7A':'#9FF3E8')+'" stroke-width="1.2"/>';
+      h+='<text x="'+c.split(' ')[0]+'" y="'+(parseFloat(c.split(' ')[1])+3)+'" text-anchor="middle" font-family="Inter" font-weight="700" font-size="8" fill="'+(m[0]>0?'#FF7A9A':'#BDEFE9')+'">'+(m[0]>0?'+':'')+m[0]+'</text>'; });
+    h+='<text x="100" y="92" text-anchor="middle" font-family="Syne" font-weight="800" font-size="9" letter-spacing="3" fill="#8f84a6">VU</text>';
+    g.innerHTML=h; }
+  function pt(deg,r){ var a=(deg-90)*Math.PI/180; return (100+Math.cos(a)*r).toFixed(1)+' '+(122+Math.sin(a)*r).toFixed(1); }
+  scale('dk-scaleL'); scale('dk-scaleR');
+
+  function setup(){ if(ctx) return; var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return;
+    try{ ctx=new AC(); var src=ctx.createMediaElementSource(au), sp=ctx.createChannelSplitter(2);
+      anS=ctx.createAnalyser(); anS.fftSize=2048; anS.smoothingTimeConstant=.72; anL=ctx.createAnalyser(); anR=ctx.createAnalyser(); anL.fftSize=anR.fftSize=1024;
+      src.connect(anS); src.connect(sp); sp.connect(anL,0); sp.connect(anR,1); src.connect(ctx.destination);
+      fS=new Uint8Array(anS.frequencyBinCount); tL=new Uint8Array(anL.fftSize); tR=new Uint8Array(anR.fftSize); real=true; }catch(e){ real=false; } }
+
+  function play(){ if(!au.getAttribute('src')) au.src=items[ti].firstChild.getAttribute('data-f'); document.querySelectorAll('video').forEach(function(v){ if(!v.muted) v.pause(); }); setup(); if(ctx&&ctx.state==='suspended') ctx.resume(); au.volume=vol; var p=au.play(); if(p&&p.catch) p.catch(function(){}); }
+  function setUI(){ playing=!au.paused; body.classList.toggle('dk-on',playing); document.getElementById('dk-deck').classList.toggle('dk-on',playing);
+    document.getElementById('dk-play').classList.toggle('dk-down',playing);
+    document.getElementById('dk-ico').innerHTML=playing?'<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>':'<path d="M6 4l14 8-14 8z"/>'; }
+  document.getElementById('dk-play').addEventListener('click',function(){ if(au.paused) play(); else au.pause(); });
+  var tl=document.getElementById('dk-tl'), RX=new Date(2026,10,27,0,0,0).getTime();
+  if(Date.now()>=RX){ [].forEach.call(tl.querySelectorAll('[data-later]'),function(li){ li.hidden=false; }); [].forEach.call(tl.querySelectorAll('.dk-soon'),function(t){ t.remove(); }); }
+  var items=[].slice.call(tl.children).filter(function(li){ return !li.hidden; }), ti=0;
+  function load(i,go){ ti=(i+items.length)%items.length; var b=items[ti].firstChild, t=b.querySelector('.dk-ti').textContent, s=document.getElementById('dk-ls');
+    au.src=b.getAttribute('data-f'); s.textContent=t; document.getElementById('dk-lc').src=b.getAttribute('data-c'); document.getElementById('dk-lside').textContent=b.getAttribute('data-s');
+    s.style.fontSize=t.length>22?'calc(13.5*var(--u))':t.length>15?'calc(15*var(--u))':'';
+    items.forEach(function(li,k){ li.classList.toggle('dk-cur',k===ti); }); if(go) play(); }
+  items.forEach(function(li,i){ li.firstChild.addEventListener('click',function(){ if(i===ti&&au.getAttribute('src')){ if(au.paused) play(); else au.pause(); } else load(i,true); }); });
+  document.getElementById('dk-prev').addEventListener('click',function(){ if(au.currentTime>3) au.currentTime=0; else load(ti-1,!au.paused); });
+  document.getElementById('dk-next').addEventListener('click',function(){ load(ti+1,!au.paused); });
+  au.addEventListener('ended',function(){ load(ti+1,true); });
+  ['play','pause','ended'].forEach(function(e){ au.addEventListener(e,setUI); });
+  document.getElementById('dk-prog').addEventListener('click',function(e){ var r=this.getBoundingClientRect(); if(au.duration) au.currentTime=(e.clientX-r.left)/r.width*au.duration; });
+
+  /* volume knob */
+  var knob=document.getElementById('dk-knob'), kn=document.getElementById('dk-kn'), drag=null;
+  function setVol(v){ vol=Math.max(0,Math.min(1,v)); au.volume=vol; kn.style.transform='rotate('+(-135+vol*270)+'deg)'; knob.setAttribute('aria-valuenow',Math.round(vol*100)); }
+  knob.addEventListener('pointerdown',function(e){ drag={y:e.clientY,v:vol}; knob.setPointerCapture(e.pointerId); });
+  knob.addEventListener('pointermove',function(e){ if(drag) setVol(drag.v+(drag.y-e.clientY)/140); });
+  knob.addEventListener('pointerup',function(){ drag=null; });
+  knob.addEventListener('keydown',function(e){ if(e.key==='ArrowUp'||e.key==='ArrowRight') setVol(vol+.05); if(e.key==='ArrowDown'||e.key==='ArrowLeft') setVol(vol-.05); });
+  setVol(.8);
+
+  function size(){ var r=cv.getBoundingClientRect(), d=Math.min(2.5,window.devicePixelRatio||1); cv.width=Math.round(r.width*d); cv.height=Math.round(r.height*d); }
+  size(); window.addEventListener('resize',size);
+
+  function rms(an,buf){ an.getByteTimeDomainData(buf); var s=0; for(var i=0;i<buf.length;i++){ var x=(buf[i]-128)/128; s+=x*x; } return Math.sqrt(s/buf.length); }
+  var T0=performance.now(), last=T0;
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){ vis=e[0].isIntersecting; },{rootMargin:'200px 0px'}).observe(root);
+  function frame(now){
+    if(!vis&&!playing){ last=now; requestAnimationFrame(frame); return; }
+    var dt=Math.min(.05,(now-last)/1000); last=now; var t=(now-T0)/1000, i;
+    var demo=window.__dkdemo, tgt=new Float32Array(BARS), l=0, r=0;
+    if(playing||demo){
+      var useReal=real&&playing&&!demo, sum=0;
+      if(useReal){ anS.getByteFrequencyData(fS); for(i=0;i<fS.length;i+=8) sum+=fS[i]; if(sum===0) zeroFor+=dt; else zeroFor=0; if(zeroFor>1.2) useReal=false; }
+      if(useReal){
+        var n=fS.length, lo=2, hiB=Math.floor(n*.72);
+        for(i=0;i<BARS;i++){ var a=Math.floor(lo*Math.pow(hiB/lo,i/BARS)), b=Math.max(a+1,Math.floor(lo*Math.pow(hiB/lo,(i+1)/BARS))), m=0; for(var k=a;k<b;k++) m=Math.max(m,fS[k]); tgt[i]=Math.pow(m/255,3.1)*(.8+i/BARS*.75); }
+        l=Math.pow(rms(anL,tL)*2.1,.6); r=Math.pow(rms(anR,tR)*2.1,.6);
+      } else { /* stand-in movement when the browser gives no audio data */
+        var beat=Math.pow(Math.max(0,Math.sin(t*Math.PI*2*2.05)),6);
+        for(i=0;i<BARS;i++){ var f=i/BARS; tgt[i]=Math.max(0,(1-f)*.55*beat+.28*(.5+.5*Math.sin(t*(3+i*.7)+i))+.25*Math.random()*(1-f*.5)); }
+        l=.35+.4*beat+.1*Math.sin(t*5); r=.33+.4*beat+.1*Math.sin(t*4.3+1);
+      }
+    }
+    var b0=0,m0=0,h0=0;
+    for(i=0;i<BARS;i++){ var v=Math.min(1,tgt[i]); lvl[i]=v>lvl[i]?lvl[i]+(v-lvl[i])*.6:Math.max(0,lvl[i]-dt*1.9);
+      if(lvl[i]>=peak[i]){ peak[i]=lvl[i]; pkT[i]=.5; } else { pkT[i]-=dt; if(pkT[i]<0) peak[i]=Math.max(0,peak[i]-dt*.9); }
+      if(i<4) b0+=lvl[i]/4; else if(i<13) m0+=lvl[i]/9; else h0+=lvl[i]/9; }
+    bass+=(b0-bass)*(b0>bass?.5:.12); mid+=(m0-mid)*.2; hi+=(h0-hi)*.2;
+    root.style.setProperty('--bass',bass.toFixed(3)); root.style.setProperty('--mid',mid.toFixed(3)); root.style.setProperty('--hi',hi.toFixed(3)); root.style.setProperty('--lv',Math.min(1,aL).toFixed(3)); root.style.setProperty('--rv',Math.min(1,aR).toFixed(3));
+    /* spectrum */
+    var W=cv.width, H=cv.height, pad=W*.035, gap=W*.012, bw=(W-pad*2-gap*(BARS-1))/BARS, sg=H*.02, sh=(H-pad*1.2-sg*(SEG-1))/SEG;
+    cx.clearRect(0,0,W,H);
+    for(i=0;i<BARS;i++){ var x=pad+i*(bw+gap), on=Math.round(lvl[i]*SEG), pk=Math.min(SEG-1,Math.round(peak[i]*SEG));
+      for(var s=0;s<SEG;s++){ var y=H-pad*.6-(s+1)*sh-s*sg, lit=s<on, q=s/(SEG-1);
+        var col=q<.45?[63,224,208]:q<.8?[255,79,163]:[255,214,236];
+        cx.shadowBlur=lit?bw*.9:0; cx.shadowColor='rgba('+col+',.9)';
+        cx.fillStyle=lit?'rgb('+col+')':(s===pk&&peak[i]>.04?'rgba(255,230,243,.95)':'rgba(255,255,255,.055)');
+        rr(x,y,bw,sh,Math.min(sh,bw)*.28); } }
+    cx.shadowBlur=0;
+    /* VU needles with slow ballistics */
+    aL+=(l-aL)*(l>aL?.5:.13); aR+=(r-aR)*(r>aR?.5:.13);
+    var tL_=-48+Math.min(1.08,aL)*88, tR_=-48+Math.min(1.08,aR)*88; nL+=(tL_-nL)*.55; nR+=(tR_-nR)*.55;
+    document.getElementById('dk-nL').setAttribute('transform','rotate('+nL.toFixed(2)+' 100 122)'); document.getElementById('dk-nR').setAttribute('transform','rotate('+nR.toFixed(2)+' 100 122)');
+    document.getElementById('dk-pkL').classList.toggle('dk-hot',nL>14); document.getElementById('dk-pkR').classList.toggle('dk-hot',nR>14);
+    /* reels and tape */
+    var p=au.duration?au.currentTime/au.duration:(demo?.35:0);
+    if(playing||demo) spin+=dt*150;
+    var rl=46-p*22, rrd=24+p*22;
+    document.getElementById('dk-packL').setAttribute('r',rl.toFixed(1)); document.getElementById('dk-packR').setAttribute('r',rrd.toFixed(1));
+    document.getElementById('dk-reelL').setAttribute('transform','translate(70 52) rotate('+(-spin*(34/rl)).toFixed(1)+')');
+    document.getElementById('dk-reelR').setAttribute('transform','translate(232 52) rotate('+(-spin*(34/rrd)).toFixed(1)+')');
+    document.getElementById('dk-strand').setAttribute('d','M'+(70-rl*.5).toFixed(1)+' '+(52+rl*.87).toFixed(1)+' L112 101 H190 L'+(232+rrd*.5).toFixed(1)+' '+(52+rrd*.87).toFixed(1));
+    var ct=au.currentTime||0; document.getElementById('dk-cnt').innerHTML='00:'+('0'+Math.floor(ct)).slice(-2)+' <small>/ 00:'+('0'+Math.round(au.duration||40)).slice(-2)+'</small>';
+    document.getElementById('dk-bar').style.width=(p*100).toFixed(2)+'%';
+    requestAnimationFrame(frame);
+  }
+  function rr(x,y,w,h,r){ cx.beginPath(); cx.moveTo(x+r,y); cx.arcTo(x+w,y,x+w,y+h,r); cx.arcTo(x+w,y+h,x,y+h,r); cx.arcTo(x,y+h,x,y,r); cx.arcTo(x,y,x+w,y,r); cx.closePath(); cx.fill(); }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
