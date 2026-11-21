@@ -317,15 +317,18 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 .nsvg text{font-family:"Sacramento",cursive;font-size:100px}
 .nsvg use{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .nsvg .ly-s use{stroke:#000;fill:#000;stroke-width:8;opacity:.55}
-.nsvg .ly-s{filter:blur(3px);transform:translate(4px,6px)}
+.nsvg .ly-s{filter:blur(3.5px);transform:translate(5px,8px)}
+.nsvg .ly-g use{stroke:#FF4FA3;fill:none;stroke-width:16;opacity:.28}.nsvg .ly-g{filter:blur(11px);transform:translate(2px,4px)}
+.nsvg .ly-lo use{stroke:none;fill:#FF6FB8;opacity:.9}
+.nsvg .ly-hl use{stroke:none;fill:#fff;opacity:1}.nsvg .ly-hl{filter:drop-shadow(0 0 .8px #fff)}
 .nsvg .ly-e use{stroke:#FFC9E8;fill:#FFC9E8;stroke-width:25.4;opacity:.75}
 .nsvg .ly-p use{stroke:#1c0b24;fill:#1c0b24;stroke-width:23.4}
 .nsvg .ly-p{opacity:.9}
 .nsvg .ly-h use{stroke:rgba(255,255,255,.1);fill:none;stroke-width:21}
-.nsvg .ly-t1 use{stroke-width:6.6}.nsvg .ly-t2 use{stroke-width:4.6}.nsvg .ly-t3 use{stroke-width:2.4}.nsvg .ly-t4 use{stroke-width:.7}
-.nsvg .pk.ly-t1 use{stroke:#B81E70;fill:#B81E70}.nsvg .pk.ly-t2 use{stroke:#FF4FA3;fill:#FF4FA3}.nsvg .pk.ly-t3 use{stroke:#FFA6D8;fill:#FFA6D8}
+.nsvg .ly-t1 use{stroke-width:6.6}.nsvg .ly-t2 use{stroke-width:4.6}.nsvg .ly-t3 use{stroke-width:1.6}.nsvg .ly-t4 use{stroke-width:0}
+.nsvg .pk.ly-t1 use{stroke:#9C1760;fill:#9C1760}.nsvg .pk.ly-t2 use{stroke:#FF4FA3;fill:#FF4FA3}.nsvg .pk.ly-t3 use{stroke:#FF8CC8;fill:#FF8CC8}
 .nsvg .aq.ly-t1 use{stroke:#178F84}.nsvg .aq.ly-t2 use{stroke:#3FE0D0}.nsvg .aq.ly-t3 use{stroke:#B5FFF7}
-.nsvg .ly-t4 use{stroke:#fff;fill:#fff}
+.nsvg .ly-t4 use{stroke:#FFE0F0;fill:#FFE0F0}
 .nsvg .aq use,.nsvg .ly-t4.nf use{fill:none}
 .nsvg .pk.ly-t2{filter:drop-shadow(0 0 3px #FF4FA3) drop-shadow(0 0 10px #FF4FA3) drop-shadow(0 0 26px rgba(255,79,163,.75))}
 .nsvg .aq.ly-t2{filter:drop-shadow(0 0 3px #3FE0D0) drop-shadow(0 0 10px #3FE0D0) drop-shadow(0 0 24px rgba(63,224,208,.7))}
@@ -340,6 +343,8 @@ footer{padding:clamp(80px,11vw,140px) 0 56px}
 .nsvg.tap-off .ly-t2 use.dk,.nsvg.tap-off .ly-t3 use.dk{opacity:0}
 .nsvg.tap-off .ly-t1 use.dk{stroke:#6b4a63;fill:#6b4a63;stroke-width:2.2;opacity:.75}
 .nsvg.tap-off .ly-t4 use.dk{opacity:.16}
+.nsvg.tap-off .ly-g use.dk,.nsvg.tap-off .ly-lo use.dk{opacity:0}.nsvg.tap-off .ly-hl use.dk{opacity:.35}
+.nsvg.tap-dim .ly-g use.dk{opacity:.12}
 .nsvg.tap-dim .ly-t2 use.dk{opacity:.42}.nsvg.tap-dim .ly-t3 use.dk{opacity:.3}.nsvg.tap-dim .ly-t4 use.dk{opacity:.5}
 .nsvg.tap-sag .pk.ly-t2{filter:drop-shadow(0 0 2px #FF4FA3) drop-shadow(0 0 7px #FF4FA3) drop-shadow(0 0 16px rgba(255,79,163,.45)) brightness(.82)}
 .nsvg.tap-sag .ly-t4{opacity:.6}
@@ -609,7 +614,7 @@ main{position:relative;z-index:1}
       </picture>
       <video id="film" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video>
       <div class="hero-copy">
-      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><svg class="nsvg" viewBox="24 34 340 118" aria-hidden="true"><defs><text id="nT" x="40" y="130" style="font-family:Sacramento,cursive;font-size:100px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0">Montero</text></defs><g class="ly-s"><use href="#nT"/></g><g class="pk ly-t1"><use href="#nT"/></g><g class="pk ly-t2"><use href="#nT"/></g><g class="pk ly-t3"><use href="#nT"/></g><g class="ly-t4"><use href="#nT"/></g></svg></span></h1>
+      <h1>Mika<span class="sr"> Montero</span><span class="neon-sign" aria-hidden="true"><svg class="nsvg" viewBox="24 34 340 118" aria-hidden="true"><defs><text id="nT" x="40" y="130" style="font-family:Sacramento,cursive;font-size:100px;font-weight:400;font-style:normal;text-transform:none;letter-spacing:0">Montero</text><mask id="nMh" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="200"><use href="#nT" style="fill:#fff;stroke:none"/><use href="#nT" style="fill:#000;stroke:#000;stroke-width:.2" transform="translate(.85 1.05)"/></mask><mask id="nMl" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="200"><use href="#nT" style="fill:#fff;stroke:none"/><use href="#nT" style="fill:#000;stroke:#000;stroke-width:.2" transform="translate(-.95 -1.15)"/></mask></defs><g class="ly-s"><use href="#nT"/></g><g class="ly-g"><use href="#nT"/></g><g class="pk ly-t1"><use href="#nT"/></g><g class="pk ly-t2"><use href="#nT"/></g><g class="pk ly-t3"><use href="#nT"/></g><g class="ly-t4"><use href="#nT"/></g><g class="ly-lo" mask="url(#nMl)"><use href="#nT"/></g><g class="ly-hl" mask="url(#nMh)"><use href="#nT"/></g></svg></span></h1>
       <p class="lead" data-i18n="lead">Miami nights. Honolulu heart.</p>
       <p class="sub" data-i18n="sub">Singer and songwriter from Miami. I write my songs at night, when the city glows pink and everything feels possible. My first single, Break You Out, drops Monday. Turn it up.</p>
       <div class="actions">
