@@ -351,6 +351,11 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 .legal h4{margin:20px 0 6px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
 .legal p{margin:0;font-size:15px;line-height:1.65}.legal a{color:var(--pink)}
 .legal-x{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:16px;cursor:pointer}
+.lang{display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:var(--r);border:1px solid var(--line);background:transparent;cursor:pointer;font:600 12px/1 var(--sans);letter-spacing:.08em}
+.lang span{padding:7px 8px;border-radius:7px;color:var(--dim);transition:background .2s,color .2s}
+html[lang=en] .lang [data-l=en],html[lang=es] .lang [data-l=es]{background:rgba(255,255,255,.1);color:var(--ink)}
+.lang:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
+@media(max-width:520px){.nav ul{gap:10px}.nav .btn-s[data-i18n=n_listen]{display:none}.logo{font-size:14px;letter-spacing:.14em}}
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*70ms),transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*70ms)}
 .rv.in{opacity:1;transform:none}
@@ -369,11 +374,12 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 <header class="nav" id="nav">
   <a class="logo" href="#top">MIKA<span>.</span>MONTERO</a>
   <ul>
-    <li class="opt"><a href="#music">Music</a></li>
-    <li class="opt"><a href="#videos">Videos</a></li>
-    <li class="opt"><a href="#about">About</a></li>
-    <li class="opt"><a href="#booking">Booking</a></li>
-    <li><a class="btn btn-p btn-s" href="#music" style="color:#14040C">Listen</a></li>
+    <li class="opt"><a href="#music" data-i18n="n_music">Music</a></li>
+    <li class="opt"><a href="#videos" data-i18n="n_videos">Videos</a></li>
+    <li class="opt"><a href="#about" data-i18n="n_about">About</a></li>
+    <li class="opt"><a href="#booking" data-i18n="n_booking">Booking</a></li>
+    <li><button class="lang" id="lang" type="button" aria-label="Español / English"><span data-l="en">EN</span><span data-l="es">ES</span></button></li>
+    <li><a class="btn btn-p btn-s" href="#music" style="color:#14040C" data-i18n="n_listen">Listen</a></li>
   </ul>
 </header>
 <main>
@@ -396,14 +402,14 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <div class="split">
       <div class="cover rv" id="cov"><img src="assets/img/single-cover-lg.jpg" alt="Cover of Break You Out: Mika in the rain with a gold sequin glove" loading="lazy"></div>
       <div>
-        <p class="eyebrow rv">New single</p>
+        <p class="eyebrow rv" data-i18n="m_eye">New single</p>
         <h2 class="rv" style="--d:1">Break<br>You Out</h2>
         <p class="lede rv" style="--d:2" id="m-lede">A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out everywhere Monday at midnight.</p>
         <div class="count rv" style="--d:3" id="cd" aria-live="polite">
-          <div><b id="cd-d">00</b><span>Days</span></div><div class="sep">:</div>
-          <div><b id="cd-h">00</b><span>Hours</span></div><div class="sep">:</div>
-          <div><b id="cd-m">00</b><span>Min</span></div><div class="sep">:</div>
-          <div><b id="cd-s">00</b><span>Sec</span></div>
+          <div><b id="cd-d">00</b><span data-i18n="cd_d">Days</span></div><div class="sep">:</div>
+          <div><b id="cd-h">00</b><span data-i18n="cd_h">Hours</span></div><div class="sep">:</div>
+          <div><b id="cd-m">00</b><span data-i18n="cd_m">Min</span></div><div class="sep">:</div>
+          <div><b id="cd-s">00</b><span data-i18n="cd_s">Sec</span></div>
         </div>
         <div class="rv" style="--d:4">
           <a class="btn btn-p" id="m-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-original-mix?utm_source=website" target="_blank" rel="noopener" style="width:100%"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg><span>Pre-save on Spotify</span></a>
@@ -421,15 +427,15 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
       <div>
         <p class="eyebrow" id="rx-eye">Next · Friday, Nov 27</p>
         <h3>The Remixes</h3>
-        <p>Five new versions, from dark disco to minimal.</p>
+        <p data-i18n="rx_p">Five new versions, from dark disco to minimal.</p>
       </div>
       <a class="btn btn-g" id="rx-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-the-remixes?utm_source=website" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg><span>Pre-save</span></a>
     </div>
 
     <div class="listen">
       <div class="listen-h">
-        <div><p class="eyebrow rv">Debut album</p><h2 class="rv" style="--d:1">No Angel.<br>No Apology.</h2></div>
-        <p class="lede rv" style="--d:2;margin:0">15 tracks and the new single. Pick one, press play, stay a while.</p>
+        <div><p class="eyebrow rv" data-i18n="al_eye">Debut album</p><h2 class="rv" style="--d:1">No Angel.<br>No Apology.</h2></div>
+        <p class="lede rv" style="--d:2;margin:0" data-i18n="al_p">15 tracks, the new single and the remixes. Pick one, press play, stay a while.</p>
       </div>
       <div class="rv" style="--d:2"><div id="mm1">
 <div class="dk-scene">
@@ -483,67 +489,67 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     </div>
   </div>
 </div></div>
-<div class="dk-list"><h4>No Angel. No Apology. <em  data-x="dk_sub">Debut album · 15 tracks + the remixes · 40-second previews</em></h4><ol id="dk-tl"><li class="dk-cur"><button type="button" data-f="assets/deck/r00.mp3" data-c="assets/img/single-cover.jpg" data-s="★"><span class="dk-no">★</span><span class="dk-ti">Break You Out</span><span class="dk-tg"  data-x="dk_new">New single</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r01.mp3" data-c="assets/img/remix-cover.jpg" data-s="R1"><span class="dk-no">R1</span><span class="dk-ti">Break You Out (Dark Disco Dub)</span><span class="dk-tg dk-soon"  data-x="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r02.mp3" data-c="assets/img/remix-cover.jpg" data-s="R2"><span class="dk-no">R2</span><span class="dk-ti">Break You Out (Ibiza Melodic House Mix)</span><span class="dk-tg dk-soon"  data-x="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r03.mp3" data-c="assets/img/remix-cover.jpg" data-s="R3"><span class="dk-no">R3</span><span class="dk-ti">Break You Out (Concrete Techno Mix)</span><span class="dk-tg dk-soon"  data-x="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r04.mp3" data-c="assets/img/remix-cover.jpg" data-s="R4"><span class="dk-no">R4</span><span class="dk-ti">Break You Out (Indie Dance Freak Mix)</span><span class="dk-tg dk-soon"  data-x="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r05.mp3" data-c="assets/img/remix-cover.jpg" data-s="R5"><span class="dk-no">R5</span><span class="dk-ti">Break You Out (Minimal Hypno Mix)</span><span class="dk-tg dk-soon"  data-x="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t01.mp3" data-c="assets/deck/album.jpg" data-s="01"><span class="dk-no">01</span><span class="dk-ti">No Angel</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t02.mp3" data-c="assets/deck/album.jpg" data-s="02"><span class="dk-no">02</span><span class="dk-ti">Palm Trees &amp; Bad Decisions</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t03.mp3" data-c="assets/deck/album.jpg" data-s="03"><span class="dk-no">03</span><span class="dk-ti">Pretty Little Problem</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t04.mp3" data-c="assets/deck/album.jpg" data-s="04"><span class="dk-no">04</span><span class="dk-ti">Rent Free in Your Head</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t05.mp3" data-c="assets/deck/album.jpg" data-s="05"><span class="dk-no">05</span><span class="dk-ti">Money Can't Buy a Pulse</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t06.mp3" data-c="assets/deck/album.jpg" data-s="06"><span class="dk-no">06</span><span class="dk-ti">Don't Test the Lipstick</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t07.mp3" data-c="assets/deck/album.jpg" data-s="07"><span class="dk-no">07</span><span class="dk-ti">Girls Like Me Get Lonely Too</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t08.mp3" data-c="assets/deck/album.jpg" data-s="08"><span class="dk-no">08</span><span class="dk-ti">No Saints in South Beach</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t09.mp3" data-c="assets/deck/album.jpg" data-s="09"><span class="dk-no">09</span><span class="dk-ti">Mama Didn't Raise a Fool</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t10.mp3" data-c="assets/deck/album.jpg" data-s="10"><span class="dk-no">10</span><span class="dk-ti">Pretty When I'm Pissed</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t11.mp3" data-c="assets/deck/album.jpg" data-s="11"><span class="dk-no">11</span><span class="dk-ti">Love Me Like You Mean It</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t12.mp3" data-c="assets/deck/album.jpg" data-s="12"><span class="dk-no">12</span><span class="dk-ti">Bad Habit with a Heart</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t13.mp3" data-c="assets/deck/album.jpg" data-s="13"><span class="dk-no">13</span><span class="dk-ti">Everybody Wants the Sunshine</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t14.mp3" data-c="assets/deck/album.jpg" data-s="14"><span class="dk-no">14</span><span class="dk-ti">The Girl in the Rearview</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t15.mp3" data-c="assets/deck/album.jpg" data-s="15"><span class="dk-no">15</span><span class="dk-ti">Still Here, Still Trouble</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li></ol></div>
+<div class="dk-list"><h4>No Angel. No Apology. <em data-i18n="dk_sub">Debut album · 15 tracks + the remixes · 40-second previews</em></h4><ol id="dk-tl"><li class="dk-cur"><button type="button" data-f="assets/deck/r00.mp3" data-c="assets/img/single-cover.jpg" data-s="★"><span class="dk-no">★</span><span class="dk-ti">Break You Out</span><span class="dk-tg" data-i18n="dk_new">New single</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r01.mp3" data-c="assets/img/remix-cover.jpg" data-s="R1"><span class="dk-no">R1</span><span class="dk-ti">Break You Out (Dark Disco Dub)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r02.mp3" data-c="assets/img/remix-cover.jpg" data-s="R2"><span class="dk-no">R2</span><span class="dk-ti">Break You Out (Ibiza Melodic House Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r03.mp3" data-c="assets/img/remix-cover.jpg" data-s="R3"><span class="dk-no">R3</span><span class="dk-ti">Break You Out (Concrete Techno Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r04.mp3" data-c="assets/img/remix-cover.jpg" data-s="R4"><span class="dk-no">R4</span><span class="dk-ti">Break You Out (Indie Dance Freak Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li class="dk-rx"><button type="button" data-f="assets/deck/r05.mp3" data-c="assets/img/remix-cover.jpg" data-s="R5"><span class="dk-no">R5</span><span class="dk-ti">Break You Out (Minimal Hypno Mix)</span><span class="dk-tg dk-soon" data-i18n="dk_soon">Fri, Nov 27</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t01.mp3" data-c="assets/deck/album.jpg" data-s="01"><span class="dk-no">01</span><span class="dk-ti">No Angel</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t02.mp3" data-c="assets/deck/album.jpg" data-s="02"><span class="dk-no">02</span><span class="dk-ti">Palm Trees &amp; Bad Decisions</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t03.mp3" data-c="assets/deck/album.jpg" data-s="03"><span class="dk-no">03</span><span class="dk-ti">Pretty Little Problem</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t04.mp3" data-c="assets/deck/album.jpg" data-s="04"><span class="dk-no">04</span><span class="dk-ti">Rent Free in Your Head</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t05.mp3" data-c="assets/deck/album.jpg" data-s="05"><span class="dk-no">05</span><span class="dk-ti">Money Can't Buy a Pulse</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t06.mp3" data-c="assets/deck/album.jpg" data-s="06"><span class="dk-no">06</span><span class="dk-ti">Don't Test the Lipstick</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t07.mp3" data-c="assets/deck/album.jpg" data-s="07"><span class="dk-no">07</span><span class="dk-ti">Girls Like Me Get Lonely Too</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t08.mp3" data-c="assets/deck/album.jpg" data-s="08"><span class="dk-no">08</span><span class="dk-ti">No Saints in South Beach</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t09.mp3" data-c="assets/deck/album.jpg" data-s="09"><span class="dk-no">09</span><span class="dk-ti">Mama Didn't Raise a Fool</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t10.mp3" data-c="assets/deck/album.jpg" data-s="10"><span class="dk-no">10</span><span class="dk-ti">Pretty When I'm Pissed</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t11.mp3" data-c="assets/deck/album.jpg" data-s="11"><span class="dk-no">11</span><span class="dk-ti">Love Me Like You Mean It</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t12.mp3" data-c="assets/deck/album.jpg" data-s="12"><span class="dk-no">12</span><span class="dk-ti">Bad Habit with a Heart</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t13.mp3" data-c="assets/deck/album.jpg" data-s="13"><span class="dk-no">13</span><span class="dk-ti">Everybody Wants the Sunshine</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t14.mp3" data-c="assets/deck/album.jpg" data-s="14"><span class="dk-no">14</span><span class="dk-ti">The Girl in the Rearview</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li><li><button type="button" data-f="assets/deck/t15.mp3" data-c="assets/deck/album.jpg" data-s="15"><span class="dk-no">15</span><span class="dk-ti">Still Here, Still Trouble</span><span class="dk-bars" aria-hidden="true"><i></i><i></i><i></i></span></button></li></ol></div>
 <audio id="song" preload="none"></audio>
 </div></div>
     </div>
   </section>
 
   <section class="sec" id="videos">
-    <p class="eyebrow rv">Videos</p>
-    <h2 class="rv" style="--d:1">Watch</h2>
+    <p class="eyebrow rv" data-i18n="v_eye">Videos</p>
+    <h2 class="rv" style="--d:1" data-i18n="v_h">Watch</h2>
     <div class="vids">
       <figure class="vid"><video src="assets/teaser.mp4" poster="assets/img/teaser-poster.jpg" controls playsinline preload="none"></video><figcaption><b>Break You Out</b><span>Teaser</span></figcaption></figure>
-      <figure class="vid" id="rx-vid"><video src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.jpg" controls playsinline preload="none"></video><figcaption><b>Dark Disco Dub</b><span>The Remixes · trailer</span></figcaption></figure>
+      <figure class="vid" id="rx-vid"><video src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.jpg" controls playsinline preload="none"></video><figcaption><b>Dark Disco Dub</b><span data-i18n="v_rx">The Remixes · trailer</span></figcaption></figure>
     </div>
   </section>
 
   <section class="sec" id="gallery" style="padding-top:0">
-    <p class="eyebrow rv">Gallery</p>
+    <p class="eyebrow rv" data-i18n="g_eye">Gallery</p>
     <div class="gal"><figure class="ph rv" style="--d:0"><img src="assets/img/m4.jpg" alt="Mika with headphones on a neon Miami street" loading="lazy" decoding="async"></figure><figure class="ph rv" style="--d:1"><img src="assets/img/g3.jpg" alt="Beauty portrait of Mika with gold hoop earrings" loading="lazy" decoding="async"></figure><figure class="ph rv" style="--d:2"><img src="assets/img/m1.jpg" alt="Mika singing into a studio microphone" loading="lazy" decoding="async"></figure><figure class="ph rv" style="--d:3"><img src="assets/img/m6.jpg" alt="Mika behind the wheel of a red vintage car" loading="lazy" decoding="async"></figure><figure class="ph rv" style="--d:4"><img src="assets/img/g5.jpg" alt="Black and white photo of Mika in an evening gown" loading="lazy" decoding="async"></figure><figure class="ph rv" style="--d:5"><img src="assets/img/m2.jpg" alt="Mika performing on stage under pink lights" loading="lazy" decoding="async"></figure></div>
-    <div class="row rv" style="margin-top:28px"><a class="btn btn-g btn-s" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>More on Instagram</a></div>
+    <div class="row rv" style="margin-top:28px"><a class="btn btn-g btn-s" href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span data-i18n="g_ig">More on Instagram</span></a></div>
   </section>
 
   <section class="sec" id="about">
     <div class="split">
       <div class="rv"><img class="about" src="assets/img/about.jpg" alt="Black and white portrait of Mika in a white shirt" loading="lazy"></div>
       <div class="about">
-        <p class="eyebrow rv">About</p>
-        <h2 class="rv" style="--d:1">Born in Honolulu.<br>Made in Miami.</h2>
-        <p class="lede rv" style="--d:2">Island girl at heart and a night owl by choice. Soul and R&amp;B are home, but a friend dragged me into house and techno, and I never left. I write at night, when the city lights come on.</p>
-        <ul class="facts rv" style="--d:3"><li><b>Miami, FL</b>Home</li><li><b>Soul · R&amp;B · House</b>Sound</li><li><b>No Angel. No Apology.</b>Debut album</li></ul>
+        <p class="eyebrow rv" data-i18n="a_eye">About</p>
+        <h2 class="rv" style="--d:1" data-i18n="a_h">Born in Honolulu.<br>Made in Miami.</h2>
+        <p class="lede rv" style="--d:2" data-i18n="a_p">Island girl at heart and a night owl by choice. Soul and R&amp;B are home, but a friend dragged me into house and techno, and I never left. I write at night, when the city lights come on.</p>
+        <ul class="facts rv" style="--d:3"><li><b>Miami, FL</b><span data-i18n="f_home">Home</span></li><li><b>Soul · R&amp;B · House</b><span data-i18n="f_sound">Sound</span></li><li><b>No Angel. No Apology.</b><span data-i18n="f_album">Debut album</span></li></ul>
       </div>
     </div>
   </section>
 
   <section class="sec book" id="booking">
-    <p class="eyebrow rv">Brands &amp; booking</p>
-    <h2 class="rv" style="--d:1">Let's work<br>together</h2>
-    <p class="lede rv" style="--d:2">Campaigns, features and performances. Tell me what you have in mind.</p>
-    <div class="row rv" style="--d:3"><a class="btn btn-p" href="mailto:booking@mikamontero.com">booking@mikamontero.com</a><a class="btn btn-g" href="press.html">Press kit</a></div>
+    <p class="eyebrow rv" data-i18n="b_eye">Brands &amp; booking</p>
+    <h2 class="rv" style="--d:1" data-i18n="b_h">Let's work<br>together</h2>
+    <p class="lede rv" style="--d:2" data-i18n="b_p">Campaigns, features and performances. Tell me what you have in mind.</p>
+    <div class="row rv" style="--d:3"><a class="btn btn-p" href="mailto:booking@mikamontero.com">booking@mikamontero.com</a><a class="btn btn-g" href="press.html" data-i18n="b_press">Press kit</a></div>
   </section>
 </main>
 <div class="mini" id="mini" role="region" aria-label="Now playing">
-  <button class="mini-go" id="mini-go" type="button" aria-label="Back to the player"><img id="mini-c" src="assets/img/single-cover.jpg" alt=""><span class="mini-t"><b id="mini-ti">Break You Out</b><span>Mika Montero · preview</span></span></button>
+  <button class="mini-go" id="mini-go" type="button" aria-label="Back to the player"><img id="mini-c" src="assets/img/single-cover.jpg" alt=""><span class="mini-t"><b id="mini-ti">Break You Out</b><span data-i18n="mini_sub">Mika Montero · preview</span></span></button>
   <button class="mini-b pp" id="mini-pp" type="button" aria-label="Pause"><svg viewBox="0 0 24 24" id="mini-ico"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button>
   <button class="mini-b" id="mini-nx" type="button" aria-label="Next track"><svg viewBox="0 0 24 24"><path d="M17.5 5H20v14h-2.5zM4 5l12 7-12 7z"/></svg></button>
   <div class="mini-bar" aria-hidden="true"><i id="mini-bar"></i></div>
 </div>
 <footer>
-  <span style="display:flex;gap:18px;flex-wrap:wrap"><button class="legal-link" id="legal-open" type="button">Legal &amp; Privacy</button><span>© 2026 Mika Montero</span></span>
-  <nav><a href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener">Spotify</a><a href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener">Apple Music</a><a href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">Instagram</a><a href="press.html">Press</a></nav>
+  <span style="display:flex;gap:18px;flex-wrap:wrap"><button class="legal-link" id="legal-open" type="button" data-i18n="lg_link">Legal &amp; Privacy</button><span>© 2026 Mika Montero</span></span>
+  <nav><a href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener">Spotify</a><a href="https://music.apple.com/us/artist/mika-montero/6829494127" target="_blank" rel="noopener">Apple Music</a><a href="https://www.youtube.com/channel/UCfUsL1WSKxfWIZijkJbRnRg" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/mikamontero26/" target="_blank" rel="noopener">Instagram</a><a href="press.html" data-i18n="f_press">Press</a></nav>
 </footer>
 <dialog class="legal" id="legal" aria-labelledby="legal-h">
   <button class="legal-x" id="legal-close" type="button" aria-label="Close">✕</button>
-  <h3 id="legal-h"  data-x="lg_h">Legal &amp; Privacy</h3>
-  <h4  data-x="lg_1h">About this site</h4>
-  <p  data-x="lg_1p">This is the official website of the artist Mika Montero. For any questions, requests or legal matters, write to <a href="mailto:booking@mikamontero.com">booking@mikamontero.com</a>.</p>
-  <h4  data-x="lg_2h">Privacy</h4>
-  <p  data-x="lg_2p">No cookies, no ads, no tracking. This site does not collect personal data. Your language choice is saved only in your own browser. The site is hosted by Cloudflare, which processes technical data such as your IP address to deliver it securely, and counts visits anonymously without cookies or personal profiles.</p>
-  <h4  data-x="lg_3h">External links</h4>
-  <p  data-x="lg_3p">Links to Instagram, Spotify, YouTube, Apple Music and other services lead to other services. Their own terms, age checks and privacy policies apply there.</p>
-  <h4  data-x="lg_4h">Copyright</h4>
-  <p  data-x="lg_4p">All photos, videos and music on this site © 2026 Mika Montero. Please don't use them without permission.</p>
+  <h3 id="legal-h" data-i18n="lg_h">Legal &amp; Privacy</h3>
+  <h4 data-i18n="lg_1h">About this site</h4>
+  <p data-i18n="lg_1p">This is the official website of the artist Mika Montero. For any questions, requests or legal matters, write to <a href="mailto:booking@mikamontero.com">booking@mikamontero.com</a>.</p>
+  <h4 data-i18n="lg_2h">Privacy</h4>
+  <p data-i18n="lg_2p">No cookies, no ads, no tracking. This site does not collect personal data. Your language choice is saved only in your own browser. The site is hosted by Cloudflare, which processes technical data such as your IP address to deliver it securely, and counts visits anonymously without cookies or personal profiles.</p>
+  <h4 data-i18n="lg_3h">External links</h4>
+  <p data-i18n="lg_3p">Links to Instagram, Spotify, YouTube and Apple Music lead to other services. Their own terms, age checks and privacy policies apply there.</p>
+  <h4 data-i18n="lg_4h">Copyright</h4>
+  <p data-i18n="lg_4p">All photos, videos and music on this site © 2026 Mika Montero. Please don't use them without permission.</p>
 </dialog>
 <script>
 (function(){
@@ -687,17 +693,30 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 })();
 </script>
 <script>
-/* release state, countdown, remixes (visitor's local midnight) */
+/* language (EN/ES) + release state, countdown, remixes (visitor's local midnight) */
 (function(){
+  var ES={"n_music": "Música", "n_videos": "Videos", "n_about": "Sobre mí", "n_booking": "Booking", "n_listen": "Escuchar", "m_eye": "Nuevo single", "cd_d": "Días", "cd_h": "Horas", "cd_m": "Min", "cd_s": "Seg", "rx_p": "Cinco versiones nuevas, del dark disco al minimal.", "al_eye": "Álbum debut", "al_p": "15 canciones, el nuevo single y los remixes. Elige una, dale play y quédate un rato.", "v_eye": "Videos", "v_h": "Mira", "v_rx": "The Remixes · tráiler", "g_eye": "Galería", "g_ig": "Más en Instagram", "a_eye": "Sobre mí", "a_h": "Nacida en Honolulu.<br>Hecha en Miami.", "a_p": "Chica de isla de corazón y noctámbula por elección. El soul y el R&amp;B son mi casa, pero un amigo me llevó al house y al techno, y ya no me fui. Escribo de noche, cuando se encienden las luces de la ciudad.", "f_home": "Hogar", "f_sound": "Sonido", "f_album": "Álbum debut", "b_eye": "Marcas y booking", "b_h": "Trabajemos<br>juntos", "b_p": "Campañas, colaboraciones y presentaciones. Cuéntame qué tienes en mente.", "b_press": "Press kit", "f_press": "Prensa", "lg_link": "Aviso legal y privacidad", "lg_h": "Aviso legal y privacidad", "lg_1h": "Sobre este sitio", "lg_1p": "Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href=\"mailto:booking@mikamontero.com\">booking@mikamontero.com</a>.", "lg_2h": "Privacidad", "lg_2p": "Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.", "lg_3h": "Enlaces externos", "lg_3p": "Los enlaces a Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos y políticas de privacidad.", "lg_4h": "Derechos de autor", "lg_4p": "Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.", "dk_sub": "Álbum debut · 15 canciones + los remixes · adelantos de 40 segundos", "dk_new": "Nuevo single", "dk_soon": "Vie 27 nov", "mini_sub": "Mika Montero · adelanto"}, DYN={"en": {"kick": "New single · Monday, Nov 23", "kickOut": "New single · Out now", "hcta": "Pre-save", "hctaOut": "Listen now", "mcta": "Pre-save on Spotify", "mctaOut": "Listen on Spotify", "lede": "A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out everywhere Monday at midnight.", "ledeOut": "A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out now everywhere you stream.", "rxEye": "Next · Friday, Nov 27", "rxEyeOut": "The Remixes · Out now", "rxCta": "Pre-save", "rxCtaOut": "Listen"}, "es": {"kick": "Nuevo single · Lun 23 nov", "kickOut": "Nuevo single · Ya disponible", "hcta": "Pre-save", "hctaOut": "Escúchalo ya", "mcta": "Haz pre-save en Spotify", "mctaOut": "Escúchalo en Spotify", "lede": "Un paseo de noche por Miami, la ciudad brillando en rosa, ese sentimiento que solo tienes que soltar. Sale el lunes a medianoche en todas partes.", "ledeOut": "Un paseo de noche por Miami, la ciudad brillando en rosa, ese sentimiento que solo tienes que soltar. Ya disponible en todas las plataformas.", "rxEye": "Próximo · Viernes 27 de nov", "rxEyeOut": "The Remixes · Ya disponibles", "rxCta": "Pre-save", "rxCtaOut": "Escuchar"}}, EN={};
+  [].forEach.call(document.querySelectorAll('[data-i18n]'),function(e){ EN[e.getAttribute('data-i18n')]=e.innerHTML; });
+  var lang='en'; try{ lang=localStorage.getItem('mm_lang')||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en'); }catch(e){}
   var R1=new Date(2026,10,23,0,0,0).getTime(), R2=new Date(2026,10,27,0,0,0).getTime();
   function pad(n){return (n<10?'0':'')+n}
+  function setText(){ var d=DYN[lang], now=Date.now(), out1=now>=R1, out2=now>=R2;
+    document.getElementById('h-kick').textContent=out1?d.kickOut:d.kick;
+    document.querySelector('#h-cta span').textContent=out1?d.hctaOut:d.hcta;
+    document.querySelector('#m-cta span').textContent=out1?d.mctaOut:d.mcta;
+    document.getElementById('m-lede').textContent=out1?d.ledeOut:d.lede;
+    document.getElementById('rx-eye').textContent=out2?d.rxEyeOut:d.rxEye;
+    document.querySelector('#rx-cta span').textContent=out2?d.rxCtaOut:d.rxCta;
+    document.getElementById('cd').hidden=out1; }
+  function apply(l){ lang=l; document.documentElement.lang=l;
+    [].forEach.call(document.querySelectorAll('[data-i18n]'),function(e){ var k=e.getAttribute('data-i18n'), v=l==='es'?ES[k]:EN[k]; if(v!=null) e.innerHTML=v; });
+    try{ localStorage.setItem('mm_lang',l); }catch(e){} setText(); }
+  document.getElementById('lang').addEventListener('click',function(){ apply(lang==='es'?'en':'es'); });
+  apply(lang);
+  var was1=Date.now()>=R1, was2=Date.now()>=R2;
   function tick(){ var now=Date.now(), ms=R1-now;
-    if(ms<=0){ document.getElementById('cd').hidden=true; document.getElementById('h-kick').textContent='New single · Out now';
-      document.querySelector('#h-cta span').textContent='Listen now'; document.querySelector('#m-cta span').textContent='Listen on Spotify';
-      document.getElementById('m-lede').textContent='A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out now everywhere you stream.'; }
-    else{ var s=Math.floor(ms/1000); document.getElementById('cd-d').textContent=pad(Math.floor(s/86400)); document.getElementById('cd-h').textContent=pad(Math.floor(s%86400/3600)); document.getElementById('cd-m').textContent=pad(Math.floor(s%3600/60)); document.getElementById('cd-s').textContent=pad(s%60); }
-    if(now>=R2){ document.getElementById('rx-eye').textContent='The Remixes · Out now'; document.querySelector('#rx-cta span').textContent='Listen'; }
-  }
+    if(ms>0){ var s=Math.floor(ms/1000); document.getElementById('cd-d').textContent=pad(Math.floor(s/86400)); document.getElementById('cd-h').textContent=pad(Math.floor(s%86400/3600)); document.getElementById('cd-m').textContent=pad(Math.floor(s%3600/60)); document.getElementById('cd-s').textContent=pad(s%60); }
+    if((now>=R1)!==was1||(now>=R2)!==was2){ was1=now>=R1; was2=now>=R2; setText(); } }
   tick(); setInterval(tick,1000);
 })();
 /* reveal on scroll + gentle cover drift */

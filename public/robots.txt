@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /after-dark.html
+Disallow: /alt.html
 Sitemap: https://mikamontero.com/sitemap.xml
