@@ -315,7 +315,7 @@ h3{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6v
 .vid video{width:100%;aspect-ratio:9/16;max-height:78vh;object-fit:cover;border-radius:14px;background:#000;display:block}
 .vid figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:14px;color:var(--mute)}
 .vid figcaption b{color:var(--ink);font-weight:600}
-@media(max-width:700px){.vids{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--pad);margin:36px calc(-1*var(--pad)) 0;padding:0 var(--pad) 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.vids::-webkit-scrollbar{display:none}.vid{flex:0 0 72%;scroll-snap-align:start}.vid video{max-height:none}}
+@media(max-width:700px){.vids{gap:12px;margin-top:32px}.vid figcaption{flex-direction:column;gap:2px;font-size:13px;margin-top:10px}}
 /* gallery */
 .gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.4vw,18px);margin-top:48px}
 .ph{margin:0;overflow:hidden;border-radius:12px}
@@ -385,6 +385,12 @@ picture{display:block}
 .hero-copy picture,.stage picture{display:contents}
 @media(max-width:860px){.rx picture{width:96px}}
 @media(max-width:520px){.count{gap:6px}.count div{padding-left:8px}.count b{font-size:clamp(20px,6.6vw,28px)!important}}
+.vid{position:relative}
+.vplay{position:absolute;left:50%;top:calc(50% - 22px);transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(9,8,14,.55);color:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .2s,background .2s}
+.vplay svg{width:24px;height:24px;fill:currentColor;margin-left:3px}
+.vplay:hover{transform:translate(-50%,-50%) scale(1.06);background:rgba(255,79,163,.85)}
+.vid.on .vplay{display:none}
+@media(max-width:700px){.vplay{width:52px;height:52px;top:calc(50% - 30px)}}
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*70ms),transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*70ms)}
 .rv.in{opacity:1;transform:none}
@@ -528,8 +534,8 @@ picture{display:block}
     <p class="eyebrow rv" data-i18n="v_eye">Videos</p>
     <h2 class="rv" style="--d:1" data-i18n="v_h">Watch</h2>
     <div class="vids">
-      <figure class="vid"><video src="assets/teaser.mp4" poster="assets/img/teaser-poster.webp" controls playsinline preload="none"></video><figcaption><b>Break You Out</b><span>Teaser</span></figcaption></figure>
-      <figure class="vid" id="rx-vid"><video src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.webp" controls playsinline preload="none"></video><figcaption><b>Dark Disco Dub</b><span data-i18n="v_rx">The Remixes · trailer</span></figcaption></figure>
+      <figure class="vid"><video src="assets/teaser.mp4" poster="assets/img/teaser-poster.webp" playsinline preload="none"></video><button class="vplay" type="button" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button><figcaption><b>Break You Out</b><span>Teaser</span></figcaption></figure>
+      <figure class="vid" id="rx-vid"><video src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.webp" playsinline preload="none"></video><button class="vplay" type="button" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button><figcaption><b>Dark Disco Dub</b><span data-i18n="v_rx">The Remixes · trailer</span></figcaption></figure>
     </div>
   </section>
 
@@ -784,6 +790,14 @@ picture{display:block}
   document.getElementById('mini-pp').addEventListener('click',function(){ document.getElementById('dk-play').click(); });
   document.getElementById('mini-nx').addEventListener('click',function(){ document.getElementById('dk-next').click(); setTimeout(sync,50); });
   document.getElementById('mini-go').addEventListener('click',function(){ var r=deck.getBoundingClientRect(); scrollTo({top:scrollY+r.top-Math.max(70,(innerHeight-r.height)/2),behavior:'smooth'}); });
+})();
+/* videos: tap to play; native controls only once playing; phones open fullscreen */
+(function(){ document.querySelectorAll('.vid').forEach(function(f){ var v=f.querySelector('video'), b=f.querySelector('.vplay'); if(!v||!b) return;
+  b.addEventListener('click',function(){ f.classList.add('on'); v.controls=true; var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    if(innerWidth<=700){ if(v.webkitEnterFullscreen){ try{ v.webkitEnterFullscreen(); }catch(e){} } else if(v.requestFullscreen){ v.requestFullscreen().catch(function(){}); } } });
+  v.addEventListener('webkitendfullscreen',function(){ v.pause(); });
+  v.addEventListener('pause',function(){ if(innerWidth<=700){ v.controls=false; f.classList.remove('on'); } });
+  v.addEventListener('ended',function(){ v.controls=false; f.classList.remove('on'); v.load(); }); });
 })();
 /* only one thing plays at a time */
 (function(){ var vids=document.querySelectorAll('.vid video'), song=document.getElementById('song');
