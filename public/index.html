@@ -338,6 +338,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 /* mini player: only while music plays and the deck is out of view */
 .mini{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));z-index:60;width:min(560px,calc(100% - 24px));display:flex;align-items:center;gap:12px;padding:8px 8px 8px 8px;border-radius:14px;background:rgba(20,18,28,.96);border:1px solid rgba(255,255,255,.1);box-shadow:0 18px 40px rgba(0,0,0,.55);transform:translate(-50%,140%);opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s}
 .mini.on{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+body.mini-pad{padding-bottom:96px}
 .mini-go{display:flex;align-items:center;gap:12px;flex:1;min-width:0;background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
 .mini img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex:0 0 auto}
 .mini-t{min-width:0;display:flex;flex-direction:column;gap:3px}
@@ -782,7 +783,7 @@ picture{display:block}
 (function(){ var m=document.getElementById('mini'), au=document.getElementById('song'), deck=document.getElementById('dk-deck'); if(!m||!au||!deck) return;
   var seen=true, PAUSE='<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>', PLAY='<path d="M6 4l14 8-14 8z"/>';
   function sync(){ var started=!!au.getAttribute('src')&&(au.currentTime>0||!au.paused);
-    m.classList.toggle('on', started && !seen);
+    m.classList.toggle('on', started && !seen); document.body.classList.toggle('mini-pad', started);
     document.getElementById('mini-ti').textContent=document.getElementById('dk-ls').textContent;
     document.getElementById('mini-c').src=document.getElementById('dk-lc').src;
     document.getElementById('mini-ico').innerHTML=au.paused?PLAY:PAUSE; document.getElementById('mini-pp').setAttribute('aria-label',au.paused?'Play':'Pause'); }
