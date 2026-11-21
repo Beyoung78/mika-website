@@ -258,6 +258,10 @@ a{color:inherit}
 .btn-g{background:rgba(255,255,255,.03);color:var(--ink);border-color:rgba(255,255,255,.18)}
 .btn-g:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.06)}
 .btn-s{height:40px;padding:0 16px;font-size:14px}
+.nav-listen{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,filter .3s}
+.nav-listen:hover,.nav-listen:focus-visible{transform:translateY(-3px) scale(1.08);box-shadow:0 0 0 1px rgba(255,79,163,.5),0 12px 34px rgba(255,79,163,.55);filter:brightness(1.08)}
+.nav-listen:active{transform:translateY(-1px) scale(1.03)}
+@media(prefers-reduced-motion:reduce){.nav-listen:hover{transform:none}}
 .row{display:flex;flex-wrap:wrap;gap:12px}
 /* hero */
 .film{position:relative;height:100vh;height:100dvh;min-height:620px;background:var(--bg)}
@@ -416,7 +420,7 @@ picture{display:block}
     <li class="opt"><a href="#about" data-i18n="n_about">About</a></li>
     <li class="opt"><a href="#booking" data-i18n="n_booking">Booking</a></li>
     <li><button class="lang" id="lang" type="button" aria-label="EN ES – language / idioma"><span data-l="en">EN</span><span data-l="es">ES</span></button></li>
-    <li><a class="btn btn-p btn-s" href="#music" style="color:#14040C" data-i18n="n_listen">Listen</a></li>
+    <li><a class="btn btn-p btn-s nav-listen" href="#music" style="color:#14040C" data-i18n="n_listen">Listen</a></li>
   </ul>
 </header>
 <main>
