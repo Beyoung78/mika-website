@@ -367,6 +367,7 @@ html[lang="en"] .lang [data-l="en"],html[lang="es"] .lang [data-l="es"]{backgrou
 .cd-cta{transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s}
 .cd-cta:hover,.cd-cta:focus-visible{transform:translateY(-6px) scale(1.04);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 24px rgba(30,215,96,.6),0 0 52px rgba(30,215,96,.35)}
 .cd-cta:active{transform:translateY(-2px) scale(1.01)}
+.rx-cta{position:relative;z-index:1;margin-top:22px;padding:0 24px;width:auto}
 /* countdown as stadium LED scoreboard (same dot technique as the marquee) */
 .cd-grid{position:relative;overflow:hidden;container-type:inline-size;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:14px 0 12px;border-radius:14px;background:#03181e;border:2px solid #7FF5EA;
   box-shadow:0 0 12px rgba(63,224,208,.6),0 0 36px rgba(63,224,208,.3),inset 0 0 20px rgba(63,224,208,.2)}
@@ -674,6 +675,7 @@ main{position:relative;z-index:1}
           <ul class="facts" aria-label="Remixes">
             <li>Dark Disco Dub</li><li>Melodic House</li><li>Concrete Techno</li><li>Indie Dance</li><li>Minimal</li>
           </ul>
+          <a class="cd-cta rx-cta" id="rx-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-the-remixes?utm_source=website" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.62.62 0 01-.86.2c-2.35-1.43-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.81-.87 7.08-.5 9.72 1.11.3.18.39.57.21.87zm1.23-2.73a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.5c3.63-1.1 8.150-.56 11.240 1.340.37.22.48.7.25 1.07zm.1-2.85C14.7 8.9 9.38 8.72 6.3 9.66a.94.94 0 11-.54-1.8c3.53-1.07 9.41-.86 13.13 1.35a.94.94 0 01-.96 1.61z"/></svg><span id="rx-cta-t">Pre-save The Remixes</span></a>
           <div class="stripes" aria-hidden="true"></div>
         </div>
       </div>
@@ -1112,10 +1114,10 @@ main{position:relative;z-index:1}
     var REMIX=new Date('2026-11-27T00:00:00-05:00');
     var fr=document.getElementById('rx-frame'), v=document.getElementById('rx-video'), b=document.getElementById('rx-play'), song=document.getElementById('song'), tz=document.getElementById('tz-video');
     if(!fr) return;
-    var T={en:{eye:'Next up · Friday, Nov 27', p:'Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.', mq:'Friday, Nov 27', mqOut:'Out now', mqn:'✦ 5 new versions', eyeOut:'The Remixes · Out now', pOut:'Five new versions of Break You Out, from dark disco to minimal. Out now everywhere you stream.', btn:'Play with sound'},
-           es:{eye:'Lo próximo · Viernes 27 de noviembre', p:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Aquí va un adelanto del Dark Disco Dub. Sale el próximo viernes a medianoche en todas las plataformas.', mq:'Viernes 27 de noviembre', mqOut:'Ya disponibles', mqn:'✦ 5 versiones nuevas', eyeOut:'The Remixes · Ya disponible', pOut:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Ya disponibles en todas las plataformas.', btn:'Reproducir con sonido'}};
+    var T={en:{eye:'Next up · Friday, Nov 27', p:'Five new versions of Break You Out, from dark disco to minimal. Here is a first taste of the Dark Disco Dub. Out next Friday at midnight, everywhere you stream.', cta:'Pre-save The Remixes', ctaOut:'Listen now', mq:'Friday, Nov 27', mqOut:'Out now', mqn:'✦ 5 new versions', eyeOut:'The Remixes · Out now', pOut:'Five new versions of Break You Out, from dark disco to minimal. Out now everywhere you stream.', btn:'Play with sound'},
+           es:{eye:'Lo próximo · Viernes 27 de noviembre', p:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Aquí va un adelanto del Dark Disco Dub. Sale el próximo viernes a medianoche en todas las plataformas.', cta:'Haz pre-save de The Remixes', ctaOut:'Escúchalo ahora', mq:'Viernes 27 de noviembre', mqOut:'Ya disponibles', mqn:'✦ 5 versiones nuevas', eyeOut:'The Remixes · Ya disponible', pOut:'Cinco nuevas versiones de Break You Out, del dark disco al minimal. Ya disponibles en todas las plataformas.', btn:'Reproducir con sonido'}};
     function render(){ var d=T[document.documentElement.lang==='es'?'es':'en'], out=Date.now()>=REMIX.getTime();
-      document.getElementById('rx-eye').textContent=out?d.eyeOut:d.eye; document.getElementById('rx-p').textContent=out?d.pOut:d.p; document.getElementById('rx-btn').textContent=d.btn;
+      document.getElementById('rx-eye').textContent=out?d.eyeOut:d.eye; document.getElementById('rx-p').textContent=out?d.pOut:d.p; document.getElementById('rx-btn').textContent=d.btn; var ct=document.getElementById('rx-cta-t'); if(ct) ct.textContent=out?d.ctaOut:d.cta;
       [].forEach.call(document.querySelectorAll('.mq-rxd'),function(x){x.textContent=out?d.mqOut:d.mq;}); [].forEach.call(document.querySelectorAll('.mq-rxn'),function(x){x.textContent=d.mqn;});
       if(out){ fr.hidden=true; try{v.pause()}catch(e){} } }
     // split headings into letters for the light wave
