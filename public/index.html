@@ -403,6 +403,35 @@ picture{display:block}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.cover{transform:none!important}}
 @media(max-width:860px){.nav ul .opt{display:none}.nav ul{gap:18px}}
 
+
+.burger-li{display:none}
+.burger{width:42px;height:42px;padding:0;border-radius:var(--r);border:1px solid rgba(255,255,255,.22);background:rgba(9,8,14,.55);display:grid;place-content:center;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.burger i{display:block;width:18px;height:2px;border-radius:2px;background:#F5F2F8;transition:transform .25s,opacity .2s}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){opacity:0}
+.burger[aria-expanded=true] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.burger:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
+.mnav{position:absolute;left:0;right:0;top:100%;display:grid;padding:4px var(--pad) 18px;background:rgba(9,8,14,.98);border-bottom:1px solid var(--line)}
+.mnav[hidden]{display:none}
+.mnav a{padding:17px 2px;font-size:20px;font-weight:600;color:#F5F2F8;text-decoration:none;border-bottom:1px solid var(--line)}
+.mnav a:last-child{border-bottom:0}
+.mnav a:active{color:var(--pink)}
+.nav.open{background:rgba(9,8,14,.98)}
+@media(max-width:860px){.burger-li{display:block}.nav{gap:12px}.nav ul{gap:10px;flex:none}.nav .logo{min-width:0;flex:0 1 auto}}
+@media(max-width:430px){.nav .logo{font-size:13.5px;letter-spacing:.1em}.lang span{padding:7px 7px}}
+@media(min-width:861px){.mnav{display:none!important}}
+.yt{margin-top:clamp(20px,3vw,36px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:stretch}
+.yt-load{display:flex;align-items:center;gap:18px;text-align:left;padding:18px 22px;border-radius:var(--r);border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;font:inherit;transition:background .2s,border-color .2s,transform .2s}
+.yt-load:hover{background:rgba(255,79,163,.1);border-color:rgba(255,79,163,.55);transform:translateY(-2px)}
+.yt-load:focus-visible,.yt-open:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
+.yt-ic{flex:none;width:52px;height:52px;border-radius:50%;background:var(--pink);display:grid;place-items:center}
+.yt-ic svg{width:22px;height:22px;fill:#14040C;margin-left:3px}
+.yt-load b{display:block;font-size:17px;font-weight:600}
+.yt-load small{display:block;margin-top:3px;font-size:13px;color:var(--mute)}
+.yt-open{display:grid;place-items:center;padding:0 22px;border-radius:var(--r);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;transition:border-color .2s,color .2s}
+.yt-open:hover{border-color:var(--aqua);color:var(--aqua)}
+.yt-frame{grid-column:1/-1;aspect-ratio:16/9;width:100%;border:0;border-radius:var(--r);background:#000}
+@media(max-width:620px){.yt{grid-template-columns:1fr}.yt-open{padding:14px 22px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MusicGroup","name":"Mika Montero","url":"https://mikamontero.com/","image":"https://mikamontero.com/assets/img/cover.jpg","genre":["Electronic","Dance","Pop"],"foundingLocation":{"@type":"Place","name":"Miami, Florida"},
@@ -421,7 +450,14 @@ picture{display:block}
     <li class="opt"><a href="#booking" data-i18n="n_booking">Booking</a></li>
     <li><button class="lang" id="lang" type="button" aria-label="EN ES – language / idioma"><span data-l="en">EN</span><span data-l="es">ES</span></button></li>
     <li><a class="btn btn-p btn-s nav-listen" href="#music" style="color:#14040C" data-i18n="n_listen">Listen</a></li>
+    <li class="burger-li"><button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><i></i><i></i><i></i></button></li>
   </ul>
+  <nav class="mnav" id="mnav" hidden>
+    <a href="#music" data-i18n="n_music">Music</a>
+    <a href="#videos" data-i18n="n_videos">Videos</a>
+    <a href="#about" data-i18n="n_about">About</a>
+    <a href="#booking" data-i18n="n_booking">Booking</a>
+  </nav>
 </header>
 <main>
   <section class="film" id="top" aria-label="Mika on a rainy neon street at night">
@@ -543,6 +579,10 @@ picture{display:block}
       <figure class="vid"><video src="assets/teaser.mp4" poster="assets/img/teaser-poster.webp" playsinline preload="none"></video><button class="vplay" type="button" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button><figcaption><b>Break You Out</b><span>Teaser</span></figcaption></figure>
       <figure class="vid" id="rx-vid"><video src="assets/remix-teaser.mp4" poster="assets/img/remix-poster.webp" playsinline preload="none"></video><button class="vplay" type="button" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></button><figcaption><b>Dark Disco Dub</b><span data-i18n="v_rx">The Remixes · trailer</span></figcaption></figure>
     </div>
+    <div class="yt rv" id="yt">
+      <button class="yt-load" id="yt-load" type="button"><span class="yt-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span><span><b data-i18n="yt_t">Play the full album on YouTube</b><small data-i18n="yt_s">No Angel. No Apology. · 15 tracks · loads the YouTube player</small></span></button>
+      <a class="yt-open" href="https://www.youtube.com/playlist?list=OLAK5uy_mtyPKjZnWEBPzSveB6BvWDz9hng7EaUqg" target="_blank" rel="noopener" data-i18n="yt_o">Open on YouTube</a>
+    </div>
   </section>
 
   <section class="sec" id="gallery" style="padding-top:0">
@@ -586,7 +626,7 @@ picture{display:block}
   <h4 data-i18n="lg_1h">About this site</h4>
   <p data-i18n="lg_1p">This is the official website of the artist Mika Montero. For any questions, requests or legal matters, write to <a href="mailto:booking@mikamontero.com">booking@mikamontero.com</a>.</p>
   <h4 data-i18n="lg_2h">Privacy</h4>
-  <p data-i18n="lg_2p">No cookies, no ads, no tracking. This site does not collect personal data. Your language choice is saved only in your own browser. The site is hosted by Cloudflare, which processes technical data such as your IP address to deliver it securely, and counts visits anonymously without cookies or personal profiles.</p>
+  <p data-i18n="lg_2p">No cookies, no ads, no tracking. This site does not collect personal data. Your language choice is saved only in your own browser. The site is hosted by Cloudflare, which processes technical data such as your IP address to deliver it securely, and counts visits anonymously without cookies or personal profiles. The YouTube player only loads when you press play. From then on YouTube may set cookies and process your data.</p>
   <h4 data-i18n="lg_3h">External links</h4>
   <p data-i18n="lg_3p">Links to Instagram, Spotify, YouTube and Apple Music lead to other services. Their own terms, age checks and privacy policies apply there.</p>
   <h4 data-i18n="lg_4h">Copyright</h4>
@@ -737,7 +777,7 @@ picture{display:block}
 <script>
 /* language (EN/ES) + release state, countdown, remixes (visitor's local midnight) */
 (function(){
-  var ES={"n_music": "Música", "n_videos": "Videos", "n_about": "Sobre mí", "n_booking": "Booking", "n_listen": "Escuchar", "m_eye": "Nuevo single", "cd_d": "Días", "cd_h": "Horas", "cd_m": "Min", "cd_s": "Seg", "rx_p": "Cinco versiones nuevas, del dark disco al minimal.", "al_eye": "Álbum debut", "al_p": "15 canciones, el nuevo single y los remixes. Elige una, dale play y quédate un rato.", "v_eye": "Videos", "v_h": "Mira", "v_rx": "The Remixes · tráiler", "g_eye": "Galería", "g_ig": "Más en Instagram", "a_eye": "Sobre mí", "a_h": "Nacida en Honolulu.<br>Hecha en Miami.", "a_p": "Chica de isla de corazón y noctámbula por elección. El soul y el R&amp;B son mi casa, pero un amigo me llevó al house y al techno, y ya no me fui. Escribo de noche, cuando se encienden las luces de la ciudad.", "f_home": "Hogar", "f_sound": "Sonido", "f_album": "Álbum debut", "b_eye": "Marcas y booking", "b_h": "Trabajemos<br>juntos", "b_p": "Campañas, colaboraciones y presentaciones. Cuéntame qué tienes en mente.", "b_press": "Press kit", "f_press": "Prensa", "lg_link": "Aviso legal y privacidad", "lg_h": "Aviso legal y privacidad", "lg_1h": "Sobre este sitio", "lg_1p": "Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href=\"mailto:booking@mikamontero.com\">booking@mikamontero.com</a>.", "lg_2h": "Privacidad", "lg_2p": "Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales.", "lg_3h": "Enlaces externos", "lg_3p": "Los enlaces a Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos y políticas de privacidad.", "lg_4h": "Derechos de autor", "lg_4p": "Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.", "dk_sub": "Álbum debut · 15 canciones + los remixes · adelantos de 40 segundos", "dk_new": "Nuevo single", "dk_soon": "Pre-save · 27 nov", "mini_sub": "Mika Montero · adelanto", "dk_g1": "Single y The Remixes · aún no disponibles, adelantos", "dk_g2": "Álbum debut · 15 canciones · ya disponible"}, DYN={"en": {"kick": "New single · Monday, Nov 23", "kickOut": "New single · Out now", "hcta": "Pre-save", "hctaOut": "Listen now", "mcta": "Pre-save on Spotify", "mctaOut": "Listen on Spotify", "lede": "A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out everywhere Monday at midnight.", "ledeOut": "A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out now everywhere you stream.", "rxEye": "Next · Friday, Nov 27", "rxEyeOut": "The Remixes · Out now", "rxCta": "Pre-save", "rxCtaOut": "Listen"}, "es": {"kick": "Nuevo single · Lun 23 nov", "kickOut": "Nuevo single · Ya disponible", "hcta": "Pre-save", "hctaOut": "Escúchalo ya", "mcta": "Haz pre-save en Spotify", "mctaOut": "Escúchalo en Spotify", "lede": "Un paseo de noche por Miami, la ciudad brillando en rosa, ese sentimiento que solo tienes que soltar. Sale el lunes a medianoche en todas partes.", "ledeOut": "Un paseo de noche por Miami, la ciudad brillando en rosa, ese sentimiento que solo tienes que soltar. Ya disponible en todas las plataformas.", "rxEye": "Próximo · Viernes 27 de nov", "rxEyeOut": "The Remixes · Ya disponibles", "rxCta": "Pre-save", "rxCtaOut": "Escuchar"}}, EN={};
+  var ES={"yt_t": "Escucha el álbum completo en YouTube", "yt_s": "No Angel. No Apology. · 15 canciones · carga el reproductor de YouTube", "yt_o": "Abrir en YouTube", "n_music": "Música", "n_videos": "Videos", "n_about": "Sobre mí", "n_booking": "Booking", "n_listen": "Escuchar", "m_eye": "Nuevo single", "cd_d": "Días", "cd_h": "Horas", "cd_m": "Min", "cd_s": "Seg", "rx_p": "Cinco versiones nuevas, del dark disco al minimal.", "al_eye": "Álbum debut", "al_p": "15 canciones, el nuevo single y los remixes. Elige una, dale play y quédate un rato.", "v_eye": "Videos", "v_h": "Mira", "v_rx": "The Remixes · tráiler", "g_eye": "Galería", "g_ig": "Más en Instagram", "a_eye": "Sobre mí", "a_h": "Nacida en Honolulu.<br>Hecha en Miami.", "a_p": "Chica de isla de corazón y noctámbula por elección. El soul y el R&amp;B son mi casa, pero un amigo me llevó al house y al techno, y ya no me fui. Escribo de noche, cuando se encienden las luces de la ciudad.", "f_home": "Hogar", "f_sound": "Sonido", "f_album": "Álbum debut", "b_eye": "Marcas y booking", "b_h": "Trabajemos<br>juntos", "b_p": "Campañas, colaboraciones y presentaciones. Cuéntame qué tienes en mente.", "b_press": "Press kit", "f_press": "Prensa", "lg_link": "Aviso legal y privacidad", "lg_h": "Aviso legal y privacidad", "lg_1h": "Sobre este sitio", "lg_1p": "Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href=\"mailto:booking@mikamontero.com\">booking@mikamontero.com</a>.", "lg_2h": "Privacidad", "lg_2p": "Sin cookies, sin anuncios, sin rastreo. Este sitio no recopila datos personales. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para entregarlo de forma segura y cuenta visitas de forma anónima, sin cookies ni perfiles personales. El reproductor de YouTube solo se carga cuando pulsas play. A partir de ahí, YouTube puede usar cookies y procesar tus datos.", "lg_3h": "Enlaces externos", "lg_3p": "Los enlaces a Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos y políticas de privacidad.", "lg_4h": "Derechos de autor", "lg_4p": "Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.", "dk_sub": "Álbum debut · 15 canciones + los remixes · adelantos de 40 segundos", "dk_new": "Nuevo single", "dk_soon": "Pre-save · 27 nov", "mini_sub": "Mika Montero · adelanto", "dk_g1": "Single y The Remixes · aún no disponibles, adelantos", "dk_g2": "Álbum debut · 15 canciones · ya disponible"}, DYN={"en": {"kick": "New single · Monday, Nov 23", "kickOut": "New single · Out now", "hcta": "Pre-save", "hctaOut": "Listen now", "mcta": "Pre-save on Spotify", "mctaOut": "Listen on Spotify", "lede": "A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out everywhere Monday at midnight.", "ledeOut": "A late drive through Miami, the city glowing pink, one feeling you just have to set free. Out now everywhere you stream.", "rxEye": "Next · Friday, Nov 27", "rxEyeOut": "The Remixes · Out now", "rxCta": "Pre-save", "rxCtaOut": "Listen"}, "es": {"kick": "Nuevo single · Lun 23 nov", "kickOut": "Nuevo single · Ya disponible", "hcta": "Pre-save", "hctaOut": "Escúchalo ya", "mcta": "Haz pre-save en Spotify", "mctaOut": "Escúchalo en Spotify", "lede": "Un paseo de noche por Miami, la ciudad brillando en rosa, ese sentimiento que solo tienes que soltar. Sale el lunes a medianoche en todas partes.", "ledeOut": "Un paseo de noche por Miami, la ciudad brillando en rosa, ese sentimiento que solo tienes que soltar. Ya disponible en todas las plataformas.", "rxEye": "Próximo · Viernes 27 de nov", "rxEyeOut": "The Remixes · Ya disponibles", "rxCta": "Pre-save", "rxCtaOut": "Escuchar"}}, EN={};
   [].forEach.call(document.querySelectorAll('[data-i18n]'),function(e){ EN[e.getAttribute('data-i18n')]=e.innerHTML; });
   var lang='en'; try{ lang=localStorage.getItem('mm_lang')||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en'); }catch(e){}
   var R1=new Date(2026,10,23,0,0,0).getTime(), R2=new Date(2026,10,27,0,0,0).getTime();
@@ -927,6 +967,25 @@ picture{display:block}
   }
   function rr(x,y,w,h,r){ cx.beginPath(); cx.moveTo(x+r,y); cx.arcTo(x+w,y,x+w,y+h,r); cx.arcTo(x+w,y+h,x,y+h,r); cx.arcTo(x,y+h,x,y,r); cx.arcTo(x,y,x+w,y,r); cx.closePath(); cx.fill(); }
   requestAnimationFrame(frame);
+})();
+</script>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),b=document.getElementById('burger'),m=document.getElementById('mnav');
+  function set(open){m.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');nav.classList.toggle('open',open);}
+  b.addEventListener('click',function(){set(m.hidden);});
+  m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){set(false);b.focus();}});
+  document.addEventListener('click',function(e){if(!m.hidden&&!nav.contains(e.target))set(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>860&&!m.hidden)set(false);});
+  var y=document.getElementById('yt-load');
+  if(y)y.addEventListener('click',function(){
+    var f=document.createElement('iframe');f.className='yt-frame';f.title='No Angel. No Apology. – YouTube';
+    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+    f.src='https://www.youtube-nocookie.com/embed/videoseries?list=OLAK5uy_mtyPKjZnWEBPzSveB6BvWDz9hng7EaUqg&autoplay=1&rel=0';
+    y.replaceWith(f);
+  });
 })();
 </script>
 </body>
