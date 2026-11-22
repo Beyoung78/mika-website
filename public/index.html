@@ -16,8 +16,8 @@
 <meta property="og:url" content="https://mikamontero.com/">
 <link rel="canonical" href="https://mikamontero.com/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="assets/hero-mobile.webp" type="image/webp" media="(max-width:860px)" fetchpriority="high">
-<link rel="preload" as="image" href="assets/hero.webp" type="image/webp" media="(min-width:861px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero-mobile.webp?v=1122" type="image/webp" media="(max-width:860px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero.webp?v=1122" type="image/webp" media="(min-width:861px)" fetchpriority="high">
 <meta name="theme-color" content="#09080E">
 <link rel="apple-touch-icon" href="assets/img/t/single.jpg">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -267,7 +267,7 @@ a{color:inherit}
 .film{position:relative;height:100vh;height:100dvh;min-height:620px;background:var(--bg)}
 .stage{position:relative;height:100%;overflow:hidden;display:flex;align-items:flex-end}
 .stage video,.stage .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 49%}
-.stage video{opacity:0;transition:opacity .8s}.stage video.ready{opacity:1}
+.stage video{opacity:0}.stage video.ready{opacity:1}
 .stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,var(--bg) 0%,rgba(9,8,14,.55) 32%,rgba(9,8,14,0) 60%),linear-gradient(90deg,rgba(9,8,14,.8) 0%,rgba(9,8,14,.25) 46%,rgba(9,8,14,0) 66%)}
 .hero-copy{position:relative;z-index:2;padding:0 var(--pad) clamp(56px,9vh,110px);width:100%;max-width:980px;min-width:0;display:flex;flex-direction:column;gap:22px}
 .hero-copy h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(44px,10.5vw,170px);line-height:.86;letter-spacing:-.03em;text-transform:uppercase}
@@ -463,7 +463,7 @@ picture{display:block}
 <main>
   <section class="film" id="top" aria-label="Mika on a rainy neon street at night">
     <div class="stage">
-      <picture><source media="(max-width:860px)" srcset="assets/hero-mobile.webp" type="image/webp"><source media="(max-width:860px)" srcset="assets/hero-mobile.jpg"><source srcset="assets/hero.webp" type="image/webp"><img class="poster" src="assets/hero.jpg" alt="" fetchpriority="high" width="1920" height="1440"></picture>
+      <picture><source media="(max-width:860px)" srcset="assets/hero-mobile.webp?v=1122" type="image/webp"><source media="(max-width:860px)" srcset="assets/hero-mobile.jpg?v=1122"><source srcset="assets/hero.webp?v=1122" type="image/webp"><img class="poster" src="assets/hero.jpg?v=1122" alt="" fetchpriority="high" width="1920" height="1440"></picture>
       <video id="film" autoplay muted playsinline loop preload="auto" aria-hidden="true"></video>
       <div class="hero-copy">
         <p class="kicker" id="h-kick">New single · Monday, Nov 23</p>
@@ -639,7 +639,7 @@ picture{display:block}
   function onScroll(){ nav.classList.toggle('solid', window.scrollY>film.offsetHeight*0.6); }
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
   var mobile=window.matchMedia('(max-width:860px)').matches;
-  v.src=mobile?'assets/hero-mobile.mp4':'assets/hero.mp4';
+  v.src=mobile?'assets/hero-mobile.mp4?v=1122':'assets/hero.mp4?v=1122';
   v.addEventListener('playing',function(){v.classList.add('ready')},{once:true});
   var p=v.play(); if(p&&p.catch){p.catch(function(){
     function go(){v.play();window.removeEventListener('touchstart',go);}
