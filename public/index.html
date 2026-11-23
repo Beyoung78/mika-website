@@ -301,6 +301,15 @@ h3{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6v
 .plats{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 .plats .btn{flex:1 1 auto}
 /* remixes card */
+.byo .lede+.rv{margin-top:32px}
+.rxf{margin-bottom:clamp(72px,10vw,130px)}
+.rxl{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;max-width:520px}
+.rxl li{font-size:13px;font-weight:500;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+.rd .live{display:none;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-right:10px;vertical-align:1px;box-shadow:0 0 0 0 rgba(255,79,163,.7);animation:livePulse 1.6s infinite}
+.rd.today .live{display:inline-block}
+#h-kick .live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-right:10px;vertical-align:1px;animation:livePulse 1.6s infinite}
+@keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(255,79,163,.7)}70%{box-shadow:0 0 0 10px rgba(255,79,163,0)}100%{box-shadow:0 0 0 0 rgba(255,79,163,0)}}
+@media(prefers-reduced-motion:reduce){.rd .live,#h-kick .live{animation:none}}
 .rx{display:grid;grid-template-columns:150px 1fr auto;gap:28px;align-items:center;margin-top:clamp(56px,8vw,100px);padding:22px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(120deg,rgba(255,79,163,.07),rgba(63,224,208,.04) 60%,transparent)}
 .rx img{width:150px;aspect-ratio:1;object-fit:cover;border-radius:10px}
 .rx p{margin:8px 0 0;color:var(--mute);font-size:15px;max-width:52ch}
@@ -480,18 +489,28 @@ picture{display:block}
   </section>
 
   <section class="sec" id="music">
-    <div class="split">
-      <div class="cover rv" id="cov"><picture><source srcset="assets/img/single-cover-lg.webp" type="image/webp"><img src="assets/img/single-cover-lg.jpg" alt="Cover of Break You Out: Mika in the rain with a gold sequin glove" loading="lazy"></picture></div>
+    <div class="split rxf">
+      <div class="cover rv"><picture><source srcset="assets/img/remix-cover-lg.webp" type="image/webp"><img src="assets/img/remix-cover-lg.jpg" alt="Cover of Break You Out, The Remixes" loading="lazy"></picture></div>
       <div>
-        <p class="eyebrow rv" data-i18n="m_eye">New single</p>
-        <h2 class="rv" style="--d:1">Break<br>You Out</h2>
-        <p class="lede rv" style="--d:2" id="m-lede">The night Mika sneaks her grandmother Ruby out of the nursing home for one last song at the Starlight Room on Sunset. Out everywhere Monday at midnight.</p>
+        <p class="eyebrow rv" id="rx-eye">Next release · Friday, Nov 27</p>
+        <h2 class="rv" style="--d:1">The<br>Remixes</h2>
+        <p class="lede rv" style="--d:2" id="rx-lede">Five new versions of Break You Out, from dark disco to minimal. Out everywhere Friday at midnight.</p>
+        <ol class="rxl rv" style="--d:2"><li>Dark Disco Dub</li><li>Ibiza Melodic House Mix</li><li>Concrete Techno Mix</li><li>Indie Dance Freak Mix</li><li>Minimal Hypno Mix</li></ol>
         <div class="count rv" style="--d:3" id="cd" aria-live="polite">
           <div><b id="cd-d">00</b><span data-i18n="cd_d">Days</span></div><div class="sep">:</div>
           <div><b id="cd-h">00</b><span data-i18n="cd_h">Hours</span></div><div class="sep">:</div>
           <div><b id="cd-m">00</b><span data-i18n="cd_m">Min</span></div><div class="sep">:</div>
           <div><b id="cd-s">00</b><span data-i18n="cd_s">Sec</span></div>
         </div>
+        <div class="rv" style="--d:4"><a class="btn btn-p" id="rx-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-the-remixes?utm_source=website" target="_blank" rel="noopener" style="width:100%"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg><span>Pre-save The Remixes</span></a></div>
+      </div>
+    </div>
+    <div class="split byo">
+      <div class="cover rv" id="cov"><picture><source srcset="assets/img/single-cover-lg.webp" type="image/webp"><img src="assets/img/single-cover-lg.jpg" alt="Cover of Break You Out: Mika in the rain with a gold sequin glove" loading="lazy"></picture></div>
+      <div>
+        <p class="eyebrow rv rd" id="m-eye"><i class="live" aria-hidden="true"></i><span>New single</span></p>
+        <h2 class="rv" style="--d:1">Break<br>You Out</h2>
+        <p class="lede rv" style="--d:2" id="m-lede">The night Mika sneaks her grandmother Ruby out of the nursing home for one last song at the Starlight Room on Sunset. Out everywhere Monday at midnight.</p>
         <div class="rv" style="--d:4">
           <a class="btn btn-p" id="m-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-original-mix?utm_source=website" target="_blank" rel="noopener" style="width:100%"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg><span>Pre-save on Spotify</span></a>
           <div class="plats">
@@ -501,16 +520,6 @@ picture{display:block}
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="rx rv">
-      <picture><source srcset="assets/img/remix-cover.webp" type="image/webp"><img src="assets/img/remix-cover.jpg" alt="Cover of Break You Out, The Remixes" loading="lazy"></picture>
-      <div>
-        <p class="eyebrow" id="rx-eye">Next · Friday, Nov 27</p>
-        <h3>The Remixes</h3>
-        <p data-i18n="rx_p">Five new versions, from dark disco to minimal.</p>
-      </div>
-      <a class="btn btn-g" id="rx-cta" href="https://distrokid.com/hyperfollow/mikamontero/break-you-out-the-remixes?utm_source=website" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.4-1.8-9-1a.6.6 0 1 1-.3-1.2c3.9-.9 7.2-.5 10 1.1.3.2.4.6.2.9zm1.2-2.7a.8.8 0 0 1-1 .3c-2.7-1.7-6.9-2.2-10.2-1.2a.8.8 0 0 1-.4-1.5c3.7-1.1 8.3-.6 11.4 1.4.3.2.4.7.2 1zm.1-2.8C14.7 9 9.4 8.8 6.3 9.7a.9.9 0 1 1-.5-1.8c3.5-1.1 9.3-.9 13 1.3a.9.9 0 0 1-.9 1.6z"/></svg><span>Pre-save</span></a>
     </div>
 
     <div class="listen">
@@ -781,19 +790,22 @@ picture{display:block}
 <script>
 /* language (EN/ES) + release state, countdown, remixes (visitor's local midnight) */
 (function(){
-  var ES={"n_lyrics": "Letras", "yt_t": "Escucha el álbum completo en YouTube", "yt_s": "No Angel. No Apology. · 15 canciones · carga el reproductor de YouTube", "yt_o": "Abrir en YouTube", "n_music": "Música", "n_videos": "Videos", "n_about": "Sobre mí", "n_booking": "Booking", "n_listen": "Escuchar", "m_eye": "Nuevo single", "cd_d": "Días", "cd_h": "Horas", "cd_m": "Min", "cd_s": "Seg", "rx_p": "Cinco versiones nuevas, del dark disco al minimal.", "al_eye": "Álbum debut", "al_p": "15 canciones, el nuevo single y los remixes. Elige una, dale play y quédate un rato.", "v_eye": "Videos", "v_h": "Mira", "v_rx": "The Remixes · tráiler", "g_eye": "Galería", "g_ig": "Más en Instagram", "a_eye": "Sobre mí", "a_h": "Nacida en Honolulu.<br>Hecha en Miami.", "a_p": "Chica de isla de corazón y noctámbula por elección. El soul y el R&amp;B son mi casa, pero un amigo me llevó al house y al techno, y ya no me fui. Escribo de noche, cuando se encienden las luces de la ciudad.", "f_home": "Hogar", "f_sound": "Sonido", "f_album": "Álbum debut", "b_eye": "Marcas y booking", "b_h": "Trabajemos<br>juntos", "b_p": "Campañas, colaboraciones y presentaciones. Cuéntame qué tienes en mente.", "b_press": "Press kit", "f_press": "Prensa", "lg_link": "Aviso legal y privacidad", "lg_h": "Aviso legal y privacidad", "lg_1h": "Sobre este sitio", "lg_1p": "Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href=\"mailto:booking@mikamontero.com\">booking@mikamontero.com</a>.", "lg_2h": "Privacidad", "lg_2p": "Sin cookies y sin anuncios. Contamos las visitas de forma anónima con Cloudflare Web Analytics, que no usa cookies ni te identifica. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para mostrarlo. El reproductor de YouTube solo se carga cuando pulsas play. A partir de ahí, YouTube puede usar cookies y procesar tus datos.", "lg_3h": "Enlaces externos", "lg_3p": "Los enlaces a Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos y políticas de privacidad.", "lg_4h": "Derechos de autor", "lg_4p": "Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.", "dk_sub": "Álbum debut · 15 canciones + los remixes · adelantos de 40 segundos", "dk_new": "Nuevo single", "dk_soon": "Pre-save · 27 nov", "mini_sub": "Mika Montero · adelanto", "dk_g1": "Single y The Remixes · aún no disponibles, adelantos", "dk_g2": "Álbum debut · 15 canciones · ya disponible"}, DYN={"en": {"kick": "New single · Monday, Nov 23", "kickOut": "New single · Out now", "hcta": "Pre-save", "hctaOut": "Listen now", "mcta": "Pre-save on Spotify", "mctaOut": "Listen on Spotify", "lede": "The night Mika sneaks her grandmother Ruby out of the nursing home for one last song at the Starlight Room on Sunset. Out everywhere Monday at midnight.", "ledeOut": "The night Mika sneaks her grandmother Ruby out of the nursing home for one last song at the Starlight Room on Sunset. Out now everywhere you stream.", "rxEye": "Next · Friday, Nov 27", "rxEyeOut": "The Remixes · Out now", "rxCta": "Pre-save", "rxCtaOut": "Listen"}, "es": {"kick": "Nuevo single · Lun 23 nov", "kickOut": "Nuevo single · Ya disponible", "hcta": "Pre-save", "hctaOut": "Escúchalo ya", "mcta": "Haz pre-save en Spotify", "mctaOut": "Escúchalo en Spotify", "lede": "La noche en que Mika saca a escondidas a su abuela Ruby de la residencia para una última canción en el Starlight Room de Sunset. Sale el lunes a medianoche en todas partes.", "ledeOut": "La noche en que Mika saca a escondidas a su abuela Ruby de la residencia para una última canción en el Starlight Room de Sunset. Ya disponible en todas las plataformas.", "rxEye": "Próximo · Viernes 27 de nov", "rxEyeOut": "The Remixes · Ya disponibles", "rxCta": "Pre-save", "rxCtaOut": "Escuchar"}}, EN={};
+  var ES={"n_lyrics": "Letras", "yt_t": "Escucha el álbum completo en YouTube", "yt_s": "No Angel. No Apology. · 15 canciones · carga el reproductor de YouTube", "yt_o": "Abrir en YouTube", "n_music": "Música", "n_videos": "Videos", "n_about": "Sobre mí", "n_booking": "Booking", "n_listen": "Escuchar", "m_eye": "Nuevo single", "cd_d": "Días", "cd_h": "Horas", "cd_m": "Min", "cd_s": "Seg", "rx_p": "Cinco versiones nuevas, del dark disco al minimal.", "al_eye": "Álbum debut", "al_p": "15 canciones, el nuevo single y los remixes. Elige una, dale play y quédate un rato.", "v_eye": "Videos", "v_h": "Mira", "v_rx": "The Remixes · tráiler", "g_eye": "Galería", "g_ig": "Más en Instagram", "a_eye": "Sobre mí", "a_h": "Nacida en Honolulu.<br>Hecha en Miami.", "a_p": "Chica de isla de corazón y noctámbula por elección. El soul y el R&amp;B son mi casa, pero un amigo me llevó al house y al techno, y ya no me fui. Escribo de noche, cuando se encienden las luces de la ciudad.", "f_home": "Hogar", "f_sound": "Sonido", "f_album": "Álbum debut", "b_eye": "Marcas y booking", "b_h": "Trabajemos<br>juntos", "b_p": "Campañas, colaboraciones y presentaciones. Cuéntame qué tienes en mente.", "b_press": "Press kit", "f_press": "Prensa", "lg_link": "Aviso legal y privacidad", "lg_h": "Aviso legal y privacidad", "lg_1h": "Sobre este sitio", "lg_1p": "Este es el sitio oficial de la artista Mika Montero. Para preguntas, solicitudes o asuntos legales, escribe a <a href=\"mailto:booking@mikamontero.com\">booking@mikamontero.com</a>.", "lg_2h": "Privacidad", "lg_2p": "Sin cookies y sin anuncios. Contamos las visitas de forma anónima con Cloudflare Web Analytics, que no usa cookies ni te identifica. Tu elección de idioma se guarda solo en tu propio navegador. El sitio está alojado en Cloudflare, que procesa datos técnicos como tu dirección IP para mostrarlo. El reproductor de YouTube solo se carga cuando pulsas play. A partir de ahí, YouTube puede usar cookies y procesar tus datos.", "lg_3h": "Enlaces externos", "lg_3p": "Los enlaces a Instagram, Spotify, YouTube y Apple Music llevan a otros servicios. Allí aplican sus propios términos y políticas de privacidad.", "lg_4h": "Derechos de autor", "lg_4p": "Todas las fotos, videos y música de este sitio © 2026 Mika Montero. Por favor, no los uses sin permiso.", "dk_sub": "Álbum debut · 15 canciones + los remixes · adelantos de 40 segundos", "dk_new": "Nuevo single", "dk_soon": "Pre-save · 27 nov", "mini_sub": "Mika Montero · adelanto", "dk_g1": "Single y The Remixes · aún no disponibles, adelantos", "dk_g2": "Álbum debut · 15 canciones · ya disponible"}, DYN={"en": {"kick": "New single · Monday, Nov 23", "kickOut": "New single · Out now", "hcta": "Pre-save", "hctaOut": "Listen now", "mcta": "Pre-save on Spotify", "mctaOut": "Listen on Spotify", "lede": "The night Mika sneaks her grandmother Ruby out of the nursing home for one last song at the Starlight Room on Sunset. Out everywhere Monday at midnight.", "ledeOut": "The night Mika sneaks her grandmother Ruby out of the nursing home for one last song at the Starlight Room on Sunset. Out now everywhere you stream.", "kickDay": "Release day · Break You Out is out now", "eye": "New single · Out now", "eyeDay": "Release day · Out today", "rxEye": "Next release · Friday, Nov 27", "rxEyeOut": "The Remixes · Out now", "rxLede": "Five new versions of Break You Out, from dark disco to minimal. Out everywhere Friday at midnight.", "rxLedeOut": "Five new versions of Break You Out, from dark disco to minimal. Out now everywhere you stream.", "rxCta": "Pre-save The Remixes", "rxCtaOut": "Listen to The Remixes"}, "es": {"kick": "Nuevo single · Lun 23 nov", "kickOut": "Nuevo single · Ya disponible", "hcta": "Pre-save", "hctaOut": "Escúchalo ya", "mcta": "Haz pre-save en Spotify", "mctaOut": "Escúchalo en Spotify", "lede": "La noche en que Mika saca a escondidas a su abuela Ruby de la residencia para una última canción en el Starlight Room de Sunset. Sale el lunes a medianoche en todas partes.", "ledeOut": "La noche en que Mika saca a escondidas a su abuela Ruby de la residencia para una última canción en el Starlight Room de Sunset. Ya disponible en todas las plataformas.", "kickDay": "Día de lanzamiento · Break You Out ya está aquí", "eye": "Nuevo single · Ya disponible", "eyeDay": "Día de lanzamiento · Sale hoy", "rxEye": "Próximo lanzamiento · Viernes 27 de nov", "rxEyeOut": "The Remixes · Ya disponibles", "rxLede": "Cinco versiones nuevas de Break You Out, del dark disco al minimal. Salen el viernes a medianoche en todas partes.", "rxLedeOut": "Cinco versiones nuevas de Break You Out, del dark disco al minimal. Ya disponibles en todas las plataformas.", "rxCta": "Haz pre-save de The Remixes", "rxCtaOut": "Escucha The Remixes"}}, EN={};
   [].forEach.call(document.querySelectorAll('[data-i18n]'),function(e){ EN[e.getAttribute('data-i18n')]=e.innerHTML; });
   var lang='en'; try{ lang=localStorage.getItem('mm_lang')||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en'); }catch(e){}
   var R1=new Date(2026,10,23,0,0,0).getTime(), R2=new Date(2026,10,27,0,0,0).getTime();
   function pad(n){return (n<10?'0':'')+n}
-  function setText(){ var d=DYN[lang], now=Date.now(), out1=now>=R1, out2=now>=R2;
-    document.getElementById('h-kick').textContent=out1?d.kickOut:d.kick;
+  function setText(){ var d=DYN[lang], now=Date.now(), out1=now>=R1, out2=now>=R2, day=out1&&now<R1+864e5;
+    var hk=document.getElementById('h-kick'); hk.innerHTML=''; if(day){ var i=document.createElement('i'); i.className='live'; i.setAttribute('aria-hidden','true'); hk.appendChild(i); }
+    hk.appendChild(document.createTextNode(day?d.kickDay:(out1?d.kickOut:d.kick)));
     document.querySelector('#h-cta span').textContent=out1?d.hctaOut:d.hcta;
     document.querySelector('#m-cta span').textContent=out1?d.mctaOut:d.mcta;
     document.getElementById('m-lede').textContent=out1?d.ledeOut:d.lede;
+    var me=document.getElementById('m-eye'); me.classList.toggle('today',day); me.querySelector('span').textContent=day?d.eyeDay:(out1?d.eye:(lang==='es'?'Nuevo single':'New single'));
     document.getElementById('rx-eye').textContent=out2?d.rxEyeOut:d.rxEye;
+    document.getElementById('rx-lede').textContent=out2?d.rxLedeOut:d.rxLede;
     document.querySelector('#rx-cta span').textContent=out2?d.rxCtaOut:d.rxCta;
-    document.getElementById('cd').hidden=out1;
+    document.getElementById('cd').hidden=out2;
     var t=document.querySelector('.dk-pre1'); if(t){ t.textContent=out1?(lang==='es'?'Nuevo single':'New single'):(lang==='es'?'Pre-save · 23 nov':'Pre-save · Nov 23'); t.classList.toggle('dk-soon',!out1); }
     var g=document.querySelector('[data-i18n=dk_g1]'); if(g&&out1){ g.textContent=out2?(lang==='es'?'Single y The Remixes · ya disponibles':'Single & The Remixes · out now'):(lang==='es'?'Single ya disponible · Remixes el 27 de nov':'Single out now · Remixes Nov 27'); } }
   function apply(l){ lang=l; document.documentElement.lang=l;
@@ -801,10 +813,10 @@ picture{display:block}
     try{ localStorage.setItem('mm_lang',l); }catch(e){} setText(); }
   document.getElementById('lang').addEventListener('click',function(){ apply(lang==='es'?'en':'es'); });
   apply(lang);
-  var was1=Date.now()>=R1, was2=Date.now()>=R2;
-  function tick(){ var now=Date.now(), ms=R1-now;
+  var was1=Date.now()>=R1, was2=Date.now()>=R2, wasD=was1&&Date.now()<R1+864e5;
+  function tick(){ var now=Date.now(), ms=R2-now;
     if(ms>0){ var s=Math.floor(ms/1000); document.getElementById('cd-d').textContent=pad(Math.floor(s/86400)); document.getElementById('cd-h').textContent=pad(Math.floor(s%86400/3600)); document.getElementById('cd-m').textContent=pad(Math.floor(s%3600/60)); document.getElementById('cd-s').textContent=pad(s%60); }
-    if((now>=R1)!==was1||(now>=R2)!==was2){ was1=now>=R1; was2=now>=R2; setText(); } }
+    var dd=now>=R1&&now<R1+864e5; if((now>=R1)!==was1||(now>=R2)!==was2||dd!==wasD){ was1=now>=R1; was2=now>=R2; wasD=dd; setText(); } }
   tick(); setInterval(tick,1000);
 })();
 /* reveal on scroll + gentle cover drift */
