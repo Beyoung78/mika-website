@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mika Montero – The Record Rail (Preview)</title>
+<meta name="theme-color" content="#09080E">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Syne;font-weight:700;font-display:swap;src:url(assets/fonts/syne-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Syne;font-weight:800;font-display:swap;src:url(assets/fonts/syne-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Serif Display";font-weight:400;font-display:swap;src:url(assets/fonts/dm-serif-display-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Serif Display";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/dm-serif-display-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2")}
+:root{--bg:#09080E;--ink:#F5F2F8;--mute:#A39DB0;--pink:#FF4FA3;--aqua:#3FE0D0;--sl:clamp(150px,15vw,210px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+
+/* ---------- section ---------- */
+.rr{position:relative;padding:clamp(56px,8vw,110px) 0 clamp(40px,6vw,80px);overflow:hidden;isolation:isolate}
+.rr::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(60% 45% at 50% 34%,rgba(255,79,163,.16),transparent 70%),radial-gradient(40% 30% at 22% 30%,rgba(63,224,208,.10),transparent 70%),radial-gradient(40% 30% at 80% 28%,rgba(63,224,208,.08),transparent 70%)}
+.rr-head{text-align:center;padding:0 20px;margin-bottom:clamp(26px,4vw,44px)}
+.rr-k{font:800 12px/1 Syne,sans-serif;letter-spacing:.42em;color:var(--aqua);text-transform:uppercase}
+.rr-h{font:400 clamp(40px,6.4vw,84px)/1 "DM Serif Display",serif;margin-top:14px;letter-spacing:-.01em}
+.rr-h em{font-style:italic;color:var(--pink)}
+.rr-s{color:var(--mute);margin-top:14px;font-size:15px}
+
+/* rail */
+.rail{position:relative;height:calc(var(--sl)*1.62 + 40px);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.rail.drag{cursor:grabbing}
+.bar{position:absolute;left:0;right:0;top:34px;height:7px;border-radius:4px;z-index:2;
+  background:linear-gradient(180deg,#f4f4f8 0%,#9a98a6 35%,#4c4a57 60%,#c9c7d2 85%,#6d6b78 100%);
+  box-shadow:0 6px 14px rgba(0,0,0,.6),0 0 22px rgba(255,79,163,.12)}
+.bar::after{content:"";position:absolute;left:0;right:0;top:1px;height:1px;background:rgba(255,255,255,.75)}
+.track{position:absolute;left:0;top:0;display:flex;gap:clamp(14px,1.8vw,26px);padding-left:20px;will-change:transform}
+.it{position:relative;width:var(--sl);padding-top:30px;flex:none;--sw:0deg}
+.hook{position:absolute;left:50%;top:22px;width:22px;height:26px;margin-left:-11px;z-index:3;pointer-events:none}
+.hook::before{content:"";position:absolute;left:5px;top:0;width:12px;height:12px;border:2.5px solid #cfcdd8;border-bottom-color:transparent;border-radius:50%;transform:rotate(-20deg)}
+.hook::after{content:"";position:absolute;left:3px;top:13px;width:16px;height:13px;border-radius:2px;background:linear-gradient(180deg,#e9e8ee,#8c8a97);box-shadow:0 2px 4px rgba(0,0,0,.5)}
+.sw{transform-origin:50% 0;transform:rotate(var(--sw));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.sl{position:relative;display:block;width:var(--sl);aspect-ratio:1;margin-top:18px;border-radius:3px;transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.2,.9,.25,1.25),filter .4s,box-shadow .5s;transform:perspective(900px) rotateX(0) rotateY(var(--ry,0deg)) translateZ(0);
+  box-shadow:0 18px 30px -8px rgba(0,0,0,.75),0 4px 8px rgba(0,0,0,.5)}
+.sl img{display:block;width:100%;height:100%;border-radius:3px;pointer-events:none}
+.sl::after{content:"";position:absolute;inset:0;border-radius:3px;pointer-events:none;
+  background:linear-gradient(115deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.04) 28%,transparent 45%,transparent 70%,rgba(255,255,255,.07) 100%);mix-blend-mode:screen}
+.tag{position:absolute;left:calc(50% + 14px);top:30px;z-index:4;font:800 10px/1 Syne,sans-serif;letter-spacing:.08em;background:#f5f2f8;color:#120f18;padding:5px 6px 4px;border-radius:2px;
+  transform-origin:0 0;transform:rotate(9deg);box-shadow:0 3px 6px rgba(0,0,0,.45)}
+.tag::before{content:"";position:absolute;left:-7px;top:-6px;width:9px;height:9px;border-left:1px solid #bbb;transform:rotate(-30deg)}
+.rail.focus .it:not(.on) .sl{filter:brightness(.42) saturate(.7)}
+.it.on{z-index:5}
+.it.on .sl{transform:perspective(900px) rotateX(-6deg) rotateY(var(--ry,0deg)) translateZ(80px) scale(1.16);box-shadow:0 40px 60px -12px rgba(0,0,0,.9),0 0 50px rgba(255,79,163,.25)}
+.refl{position:absolute;left:0;right:0;bottom:0;height:50px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);pointer-events:none}
+.rr-cap{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;max-width:1240px;margin:clamp(6px,1.4vw,18px) auto 0;padding:0 24px;min-height:52px}
+.cap-l b{display:block;font:400 clamp(22px,2.4vw,30px)/1.1 "DM Serif Display",serif}
+.cap-l small{display:block;margin-top:6px;font:700 11px/1 Syne,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--aqua)}
+.cap-r{font-size:13px;color:var(--mute);text-align:right}
+.cap-r i{font-style:normal;color:var(--pink)}
+.prog{max-width:1240px;margin:22px auto 0;padding:0 24px}
+.prog div{height:2px;background:rgba(255,255,255,.12);border-radius:2px;position:relative;overflow:hidden}
+.prog span{position:absolute;left:0;top:0;bottom:0;width:18%;background:var(--ink);border-radius:2px}
+
+/* ---------- detail view ---------- */
+.dv{position:fixed;inset:0;z-index:50;display:grid;place-items:center;visibility:hidden;opacity:0;transition:opacity .45s,visibility .45s;
+  background:radial-gradient(70% 70% at 35% 45%,rgba(255,79,163,.18),transparent 60%),rgba(6,5,10,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.dv.open{visibility:visible;opacity:1}
+.dv-in{position:relative;display:grid;grid-template-columns:auto minmax(260px,380px);gap:clamp(30px,4vw,60px);align-items:center;padding:30px}
+.stage{position:relative;width:min(40vw,440px);aspect-ratio:1;perspective:1200px;margin-right:calc(min(40vw,440px)*.5)}
+.big{position:absolute;inset:0;z-index:2;transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  transform:rotateX(var(--tx,0deg)) rotateY(var(--ty,0deg));box-shadow:0 50px 80px -20px rgba(0,0,0,.95);border-radius:4px}
+.big img{display:block;width:100%;height:100%;border-radius:4px}
+.big::after{content:"";position:absolute;inset:0;border-radius:4px;pointer-events:none;background:linear-gradient(calc(115deg + var(--ty,0deg)*3),rgba(255,255,255,.25),transparent 40%,transparent 70%,rgba(255,255,255,.08))}
+.vin{position:absolute;top:3%;left:3%;width:94%;aspect-ratio:1;border-radius:50%;z-index:1;transition:transform 1s cubic-bezier(.2,.8,.2,1);transform:translateX(0);
+  background:radial-gradient(circle,#0b0b0e 0 17.5%,transparent 17.6%),repeating-radial-gradient(circle,#141317 0 1.2px,#0a090c 1.3px 2.6px),#0b0a0d;
+  box-shadow:0 30px 60px rgba(0,0,0,.8),inset 0 0 0 2px #1a191e}
+.vin::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 20deg,transparent 0 10%,rgba(255,255,255,.13) 14%,transparent 20% 50%,rgba(255,255,255,.09) 60%,transparent 66%)}
+.dv.open .vin{transform:translateX(52%)}
+.lbl{position:absolute;inset:32%;border-radius:50%;overflow:hidden;animation:spin 1.8s linear infinite;animation-play-state:paused;box-shadow:0 0 0 3px #111}
+.lbl img{width:100%;height:100%;object-fit:cover}
+.lbl::after{content:"";position:absolute;left:50%;top:50%;width:8%;height:8%;margin:-4% 0 0 -4%;border-radius:50%;background:#09080E}
+.dv.play .lbl{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.info .no{font:800 12px/1 Syne,sans-serif;letter-spacing:.34em;color:var(--aqua)}
+.info h3{font:400 clamp(36px,4.6vw,64px)/1.02 "DM Serif Display",serif;margin:16px 0 10px}
+.info .sub{color:var(--mute);font-size:15px}
+.ctrl{display:flex;align-items:center;gap:16px;margin-top:30px}
+.pp{width:64px;height:64px;border-radius:50%;background:var(--pink);display:grid;place-items:center;box-shadow:0 12px 30px rgba(255,79,163,.45);transition:transform .2s}
+.pp:hover{transform:scale(1.06)}
+.pp svg{width:24px;height:24px;fill:#120f18}
+.time{flex:1}
+.tbar{height:3px;background:rgba(255,255,255,.14);border-radius:3px;overflow:hidden}
+.tbar i{display:block;height:100%;width:0;background:var(--ink)}
+.tt{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.links{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.links a{font:700 12px/1 Syne,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:13px 18px;border:1px solid rgba(255,255,255,.22);border-radius:40px;transition:border-color .2s,background .2s}
+.links a:hover{border-color:var(--aqua);background:rgba(63,224,208,.08)}
+.links a.sp{background:#1DB954;border-color:#1DB954;color:#06150b}
+.nav{display:flex;gap:10px;margin-top:34px}
+.nav button,.x{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-size:18px;transition:border-color .2s}
+.nav button:hover,.x:hover{border-color:var(--ink)}
+.x{position:fixed;top:22px;right:22px;z-index:51}
+.hint{margin-top:16px;font-size:12px;color:var(--mute)}
+
+@media (max-width:820px){
+  .dv-in{grid-template-columns:1fr;gap:26px;padding:70px 22px 30px;justify-items:center;text-align:center}
+  .stage{width:min(62vw,300px);margin-right:min(22vw,110px)}
+  .dv.open .vin{transform:translateX(36%)}
+  .ctrl,.links,.nav{justify-content:center}
+  .ctrl{width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+  .info{width:100%}
+  .hint{display:none}
+  .cap-r{display:none}
+}
+@media (prefers-reduced-motion:reduce){.sl,.sw,.vin,.big{transition:none}.lbl{animation:none}}
+</style>
+</head>
+<body>
+<section class="rr" id="records" aria-label="The record rail">
+  <div class="rr-head">
+    <p class="rr-k">The Record Rail</p>
+    <h2 class="rr-h">Pick a record, <em>press play.</em></h2>
+    <p class="rr-s">21 songs · the single, the remixes and the debut album</p>
+  </div>
+  <div class="rail" id="rail"><div class="bar"></div><div class="track" id="track"></div></div>
+  <div class="rr-cap"><div class="cap-l" id="cap"><b>Break You Out</b><small>The single</small></div><div class="cap-r">Hover a record · <i>click to listen</i></div></div>
+  <div class="prog"><div><span id="pbar"></span></div></div>
+</section>
+
+<div class="dv" id="dv" role="dialog" aria-modal="true" aria-label="Record">
+  <button class="x" id="dvx" aria-label="Close">✕</button>
+  <div class="dv-in">
+    <div class="stage" id="stage">
+      <div class="vin"><div class="lbl"><img id="dvl" alt=""></div></div>
+      <div class="big" id="big"><img id="dvi" alt=""></div>
+    </div>
+    <div class="info">
+      <p class="no" id="dvn"></p>
+      <h3 id="dvt"></h3>
+      <p class="sub" id="dvs"></p>
+      <div class="ctrl">
+        <button class="pp" id="pp" aria-label="Play"><svg viewBox="0 0 24 24" id="ppi"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+        <div class="time"><div class="tbar"><i id="tb"></i></div><div class="tt"><span id="tc">0:00</span><span>preview</span></div></div>
+      </div>
+      <div class="links"><a class="sp" href="https://open.spotify.com/artist/4VnsEXQqPFEcNySITWgvTW" target="_blank" rel="noopener">Spotify</a><a id="lyr" href="#">Lyrics</a></div>
+      <div class="nav"><button id="pv" aria-label="Previous record">←</button><button id="nx" aria-label="Next record">→</button></div>
+      <p class="hint">← → to flip records · Esc to close</p>
+    </div>
+  </div>
+</div>
+<audio id="au" preload="none"></audio>
+
+<script>
+const ITEMS=[{"id":"s00","t":"Break You Out","sub":"The single","f":"assets/deck/r00.mp3","label":"assets/img/t/single.webp","lyr":"lyrics/break-you-out.html","no":"★"},{"id":"t01","t":"No Angel","sub":"No Angel. No Apology.","f":"assets/deck/t01.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/no-angel.html","no":"01"},{"id":"t02","t":"Palm Trees & Bad Decisions","sub":"No Angel. No Apology.","f":"assets/deck/t02.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/palm-trees-and-bad-decisions.html","no":"02"},{"id":"t03","t":"Pretty Little Problem","sub":"No Angel. No Apology.","f":"assets/deck/t03.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/pretty-little-problem.html","no":"03"},{"id":"t04","t":"Rent Free in Your Head","sub":"No Angel. No Apology.","f":"assets/deck/t04.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/rent-free-in-your-head.html","no":"04"},{"id":"r01","t":"Break You Out","sub":"Dark Disco Dub","f":"assets/deck/r01.mp3","label":"assets/img/t/remix.webp","lyr":"lyrics/break-you-out.html","no":"R1"},{"id":"t05","t":"Money Can't Buy a Pulse","sub":"No Angel. No Apology.","f":"assets/deck/t05.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/money-cant-buy-a-pulse.html","no":"05"},{"id":"t06","t":"Don't Test the Lipstick","sub":"No Angel. No Apology.","f":"assets/deck/t06.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/dont-test-the-lipstick.html","no":"06"},{"id":"t07","t":"Girls Like Me Get Lonely Too","sub":"No Angel. No Apology.","f":"assets/deck/t07.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/girls-like-me-get-lonely-too.html","no":"07"},{"id":"r02","t":"Break You Out","sub":"Ibiza Melodic House Mix","f":"assets/deck/r02.mp3","label":"assets/img/t/remix.webp","lyr":"lyrics/break-you-out.html","no":"R2"},{"id":"t08","t":"No Saints in South Beach","sub":"No Angel. No Apology.","f":"assets/deck/t08.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/no-saints-in-south-beach.html","no":"08"},{"id":"t09","t":"Mama Didn't Raise a Fool","sub":"No Angel. No Apology.","f":"assets/deck/t09.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/mama-didnt-raise-a-fool.html","no":"09"},{"id":"t10","t":"Pretty When I'm Pissed","sub":"No Angel. No Apology.","f":"assets/deck/t10.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/pretty-when-im-pissed.html","no":"10"},{"id":"r03","t":"Break You Out","sub":"Concrete Techno Mix","f":"assets/deck/r03.mp3","label":"assets/img/t/remix.webp","lyr":"lyrics/break-you-out.html","no":"R3"},{"id":"t11","t":"Love Me Like You Mean It","sub":"No Angel. No Apology.","f":"assets/deck/t11.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/love-me-like-you-mean-it.html","no":"11"},{"id":"t12","t":"Bad Habit with a Heart","sub":"No Angel. No Apology.","f":"assets/deck/t12.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/bad-habit-with-a-heart.html","no":"12"},{"id":"t13","t":"Everybody Wants the Sunshine","sub":"No Angel. No Apology.","f":"assets/deck/t13.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/everybody-wants-the-sunshine.html","no":"13"},{"id":"r04","t":"Break You Out","sub":"Indie Dance Freak Mix","f":"assets/deck/r04.mp3","label":"assets/img/t/remix.webp","lyr":"lyrics/break-you-out.html","no":"R4"},{"id":"t14","t":"The Girl in the Rearview","sub":"No Angel. No Apology.","f":"assets/deck/t14.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/the-girl-in-the-rearview.html","no":"14"},{"id":"t15","t":"Still Here, Still Trouble","sub":"No Angel. No Apology.","f":"assets/deck/t15.mp3","label":"assets/img/t/album.webp","lyr":"lyrics/still-here-still-trouble.html","no":"15"},{"id":"r05","t":"Break You Out","sub":"Minimal Hypno Mix","f":"assets/deck/r05.mp3","label":"assets/img/t/remix.webp","lyr":"lyrics/break-you-out.html","no":"R5"}];
+(function(){
+  const rail=document.getElementById('rail'), track=document.getElementById('track'), cap=document.getElementById('cap'), pbar=document.getElementById('pbar');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // build two copies for a seamless loop
+  function make(it,i){const d=document.createElement('div');d.className='it';d.dataset.i=i;
+    d.innerHTML='<span class="hook"></span><span class="tag">'+it.no+'</span><div class="sw"><button class="sl" aria-label="'+it.t+' – '+it.sub+'"><img src="assets/rail/'+it.id+'.webp" alt="" width="360" height="360" loading="lazy" decoding="async"></button></div>';return d;}
+  for(let c=0;c<2;c++) ITEMS.forEach((it,i)=>track.appendChild(make(it,i)));
+  const els=[...track.children];
+  let half=0; function measure(){half=track.scrollWidth/2;} measure(); addEventListener('resize',measure);
+  let x=0, v=-0.35, target=-0.35, hover=null, drag=null, last=0, t0=performance.now();
+  function setCap(i){const it=ITEMS[i]; cap.innerHTML='<b>'+it.t+'</b><small>'+(it.no.length===2&&!isNaN(it.no)?'Track '+it.no+' · ':'')+it.sub+'</small>';}
+  function tick(now){const dt=Math.min(50,now-t0);t0=now;
+    if(!drag){ target = hover ? 0 : (reduce?0:-0.35); v += (target-v)*0.06; x += v*dt/16; }
+    if(x<=-half) x+=half; if(x>0) x-=half;
+    track.style.transform='translate3d('+x+'px,0,0)';
+    pbar.style.left=((-x/half)*82)+'%';
+    // gentle sway, stronger where the rail moves
+    const s=now/1000;
+    if(!reduce) els.forEach((e,k)=>{ if(e===hover) return; const a=Math.sin(s*1.3+k*0.7)*1.1 + (-v)*2.2; e.style.setProperty('--sw',a.toFixed(2)+'deg'); });
+    requestAnimationFrame(tick);}
+  requestAnimationFrame(tick);
+  els.forEach(e=>{
+    e.addEventListener('pointerenter',ev=>{ if(ev.pointerType!=='mouse') return; hover=e; e.classList.add('on'); rail.classList.add('focus'); e.style.setProperty('--sw','0deg'); setCap(+e.dataset.i); });
+    e.addEventListener('pointerleave',()=>{ if(hover===e) hover=null; e.classList.remove('on'); e.style.removeProperty('--ry'); if(!hover) rail.classList.remove('focus'); });
+    e.addEventListener('pointermove',ev=>{ if(e!==hover) return; const r=e.querySelector('.sl').getBoundingClientRect(); e.style.setProperty('--ry',(((ev.clientX-r.left)/r.width-.5)*24).toFixed(1)+'deg'); });
+  });
+  // drag / swipe with inertia
+  let moved=0;
+  rail.addEventListener('pointerdown',ev=>{ drag={x:ev.clientX,ox:x,t:performance.now()}; moved=0; last=ev.clientX; rail.classList.add('drag'); });
+  addEventListener('pointermove',ev=>{ if(!drag) return; const dx=ev.clientX-drag.x; moved=Math.max(moved,Math.abs(dx)); x=drag.ox+dx; v=(ev.clientX-last)*0.9; last=ev.clientX;
+    if(ev.pointerType!=='mouse'){ const k=Math.round(((-x+innerWidth/2)%half)/(half/ITEMS.length)); setCap(((k%ITEMS.length)+ITEMS.length)%ITEMS.length); } });
+  addEventListener('pointerup',()=>{ if(!drag) return; drag=null; rail.classList.remove('drag'); v=Math.max(-25,Math.min(25,v)); });
+  track.addEventListener('click',ev=>{ const b=ev.target.closest('.it'); if(!b||moved>8) return; open(+b.dataset.i); });
+
+  // ---------- detail view ----------
+  const dv=document.getElementById('dv'), au=document.getElementById('au'), big=document.getElementById('big'), stage=document.getElementById('stage');
+  const q=id=>document.getElementById(id); let cur=0;
+  const PLAY='<path d="M7 4.5v15l13-7.5z"/>', PAUSE='<path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/>';
+  function show(i,autoplay){ cur=(i+ITEMS.length)%ITEMS.length; const it=ITEMS[cur];
+    q('dvi').src='assets/rail/'+it.id+'.webp'; q('dvl').src=it.label; q('dvt').textContent=it.t+(it.id[0]==='r'?'':'');
+    q('dvs').textContent=it.id[0]==='r'?it.sub+' · Break You Out – The Remixes':it.sub;
+    q('dvn').textContent=it.id[0]==='t'?'TRACK '+it.no+' / 15':(it.id==='s00'?'THE SINGLE':'REMIX '+it.no.slice(1)+' / 5');
+    q('lyr').href=it.lyr; au.src=it.f; q('tb').style.width='0'; q('tc').textContent='0:00';
+    if(autoplay) au.play().catch(()=>{}); }
+  function open(i){ show(i,true); dv.classList.add('open'); document.body.style.overflow='hidden'; q('dvx').focus({preventScroll:true}); }
+  function close(){ dv.classList.remove('open','play'); au.pause(); document.body.style.overflow=''; }
+  q('dvx').onclick=close; dv.addEventListener('click',e=>{ if(e.target===dv) close(); });
+  q('pv').onclick=()=>show(cur-1,!au.paused); q('nx').onclick=()=>show(cur+1,!au.paused);
+  q('pp').onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.addEventListener('play',()=>{dv.classList.add('play');q('ppi').innerHTML=PAUSE;q('pp').setAttribute('aria-label','Pause');});
+  au.addEventListener('pause',()=>{dv.classList.remove('play');q('ppi').innerHTML=PLAY;q('pp').setAttribute('aria-label','Play');});
+  au.addEventListener('ended',()=>show(cur+1,true));
+  au.addEventListener('timeupdate',()=>{ const d=au.duration||40; q('tb').style.width=(au.currentTime/d*100)+'%'; const s=Math.floor(au.currentTime); q('tc').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); });
+  addEventListener('keydown',e=>{ if(!dv.classList.contains('open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowRight') show(cur+1,!au.paused); if(e.key==='ArrowLeft') show(cur-1,!au.paused); if(e.key===' '){e.preventDefault();q('pp').click();} });
+  stage.addEventListener('pointermove',e=>{ const r=stage.getBoundingClientRect(); big.style.setProperty('--ty',(((e.clientX-r.left)/r.width-.5)*22).toFixed(1)+'deg'); big.style.setProperty('--tx',(-((e.clientY-r.top)/r.height-.5)*16).toFixed(1)+'deg'); });
+  stage.addEventListener('pointerleave',()=>{ big.style.setProperty('--ty','0deg'); big.style.setProperty('--tx','0deg'); });
+  // swipe in detail view on phones
+  let sx=null; stage.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  stage.addEventListener('touchend',e=>{ if(sx===null) return; const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1),!au.paused); sx=null; });
+})();
+</script>
+</body>
+</html>
