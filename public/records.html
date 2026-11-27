@@ -173,11 +173,11 @@ a{color:inherit}
 <section class="rr" id="records" aria-label="The record rail">
   <div class="rr-head">
     <p class="rr-k">The Record Rail</p>
-    <h2 class="rr-h">Pick a record, <em>press play.</em></h2>
-    <p class="rr-s">21 songs · the single, the remixes and the debut album</p>
+    <h2 class="rr-h" data-i18n="rr_h">Pick a record, <em>press play.</em></h2>
+    <p class="rr-s" data-i18n="rr_s">21 songs · the single, the remixes and the debut album</p>
   </div>
   <div class="rail" id="rail"><div class="bar"></div><div class="track" id="track"></div></div>
-  <div class="rr-cap"><div class="cap-l" id="cap"><b>Break You Out</b><small>The single</small></div><div class="cap-r" id="caph"><i></i><span>Click any record to listen</span></div></div>
+  <div class="rr-cap"><div class="cap-l" id="cap"><b>Break You Out</b><small>The single</small></div><div class="cap-r" id="caph"><i></i><span data-i18n="rr_hint">Pick any record to listen</span></div></div>
   <div class="prog"><div><span id="pbar"></span></div></div>
 </section>
 
@@ -213,7 +213,7 @@ const ITEMS=[{"id":"s00","t":"Break You Out","sub":"The single","f":"assets/deck
   // build two copies for a seamless loop
   function make(it,i){const d=document.createElement('div');d.className='it';d.dataset.i=i;
     const tri='<svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg>';
-    d.innerHTML='<span class="hook"></span><span class="tag">'+it.no+'</span><div class="sw"><span class="ring"></span><button class="sl" aria-label="Play '+it.t+' – '+it.sub+'"><img src="assets/rail/'+it.id+'.webp" alt="" width="360" height="360" loading="lazy" decoding="async"><span class="po">'+tri+'</span><span class="pb">'+tri+'</span></button><span class="cta">Play preview</span><span class="chip">'+(matchMedia('(hover:hover)').matches?'Click to listen':'Tap to listen')+'</span></div>';return d;}
+    d.innerHTML='<span class="hook"></span><span class="tag">'+it.no+'</span><div class="sw"><span class="ring"></span><button class="sl" aria-label="Play '+it.t+' – '+it.sub+'"><img src="assets/rail/'+it.id+'.webp" alt="" width="360" height="360" loading="lazy" decoding="async"><span class="po">'+tri+'</span><span class="pb">'+tri+'</span></button><span class="cta">Play</span><span class="chip">▶&nbsp; Play</span></div>';return d;}
   for(let c=0;c<2;c++) ITEMS.forEach((it,i)=>track.appendChild(make(it,i)));
   const els=[...track.children];
   let half=0; function measure(){half=track.scrollWidth/2;} measure(); addEventListener('resize',measure);
@@ -237,7 +237,6 @@ const ITEMS=[{"id":"s00","t":"Break You Out","sub":"The single","f":"assets/deck
   // ---------- nudge: show first-time visitors that records are playable ----------
   let used=false; try{used=localStorage.getItem('rr_used')==='1'}catch(e){}
   const caph=document.getElementById('caph');
-  if(!matchMedia('(hover:hover)').matches) caph.querySelector('span').textContent='Tap any record to listen';
   let nudged=null;
   function nudge(){ if(used||hover||document.hidden) return; if(nudged) nudged.classList.remove('nudge');
     const c=innerWidth*(innerWidth<700?.5:.42); let best=null,bd=1e9;
